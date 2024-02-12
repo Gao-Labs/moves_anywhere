@@ -13,4 +13,5 @@ To run this software, you'll need to...
 
 ## Tutorial
 - See `demos/demo1.sh`!
+- View [our recent Training Video](https://vod.video.cornell.edu/media/MOVES+Anywhere+Training/1_d97n2qdm) of `moves_anywhere` for Cornell's Gao Labs Workshop in February 2024.
 - [Extended Tutorial coming soon!]
