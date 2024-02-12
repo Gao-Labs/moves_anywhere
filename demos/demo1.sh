@@ -88,6 +88,8 @@ start docker
 # Set working directory
 cd "$image_folder";
 
+# One time, you'll need to pull this 'starter' image
+docker pull -t tmf77/docker_moves
 # Build image
 docker build -t moves_anywhere:v0 . --no-cache;
 # docker build -t moves_anywhere:v0 .;
