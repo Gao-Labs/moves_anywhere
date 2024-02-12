@@ -3,3 +3,6 @@
 .Rdata
 .Ruserdata
 .Renviron
+inputs/*.xml
+inputs/*.csv
+inputs/*.json
