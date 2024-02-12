@@ -9,7 +9,8 @@
 #' -- 2 custom input tables (made up)
 #' -- geoid: 36109'
 #' -- year: '
-# 1B. A Custom Run with 2 Tables ###########################################
+
+# 1. A Custom Run with 2 Tables ###########################################
 # Make folder values
 # Path to the main folder
 main_folder=$(pwd)
@@ -51,7 +52,7 @@ echo "output folder:  $output_folder"
 echo "my container:  $mycontainer"
 echo "json_data: " $json_data
 
-# Gather Parameters & Files as Inputs #############################
+# 2. Gather Parameters & Files as Inputs #############################
 
 # Set working directory to main folder
 cd "$main_folder"
@@ -80,7 +81,7 @@ cat "$inputs_folder/parameters.json"
 cp -r "$data_folder/"/* "$inputs_folder"
 
 
-# Build Image ############################################
+# 3. Build Image ############################################
 
 # Start docker
 start docker
@@ -113,14 +114,25 @@ service mysql start
 R
 # run the post-processing R script
 source("postprocess.r") 
+# Check your files
+dir()
 # View your output
-readr::read_rds("demos/demo1_data.rds")
+readr::read_rds("data.rds")
+
+# View and explore the data
+library(dplyr)
+library(readr)
+readr::read_rds("data.rds") %>% glimpse() 
+readr::read_rds("data.rds") %>% filter(by == 16) %>% glimpse() 
+read_rds("data.rds") %>% write_csv("data.csv")
+# Check our folder files
+dir()
 # Close R
 q("no")
 # Exit container (try it twice if it doesn't work the first time)
 exit
 
-# Retrieve output files ##############################################
+# 4. Retrieve output files ##############################################
 # Restart same container (if you exited too early.)
 docker start dock
 # Mark working directory
@@ -128,13 +140,16 @@ cd "$main_folder"
 
 # Copy the csv file from docker container to your output folder & file path.
 docker cp dock:cat-api/data.rds "$output_folder/$output_file"
+# docker cp dock:cat-api/data.rds "$output_folder/demo1_data.rds"
+docker cp dock:cat-api/data.csv "$output_folder/demo1_data.csv"
+
 # Close Down your container
 docker stop dock
 
 
 
 
-# (Optional) Explore Data Manually in MariaDB #######################
+# 5. (Optional) Explore Data Manually in MariaDB #######################
 
 # Start the container back up....
 docker start dock
@@ -170,7 +185,8 @@ con %>%
   tbl("movesactivityoutput") %>% 
   collect() %>% 
   write_csv("movesactivityoutput.csv")
-
+# Check our files
+dir()
 # Always disconnect
 dbDisconnect(con)
 # Quit R
@@ -190,7 +206,7 @@ docker cp dock:cat-api/movesactivityoutput.csv "$output_folder/demo1_movesactivi
 # Close Down your container
 docker stop dock
 
-# If you need to enter the container again #####################
+# 6. (Optional) If you need to enter the container again #####################
 # To start container...
 # docker start dock
 # To enter container...
@@ -203,7 +219,7 @@ docker stop dock
 # Delete your container (caution! You'll lose any data left inside!)
 # docker rm dock
 
-# Prune any dangling images ####################################
+# 7. Prune any dangling images ####################################
 # Always a good idea at the end. Doesn't prune any **named** images like 'moves_anywhere'
 # List dangling images
 docker images -q -f "dangling=true";
