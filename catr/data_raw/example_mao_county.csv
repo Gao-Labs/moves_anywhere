@@ -1,0 +1,6 @@
+MOVESRunID,iterationID,yearID,monthID,dayID,hourID,stateID,countyID,zoneID,linkID,sourceTypeID,regClassID,fuelTypeID,fuelSubTypeID,modelYearID,roadTypeID,SCC,engTechID,sectorID,hpID,activityTypeID,activity,activityMean,activitySigma
+1,1,2060,NA,NA,NA,15,15005,NA,NA,32,30,5,NA,NA,1,NA,NA,NA,NA,6,0,NA,NA
+1,1,2060,NA,NA,NA,15,15005,NA,NA,31,30,5,NA,NA,1,NA,NA,NA,NA,6,0,NA,NA
+1,1,2060,NA,NA,NA,15,15005,NA,NA,21,20,5,NA,NA,1,NA,NA,NA,NA,6,0,NA,NA
+1,1,2060,NA,NA,NA,15,15005,NA,NA,61,47,3,NA,NA,1,NA,NA,NA,NA,6,0,NA,NA
+1,1,2060,NA,NA,NA,15,15005,NA,NA,53,47,3,NA,NA,1,NA,NA,NA,NA,6,0,NA,NA

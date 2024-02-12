@@ -1,0 +1,7 @@
+MOVESRunID,iterationID,yearID,monthID,dayID,hourID,stateID,countyID,zoneID,linkID,pollutantID,processID,sourceTypeID,regClassID,fuelTypeID,fuelSubTypeID,modelYearID,roadTypeID,SCC,engTechID,sectorID,hpID,emissionQuant,emissionQuantMean,emissionQuantSigma
+1,1,2060,NA,NA,NA,24,NA,NA,NA,119,NA,32,30,5,NA,NA,5,NA,NA,NA,NA,0,NA,NA
+1,1,2060,NA,NA,NA,24,NA,NA,NA,119,NA,31,30,5,NA,NA,5,NA,NA,NA,NA,0,NA,NA
+1,1,2060,NA,NA,NA,24,NA,NA,NA,119,NA,21,20,5,NA,NA,5,NA,NA,NA,NA,0,NA,NA
+1,1,2060,NA,NA,NA,24,NA,NA,NA,119,NA,61,47,3,NA,NA,5,NA,NA,NA,NA,0,NA,NA
+1,1,2060,NA,NA,NA,24,NA,NA,NA,119,NA,53,47,3,NA,NA,5,NA,NA,NA,NA,0,NA,NA
+1,1,2060,NA,NA,NA,24,NA,NA,NA,119,NA,52,47,3,NA,NA,5,NA,NA,NA,NA,0,NA,NA
