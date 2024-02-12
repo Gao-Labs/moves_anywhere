@@ -1,5 +1,11 @@
 #' @name connect
 #' @title Connect to Database
+#' @param type "mariadb" or "mysql"
+#' @param ... database name
+#' @importFrom DBI dbConnect
+#' @importFrom RMariaDB MariaDB
+#' @importFrom RMySQL MySQL
+#' @export
 connect = function(type = "mariadb", ...){
   
   if(type == "mariadb"){

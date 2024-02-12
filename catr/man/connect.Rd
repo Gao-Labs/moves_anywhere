@@ -6,6 +6,11 @@
 \usage{
 connect(type = "mariadb", ...)
 }
+\arguments{
+\item{type}{"mariadb" or "mysql"}
+
+\item{...}{database name}
+}
 \description{
 Connect to Database
 }

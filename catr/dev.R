@@ -32,7 +32,7 @@ install.packages(package, type = "source")
 
 
 # Load catr
-library(catr)
+# library(catr)
 
 # Clean up
 rm(list = ls()); gc()
