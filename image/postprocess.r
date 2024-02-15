@@ -20,3 +20,4 @@ print(path)
 
 # Check it
 path %>% readr::read_rds() %>% head()
+read_rds("data.rds") %>% write_csv("data.csv")
