@@ -49,7 +49,6 @@ echo $JAVA_HOME
 # Compiling Java and Go files in MOVES
 echo ------------compiling Java------------
 ant clean
-ant compile
 ant compileall
 echo ------------compiling Go------------
 ant go64
@@ -63,6 +62,6 @@ sudo -u mysql ant run -Drunspec="/cat-api/EPA_MOVES_Model/rs_custom.xml"
 cd ..
 
 # # 3. Post-Processing #########################################################################
-# Rscript postprocess.r
+Rscript postprocess.r
 
 bash

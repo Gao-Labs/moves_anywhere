@@ -1,8 +1,4 @@
 #!/bin/bash
-
-#' @name demo1.sh
-#' @author Tim Fraser
-#' @description
 #' A demo script for running MOVES with `moves_anywhere`
 #' 
 #' -- Custom run
@@ -84,9 +80,6 @@ cp -r "$data_folder/"/* "$inputs_folder"
 
 # 3. Build Image ############################################
 
-# Start docker
-start docker
-
 # Set working directory
 cd "$image_folder";
 
@@ -102,38 +95,8 @@ docker run  --name dock  \
   --mount src="$inputs_folder",target="/cat-api/inputs",type=bind \
   -it moves_anywhere:v0
 
-# Run script in terminal - runs preprocessing and MOVES. 
-# Takes ~1.5 minutes for 1 custom county level run.
-bash launch.sh
-
-# Post-Process and Format your outputs into CAT format ###############
-
-# Start MySQL (just in case)
-service mysql start
-
-# start R
-R
-# run the post-processing R script
-source("postprocess.r") 
-# Check your files
-dir()
-# View your output
-readr::read_rds("data.rds")
-
-# View and explore the data
-library(dplyr)
-library(readr)
-readr::read_rds("data.rds") %>% glimpse() 
-readr::read_rds("data.rds") %>% filter(by == 16) %>% glimpse() 
-read_rds("data.rds") %>% write_csv("data.csv")
-# Check our folder files
-dir()
-# Close R
-q("no")
-# Exit container (try it twice if it doesn't work the first time)
-exit
-
 # 4. Retrieve output files ##############################################
+echo "----------Retrieving output files--------------------"
 # Restart same container (if you exited too early.)
 docker start dock
 # Mark working directory
@@ -146,83 +109,3 @@ docker cp dock:cat-api/data.csv "$output_folder/demo1_data.csv"
 
 # Close Down your container
 docker stop dock
-
-
-
-
-# 5. (Optional) Explore Data Manually in MariaDB #######################
-
-# Start the container back up....
-docker start dock
-# To enter container...
-docker exec -it dock bash
-# Start MySQL (just in case)
-service mysql start
-# start R
-R
-# Load packages
-library(dplyr)
-library(DBI)
-library(RMariaDB)
-library(readr)
-library(catr)
-# Connect to output database
-con = catr::connect(type = "mariadb", "moves")
-# Check status of run
-con %>% tbl("movesrun") %>% glimpse()
-
-# View results
-con %>% tbl("movesoutput") %>% glimpse()
-
-# View results
-con %>% tbl("movesactivityoutput") %>% glimpse()
-
-# Write results to file
-con %>% 
-  tbl("movesoutput") %>% 
-  collect() %>%
-  write_csv("movesoutput.csv")
-con %>% 
-  tbl("movesactivityoutput") %>% 
-  collect() %>% 
-  write_csv("movesactivityoutput.csv")
-# Check our files
-dir()
-# Always disconnect
-dbDisconnect(con)
-# Quit R
-q("no")
-# To exit the container
-exit
-# Retrieve output files ##############################################
-# Restart same container (if you exited too early.)
-docker start dock
-# Mark working directory
-cd "$main_folder"
-
-# Copy the csv file from docker container to your output folder & file path.
-docker cp dock:cat-api/movesoutput.csv "$output_folder/demo1_movesoutput.csv"
-docker cp dock:cat-api/movesactivityoutput.csv "$output_folder/demo1_movesactivityoutput.csv"
-
-# Close Down your container
-docker stop dock
-
-# 6. (Optional) If you need to enter the container again #####################
-# To start container...
-# docker start dock
-# To enter container...
-# docker exec -it dock bash
-# To exit...
-# exit
-# To stop your container...
-# docker stop dock
-
-# Delete your container (caution! You'll lose any data left inside!)
-# docker rm dock
-
-# 7. Prune any dangling images ####################################
-# Always a good idea at the end. Doesn't prune any **named** images like 'moves_anywhere'
-# List dangling images
-docker images -q -f "dangling=true";
-# Prune dangling images
-docker rmi $(docker images -q -f "dangling=true");
