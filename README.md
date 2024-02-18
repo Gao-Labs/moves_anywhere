@@ -38,7 +38,7 @@ For a comprehensive walkthrough, view [our recent Training Video](https://vod.vi
 First, we must restart the container and navigate into it: 
 1. Restart the container with `docker start dock`
 2. Navigate into the container with `docker exec -it dock bash`
-This will allow you to interact with the container through the command line. To explore the data, you can start R with the command `R` or you can work with SQL directly with the command `mySQL`. 
+This will allow you to interact with the container through the command line. To explore the data, you can start R with the command `R` or you can work with SQL directly with the command `mysql`. 
 - If using R:
   - Load relevant libraries such as dplyr, DBI, RMariaDB, readr, and catr
   - Connect to the database you want to explore with `con = catr::connect(type = "mariadb", "dbname")`, replacing dbname with the database. Using this connection, you can check the results of your run by looking into different tables.
