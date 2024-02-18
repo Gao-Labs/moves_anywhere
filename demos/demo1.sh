@@ -15,14 +15,13 @@
 # Path to the main folder
 main_folder=$(pwd)
 # Path to image folder
-image_folder="$(dirname $(pwd))"
-image_folder="$image_folder/image"
+image_folder="$(pwd)/image"
 # Path to where you WILL store your inputs
 inputs_folder="$(pwd)/inputs"
 # Path to where you will source your data/inputs FROM --- UPDATE THIS
-data_folder="$(pwd)/demo1_inputs"
+data_folder="$(pwd)/demos/demo1_inputs"
 # Path to where you want to put your outputs
-output_folder="$(pwd)"
+output_folder="$(pwd)/demos"
 # Path to output file
 output_file="demo1_data.rds"
 # Name to give your container
@@ -113,8 +112,7 @@ service mysql start
 
 # start R
 R
-# run the post-processing R script
-source("postprocess.r") 
+
 # Check your files
 dir()
 # View your output
