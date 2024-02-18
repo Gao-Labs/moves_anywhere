@@ -48,6 +48,7 @@ This will allow you to interact with the container through the command line. To 
   - `SHOW DATABASES;` will provide all the databases on the mySQL server
   - `USE dbname;` will select the database. Most of the moves output data is located in the `moves` database
   - Once you have selected a database, you can see all the tables in the database with `SHOW TABLES;`
+    These tables contain data outputted by moves. You can interact with the tables using various SQL SELECT statements.
 
 ### Before Starting Another Run
 Ensure that you have no dangling images. You can do this in 2 ways: manually or command line.
