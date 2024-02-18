@@ -15,7 +15,12 @@ If running on a windows device:
 - Install [Git Bash](https://git-scm.com/downloads) on your computer, to run Bash shell scripts
 
 ## Tutorial
-- See `demos/demo1.sh`!
+There are two ways you can interact with this repository. If you use R and have RStudio installed, see [Running With RStudio](https://github.com/Gao-Labs/moves_anywhere/tree/main?tab=readme-ov-file#running-with-rstudio). Otherwise, you can [Run With the Command Line](https://github.com/Gao-Labs/moves_anywhere/tree/main?tab=readme-ov-file#running-with-command-line). 
+
+### Running with Rstudio
+For a comprehensive walkthrough, view [our recent Training Video](https://vod.video.cornell.edu/media/MOVES+Anywhere+Training/1_d97n2qdm) of `moves_anywhere` for Cornell's Gao Labs Workshop in February 2024.
+  1. Open an RStudio session. Navigate to the demos folder and open demo1.sh
+  2. Run the script line by line
   
 ### Running with Command Line
   1. Ensure that Docker Desktop is open. You can do this by navigating to your applications and clicking on the app icon.
@@ -26,13 +31,26 @@ If running on a windows device:
   5. Run `bash launch.sh`. This will perform all the setup for MOVES and the run itself.
      - Once you see the prompt `BUILD SUCCESSFUL`, the MOVES run has finished.
   6. Now, we are done with MOVES. To get back to the script, run the `exit` command. You may need to run this twice.
+     - If you want to explore within the docker command, you can do so now (do not run the `exit` command)
      - At this point, the formatted output data has been copied to your machine
 
-### Running with Rstudio
-- View [our recent Training Video](https://vod.video.cornell.edu/media/MOVES+Anywhere+Training/1_d97n2qdm) of `moves_anywhere` for Cornell's Gao Labs Workshop in February 2024.
+#### Exploring Data Manually Within the Docker Container
+First, we must restart the container and navigate into it: 
+1. Restart the container with `docker start dock`
+2. Navigate into the container with `docker exec -it dock bash`
+This will allow you to interact with the container through the command line. To explore the data, you can start R with the command `R` or you can work with SQL directly with the command `mySQL`. 
+- If using R:
+  - Load relevant libraries such as dplyr, DBI, RMariaDB, readr, and catr
+  - Connect to the database you want to explore with `con = catr::connect(type = "mariadb", "dbname")`, replacing dbname with the database
+    Using this connection, you can check the results of your run by looking into different tables.
+  - For additional functionality, refer to [step 5](https://github.com/Gao-Labs/moves_anywhere/blob/main/demos/demo1.sh#L151C1-L151C73) in demo1.sh
+- If interacting with SQL directly:
+  - `SHOW DATABASES;` will provide all the databases on the mySQL server
+  - `USE dbname;` will select the database. Most of the moves output data is located in the `moves` database
+  - Once you have selected a database, you can see all the tables in the database with `SHOW TABLES;`
 
 ### Before Starting Another Run
-Ensure that you have no dangling images. You can do this in 2 ways: manually versus command line.
+Ensure that you have no dangling images. You can do this in 2 ways: manually or command line.
 #### Manually Deleting Images
 Navigate to Docker Desktop and manually deleting any moves-related images and containers listed
 #### Using the Command Line to Remove Dangling Images
