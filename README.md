@@ -41,14 +41,12 @@ First, we must restart the container and navigate into it:
 This will allow you to interact with the container through the command line. To explore the data, you can start R with the command `R` or you can work with SQL directly with the command `mySQL`. 
 - If using R:
   - Load relevant libraries such as dplyr, DBI, RMariaDB, readr, and catr
-  - Connect to the database you want to explore with `con = catr::connect(type = "mariadb", "dbname")`, replacing dbname with the database
-    Using this connection, you can check the results of your run by looking into different tables.
+  - Connect to the database you want to explore with `con = catr::connect(type = "mariadb", "dbname")`, replacing dbname with the database. Using this connection, you can check the results of your run by looking into different tables.
   - For additional functionality, refer to [step 5](https://github.com/Gao-Labs/moves_anywhere/blob/main/demos/demo1.sh#L151C1-L151C73) in demo1.sh
 - If interacting with SQL directly:
   - `SHOW DATABASES;` will provide all the databases on the mySQL server
   - `USE dbname;` will select the database. Most of the moves output data is located in the `moves` database
-  - Once you have selected a database, you can see all the tables in the database with `SHOW TABLES;`
-    These tables contain data outputted by moves. You can interact with the tables using various SQL SELECT statements.
+  - Once you have selected a database, you can see all the tables in the database with `SHOW TABLES;`. These tables contain data outputted by moves. You can interact with the tables using various SQL SELECT statements.
 
 ### Before Starting Another Run
 Ensure that you have no dangling images. You can do this in 2 ways: manually or command line.
