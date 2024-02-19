@@ -31,7 +31,7 @@ For a comprehensive walkthrough, view [our recent Training Video](https://vod.vi
   5. Run `bash launch.sh`. This will perform all the setup for MOVES and the run itself.
      - Once you see the prompt `BUILD SUCCESSFUL`, the MOVES run has finished.
   6. Now, we are done with MOVES. To get back to the script, run the `exit` command. You may need to run this twice.
-     - If you want to explore within the docker command, you can do so now (do not run the `exit` command)
+     - If you want to explore within the docker container, you can do so now (do not run the `exit` command)
      - At this point, the formatted output data has been copied to your machine
 
 #### Exploring Data Manually Within the Docker Container
