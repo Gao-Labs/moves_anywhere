@@ -14,12 +14,15 @@
 # Make folder values
 # Path to the main folder
 main_folder=$(pwd)
+# Path to where you will source your data/inputs FROM --- UPDATE THIS
+data_folder="$(pwd)/demo1_inputs/run1"
+
 # Path to image folder
 image_folder="$(pwd)/image"
 # Path to where you WILL store your inputs
-inputs_folder="$(pwd)/inputs"
-# Path to where you will source your data/inputs FROM --- UPDATE THIS
-data_folder="$(pwd)/demos/demo1_inputs"
+inputs_folder="$(pwd)/inputs/run1/data.rds"
+
+
 # Path to where you want to put your outputs
 output_folder="$(pwd)/demos"
 # Path to output file
@@ -32,25 +35,25 @@ mycontainer="dock"
 # --Don't change pollutants.
 # --You should update 'changes' with the names of any files you're going to enter
 json_data='{
-  "level" : "county",
-  "geoid" :  "36109",
-  "year" : 2020,
-  "default" : false,
-  "by" :  [ 1, 16, 8, 12, 14, 15 ],
-  "pollutant" : [ 98,  91,  1, 5, 90, 31, 3, 6, 2, 87, 79, 110, 117, 116, 112, 115, 118, 119, 100, 106, 107 ],
-  "changes" : [ "sourcetypeyear.csv", "startsperdaypervehicle.csv" ]
+  "level": ["county"],
+  "geoid": ["42091"],
+  "year": [2025],
+  "default": [false],
+  "by": [1, 16, 8, 12, 14, 15],
+  "pollutant": [98, 91, 1, 5, 90, 31, 3, 6, 2, 87, 79, 110, 117, 116, 112, 115, 118, 119, 100, 106, 107],
+  "changes": ["avft.csv", "sourcetypepopulation.csv"]
 }'
 
 
 # Test your variables with 'echo'
-echo "----------My Folder Paths--------------------"
-echo "main folder:  $main_folder"
-echo "image folder:  $image_folder"
-echo "inputs folder:  $inputs_folder"
-echo "data folder:  $data_folder"
-echo "output folder:  $output_folder"
-echo "my container:  $mycontainer"
-echo "json_data: " $json_data
+# echo "----------My Folder Paths--------------------"
+# echo "main folder:  $main_folder"
+# echo "image folder:  $image_folder"
+# echo "inputs folder:  $inputs_folder"
+# echo "data folder:  $data_folder"
+# echo "output folder:  $output_folder"
+# echo "my container:  $mycontainer"
+# echo "json_data: " $json_data
 
 # 2. Gather Parameters & Files as Inputs #############################
 
@@ -72,13 +75,13 @@ echo "$json_data" > "$inputs_folder/parameters.json"
 # Print your parameters, just to check
 cat "$inputs_folder/parameters.json"
 
-## copy your folder of supplied csv files
+# copy your folder of supplied csv files
 
 # Either individually...
 # cp "demos/data/sourcetypeyear.csv" "inputs/sourcetypeyear.csv"
 # cp "demos/data/startsperdaypervehicle.csv" "inputs/startsperdaypervehicle.csv"
 # Or all in a group at once from a folder like demos/data/
-cp -r "$data_folder/"/* "$inputs_folder"
+# cp -r "$data_folder/"/* "$inputs_folder"
 
 
 # 3. Build Image ############################################
@@ -88,18 +91,30 @@ start docker
 
 # Set working directory
 cd "$image_folder";
-
+$image_folder
 # One time, you'll need to pull this 'starter' image
 docker pull -t tmf77/docker_moves
 # Build image
 docker build -t moves_anywhere:v0 . --no-cache;
 # docker build -t moves_anywhere:v0 .;
 
+# # Arguments from command line, if running it that way
+# args <- commandArgs(trailingOnly = TRUE)
+# if (length(args) > 0) {
+#   first_arg <- args[1]
+#   # You can now use first_arg as needed within your R script
+# } else {
+#   target_folder <- "/cat-api/inputs"
+#   # Proceed with a default value if no arguments are provided
+# }
+
 # Run container called 'dock', mounting the appropriate folder
 # Write the file path to your inputs folder
 docker run  --name dock  \
-  --mount src="$inputs_folder",target="/cat-api/inputs",type=bind \
+  --mount src="$data_folder",target=target_folder, type=bind \
   -it moves_anywhere:v0
+
+# docker rm dock
 
 # Run script in terminal - runs preprocessing and MOVES. 
 # Takes ~1.5 minutes for 1 custom county level run.
@@ -110,9 +125,16 @@ bash launch.sh
 # Start MySQL (just in case)
 service mysql start
 
-# start R
-R
+Rscript postprocess.r
 
+# start R
+# cp data.rds /cat-api/inputs/data.rds
+R -e "data = readr::read_rds('data.rds'); readr::write_csv(data, 'inputs/data.csv')"
+
+exit
+docker rm dock
+
+readr::read_rds("data.rds")
 # Check your files
 dir()
 # View your output
@@ -224,3 +246,6 @@ docker stop dock
 docker images -q -f "dangling=true";
 # Prune dangling images
 docker rmi $(docker images -q -f "dangling=true");
+
+docker image prune -f
+
