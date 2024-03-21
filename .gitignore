@@ -6,3 +6,4 @@
 inputs/*.xml
 inputs/*.csv
 inputs/*.json
+.DS_Store
