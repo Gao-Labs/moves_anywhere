@@ -20,4 +20,15 @@ print(path)
 
 # Check it
 path %>% readr::read_rds() %>% head()
-read_rds("data.rds") %>% write_csv("data.csv")
+read_rds("data.rds") %>% write_csv("inputs/data.csv")
+
+# Grab movesoutput and movesactivityoutput
+library(DBI)
+library(dplyr)
+library(catr)
+library(readr)
+db = catr::connect(type = "mariadb", "moves")
+db %>% tbl("movesoutput") %>% collect() %>% write_csv("inputs/movesoutput.csv")
+db %>% tbl("movesactivityoutput") %>% collect() %>% write_csv("inputs/movesactivityoutput.csv")
+DBI::dbDisconnect(db)
+
