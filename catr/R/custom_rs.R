@@ -7,11 +7,11 @@
 #' @param .level  description TBA.
 #' @param .default  description TBA.
 #' @param .id  description TBA.
-#' @param .dir Directory where runspec outputs
 #' @param .outputdbname Output database name
 #' @param .outputservername Hostname of output database (defaults to localhost)
 #' @param .inputdbname Custom Input database name
 #' @param .inputservername Hostname of custom input database (defaults to localhost) 
+#' @param .path Output path for runspec.
 #' @importFrom xml2 read_xml as_list write_xml as_xml_document
 #' @export
 
@@ -22,17 +22,17 @@ custom_rs = function(
     .level = "county",
     .default = FALSE,
     .id = 1,
-    .dir = NULL,
     .outputdbname = "moves",
     .outputservername = "localhost",
     .inputdbname = "movesdb20240104",
-    .inputservername = "localhost"
+    .inputservername = "localhost",
+    .path = "inputs/rs_custom.xml"
 ){
   
   # Set database information  
   
   # Set rs_folder to TEMP_FOLDER by default.
-  if(is.null(.dir)){ .dir = Sys.getenv("TEMP_FOLDER") }
+  # if(is.null(.dir)){ .dir = Sys.getenv("TEMP_FOLDER") }
   
 
   # require(xml2, warn.conflicts = FALSE)
@@ -95,8 +95,9 @@ custom_rs = function(
   # Update the runspec description
   x$runspec$description[[1]] <- paste0(.level, .geoid, " MOVES run with ", .name, " inputs")
   
-  # Design the filepath
-  .path = paste0(.dir, "/", "rs", "_", .geoid, "_", .year, "_rs_moves31_", .name, "_", .id, ".xml")
+  # Design the filepath (outddated - let's just use rs_custom.xml)
+  # .path = paste0(.dir, "/", "rs", "_", .geoid, "_", .year, "_rs_moves31_", .name, "_", .id, ".xml")
+  
   # Normalize the path
   .path = normalizePath(.path, winslash = "/")
   

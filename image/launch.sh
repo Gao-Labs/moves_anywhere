@@ -61,7 +61,12 @@ sudo -u mysql ant run -Drunspec="/cat-api/EPA_MOVES_Model/rs_custom.xml"
 # Jump Backwards in File Directory, back to /cat-api/
 cd ..
 
-# # 3. Post-Processing #########################################################################
+# 3. Post-Processing #########################################################################
+# Post-process the data into a data.rds file
 Rscript postprocess.r
 
+# Run upload post-processing (where applicable. Requires a mounted .Renviron file)
+Rscript postprocess_upload.r
+
+# End script
 bash

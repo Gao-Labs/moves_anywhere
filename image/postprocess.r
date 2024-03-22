@@ -20,9 +20,11 @@ print(path)
 
 # Check it
 path %>% readr::read_rds() %>% head()
+
+# Write it to file as .csv in the mounted inputs/ folder.
 read_rds("data.rds") %>% write_csv("inputs/data.csv")
 
-# Grab movesoutput and movesactivityoutput
+# Grab movesoutput and movesactivityoutput as .csvs in the mounted inputs/ folder
 library(DBI)
 library(dplyr)
 library(catr)

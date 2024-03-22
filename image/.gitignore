@@ -3,3 +3,8 @@
 .Rdata
 .Ruserdata
 .Renviron
+.git
+manifest.json
+rsconnect/
+.Rproj.user
+README.md

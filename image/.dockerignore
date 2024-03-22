@@ -5,3 +5,8 @@
 manifest.json
 rsconnect/
 .Rproj.user
+README.md
+.Renviron
+buildme.sh
+testme.sh
+uploadme.sh

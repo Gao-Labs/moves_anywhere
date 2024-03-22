@@ -57,7 +57,7 @@
 # SHELL ["/bin/bash", "-c"]
 # RUN /cat-api/setupdb.sh
 
-
+# Build ontop of tmf77/docker_moves:v1, whose layers are written above
 FROM tmf77/docker_moves:v1
 
 WORKDIR /cat-api
@@ -74,18 +74,32 @@ COPY setenv.r /cat-api/setenv.r
 COPY preprocess.r /cat-api/preprocess.r
 COPY postprocess.r /cat-api/postprocess.r
 
-
-# Copy other items that might change often
-# COPY /inputs /cat-api/inputs
-VOLUME /cat-api/inputs
-
-# Give recursive powers to the whole folder
-# RUN chown -R mysql:mysql /cat-api
-# RUN chmod -R 6777 /cat-api
+# Copy upload.r, the function script that uploads to CATSERVER
+COPY upload.r /cat-api/upload.r
+# Copy postprocess_upload.r, the script that calls upload.r
+COPY postprocess_upload.r /cat-api/postprocess_upload.r
+# Copy check.r, the script that checks if upload was successful.
+COPY check.r /cat-api/check.r
 
 # Launch MOVES 
 COPY launch.sh /cat-api/launch.sh
 RUN chmod +x /cat-api/launch.sh
 
-# Use launch.sh as the entrypoint
+# Set working directory of image
+WORKDIR /cat-api
+
+# Make inputs folder be mountable
+VOLUME /cat-api/inputs
+
+# To upload to CATSERVER (optional, just for advanced use),
+# You can mount an .Renviron file with CATSERVER write credentials (sensitive!)
+# note: you will need to add this file yourself. Looks like:
+# ORDERDATA read-write credentials
+# ORDERDATA_USERNAME="******************"
+# ORDERDATA_PASSWORD="******************"
+# ORDERDATA_HOST="****************"
+# ORDERDATA_PORT="****"
+VOLUME /cat-api/.Renviron
+
+# Optional: Use launch.sh as the entrypoint
 # ENTRYPOINT [ "/cat-api/launch.sh" ]

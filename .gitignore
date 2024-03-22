@@ -6,4 +6,11 @@
 inputs/*.xml
 inputs/*.csv
 inputs/*.json
+image/.Renviron
+inputs/.Renviron
+demos/.Renviron
+demos/demo0/.Renviron
+demos/demo1/.Renviron
+demos/demo2/.Renviron
+demos/demo3/.Renviron
 .DS_Store
