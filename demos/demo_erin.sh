@@ -30,9 +30,21 @@ docker pull tmf77/moves_anywhere:v0
 # Make folder values
 
 # Default values
-DATA_FOLDER="$(pwd)/demo1_inputs/run1" # Path to where you will source your data/inputs FROM
-RUN=1 # UNIQUE ID FOR YOUR DOCKER CONTAINER
+DATA_FOLDER="${1:-$(pwd)/demo1_inputs/run1}" # Path to where you will source your data/inputs FROM
 
+# Create a unique ID for your Docker container
+RUN_FILE="run_id.txt"
+# Check if the run file exists and is not empty
+if [ -f "$RUN_FILE" ] && [ -s "$RUN_FILE" ]; then
+  # Read the RUN value, increment by 1
+  RUN=$(cat "$RUN_FILE")
+  RUN=$((RUN+1))
+else
+  # Initialize RUN with 1 if file does not exist or is empty
+  RUN=1
+fi
+# Update the run file with the new RUN value
+echo $RUN > "$RUN_FILE"
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
