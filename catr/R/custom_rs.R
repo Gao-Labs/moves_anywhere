@@ -30,16 +30,16 @@ custom_rs = function(
 ){
 
   # Testing Values (comment out before pushing)  
-  .geoid = "36109"
-  .year = 2020
-  .level = "county"
-  .default = FALSE
-  .id = 1
-  .outputdbname = "moves"
-  .outputservername = "localhost"
-  .inputdbname = "movesdb20240104"
-  .inputservername = "localhost"
-  .path = "inputs/rs_custom.xml"
+  # .geoid = "36109"
+  # .year = 2020
+  # .level = "county"
+  # .default = FALSE
+  # .id = 1
+  # .outputdbname = "moves"
+  # .outputservername = "localhost"
+  # .inputdbname = "movesdb20240104"
+  # .inputservername = "localhost"
+  # .path = "inputs/rs_custom.xml"
   # require(xml2, warn.conflicts = FALSE)
   # require(dplyr, warn.conflicts = FALSE)
 
