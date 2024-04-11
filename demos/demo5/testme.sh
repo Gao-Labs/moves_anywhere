@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# testme.sh
+# demo5/testme.sh
 # 
-# Description
-#   Script to test docker container deployment.
-#
+# Description: Script to test docker container deployment.
+# Requirements: **parameters.json** and any custom inputs. **No rs_custom.xml**
+
+
 
 # Start docker before running this script
 # start docker
@@ -14,7 +15,7 @@ pwd
 
 # Variables
 IMAGE_NAME="moves_anywhere:v1"
-DATA_FOLDER="$(pwd)/demos/demo3" # Path to where you will source your data/inputs FROM
+DATA_FOLDER="$(pwd)/demos/demo5" # Path to where you will source your data/inputs FROM
 RUN="${DATA_FOLDER##*/}" # Extract folder name. This will be the name of your docker image, eg. dockrun1 (dock$RUN)
 
 echo "$DATA_FOLDER"
@@ -54,6 +55,10 @@ docker run  \
   --mount src="$DATA_FOLDER/",target="/cat-api/inputs",type=bind \
   -it "$IMAGE_NAME" \
   bash -c "bash launch.sh;"
+
+# Exit upon successful completion
+exit
+
 
 # Jump into the Container
 # docker exec -it "dock$RUN" bash

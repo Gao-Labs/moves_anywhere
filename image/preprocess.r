@@ -163,7 +163,7 @@ library(RMariaDB, quietly = TRUE)
 library(dplyr, quietly = TRUE)
 
 # Load adapt() function (now in catr)
-# source("adapt.r")
+source("adapt.r")
 # Run adapt() function on runspec with vector of custom input csv table paths
 adapt(.changes = changes, .runspec = runspec)
 # Remove adapt function

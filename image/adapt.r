@@ -1,5 +1,5 @@
 #' @name adapt
-#' @title `adapt()` function - adapted for docker_moves
+#' @title `adapt()` function - adapted for moves_anywhere
 #' @author Tim Fraser
 #' @description This function adapts existing default data to a new custom input database.
 #' As opposed to past versions, we just literally edit the default database, rather than creating a separate database.
@@ -44,7 +44,7 @@ adapt = function(.runspec, .changes = NULL){
   
   # .local = Sys.getenv("MDB_DEFAULT")
   .default = rs$default
-
+  
   # If it's a default run, skip this whole thing.
   if(.default == TRUE){ 
     # Tell user we're not using custom inputs in this case
@@ -66,27 +66,28 @@ adapt = function(.runspec, .changes = NULL){
     # Get a list of table names that were changed (dropping the inputs/ and .csv parts)
     .changed = .changes %>% stringr::str_remove(".*[/]") %>% tolower() %>% stringr::str_remove("[.]csv")
     # Get a vector of filetypes 
-    .filetype = .changes %>% tolower() %>% stringr::str_extract("[.]csv")
+    #.filetype = .changes %>% tolower() %>% stringr::str_extract("[.]csv")
     # Get an index vector
     .index = 1:length(.changed)
     # Get a list of tables
     tabs = custom %>% dbListTables()
     # For each custom input table provided
     for(i in .index){
-
+      
       # If this table name a valid moves table, 
       # its template will be present in the default database
       # So let's check - is this table in the set of all moves default db tables, empty or not?
       if(.changed[i] %in% tabs){
         # Message
-        cat(paste0("\n---", "importing custom table: ", .changed[i]))
+        cat(paste0("\n---", "importing custom table: ", .changed[i], "\n"))
         # Read in the file
         data = readr::read_csv(file = .changes[i])
         # If not empty
         if(nrow(data) > 0){
           # Truncate the table
           dbExecute(conn = custom, statement = paste0("TRUNCATE TABLE ", .changed[i], ";"))
-          # Write it to the custom database with that table name.
+          # Write it to the custom database with that table name. 
+          # (Append, not overwrite - you truncated the table in the line before, and appending means you keep the existing column schema)
           DBI::dbWriteTable(conn = custom, name = .changed[i], value = data, overwrite = FALSE, append = TRUE)
         }
         # cleanup
@@ -212,6 +213,7 @@ adapt = function(.runspec, .changes = NULL){
     # Cleanup
     remove(data)
   }
+  
   ### totalidlefraction ######################  
   if(!"totalidlefraction" %in% .changed){
     # Query
@@ -332,12 +334,6 @@ adapt = function(.runspec, .changes = NULL){
   #   DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
   # https://www.epa.gov/sites/default/files/2021-05/documents/moves3-experienced-users-webinar-2021-05-05.pdf
   
-  ### (N/A) hpmsvtypeday #################################
-  # .table = "hpmsvtypeday" # bring as is
-  # data = custom %>% tbl(.table) %>% collect()
-  #    DBI::dbExecute(custom, "TRUNCATE TABLE imcoverage;")
-  #   DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
-  # 
   
   
   ## FUEL ########################################
@@ -437,40 +433,8 @@ adapt = function(.runspec, .changes = NULL){
     
   }
   
-  ## ACTIVITY #########################
-  cat("\n\n---ACTIVITY TABLES----------------------\n")
-  
-  
-  ### hpmsvtypeyear #################################
-  if(!"hpmsvtypeyear" %in% .changed){
-    # Query
-    data = custom %>% tbl("hpmsvtypeyear") %>% 
-      filter(yearID %in% !!.year) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE hpmsvtypeyear;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "hpmsvtypeyear", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "hpmsvtypeyear", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }  
-  ### sourcetypeagedistribution #################################
-  if(!"sourcetypeagedistribution" %in% .changed){
-    # Query
-    data = custom %>% tbl("sourcetypeagedistribution") %>% 
-      filter(yearID %in% !!.year) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypeagedistribution;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "sourcetypeagedistribution", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "sourcetypeagedistribution", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
+  ## SOURCETYPE POPULATION #############################
+  cat("\n\n---SOURCE TYPE POPULATION TABLES----------------------\n")
   
   ### sourcetypeyear #################################
   if(!"sourcetypeyear" %in% .changed){
@@ -484,257 +448,339 @@ adapt = function(.runspec, .changes = NULL){
     cat(paste0("\n---adapted default table:   ", "sourcetypeyear", counter(data)))
     # Cleanup
     remove(data)
-    
   }
   
-  ### sourcetypeyearvmt #################################
-  # Note: if sourcetypedayvmt is provided, skip this one
-  if(!"sourcetypeyearvmt" %in% .changed){
+  
+  ## VEHICLE TYPE VMT #########################
+  cat("\n\n---VEHICLE TYPE VMT TABLES----------------------\n")
+  
+  ### PICK ONE ######################################
+  #### sourcetypedayvmt #################################
+  #### hpmsvtypeday #################################
+  #### sourcetypeyearvmt ################################
+  #### hpmsvtypeyear #################################
+  
+  # Only one of these next 4 tables can be uploaded at one time.
+  # Suppose this is our changed vector
+  # .changed = c("sourcetypeyearvmt", "hpmsvtypeyear", "bird")
+  
+  # First, check if MULTIPLE TABLES are uploaded.
+  items = c("sourcetypeyearvmt", "sourcetypedayvmt", "hpmsvtypeyear", "hpmsvtypeday")
+  # Find me the items that meet our criteria and are in .changed  
+  myitems = items[items %in% .changed]
+  # How many were uploaded
+  n_uploaded = sum(items %in% .changed)
+  
+  # If ZERO of these 4 tables are uploaded, draw THIS ONE TABLE FROM THE DEFAULTS.
+  if(n_uploaded == 0){
+    
     # Query
-    data = custom %>% tbl("sourcetypeyearvmt" ) %>% filter(yearID %in% !!.year) %>% collect()
+    data = custom %>% tbl("hpmsvtypeyear") %>% 
+      filter(yearID %in% !!.year) %>% collect()
     # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypeyearvmt;")
-    # Only if sourcetypeyearvmt is NOT provided
-    if(!"sourcetypedayvmt" %in% .changed){
-      
+    DBI::dbExecute(custom, "TRUNCATE TABLE hpmsvtypeyear;")
     # Append
-    DBI::dbWriteTable(conn = custom, name = "sourcetypeyearvmt" , value = data, overwrite = FALSE, append = TRUE)
+    DBI::dbWriteTable(conn = custom, name = "hpmsvtypeyear", value = data, overwrite = FALSE, append = TRUE)
     # Message
-    cat(paste0("\n---adapted default table:   ", "sourcetypeyearvmt", counter(data)))
-    }
+    cat(paste0("\n---adapted default table:   ", "hpmsvtypeyear", counter(data)))
     # Cleanup
     remove(data)
     
-  }
-  ### sourcetypedayvmt ################################
-  # Note: if sourcetypeyearvmt is provided, skip this one
-  if(!"sourcetypedayvmt" %in% .changed ){ # added
-    
-    # Query
-    data = custom %>% tbl("sourcetypedayvmt") %>% filter(yearID %in% !!.year) %>% collect()
-    # Truncate
+    # Truncate these alternatives - should be empty anyways, but can't run with more than 1 of these 4 tables
     DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypedayvmt;")
-    # Only if sourcetypeyearvmt is NOT provided
-    if(!"sourcetypeyearvmt" %in% .changed){
-      # Append
-      DBI::dbWriteTable(conn = custom, name = "sourcetypedayvmt", value = data, overwrite = FALSE, append = TRUE)
-      # Message
-      cat(paste0("\n---adapted default table:   ", "sourcetypedayvmt", counter(data)))
+    DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypeyearvmt;")
+    DBI::dbExecute(custom, "TRUNCATE TABLE hpmsvtypeday;")
+    
+  # If 1 is uploaded...
+  }else if(n_uploaded == 1){
+    # Then myitems has 1 item in it
+    # myitems
+    # Get the items that ARE NOT this.
+    items_to_drop = items[!items %in% myitems]
+    # For each item to drop, truncate that table
+    if(length(items_to_drop) > 0){
+      for(i in items_to_drop){ DBI::dbExecute(custom, statement = paste0("TRUNCATE TABLE ", i, ";")) }
     }
-    # Cleanup
-    remove(data)
+    
+  # If MORE than 1 of these 4 are uploaded, 
+  }else if(n_uploaded > 1){
+    # Message
+    cat(paste0("\n\n---WARNING: Multiple tables uploaded for section VEHICLE TYPE VMT when only 1 is allowed at a time. Overlapping tables: ", paste0(myitems, collapse = ", "), "\n"))
+    cat("\nWill prioritize tables in this order: sourcetypedayvmt, hpmsvtypeday, sourcetypeyearvmt, hpmsvtypeyear\n")
+    cat("\nIf this is a problem, remove the extra tables from inputs.\n\n")
+    
+    # We already uploaded the tables above, so we will DROP the less preferrable ones here.
+    # IF "sourcetypedayvmt" is available...
+    if("sourcetypedayvmt" %in% .changed){
+      item_to_keep = "sourcetypedayvmt"
+      # OTHERWISE, if "hpmsvtypeday" is available...
+    }else if("hpmsvtypeday" %in% .changed){
+      item_to_keep = "hpmsvtypeday"
+      # OTHERWISE, if "sourcetypeyearvmt" is available...
+    }else if("sourcetypeyearvmt" %in% .changed){
+      item_to_keep = "sourcetypeyearvmt"
+      # OTHERWISE, if "hpmsvtypeyear" is available...
+    }else if("hpmsvtypeyear" %in% .changed){ 
+      item_to_keep = "hpmsvtypeyear"
+    }
+    
+    # Get the items that ARE NOT this.
+    items_to_drop = items[!items %in% item_to_keep]
+    # Drop these other items from the .changed vector
+    .changed = .changed[!.changed %in% items_to_drop]
+    # For each item to drop, truncate that table
+    if(length(items_to_drop) > 0){
+      for(i in items_to_drop){ DBI::dbExecute(custom, statement = paste0("TRUNCATE TABLE ", i, ";")) }
+    }
     
   }
 
-  ### monthvmtfraction #################################  
-  if(!"monthvmtfraction" %in% .changed){
-    # Query
-    data = custom %>% tbl("monthvmtfraction") %>% filter(monthID %in% !!.month) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE monthvmtfraction;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "monthvmtfraction", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "monthvmtfraction", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
-  ### startshourfraction #################################
-  if(!"startshourfraction" %in% .changed){
-   # Query
-     data = custom %>% tbl("startshourfraction") %>% filter(dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
-     # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE startshourfraction;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "startshourfraction", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "startshourfraction", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
+
+
+
+### ADDITIONAL TABLES ######################################
+
+#### dayvmtfraction #################################  
+if(!"dayvmtfraction" %in% .changed){ 
+  # must not filter by roadtype here
+  # Query
+  data = custom %>% tbl("dayvmtfraction") %>% filter(monthID %in% !!.month & dayID %in% !!.day) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE dayvmtfraction;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "dayvmtfraction", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "dayvmtfraction", counter(data)))
+  # Cleanup
+  remove(data)
   
-  ### dayvmtfraction #################################  
-  if(!"dayvmtfraction" %in% .changed){ 
-    # must not filter by roadtype here
-    # Query
-    data = custom %>% tbl("dayvmtfraction") %>% filter(monthID %in% !!.month & dayID %in% !!.day) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE dayvmtfraction;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "dayvmtfraction", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "dayvmtfraction", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
+}
+#### hourvmtfraction #################################  
+if(!"hourvmtfraction" %in% .changed){
+  # Query
+  data = custom %>% tbl("hourvmtfraction") %>% filter(dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE hourvmtfraction;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "hourvmtfraction", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "hourvmtfraction", counter(data)))
+  # Cleanup
+  remove(data)
   
-  ### avgspeeddistribution #################################  
-  if(!"avgspeeddistribution" %in% .changed){ 
-    # must not filter by roadtype here - to make sure that all roads are represented in calculations.
-    # Query
-    data = custom %>% tbl("avgspeeddistribution") %>% filter(hourDayID %in% !!.hourday) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE avgspeeddistribution;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "avgspeeddistribution", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "avgspeeddistribution", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
-  ### hourvmtfraction #################################  
-  if(!"hourvmtfraction" %in% .changed){
-    # Query
-    data = custom %>% tbl("hourvmtfraction") %>% filter(dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE hourvmtfraction;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "hourvmtfraction", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "hourvmtfraction", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
+}
+
+#### monthvmtfraction #################################  
+if(!"monthvmtfraction" %in% .changed){
+  # Query
+  data = custom %>% tbl("monthvmtfraction") %>% filter(monthID %in% !!.month) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE monthvmtfraction;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "monthvmtfraction", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "monthvmtfraction", counter(data)))
+  # Cleanup
+  remove(data)
   
+}
+
+## AGE DISTRIBUTION ####################################
+  cat("\n\n---AGE DISTRIBUTION TABLES----------------------\n")
+  
+### sourcetypeagedistribution #################################
+if(!"sourcetypeagedistribution" %in% .changed){
+  # Query
+  data = custom %>% tbl("sourcetypeagedistribution") %>% 
+    filter(yearID %in% !!.year) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypeagedistribution;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "sourcetypeagedistribution", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "sourcetypeagedistribution", counter(data)))
+  # Cleanup
+  remove(data)
+  
+}
+
+
+
+
+## STARTS ###############################################
+  cat("\n\n---STARTS TABLES----------------------\n")
+  
+### startshourfraction #################################
+if(!"startshourfraction" %in% .changed){
+  # Query
+  data = custom %>% tbl("startshourfraction") %>% filter(dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE startshourfraction;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "startshourfraction", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "startshourfraction", counter(data)))
+  # Cleanup
+  remove(data)
+  
+}
+
+### starts ###########################
+if(!"starts" %in% .changed){
+  # Query
+  data = custom %>% tbl("starts") %>% filter(yearID %in% !!.year) %>%  collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE starts;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "starts", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "starts", counter(data)))
+  # Cleanup
+  remove(data)
+  
+}
+
+
+### startsperday ###################
+if(!"startsperday" %in% .changed){
+  # Query
+  data = custom %>% tbl("startsperday") %>% filter(dayID %in% !!.day) %>%  collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE startsperday;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "startsperday", value = data, overwrite = FALSE, append = TRUE)
+  # Mesage
+  cat(paste0("\n---adapted default table:   ", "startsperday", counter(data)))
+  # Cleanup
+  remove(data)
+  
+}
+
+### startsperdaypervehicle #################################  
+if(!"startsperdaypervehicle" %in% .changed){
+  # Query
+  data = custom %>% tbl("startsperdaypervehicle") %>% filter(dayID %in% !!.day) %>%  collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE startsperdaypervehicle;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "startsperdaypervehicle", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "startsperdaypervehicle", counter(data)))
+  # Cleanup
+  remove(data)
+  
+}
+
+## AVG SPEED DISTRIBUTION #############################
+  cat("\n\n---AVG SPEED DISTRIBUTION TABLES----------------------\n")
+  
+### avgspeeddistribution #################################  
+if(!"avgspeeddistribution" %in% .changed){ 
+  # must not filter by roadtype here - to make sure that all roads are represented in calculations.
+  # Query
+  data = custom %>% tbl("avgspeeddistribution") %>% filter(hourDayID %in% !!.hourday) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE avgspeeddistribution;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "avgspeeddistribution", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "avgspeeddistribution", counter(data)))
+  # Cleanup
+  remove(data)
+  
+}
+
+## ROAD TYPE DISTRIBUTION ###########################################
+  cat("\n\n---ROAD TYPE DISTRIBUTION TABLES----------------------\n")
   ### (N/A) roadtypedistribution #################################  
-  # .table = "roadtypedistribution"
-  # data = custom %>% tbl(.table) %>%
-  #   # filter(roadTypeID %in% !!.roadtype) %>%
-  #   collect()
-  #   DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
-  # # 
+# .table = "roadtypedistribution"
+# data = custom %>% tbl(.table) %>%
+#   # filter(roadTypeID %in% !!.roadtype) %>%
+#   collect()
+#   DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
+# # 
+
+
+
+
+## POLLUTANT #########################################################################
+cat("\n\n---POLLUTANT TABLES----------------------\n")
+
+
+### pollutantprocessassoc #################################  
+if(!"pollutantprocessassoc" %in% .changed){
+  # Query
+  data = custom %>% tbl("pollutantprocessassoc") %>% filter(pollutantID %in% !!.pollutant) %>% collect() 
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE pollutantprocessassoc;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "pollutantprocessassoc", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "pollutantprocessassoc", counter(data)))
+  # Clean
+  remove(data)
   
-  ### starts ###########################
-  if(!"starts" %in% .changed){
-    # Query
-    data = custom %>% tbl("starts") %>% filter(yearID %in% !!.year) %>%  collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE starts;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "starts", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "starts", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
+}
+
+### opmodepolprocassoc #################################  
+if(!"opmodepolprocassoc" %in% .changed){
+  # Query
+  data = custom %>% tbl("opmodepolprocassoc") %>% filter(polProcessID %in% !!ids$polProcessID) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE opmodepolprocassoc;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "opmodepolprocassoc", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "opmodepolprocassoc", counter(data)))
+  # Clean
+  remove(data)
   
+}
+
+### startsopmodedistribution #################################  
+if(!"startsopmodedistribution" %in% .changed){
+  # Query
+  data = custom %>% tbl("startsopmodedistribution") %>% 
+    filter(opModeID %in% !!ids$opModeID, dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
+  # Truncate
+  DBI::dbExecute(custom, "TRUNCATE TABLE startsopmodedistribution;")
+  # Append
+  DBI::dbWriteTable(conn = custom, name = "startsopmodedistribution", value = data, overwrite = FALSE, append = TRUE)
+  # Message
+  cat(paste0("\n---adapted default table:   ", "startsopmodedistribution", counter(data)))
+  # Clean
+  remove(data)
   
-  ### startsperday ###################
-  if(!"startsperday" %in% .changed){
-    # Query
-    data = custom %>% tbl("startsperday") %>% filter(dayID %in% !!.day) %>%  collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE startsperday;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "startsperday", value = data, overwrite = FALSE, append = TRUE)
-    # Mesage
-    cat(paste0("\n---adapted default table:   ", "startsperday", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
-  
-  ### startsperdaypervehicle #################################  
-  if(!"startsperdaypervehicle" %in% .changed){
-    # Query
-    data = custom %>% tbl("startsperdaypervehicle") %>% filter(dayID %in% !!.day) %>%  collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE startsperdaypervehicle;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "startsperdaypervehicle", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "startsperdaypervehicle", counter(data)))
-    # Cleanup
-    remove(data)
-    
-  }
-  
-  
-  
-  ## POLLUTANT #########################################################################
-  cat("\n\n---POLLUTANT TABLES----------------------\n")
-  
-  
-  ### pollutantprocessassoc #################################  
-  if(!"pollutantprocessassoc" %in% .changed){
-    # Query
-    data = custom %>% tbl("pollutantprocessassoc") %>% filter(pollutantID %in% !!.pollutant) %>% collect() 
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE pollutantprocessassoc;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "pollutantprocessassoc", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "pollutantprocessassoc", counter(data)))
-    # Clean
-    remove(data)
-    
-  }
-  
-  ### opmodepolprocassoc #################################  
-  if(!"opmodepolprocassoc" %in% .changed){
-    # Query
-    data = custom %>% tbl("opmodepolprocassoc") %>% filter(polProcessID %in% !!ids$polProcessID) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE opmodepolprocassoc;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "opmodepolprocassoc", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "opmodepolprocassoc", counter(data)))
-    # Clean
-    remove(data)
-    
-  }
-  
-  ### startsopmodedistribution #################################  
-  if(!"startsopmodedistribution" %in% .changed){
-    # Query
-    data = custom %>% tbl("startsopmodedistribution") %>% 
-      filter(opModeID %in% !!ids$opModeID, dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE startsopmodedistribution;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "startsopmodedistribution", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "startsopmodedistribution", counter(data)))
-    # Clean
-    remove(data)
-    
-  }
-  
-  ## EXTRAS #################################
-  # .vars = c("startsageadjustment", "startsmonthadjust",
-  #           "idlemodelyeargrouping", "idlemonthadjust", "idledayadjust")
-  # for(i in .vars){
-  #   if(!i %in% .changed){
-  #     data = custom %>% tbl(i) %>% collect()
-  #           DBI::dbExecute(custom, "TRUNCATE TABLE imcoverage;")
-  #      DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
-  #   }
-  # }
-  
-  
-  
-  # Connect to custom database
-  # Get list of tables.
-  # tabs = dbListTables(custom)
-  
-  # If missing, initialize these tables
-  # Table descriptions from here:
-  # https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md
-  
-  # remove(tabs)
-  
-  # Z. DISCONNECT #####################################################
-  # Always, always, always disconnect.
-  DBI::dbDisconnect(custom); remove(custom) 
-  #DBI::dbDisconnect(local); remove(local)
-  gc()
-  cat("\n---done!")
-  
+}
+
+## EXTRAS #################################
+# .vars = c("startsageadjustment", "startsmonthadjust",
+#           "idlemodelyeargrouping", "idlemonthadjust", "idledayadjust")
+# for(i in .vars){
+#   if(!i %in% .changed){
+#     data = custom %>% tbl(i) %>% collect()
+#           DBI::dbExecute(custom, "TRUNCATE TABLE imcoverage;")
+#      DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
+#   }
+# }
+
+
+
+# Connect to custom database
+# Get list of tables.
+# tabs = dbListTables(custom)
+
+# If missing, initialize these tables
+# Table descriptions from here:
+# https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md
+
+# remove(tabs)
+
+# Z. DISCONNECT #####################################################
+# Always, always, always disconnect.
+DBI::dbDisconnect(custom); remove(custom) 
+#DBI::dbDisconnect(local); remove(local)
+gc()
+cat("\n---done!")
+
 }

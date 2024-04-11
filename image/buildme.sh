@@ -7,7 +7,8 @@
 #
 
 # STARTUP ################################################################
-
+# cd ../moves_anywhere
+pwd
 # Path to image folder
 IMAGE_FOLDER="$(pwd)/image"
 # Set your DockerHub username

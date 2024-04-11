@@ -9,6 +9,8 @@
 unloadNamespace(ns = "catr"); rm(list = ls())
 remove.packages("catr")
 # Set working directory to project directory
+# getwd()
+# setwd("../moves_anywhere/catr")
 setwd(rstudioapi::getActiveProject())
 # Zoom into catr directory
 setwd("./catr")

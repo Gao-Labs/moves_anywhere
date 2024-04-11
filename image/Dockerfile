@@ -73,6 +73,7 @@ COPY setenv.sh /cat-api/setenv.sh
 COPY setenv.r /cat-api/setenv.r
 COPY preprocess.r /cat-api/preprocess.r
 COPY postprocess.r /cat-api/postprocess.r
+COPY adapt.r /cat-api/adapt.r
 
 # Copy upload.r, the function script that uploads to CATSERVER
 COPY upload.r /cat-api/upload.r
