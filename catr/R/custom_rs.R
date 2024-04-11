@@ -28,15 +28,28 @@ custom_rs = function(
     .inputservername = "localhost",
     .path = "inputs/rs_custom.xml"
 ){
-  
+
+  # Testing Values (comment out before pushing)  
+  .geoid = "36109"
+  .year = 2020
+  .level = "county"
+  .default = FALSE
+  .id = 1
+  .outputdbname = "moves"
+  .outputservername = "localhost"
+  .inputdbname = "movesdb20240104"
+  .inputservername = "localhost"
+  .path = "inputs/rs_custom.xml"
+  # require(xml2, warn.conflicts = FALSE)
+  # require(dplyr, warn.conflicts = FALSE)
+
+
+  # load("catr/data/rs_template.rda")
   # Set database information  
   
   # Set rs_folder to TEMP_FOLDER by default.
   # if(is.null(.dir)){ .dir = Sys.getenv("TEMP_FOLDER") }
-  
 
-  # require(xml2, warn.conflicts = FALSE)
-  # require(dplyr, warn.conflicts = FALSE)
   
   # Get template RS
   data("rs_template", envir=environment()); x = rs_template; remove(rs_template)

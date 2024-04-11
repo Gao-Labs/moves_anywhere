@@ -30,3 +30,51 @@
 - If you edit `launch_plus.sh` on a windows machine, you'll probably need to run `dos2unix launch_plus.sh` in order for the linux container to read it properly.
 - Add here...
 
+
+### How does MOVES Anywhere work anyways?
+
+- write a runspec from parameters --> `catr/R/custom_rs.R`
+- write custom tables into a moves input database --> `images/adapt.r`, formerly `catr/R/adapt.r`
+
+
+- default database
+- output database
+- input database
+
+
+- default database --> overwrite tables with .csvs from the inputs/ folder (adapt.r)
+- default database --> for every table not uploaded, go and adapt it to be the right filters, etc. (adapt.r)
+
+
+`image/launch.sh` runs several scripts
+  - turns on MySQL in the container
+  - `image/preprocess.r`: run a pre-processing script
+      - load R packages
+      - `image/setenv.r` sets environmental variables
+      - imports parameters from `inputs/parameters.json`
+      - uses `catr::custom_rs()` to make a runspec  (see `catr/R/custom_rs`)
+      - writes a runsepc to `inputs/rs_custom.xml`
+      - `image/adapt.r` - imports a set of .csvs from `inputs/XXXX.csv` and the `inputs/rs_custom.xml`
+      
+`catr/R/custom_rs.R`
+  - grabs a list object saved in `catr/data/rs_template.rda`
+  - tweaks it using just a few inputs, like `.geoid`, `.year`, `.level`, `.default`, .`id`, and input/output database names and stuff.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
