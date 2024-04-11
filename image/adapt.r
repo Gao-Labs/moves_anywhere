@@ -440,6 +440,12 @@ adapt = function(.runspec, .changes = NULL){
   if(!"sourcetypeyear" %in% .changed){
     # Query
     data = custom %>% tbl("sourcetypeyear") %>% filter(yearID %in% !!.year) %>% collect()
+    
+    # If we HAVE to guestimate the sourcetypeyear vehicle sourceTypePopulation for a county,
+    # what's a good way to do this?
+    # translators::inputs$startsperdaypervehicle
+    
+    
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypeyear;")
     # Append
