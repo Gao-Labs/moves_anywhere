@@ -45,14 +45,15 @@ Sometimes, if you run two custom input tables together, MOVES will reject it, te
 - Roads
   - [ ] roadTypeDistribution
 
-### Remaining Questions
+### Handling National Default Data
 
-- Is it 'right' to grab the default data for `sourcetypeyear`, which is a national-level tally? Does MOVES adjust it to county level at all? *Answer*: No. You should supply this with *real* county-level data.
+- Is it 'right' to grab the default data for `sourcetypeyear`, which is a national-level tally? Does MOVES adjust it to county level at all? *Answer*: No. You should supply this with *real* county-level data. When this is not supplied, we use census population based weighting to adjust these national-level values to a scale more fitting for that county. This process is performed for the `sourcetypeyear` table and the `hpmsvtypeyearvmt` table.
 
 - How did CATSERVER data get generated? *Answer*: CATSERVER V1 was run using an early version of `catr` and `MOVES 3.1`. We did not supply any custom input tables, but the command line was able to perform a custom run even without custom tables supplied. Now, `moves_anywhere` runs a specific procedure to generate any required tables not provided from defaults, or adapt them. This is written in the `adapt.r` script in `image/adapt.r`.
 
 - Why do some areas have very high values?
 
 
+### Validation Tests
 
 
