@@ -10,6 +10,12 @@ setwd(rstudioapi::getActiveProject())
 setwd("demos")
 
 # data.csv ######################################
+
+"demo7/data.csv" %>%
+  read_csv() %>%
+  filter(by == 16, pollutant ==98)  %>%
+  select(emissions, vehicles, starts, vmt, sourcehours)
+
 ## OVERALL ###################################
 test1 = function(path = "demo6/data.csv"){
   path %>%
@@ -76,3 +82,4 @@ bind_rows(
   test4("demo7/movesoutput.csv"),
   test4("demo8/movesoutput.csv")
 )
+

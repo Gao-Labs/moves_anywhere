@@ -13,7 +13,6 @@
 #' @importFrom stringr str_remove str_split 
 #' @importFrom utils data
 #' @import DBI
-#' @import RSQLite
 #' @import RMariaDB
 #' @export
 #' @author Tim Fraser, March 2023
@@ -29,10 +28,7 @@ process_activity = function(tab, .by, .geoid){
   # Set unique ID variables
   ids = c("year", "geoid")
   # Get categories matching your '.by' id
-  data("by", overwrite = TRUE, envir=environment())
-  cats = by %>% filter(id == !!.by) %>% with(term) %>% 
-    str_remove("overall") %>% str_split(pattern = ", ") %>%  unlist() %>%  na_if("") %>% .[!is.na(.)]
-  
+  cats = get_bycats(.by)
   # Get starter values for aggregation strata
   all = c(ids, cats)
   # Remove roadtype, which does not apply to some activity metrics
@@ -55,7 +51,6 @@ process_activity = function(tab, .by, .geoid){
   }else if(length(.geoid) == 1 & .geoid[1] == "00"){
     .mygeoid = as.integer(.geoid)
     data = data %>% filter(is.null(geoid)) %>% mutate(geoid = !!.mygeoid)}
-  
   
   # Aggregate Activity levels that vary by road
   data = data %>%
