@@ -22,9 +22,9 @@ docker login
 DOCKERHUB_USERNAME="tmf77"
 # Set your Docker image name and tag
 DOCKER_IMAGE_NAME="moves_anywhere"
-DOCKER_IMAGE_TAG="v0"
+DOCKER_IMAGE_TAG="v2"
 # One time, you'll need to pull this 'starter' image
-docker pull -t tmf77/docker_moves
+# docker pull -t tmf77/docker_moves
 # Build the Docker image
 docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG . --no-cache
 # Tag the Docker image with the repository name
