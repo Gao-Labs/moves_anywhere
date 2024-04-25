@@ -13,7 +13,6 @@
 #' @importFrom stringr str_remove str_split 
 #' @importFrom utils data
 #' @import DBI
-#' @import RSQLite
 #' @import RMariaDB
 #' @export
 #' @author Tim Fraser, March 2023
@@ -21,7 +20,6 @@
 process_emissions = function(tab, .by, .geoid, .pollutant = NULL){
   # require(dplyr, warn.conflicts = FALSE)
   # require(DBI, warn.conflicts = FALSE)
-  # #require(RSQLite, warn.conflicts = FALSE)
   # require(RMariaDB, warn.conflicts = FALSE)
   # require(tidyr, warn.conflicts = FALSE)
   # require(stringr, warn.conflicts = FALSE)

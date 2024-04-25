@@ -20,7 +20,6 @@
 process_activity = function(tab, .by, .geoid){
   # require(dplyr, warn.conflicts = FALSE)
   # require(DBI, warn.conflicts = FALSE)
-  # require(RSQLite, warn.conflicts = FALSE)
   # require(RMariaDB, warn.conflicts = FALSE)
   # require(tidyr, warn.conflicts = FALSE)
   # require(stringr, warn.conflicts = FALSE)
