@@ -14,7 +14,11 @@ custom_rs(
   .outputservername = "localhost",
   .inputdbname = "movesdb20240104",
   .inputservername = "localhost",
-  .path = "inputs/rs_custom.xml"
+  .path = "inputs/rs_custom.xml",
+  .normalize = FALSE,
+  .rate = FALSE,
+  .geoaggregation = NULL,
+  .timeaggregation = "year"
 )
 }
 \arguments{
@@ -37,6 +41,10 @@ custom_rs(
 \item{.inputservername}{Hostname of custom input database (defaults to localhost)}
 
 \item{.path}{Output path for runspec.}
+
+\item{.normalize}{(logical) normalize the file path? FALSE}
+
+\item{.rate}{(logical) is this for emissions rate mode or inventory mode?}
 }
 \description{
 Designs a custom runspec file based off input parameters.

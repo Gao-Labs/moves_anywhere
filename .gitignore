@@ -7,6 +7,7 @@ inputs/*.xml
 inputs/*.csv
 inputs/*.json
 image/.Renviron
+image_cmd/.Renviron
 inputs/.Renviron
 demos/.Renviron
 demos/demo0/.Renviron
