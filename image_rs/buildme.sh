@@ -4,8 +4,10 @@
 
 
 # STARTUP ################################################################
-# cd ../moves_anywhere
-pwd
+# Get moves_anywhere path
+REPO=$(git rev-parse --show-toplevel)
+cd "$REPO"
+
 # Path to image folder
 IMAGE_FOLDER="$(pwd)/image_rs"
 # Set your DockerHub username

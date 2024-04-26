@@ -17,3 +17,6 @@ demos/demo1/.Renviron
 demos/demo2/.Renviron
 demos/demo3/.Renviron
 .DS_Store
+key.json
+dev/key.json
+dev/.env
