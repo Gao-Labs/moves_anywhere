@@ -25,7 +25,8 @@ devtools::build(path = ".", pkg = getwd(), binary = FALSE, manual = TRUE, vignet
 package = "catr_0.1.0.tar.gz"
 # Copy package to image folders
 file.copy(from = package, to = paste0("../image/", package), overwrite = TRUE)
-file.copy(from = package, to = paste0("../image_catr/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_rs/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_upload/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_cmd/", package), overwrite = TRUE)
 
 # Unload catr if installed or loaded

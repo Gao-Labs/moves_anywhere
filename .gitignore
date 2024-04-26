@@ -8,6 +8,8 @@ inputs/*.csv
 inputs/*.json
 image/.Renviron
 image_cmd/.Renviron
+image_rs/.Renviron
+image_upload/.Renviron
 inputs/.Renviron
 demos/.Renviron
 demos/demo0/.Renviron

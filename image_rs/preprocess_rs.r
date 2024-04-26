@@ -1,8 +1,10 @@
-#!/usr/bin/Rscript
-# Author: Tim Fraser & Colleagues
-
-# For testing only:
-# setwd("docker_moves_v2")
+#' @name preprocess_rs.R
+#' @description
+#' Shortened version of the preprocess script.
+#' Does the following
+#' Checks if your bucket has a parameters.json but NOT an xml
+#' If so, makes a runspec from it. 
+#' If your bucket has an xml, makes a parameters.json from it.
 
 # 1. LOAD PACKAGES #######################################################
 
@@ -11,7 +13,6 @@ library("catr", quietly = TRUE, warn.conflicts = FALSE)
 library("dplyr", quietly = TRUE, warn.conflicts = FALSE)
 library(readr, quietly = TRUE, warn.conflicts = FALSE)
 library(DBI, quietly = TRUE, warn.conflicts = FALSE)
-library(RMariaDB, quietly = TRUE, warn.conflicts = FALSE)
 library(RMySQL, quietly = TRUE, warn.conflicts = FALSE)
 library(jsonlite, quietly = TRUE, warn.conflicts = FALSE)
 library(xml2, quietly = TRUE, warn.conflicts = FALSE)
@@ -43,12 +44,6 @@ cat(paste0("\n-----MDB_NAME=", Sys.getenv("MDB_NAME")))
 cat(paste0("\n-----MDB_DEFAULT=", Sys.getenv("MDB_DEFAULT")))
 cat(paste0("\n-----MOVES_FOLDER=", Sys.getenv("MOVES_FOLDER")))
 cat(paste0("\n-----TEMP_FOLDER=", Sys.getenv("TEMP_FOLDER")))
-
-
-# 2. IMPORT PARAMETERS #####################################
-# Import the parameters json file as 'p'
-cat("\n---------importing parameters----------\n")
-
 
 
 # 2. IMPORT PARAMETERS #####################################
@@ -92,13 +87,14 @@ if(has_json == TRUE & has_xml == FALSE){
     .level = p$level, .geoid = p$geoid, .year = p$year, .default = p$default, 
     # Save in the inputs folder (? - optional)
     .path = "inputs/rs_custom.xml")
-  
+
   # If there IS an .xml, whether or not there is a .json
 }else if(has_xml == TRUE){
   
   cat("\n---------using existing runspec----------\n")
   
   runspec = paste0("inputs/", any_xml[1])
+  
   p = translate_rs(.runspec = runspec)
   # Extract relevant fields
   p = p %>% with(list(level = level, geoid = geoid, year = year, default = default, pollutant = pollutant))
@@ -113,78 +109,4 @@ if(has_json == TRUE & has_xml == FALSE){
   
 }else{ stop("Neither a .json nor .xml provided. Stopping run...")  }
 
-## COPY RUNSPEC TO MOVES FOLDER ####################################
 
-if(has_json == TRUE & has_xml == FALSE){  
-  # Now rename that runspec to a standardized name, 
-  # located in the folder we'll run MOVES in
-  # file.rename(from = runspec, to = "inputs/rs_custom.xml")
-  # Overwrite the runspec name
-  runspec = "EPA_MOVES_Model/rs_custom.xml"
-  # Copy to the EPA_MOVES_Model directory
-  file.copy(from = "inputs/rs_custom.xml", to = runspec, overwrite = TRUE)
-  # If there IS an .xml, whether or not there is a .json
-}else if(has_xml == TRUE){
-  
-  # Overwrite the runspec name
-  runspec = "EPA_MOVES_Model/rs_custom.xml"
-  # Copy that file to the EPA_MOVES_Model directory
-  file.copy(from = paste0("inputs/", any_xml), to = runspec, overwrite = TRUE)
-}
-
-
-## diagnostics ###########################
-
-# Check that we can actually connect to the outputdb?
-# Load connect function
-# library(catr)
-# # Connect to MariaDB, no database in particular.
-# db = connect("mariadb")
-# # Print all databases available to you
-# db %>% dbGetQuery("SHOW DATABASES;")
-# Should include both outputdb "moves" and inputdb "movesdb20240104"
-# # Disconnect
-# dbDisconnect(db); remove(db)
-
-# Output database has already been initialized by the setupdb.sh script
-# in the original docker image docker_moves:v1,
-# which we build docker_moves:v2 on.
-
-
-## diagnostics ########################
-
-# View your runspec xml doc
-# p$runspec %>% xml2::read_xml()
-
-
-# 5. ADAPT INPUT DATABASE ###########################################
-
-# Message
-cat("\n---------adapting defaults into custom input database----------\n")
-
-
-# Adapt your default database to be a custom database,
-# using a vector of supplied .csv paths, named after the tables they replace.
-# Load packages
-library(catr, quietly = TRUE)
-library(DBI, quietly = TRUE)
-library(RMariaDB, quietly = TRUE)
-library(dplyr, quietly = TRUE)
-
-# Load adapt() function (now in catr)
-source("adapt.r")
-# Run adapt() function on runspec with vector of custom input csv table paths
-adapt(.changes = changes, .runspec = runspec)
-# Remove adapt function
-# remove(adapt)
-
-## diagnostics ####################
-
-# # You could connect to the custom db - if successful, it will be **FULL.**
-# source("connect.r")
-# db = connect("mariadb", "movesdb20240104)
-# db %>% dbListTables()
-# dbDisconnect(db); remove(db)
-
-# Closing Message
-cat("\n--------preprocessing complete---------\n")

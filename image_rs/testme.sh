@@ -14,13 +14,18 @@ pwd
 
 # Variables
 IMAGE_NAME="catr:v1"
-# DATA_FOLDER="$(pwd)/demos/demo3" # Path to where you will source your data/inputs FROM
+DATA_FOLDER="$(pwd)/image_catr/volume" # Path to where you will source your data/inputs FROM
 
 echo "$DATA_FOLDER"
+
+# Delete an existing runspec if present
+if [ -e "$DATA_FOLDER/rs_custom.xml" ]; then unlink "$DATA_FOLDER/rs_custom.xml"; fi
+
 
 # Test container - interactively (remove upon completion) #####################################
 docker run  \
   --rm \
+  --mount src="$DATA_FOLDER/",target="/cat-api/inputs",type=bind \
   --name "dock" \
   -it "$IMAGE_NAME"
 
