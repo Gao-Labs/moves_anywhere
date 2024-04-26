@@ -14,7 +14,7 @@ pwd
 
 # Variables
 IMAGE_NAME="catr:v1"
-DATA_FOLDER="$(pwd)/image_catr/volume" # Path to where you will source your data/inputs FROM
+DATA_FOLDER="$(pwd)/image_catr/volume_parameters" # Path to where you will source your data/inputs FROM
 
 echo "$DATA_FOLDER"
 

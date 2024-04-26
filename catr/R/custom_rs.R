@@ -86,7 +86,7 @@ custom_rs = function(
     # Get template runspec for a rate mode run
     data("rs_template_rate", envir = environment()); x = rs_template_rate; remove(rs_template_rate)
     # Set mode
-    x$runspec$modelscale %>% attr("value") = "Rates"
+    attr(x$runspec$modelscale, "value") = "Rates"
     # Q1 ########################################
     # - geographicoutputdetail: does it have to be LINK for rate mode? Let's find out.
     # .geographicoutputdetail = if(.level == "county"){ "LINK" }
@@ -116,9 +116,9 @@ custom_rs = function(
   ## LEVEL ####################################
   # Extract geographic attributes
   #.g = x$runspec$geographicselections$geographicselection
-  x$runspec$geographicselections$geographicselection %>% attr("type") = .geographicselection
-  x$runspec$geographicselections$geographicselection %>% attr("key") <-  .geoid 
-  x$runspec$geographicselections$geographicselection %>% attr("description") <- ""
+  attr(x$runspec$geographicselections$geographicselection, "type") = .geographicselection
+  attr(x$runspec$geographicselections$geographicselection, "key") <-  .geoid 
+       attr(x$runspec$geographicselections$geographicselection, "description") <- ""
   # Update the actual runspec again.
   # x$runspec$geographicselections$geographicselection <- .g
   # remove(.g)
@@ -135,29 +135,29 @@ custom_rs = function(
 
   ## AGGREGATION #############################################  
   # Update aggregation time category (eg. by "Year", by "Month", by "Hour", etc)  
-  x$runspec$timespan$aggregateBy %>% attr("key") = .timeaggregation
+  attr(x$runspec$timespan$aggregateBy, "key") = .timeaggregation
 
   # Time Units in Output (eg. "Year")
-  x$runspec$outputtimestep %>% attr("value") = .timeaggregation
+  attr(x$runspec$outputtimestep, "value") = .timeaggregation
 
   # Time Units in Output (eg. "Year")  
-  x$runspec$outputfactors$timefactors %>% attr("units") = .timeaggregation
+  attr(x$runspec$outputfactors$timefactors, "units") = .timeaggregation
 
   
     
   # OUTPUT DATABASE ###############################################
-  x$runspec$outputdatabase %>% attr( "databasename") <- .outputdbname
-  x$runspec$outputdatabase %>% attr("servername") <- .outputservername
+  attr(x$runspec$outputdatabase, "databasename") <- .outputdbname
+  attr(x$runspec$outputdatabase, "servername") <- .outputservername
 
   
   # INPUT DATABASE ################################################
-  x$runspec$scaleinputdatabase %>% attr("databasename") = .inputdbname
-  x$runspec$scaleinputdatabase %>% attr("servername") = .inputservername
-  x$runspec$scaleinputdatabase %>% attr( "description") = .description
+  attr(x$runspec$scaleinputdatabase, "databasename") = .inputdbname
+  attr(x$runspec$scaleinputdatabase, "servername") = .inputservername
+  attr(x$runspec$scaleinputdatabase, "description") = .description
 
   # RUN TYPE ##################################################
   # SET RUN TYPE ("SINGLE" COUNTY vs. "DEFAULT")
-  x$runspec$modeldomain %>% attr("value") = .domain
+  attr(x$runspec$modeldomain, "value") = .domain
 
   # DESCRIPTION ###############################################
   # Update the runspec description

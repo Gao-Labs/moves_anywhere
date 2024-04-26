@@ -14,10 +14,15 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
   # short R list of inputs describing key information from the runspec.
   # Useful for piping to adapt()
   
-  #require(xml2)
-  #require(dplyr)
+  # Testing values
+  # require(xml2)
+  # require(dplyr)
+  # .runspec = "data_raw/rs_template.xml"
   
   x = read_xml(.runspec) %>% as_list()
+  
+  # Get mode (inventory or rate)
+  .mode = attr(x$runspec$modelscale, "value") %>% tolower()
   
   # Get all geographies listed
   geo = x$runspec$geographicselections
@@ -79,7 +84,8 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
                 inputservername = .inputservername,
                 inputdbname = .inputdbname,
                 outputservername = .outputservername,
-                outputdbname = .outputdbname)
+                outputdbname = .outputdbname,
+                mode = .mode)
   
   return(result)
 }
