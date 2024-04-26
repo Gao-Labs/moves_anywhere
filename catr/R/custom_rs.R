@@ -16,6 +16,7 @@
 #' @param .rate (logical) is this for emissions rate mode or inventory mode?
 #' @importFrom xml2 read_xml as_list write_xml as_xml_document
 #' @importFrom stringr str_sub
+#' @importFrom dplyr `%>%`
 #' @export
 
 # Function to design a 'custom' runspec for 1 county for custom county data manager inputs
@@ -85,7 +86,7 @@ custom_rs = function(
     # Get template runspec for a rate mode run
     data("rs_template_rate", envir = environment()); x = rs_template_rate; remove(rs_template_rate)
     # Set mode
-    x$runspec$modelscale |> attr("value") = "Rates"
+    x$runspec$modelscale %>% attr("value") = "Rates"
     # Q1 ########################################
     # - geographicoutputdetail: does it have to be LINK for rate mode? Let's find out.
     # .geographicoutputdetail = if(.level == "county"){ "LINK" }
@@ -115,9 +116,9 @@ custom_rs = function(
   ## LEVEL ####################################
   # Extract geographic attributes
   #.g = x$runspec$geographicselections$geographicselection
-  x$runspec$geographicselections$geographicselection |> attr("type") = .geographicselection
-  x$runspec$geographicselections$geographicselection |> attr("key") <-  .geoid 
-  x$runspec$geographicselections$geographicselection |> attr("description") <- ""
+  x$runspec$geographicselections$geographicselection %>% attr("type") = .geographicselection
+  x$runspec$geographicselections$geographicselection %>% attr("key") <-  .geoid 
+  x$runspec$geographicselections$geographicselection %>% attr("description") <- ""
   # Update the actual runspec again.
   # x$runspec$geographicselections$geographicselection <- .g
   # remove(.g)
@@ -134,29 +135,29 @@ custom_rs = function(
 
   ## AGGREGATION #############################################  
   # Update aggregation time category (eg. by "Year", by "Month", by "Hour", etc)  
-  x$runspec$timespan$aggregateBy |> attr("key") = .timeaggregation
+  x$runspec$timespan$aggregateBy %>% attr("key") = .timeaggregation
 
   # Time Units in Output (eg. "Year")
-  x$runspec$outputtimestep |> attr("value") = .timeaggregation
+  x$runspec$outputtimestep %>% attr("value") = .timeaggregation
 
   # Time Units in Output (eg. "Year")  
-  x$runspec$outputfactors$timefactors |> attr("units") = .timeaggregation
+  x$runspec$outputfactors$timefactors %>% attr("units") = .timeaggregation
 
   
     
   # OUTPUT DATABASE ###############################################
-  x$runspec$outputdatabase |> attr( "databasename") <- .outputdbname
-  x$runspec$outputdatabase |> attr("servername") <- .outputservername
+  x$runspec$outputdatabase %>% attr( "databasename") <- .outputdbname
+  x$runspec$outputdatabase %>% attr("servername") <- .outputservername
 
   
   # INPUT DATABASE ################################################
-  x$runspec$scaleinputdatabase |> attr("databasename") = .inputdbname
-  x$runspec$scaleinputdatabase |> attr("servername") = .inputservername
-  x$runspec$scaleinputdatabase |> attr( "description") = .description
+  x$runspec$scaleinputdatabase %>% attr("databasename") = .inputdbname
+  x$runspec$scaleinputdatabase %>% attr("servername") = .inputservername
+  x$runspec$scaleinputdatabase %>% attr( "description") = .description
 
   # RUN TYPE ##################################################
   # SET RUN TYPE ("SINGLE" COUNTY vs. "DEFAULT")
-  x$runspec$modeldomain |> attr("value") = .domain
+  x$runspec$modeldomain %>% attr("value") = .domain
 
   # DESCRIPTION ###############################################
   # Update the runspec description

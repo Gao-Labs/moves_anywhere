@@ -28,6 +28,7 @@ file.copy(from = package, to = paste0("../image/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_rs/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_upload/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_cmd/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_moves/", package), overwrite = TRUE)
 
 # Unload catr if installed or loaded
 unloadNamespace(ns = "catr"); remove.packages("catr")
