@@ -42,6 +42,8 @@ if(env_exists == FALSE){
   
   # Load upload function
   source("upload.r")
+  # Load the fieldtypes
+  source("fieldtypes.r")
   
   # Load in your parameters
   p = jsonlite::fromJSON(parameters) 
@@ -71,6 +73,7 @@ if(env_exists == FALSE){
     upload(
       data = readr::read_csv(path), 
       table = p$dtablename, 
+      fieldtypes = fieldtypes, # generated in fieldtypes.r
       overwrite = overwrite, append = append)
     
     # Load check() function

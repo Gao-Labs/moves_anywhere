@@ -4,6 +4,7 @@
 #'
 #' @param data (data.frame) data.frame of data to upload
 #' @param table (character) table name on CATSERVER to overwrite
+#' @param fieldtypes character vector of fieldtypes, from `fieldtypes.r`
 #' @param overwrite (logical) overwrite this table? Defaults to TRUE
 #' @param append (logical) append this table? Defaults to FALSE
 #' 
@@ -13,7 +14,7 @@
 #' @importFrom RMySQL MySQL
 #' 
 #' @export
-upload = function(data, table, overwrite = TRUE, append = FALSE){
+upload = function(data, table, fieldtypes, overwrite = TRUE, append = FALSE){
   
   library(DBI, warn.conflicts = FALSE, quietly = TRUE)
   library(RMySQL, warn.conflicts = FALSE, quietly = TRUE)
@@ -32,51 +33,57 @@ upload = function(data, table, overwrite = TRUE, append = FALSE){
   password = Sys.getenv("ORDERDATA_PASSWORD")
   host = Sys.getenv("ORDERDATA_HOST")
   port = Sys.getenv("ORDERDATA_PORT")
+  dbname = Sys.getenv("ORDERDATA_DBNAME")
   
-  if(nchar(username) == 0){ warning("Need valid username for CATSERVER."); end = TRUE }
-  if(nchar(password) == 0){ warning("Need valid password for CATSERVER."); end = TRUE }
-  if(nchar(host) == 0){ warning("Need valid host for CATSERVER."); end = TRUE }
-  if(nchar(port) == 0){ warning("Need valid port for CATSERVER."); end = TRUE }
+  if(nchar(username) == 0){ warning("Need valid username for database."); end = TRUE }
+  if(nchar(password) == 0){ warning("Need valid password for database."); end = TRUE }
+  if(nchar(host) == 0){ warning("Need valid host for database."); end = TRUE }
+  if(nchar(port) == 0){ warning("Need valid port for database."); end = TRUE }
+  if(nchar(dbname) == 0){ warning("Need valid dbname for database."); end = TRUE }
   
+  # Are all necessary files for ssl cerdentials mounted?
+  check_ssl = prod(file.exists(c("server-ca.pem", "client-cert.pem", "client-key.pem")))
+  
+ 
   # Evaluate end
   if(end == FALSE){
     
-    # Connect to order database
-    db = DBI::dbConnect(
-      drv = RMySQL::MySQL(),
-      username = username,
-      password = password,
-      host = host,
-      port = as.integer(port),
-      dbname = "orderdata"
-    )
+    # If ssl credentials are provided, use these credentials to connect.
+    if(check_ssl == TRUE){
+      # Check if there is are .pem files mounted
+      db = DBI::dbConnect(
+        drv = RMySQL::MySQL(), 
+        user = username, 
+        password = password, 
+        host = host, 
+        port = as.integer(port),
+        dbname = dbname,
+        sslca = "server-ca.pem",
+        sslcert = "client-cert.pem",
+        sslkey = "client-key.pem")
+      # Otherwise, connect the normal way
+    }else if(check_ssl == FALSE){
+      
+      
+      # Connect to order database
+      db = DBI::dbConnect(
+        drv = RMySQL::MySQL(),
+        username = username,
+        password = password,
+        host = host,
+        port = as.integer(port),
+        dbname = dbname
+      )
+      
+    }
     
     # Clear
-    remove(username, password, host, port)
+    remove(username, password, host, port, dbname)
     # # Check tables
     # db %>% dbListTables()
     # dbDisconnect(db)
     
-    fieldtypes = c(
-      by = "tinyint(2)",
-      year = "smallint(4)",
-      geoid = "char(5)",
-      pollutant = "tinyint(3)",
-      sourcetype = "tinyint(2)",
-      regclass = "tinyint(2)",
-      fueltype = "tinyint(1)",
-      roadtype = "tinyint(1)",
-      emissions = "double(18,1)",
-      vmt = "double(18,1)",
-      sourcehours = "double(18,1)",
-      vehicles = "double(18,1)",
-      starts = "double(18,1)",
-      idlehours = "double(18,1)",
-      hoteld = "double(18,1)",
-      hotelb = "double(18,1)",
-      hotelo = "double(18,1)")
-    
-    
+
     # Write a new table using fieldtypes,
     DBI::dbWriteTable(
       # For this database connection

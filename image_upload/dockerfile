@@ -38,11 +38,16 @@ RUN chmod -R 6777 /cat-api
 COPY "postprocess_upload.r" "/cat-api/postprocess_upload.r"
 COPY "upload.r" "/cat-api/upload.r"
 COPY "check.r" "/cat-api/check.r"
+COPY "fieldtypes.r" "/cat-api/fieldtypes.r"
 COPY "launch.sh" "/cat-api/launch.sh"
 
 # Label volumes to be mounted
-VOLUME /cat-api/inputs
-VOLUME /cat-api/.Renviron
+VOLUME /cat-api/inputs # Data inputs folder
+VOLUME /cat-api/.Renviron # Environmental variables for MySQL connection
+VOLUME /cat-api/server-ca.pem # SSL credentials (Optional), if your MySQL connection requires that.
+VOLUME /cat-api/client-cert.pem # SSL credentials (Optional), if your MySQL connection requires that.
+VOLUME /cat-api/client-key.pem # SSL credentials (Optional), if your MySQL connection requires that.
+
 
 # Make a runspec
 CMD [ "./launch.sh" ]

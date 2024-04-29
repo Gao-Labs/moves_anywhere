@@ -31,7 +31,6 @@ cd "$IMAGE_FOLDER"
 # Build the Docker image
 docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG . 
 # --no-cache
-
 cd ..
 
 

@@ -10,6 +10,7 @@ image/.Renviron
 image_cmd/.Renviron
 image_rs/.Renviron
 image_upload/.Renviron
+image_upload/.Renvironcatcloud
 inputs/.Renviron
 demos/.Renviron
 demos/demo0/.Renviron
@@ -20,3 +21,4 @@ demos/demo3/.Renviron
 key.json
 dev/key.json
 dev/.env
+

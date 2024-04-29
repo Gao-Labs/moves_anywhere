@@ -18,9 +18,9 @@ check = function(parameters = "inputs/parameters.json", env = ".Renviron"){
   # parameters = "inputs/parameters.json"; env = ".Renviron"
   
   # Load packages
-  library(DBI)
-  library(RMySQL)
-  library(dplyr)
+  library(DBI, warn.conflicts = FALSE, quietly = TRUE)
+  library(RMySQL, warn.conflicts = FALSE, quietly = TRUE)
+  library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
   
   # Check if the object exists.
   env_exists = file.exists(env)
