@@ -43,11 +43,17 @@ COPY "launch.sh" "/cat-api/launch.sh"
 
 # Label volumes to be mounted
 VOLUME /cat-api/inputs # Data inputs folder
-VOLUME /cat-api/.Renviron # Environmental variables for MySQL connection
-VOLUME /cat-api/server-ca.pem # SSL credentials (Optional), if your MySQL connection requires that.
-VOLUME /cat-api/client-cert.pem # SSL credentials (Optional), if your MySQL connection requires that.
-VOLUME /cat-api/client-key.pem # SSL credentials (Optional), if your MySQL connection requires that.
+VOLUME /cat-api/secret1/.Renviron # Environmental variables for MySQL connection
+VOLUME /cat-api/secret2/server-ca.pem # SSL credentials (Optional), if your MySQL connection requires that.
+VOLUME /cat-api/secret3/client-cert.pem # SSL credentials (Optional), if your MySQL connection requires that.
+VOLUME /cat-api/secret4/client-key.pem # SSL credentials (Optional), if your MySQL connection requires that.
 
+# Add Cloud SQL proxy 
+# https://cloud.google.com/sql/docs/mysql/sql-proxy#linux-32-bit
+# RUN apt install curl
+# RUN curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.11.0/cloud-sql-proxy.linux.386
+# RUN chmod +x cloud-sql-proxy
 
-# Make a runspec
+# Run the main functionality
 CMD [ "./launch.sh" ]
+

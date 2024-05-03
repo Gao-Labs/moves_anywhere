@@ -1,0 +1,63 @@
+FROM rocker/r-base:latest
+
+RUN mkdir cat-api
+
+# Create and change to this directory
+WORKDIR cat-api
+
+# Set environment variable so apt-get runs without interactive dialogue
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    libxml2-dev \
+    r-cran-dplyr \
+    r-cran-readr \
+    r-cran-jsonlite \
+    r-cran-dbi \
+    r-cran-xml2
+    
+RUN apt-get install -y r-cran-tidyr
+RUN apt-get install -y r-cran-dbplyr
+RUN apt-get install -y r-cran-purrr
+RUN apt-get install -y r-cran-rmysql
+
+
+# Install More R Packages
+# RUN apt-get install -y libmariadb-dev
+# RUN R -e "install.packages('RMariaDB', repo = 'http://cran.rstudio.com/')"
+
+# Add catr package
+# COPY "catr_0.1.0.tar.gz" "/cat-api/catr_0.1.0.tar.gz"
+# RUN R -e "install.packages('catr_0.1.0.tar.gz', type = 'source'); print(packageVersion('catr'))"
+
+# Giving group permissions recursively to /cat-api and giving mysql ownership recursively
+RUN chmod -R 6777 /cat-api
+
+# Add Cloud SQL proxy 
+# https://cloud.google.com/sql/docs/mysql/sql-proxy#linux-64-bit
+RUN apt install curl
+ENV URL="https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.11.0"
+RUN curl "$URL/cloud-sql-proxy.linux.amd64" -o cloud-sql-proxy
+RUN chmod +x cloud-sql-proxy
+
+# These variables will need to be added at runtime
+ENV HOST=""
+ENV PORT=""
+ENV INSTANCE=""
+ENV DBNAME=""
+ENV USERNAME=""
+ENV PASSWORD=""
+
+# Label volumes to be mounted
+VOLUME /cat-api/inputs # Data inputs folder
+VOLUME /cat-api/secret # secrets folder to mount
+# Copy scripts
+COPY "postprocess_upload.r" "/cat-api/postprocess_upload.r"
+COPY "upload.r" "/cat-api/upload.r"
+COPY "check.r" "/cat-api/check.r"
+COPY "fieldtypes.r" "/cat-api/fieldtypes.r"
+COPY "launch.sh" "/cat-api/launch.sh"
+
+# Run the main functionality
+CMD [ "./launch.sh" ]

@@ -33,3 +33,12 @@ VOLUME /cat-api/server-ca.pem # SSL certificates (Optional), if your MySQL conne
 VOLUME /cat-api/client-cert.pem # SSL certificates (Optional), if your MySQL connection requires that.
 VOLUME /cat-api/client-key.pem # SSL certificates (Optional), if your MySQL connection requires that.
 ```
+
+
+### Debugging
+
+- [x] Works locally
+- [ ] Works as a job created by REST API
+- [ ] Works as a job created by Workflow
+
+

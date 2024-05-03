@@ -9,12 +9,12 @@ REPO=$(git rev-parse --show-toplevel)
 cd "$REPO"
 pwd
 # Path to image folder
-IMAGE_FOLDER="$(pwd)/image_upload"
+IMAGE_FOLDER="$(pwd)/image_cloudproxy"
 # Set your DockerHub username
 #DOCKERHUB_USERNAME="tmf77"
 # Set your Docker image name and tag
 DOCKER_IMAGE_NAME="upload"
-DOCKER_IMAGE_TAG="v1"
+DOCKER_IMAGE_TAG="v2"
 
 # PREPARE #######################################################################
 

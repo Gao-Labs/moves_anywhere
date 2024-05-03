@@ -18,6 +18,7 @@ upload = function(data, table, fieldtypes, overwrite = TRUE, append = FALSE){
   
   library(DBI, warn.conflicts = FALSE, quietly = TRUE)
   library(RMySQL, warn.conflicts = FALSE, quietly = TRUE)
+  library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
   # Create a value 'end', where if end becomes TRUE, the process stops.
   # By default, end is FALSE, so the process continues.
   end = FALSE
@@ -42,7 +43,7 @@ upload = function(data, table, fieldtypes, overwrite = TRUE, append = FALSE){
   if(nchar(dbname) == 0){ warning("Need valid dbname for database."); end = TRUE }
   
   # Are all necessary files for ssl cerdentials mounted?
-  check_ssl = prod(file.exists(c("server-ca.pem", "client-cert.pem", "client-key.pem")))
+  check_ssl = prod(file.exists(c("secret2/server-ca.pem", "secret3/client-cert.pem", "secret4/client-key.pem")))
   
  
   # Evaluate end
@@ -58,9 +59,9 @@ upload = function(data, table, fieldtypes, overwrite = TRUE, append = FALSE){
         host = host, 
         port = as.integer(port),
         dbname = dbname,
-        sslca = "server-ca.pem",
-        sslcert = "client-cert.pem",
-        sslkey = "client-key.pem")
+        sslca = "secret2/server-ca.pem",
+        sslcert = "secret3/client-cert.pem",
+        sslkey = "secret4/client-key.pem")
       # Otherwise, connect the normal way
     }else if(check_ssl == FALSE){
       

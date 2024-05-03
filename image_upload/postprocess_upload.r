@@ -4,18 +4,46 @@
 
 # library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
 # library(readr, warn.conflicts = FALSE, quietly = TRUE)
+require(dplyr, warn.conflicts = FALSE, quietly = TRUE)
+require(purrr, warn.conflicts = FALSE, quietly = TRUE)
+require(jsonlite, warn.conflicts = FALSE, quietly = TRUE)
 
 # Set main paths used in this script
-env = '.Renviron'
+env = 'secret1/.Renviron'
 parameters ="inputs/parameters.json"
 # Specify the output file path from postprocess.R - should be data.csv
 path = "inputs/data.csv"
+# Paths to certificates for database
+cert = c("secret2/server-ca.pem", "secret3/client-cert.pem", "secret4/client-key.pem")
+# Working directory path
+working_dir = getwd()
 
+# Get file information for each dependency.
+info = file.info(c(env, parameters, path, cert, working_dir)) %>%
+  as_tibble(rownames = "file") %>%
+  mutate(exists = if_else(!is.na(size), TRUE, FALSE)) %>%
+  select(file, exists, isdir, mode) %>%
+  mutate(id = 1:n())
+
+# For each file, concatenate the output
+message = info %>%
+  split(.$id) %>%
+  map(~paste0("file_exists: ", .x$exists, " | ",
+              "folder: ", .x$isdir, " | ",
+              "file: ", .x$file, " | ", "\n") ) %>%
+  paste0(collapse = "") %>%
+  paste0("\n---FILE CHECK----------------------------\n", ., 
+         "-----------------------------------------\n")
+cat(message)
+
+#"server-ca.pem", "client-cert.pem", "client-key.pem"
+
+# Check status of each required credential
 # Check if an .Renviron file exists
-env_exists = file.exists(env)
+exist_env = file.exists(env)
 
 # If the .Renviron file has NOT been supplied...
-if(env_exists == FALSE){
+if(exist_env == FALSE){
   
   message = paste0(
     "\n",
@@ -28,7 +56,7 @@ if(env_exists == FALSE){
   cat(message)
   
   # If the .Renviron file has been supplied...
-}else if(env_exists == TRUE){
+}else if(exist_env == TRUE){
   
   # Read Environmental Variables for ORDERDATA_
   readRenviron(env)

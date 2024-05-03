@@ -10,6 +10,7 @@
 
 # Get moves_anywhere repository path
 REPO=$(git rev-parse --show-toplevel)
+REPO="C://Users/tmf77/OneDrive - Cornell University/Documents/rstudio/moves_anywhere"
 cd "$REPO"
 
 # Load environmental variables
@@ -36,7 +37,9 @@ cd "$REPO"
 #     --repository-format=docker \
 #     --location=$LOCATION
 
-
+# Get moves_anywhere path
+REPO=$(git rev-parse --show-toplevel)
+cd "$REPO"
 # image_moves #################################
 echo "-----------build image_moves--------------"
 # Build image_moves/
@@ -103,6 +106,18 @@ docker logout
 docker image rm "$IMAGE_NAME"
 
 
+
+
+# PRUNE ####################################
+# Always a good idea at the end. Doesn't prune any **named** images like 'moves_anywhere'
+# List dangling images
+docker images -q -f "dangling=true";
+# Prune dangling images
+docker rmi $(docker images -q -f "dangling=true");
+
+docker image prune -f
+
 # End script
 bash
+
 
