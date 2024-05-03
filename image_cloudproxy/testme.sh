@@ -33,15 +33,17 @@ docker run  \
   --rm \
   --mount src="$BUCKET/",target="/cat-api/inputs",type=bind \
   --mount src="$SECRET/",target="/cat-api/secret",type=bind \
-  -e "USERNAME=$USERNAME" \
-  -e "PASSWORD=$PASSWORD" \
+  -e "DBUSERNAME=$USERNAME" \
+  -e "DBPASSWORD=$PASSWORD" \
   -e "DBNAME=$DBNAME" \
-  -e "INSTANCE=$INSTANCE" \
-  -e "HOST=$HOST" \
-  -e "PORT=$PORT" \
+  -e "DBINSTANCE=$INSTANCE" \
+  -e "DBHOST=$HOST" \
+  -e "DBPORT=$PORT" \
   --name "dock" \
   -it "$IMAGE_NAME"
-  
+
+
+
 
 # 
 # docker run  \

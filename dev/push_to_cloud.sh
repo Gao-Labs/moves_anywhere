@@ -87,12 +87,12 @@ docker image rm "$IMAGE_NAME"
 # image_upload ######################################
 echo "-----------build image_upload--------------"
 # Build image_upload/
-bash "image_upload/buildme.sh"
+bash "image_cloudproxy/buildme.sh"
 
 source 'dev/.env'
-IMAGE="upload:v1"
+IMAGE="upload:v2"
 IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
-SOURCE_IMAGE="upload:v1"
+SOURCE_IMAGE="upload:v2"
 
 # Tag the image locally
 docker tag $SOURCE_IMAGE $IMAGE_NAME
@@ -104,8 +104,6 @@ docker push "$IMAGE_NAME"
 docker logout
 # Remove the duplicate tagged image, in favor of its local name
 docker image rm "$IMAGE_NAME"
-
-
 
 
 # PRUNE ####################################

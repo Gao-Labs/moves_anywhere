@@ -42,12 +42,12 @@ RUN curl "$URL/cloud-sql-proxy.linux.amd64" -o cloud-sql-proxy
 RUN chmod +x cloud-sql-proxy
 
 # These variables will need to be added at runtime
-ENV HOST=""
-ENV PORT=""
-ENV INSTANCE=""
-ENV DBNAME=""
-ENV USERNAME=""
-ENV PASSWORD=""
+ENV DBHOST=""
+ENV DBPORT=""
+ENV DBINSTANCE=""
+ENV DBDBNAME=""
+ENV DBUSERNAME=""
+ENV DBPASSWORD=""
 
 # Label volumes to be mounted
 VOLUME /cat-api/inputs # Data inputs folder
@@ -55,9 +55,10 @@ VOLUME /cat-api/secret # secrets folder to mount
 # Copy scripts
 COPY "postprocess_upload.r" "/cat-api/postprocess_upload.r"
 COPY "upload.r" "/cat-api/upload.r"
-COPY "check.r" "/cat-api/check.r"
 COPY "fieldtypes.r" "/cat-api/fieldtypes.r"
 COPY "launch.sh" "/cat-api/launch.sh"
 
 # Run the main functionality
+#ENTRYPOINT [ "/cat-api/launch.sh" ]
+
 CMD [ "./launch.sh" ]

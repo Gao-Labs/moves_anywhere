@@ -30,10 +30,10 @@ upload = function(data, table, fieldtypes, overwrite = TRUE, append = FALSE){
   }
   
   # Retrieve required values
-  username = Sys.getenv("USERNAME")
-  password = Sys.getenv("PASSWORD")
-  host = Sys.getenv("HOST")
-  port = Sys.getenv("PORT")
+  username = Sys.getenv("DBUSERNAME")
+  password = Sys.getenv("DBPASSWORD")
+  host = Sys.getenv("DBHOST")
+  port = Sys.getenv("DBPORT")
   dbname = Sys.getenv("DBNAME")
   
   if(nchar(username) == 0){ warning("Need valid username for database."); end = TRUE }

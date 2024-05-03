@@ -9,9 +9,9 @@
 pwd;
 
 # In order for this to work, your docker image needs a few environmental variables
-if [ -n "$HOST" ] && [ -n "$PORT" ] && [ -n "$INSTANCE" ] && [ -n "$DBNAME" ] && [ -n "$USERNAME" ] && [ -n "$PASSWORD" ]; then
+if [ -n "$DBHOST" ] && [ -n "$DBPORT" ] && [ -n "$DBINSTANCE" ] && [ -n "$DBNAME" ] && [ -n "$DBUSERNAME" ] && [ -n "$DBPASSWORD" ]; then
 
-  echo "HOST, PORT, & INSTANCE, DBNAME, USERNAME, & PASSWORD, variables are present."
+  echo "DBHOST, DBPORT, & DBINSTANCE, DBNAME, DBUSERNAME, & DBPASSWORD, variables are present."
 
   # ./cloud-sql-proxy --help
   # ./cloud-sql-proxy --json-credentials secret1/keyapi.json "$INSTANCE"
@@ -23,10 +23,10 @@ if [ -n "$HOST" ] && [ -n "$PORT" ] && [ -n "$INSTANCE" ] && [ -n "$DBNAME" ] &&
     echo "Starting daemon..."
     ./cloud-sql-proxy \
        --credentials-file secret/runapikey.json \
-       --address "$HOST" \
-       --port $PORT \
+       --address "$DBHOST" \
+       --port $DBPORT \
        --run-connection-test \
-       "$INSTANCE"
+       "$DBINSTANCE"
   }
 
   # Start the daemon
@@ -34,7 +34,9 @@ if [ -n "$HOST" ] && [ -n "$PORT" ] && [ -n "$INSTANCE" ] && [ -n "$DBNAME" ] &&
 
   echo "Postprocessing..."
   # Run upload post-processing (where applicable. Requires a mounted .Renviron file)
-  Rscript postprocess_upload.r
+  # --vanilla --> run R without saving environment, etc.
+  # --ess --> run R in a non-interactive environment
+  Rscript --vanilla --ess postprocess_upload.r
 
 else
     echo "An environmental variable is either not set or has length 0."

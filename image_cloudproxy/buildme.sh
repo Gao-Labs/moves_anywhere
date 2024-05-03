@@ -42,4 +42,3 @@ docker images -q -f "dangling=true";
 docker rmi $(docker images -q -f "dangling=true");
 
 docker image prune -f
-
