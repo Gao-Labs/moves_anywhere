@@ -126,4 +126,30 @@ So, the first step of the `moves_anywhere` team was to develop a strategy to pop
 
 ### [Optional Generic Tables for County Data Manager]
 
--   
+## `moves_anywhere` process
+
+`moves_anywhere` follows the following process. First, a runspec is made. The catr package's custom_rs function can swiftly produce run specs from a limited set of inputs. Then, a bucket (eg. folder) is made to hold the runspec and any kl input files. Any other custom input tables are placed into the bucket, where their names match their respective tables exactly, with no spaces, typically lowercase, written as .csv files. For example, the sourceTypeYear table would be saved in the bucket as sourcetypeyear.csv. Finally, the runspec is placed in the bucket. Then, a container is made from the 'moves' docker image, where the bucket has been mounted to that container to the file path cat-api/inputs/. Any changes that the container makes to the contents of that folder occur to the contents of the bucket itself. 
+
+Upon starting the moves container, this container runs the bash shell script cat-api/launch.sh. This script conducts settings, preprocessing, invokes moves, and then conducts data postprocessing. 
+
+*Settings*
+Settings involves starting up the MySQL server on the container and loading environmental variables necessary for running moves from the setenv.sh script.
+
+*Preprocessing*
+Preprocessing involves using the runspec and user supplied custom input tables to run the adapt.r function. As discussed earlier, adapt() imports into the default input database any provided custom input tables. Then, if a given custom input table was not supplied, it develops suitable approximations from the default input data and save these as custom input tables. Additionally, it filters other relevant tables to reflect the metadata of that moves run, fixing the county, year, region, etc. At the end, the resulting database still bears the same name as its original form as a default input database, but it is now a custom input database, it must be listed in the runspec as such.
+
+*Running MOVES*
+Running moves involves compiling Go and Java, then directing moves to run using the specific runspec from the bucket. A typical county moves runtime for 1 county-year fairies depending on CPU. We have found that a virtual machine with 4GB of RAM and 1 CPU can run moves in inventory mode in 5-10 minutes. With more CPU, that number can decrease to about 2 minutes. A running moves in rate mode may require upwards of 30 minutes for a large number of pollutants.
+
+*Post-processing*
+At the conclusion of the moves container's process, it has written its output files to the aptly named output database "moves". These tables will only exist as long as the container runs, so they must be collected from the database and written to file in the bucket as csvs. A post processing script extracts the movesoutput and movesactivityoutput tables and saves them as movesoutput.csv and movesactivityoutput.csv. Additionally, formatting functions from a catr R package, which is built into the container, combine these two tables into the more dataviz friendly CAT Format and save it as data.csv in the bucket. 
+
+*CAT Format*
+CAT Format refers to the act of joining an aggregating these tables, in 1 to as many as 16 different ways, and then bundling them top each other, so that emissions and activity variables can be seen for each county year at different levels of aggregation. These levels of aggregation are recorded in the 'by' column. For example, by=16 means completely aggregated, showing the total emissions and vehicle miles travel among other metrics for a given pollutant in a given year in a given County. By=8 shows total emissions and activity metrics for giving pollutants and it given a year in a given County disaggregated by sourcetype, meaning type of vehicle. By=1 means total emissions and activity metrics for a given pollutant in a given year in a given County completely disaggregated by source type, fuel type, regulatory class, and road type.
+
+For a detailed explanation of CAT Format, please see this markdown document!
+
+
+
+
+
