@@ -3,12 +3,12 @@
 
 library(dplyr)
 library(readr)
-library(translators)
+library(translators) # private, not yet publicly provided
 # Set working directory to repo main directory
 setwd(rstudioapi::getActiveProject())
-readRenviron(".Renviron")
+readRenviron("../../.Renviron")
 
 translators::get_sourcetypeyear_cat(.year = 2025, .table = "d42091", .pollutant = 98) %>%
   mutate(sourceTypePopulation = case_when(sourceTypeID == 11 ~ sourceTypePopulation * 5, TRUE ~ sourceTypePopulation)) %>%
-  write_csv("demos/demo8/sourcetypeyear.csv")
+  write_csv("demos/demo_docker/sourcetypeyear.csv")
 
