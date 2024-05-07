@@ -93,7 +93,7 @@ Welcome to `moves_anywhere`! This software suite includes several tools to help 
 
 Let's take a closer look at step 6 from above, where the magic happens in the container.
 
-#### *2.2.1 Settings* 
+#### *2.2.1 Settings*
 
 Settings involves starting up the MySQL server on the container and loading environmental variables necessary for running moves from the setenv.sh script.
 
@@ -245,27 +245,27 @@ One of the key challenges of using MOVES is that unless someone crafts all **req
 
 #### Table 3: Generic Tables to be Updated
 
-+----------------+-------------------------+------------------------------------+
-| Menu           | Table                   | Adaptation                         |
-+================+=========================+====================================+
-| Generic        | `year`                  | Filter by `yearID`                 |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `county`                | Filter by `countyID`               |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `state`                 | Filter by `stateID`                |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `idleRegion`            | Filter by `idleRegionID`           |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `zone`                  | Filter by `countyID`               |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `zoneRoadType`          | Filter by `zoneID`                 |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `regionCounty`          | Filter by `countyID`, `fuelYearID` |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `pollutantProcessAssoc` | Filter by `pollutantID`            |
-+----------------+-------------------------+------------------------------------+
-| Generic        | `opModePolProcAssoc`    | Filter by `polProcessID`           |
-+----------------+-------------------------+------------------------------------+
++---------------+-------------------------+------------------------------------+
+| Menu          | Table                   | Adaptation                         |
++===============+=========================+====================================+
+| Generic       | `year`                  | Filter by `yearID`                 |
++---------------+-------------------------+------------------------------------+
+| Generic       | `county`                | Filter by `countyID`               |
++---------------+-------------------------+------------------------------------+
+| Generic       | `state`                 | Filter by `stateID`                |
++---------------+-------------------------+------------------------------------+
+| Generic       | `idleRegion`            | Filter by `idleRegionID`           |
++---------------+-------------------------+------------------------------------+
+| Generic       | `zone`                  | Filter by `countyID`               |
++---------------+-------------------------+------------------------------------+
+| Generic       | `zoneRoadType`          | Filter by `zoneID`                 |
++---------------+-------------------------+------------------------------------+
+| Generic       | `regionCounty`          | Filter by `countyID`, `fuelYearID` |
++---------------+-------------------------+------------------------------------+
+| Generic       | `pollutantProcessAssoc` | Filter by `pollutantID`            |
++---------------+-------------------------+------------------------------------+
+| Generic       | `opModePolProcAssoc`    | Filter by `polProcessID`           |
++---------------+-------------------------+------------------------------------+
 
 : Adaptations of Note
 
@@ -309,7 +309,7 @@ According to recent EPA guidance, because fuel properties can be quite variable,
 
 ## 4. How does `catr` write Runspecs and Parameters?
 
-### 4.1 How does  `catr` write `runspec` files?
+### 4.1 How does `catr` write `runspec` files?
 
 `moves_anywhere` uses the `catr` package and its function `custom_rs()` to write runspec.xml files, based off a template stored in `catr::rs_template`. It programmatically replaces runspec contents, according to several parameters. [See `catr/R/custom_rs.R` for a detailed explanation and source code](https://github.com/Gao-Labs/moves_anywhere/blob/main/catr/R/custom_rs.R).
 

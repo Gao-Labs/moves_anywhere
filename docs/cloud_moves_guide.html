@@ -11,7 +11,7 @@
 
 
 
-<title>moves_anywhere_guide</title>
+<title>cloud_moves_guide</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,811 +352,176 @@ display: none;
 </div>
 
 
-<div id="moves-anywhere-guide" class="section level1">
-<h1>MOVES Anywhere Guide</h1>
+<div id="cloud-moves-guide" class="section level1">
+<h1>Cloud MOVES Guide</h1>
+<p>Lead Developer: Tim Fraser, PhD</p>
+<p>Contributors: Erin Murphy</p>
+<div id="using-cornell-cloud-moves-alpha---for-cornell-cat-research-team-only" class="section level2">
+<h2>0. Using Cornell Cloud MOVES (Alpha - for Cornell CAT Research Team
+only)</h2>
+<p>An exciting current research direction of the Cornell CAT MOVES team
+is the development of Cornell Cloud MOVES, a system for executing MOVES
+runs in the Cloud. This technology is currently in Alpha mode, available
+only for CAT research team members only with permission. Please see
+below for details on how to execute it.</p>
+</div>
+<div id="requirements-for-cornell-cloud-moves" class="section level2">
+<h2>1. Requirements for Cornell Cloud MOVES</h2>
+<p>To use Cornell Cloud MOVES, you will need the following items.</p>
 <ul>
-<li>Lead Developer: Tim Fraser, PhD</li>
-<li>Contributors: Erin Murphy, Junna Chen, Mahak Bindal, Shungo Najima,
-Carl Closs</li>
-<li>Institution: Gao Labs @ Cornell University</li>
-<li>Description: A Docker-based solution to run MOVES anywhere - on
-Windows, Mac, or Linux</li>
+<li><p>A Google Cloud API Key with requisite permissions</p></li>
+<li><p>A Cornell gmail account</p></li>
+<li><p>Viewer Permissions for Google Storage Buckets, assigned to your
+Cornell gmail account</p></li>
+<li><p>The catr package installed in RStudio, plus any
+dependencies</p></li>
+<li><p>Your runspec, saved as rs_custom.xml. It must always be added to
+the bucket LAST after your custom input tables.</p></li>
+<li><p>Your parameters file, saved as parameters.json - if you want your
+data to be saved to catcloud’s orderdata database.</p></li>
+<li><p>Any custom input tables in the style described in Section 3.1
+above.</p></li>
+<li><p>A CAT user account, with a userid number.</p></li>
+<li><p>A unique bucket name that has not yet been used and a dtablename
+that has not yet been used. Standard format is d36109-u1-o1</p></li>
+<li><p>If doing just 1 single MOVES run, review demo_run.R.</p></li>
+<li><p>If doing several MOVES run as a scenario, review
+demo_scenario.R</p></li>
 </ul>
-<p>Welcome to <code>moves_anywhere</code>! This software suite includes
-several tools to help you run the Environmental Protection Agency’s
-<u>MO</u>tor <u>V</u>ehicle <u>E</u>missions <u>S</u>imulator (MOVES)
-more easily. Developed by Tim Fraser and colleagues at Gao Labs at
-Cornell University, <code>moves_anywhere</code> aims to solve several
-common problems for planners, engineers, and researchers who need to
-know how many tons of emissions are produced from on-road transportation
-sources in their county or state. These problems include:</p>
+<p>If any questions, ask Tim Fraser <a href="mailto:tmf77@cornell.edu" class="email">tmf77@cornell.edu</a>. Please be sure to read the
+documentation first, as 99% of questions often can be first resolved
+with the documentation. 😃</p>
+</div>
+<div id="cloud-moves-process" class="section level2">
+<h2>2. Cloud MOVES Process</h2>
+<p>Cloud MOVES is run on Google Cloud, making use of the Workflows API,
+Cloud Run API, and Cloud SQL API, among others. The basic idea is as
+follows:</p>
+<div id="figure-1-triggering-a-moves-run-job" class="section level4">
+<h4>Figure 1: Triggering a MOVES Run Job</h4>
 <ul>
-<li><p>Writing runspec.xml documents faster (a recipe for your MOVES
-run)</p></li>
-<li><p>Running MOVES on any OS (Windows, Mac, or Linux), using a Docker
-container.</p></li>
-<li><p>Running MOVES with custom inputs when you have <em>some (or
-none)</em> of the required custom input tables, but not all.</p></li>
-<li><p>Post-processing MOVES inventory output data into the more
-dataviz-friendly “CAT Format”, developed for Cornell’s Climate Action in
-Transportation (CAT) team’s research.</p></li>
-<li><p>Uploading CAT Formatted Data to a Google Cloud SQL server using a
-Docker container.</p></li>
-<li><p>And more!</p></li>
+<li><p>Add any custom input <code>.csv</code>s to the bucket.</p></li>
+<li><p>Add <code>rs_custom.xml</code> to the bucket. This is the trigger
+event that kicks off a cloud upload job. This step must always occur
+<u><strong>LAST</strong></u><strong>.</strong></p></li>
 </ul>
-<p><em>Note: This is a living document that will be updated continuously
-as development on <code>moves_anywhere</code> integrations continues, so
-be sure to check back for updates.</em></p>
-<div id="key-terms-in-moves_anywhere" class="section level2">
-<h2>1. Key Terms in <code>moves_anywhere</code></h2>
-<p><code>moves_anywhere</code>: a software suite containing several
-tools for making it easier to run MOVES. Here is a list of key terms to
-help users and developers keep those tools straight!</p>
+<pre class="mermaid"><code>flowchart LR
+
+bucket
+csv[&quot;custom inputs&quot;]
+rs[&quot;runspec&quot;]
+
+create_bucket[[&quot;create&lt;br&gt;bucket&quot;]]
+add_files[[&quot;add files&quot;]]
+add_rs[[&quot;add rs_custom.xml&quot;]]
+workflow_moves[&quot;workflow&lt;br&gt;&lt;b&gt;moves&lt;/b&gt;&quot;]
+create_job[[&quot;create job&lt;br&gt;&amp; mount bucket&quot;]]
+image_moves[&quot;image&lt;br&gt;&lt;b&gt;moves:v1&lt;/b&gt;&quot;]
+container_moves[&quot;run&lt;br&gt;container&lt;br&gt;&lt;b&gt;moves&lt;/b&gt;&quot;]
+output_csvs[&quot;output .csvs&quot;]
+
+create_bucket ---&gt; bucket
+csv --&gt; add_files --&gt; bucket
+rs --&gt; add_rs
+add_rs --&gt; trigger_moves
+add_rs --&gt; bucket
+
+trigger_moves(&quot;trigger&lt;br&gt;&lt;b&gt;rs-to-moves&lt;/b&gt;&quot;)
+bucket --&gt; trigger_moves
+
+trigger_moves --&gt; workflow_moves
+
+image_moves ---&gt; create_job
+workflow_moves --&gt; create_job --&gt; container_moves
+
+bucket --- create_job
+
+container_moves --&gt; output_csvs 
+output_csvs -- Put Outputs back in Bucket --&gt; bucket</code></pre>
+</div>
+<div id="figure-2-triggering-a-cloud-sql-upload-job" class="section level4">
+<h4>Figure 2: Triggering a Cloud SQL Upload Job</h4>
+<p>Next, optionally, if the developer desires for their
+<code>data.csv</code> to be stored in our Cloud SQL
+<code>catcloud</code> server in the <code>orderdata</code> database,
+they must…</p>
 <ul>
-<li><p><code>MOVES</code>: The Environmental Protection Agency’s <a href="https://www.epa.gov/moves"><u>MO</u>tor <u>V</u>ehicle
-<u>E</u>missions <u>S</u>imulator (MOVES)</a> software. Used for
-estimating emissions from onroad transportation sources, for about ~100
-types of pollutants. Originally developed for Windows. The most
-up-to-date information can be found on the <a href="https://github.com/USEPA/EPA_MOVES_Model">MOVES Github
-Repository</a>.</p>
+<li><p>Add a <code>parameters.json</code> file to the bucket.</p>
 <ul>
-<li><p>From <a href="https://github.com/USEPA/EPA_MOVES_Model">Github</a>, MOVES can be
-downloaded and implemented on linux, provided a fair amount of
-familiarity with Linux, Go, Java, and command line coding.</p></li>
-<li><p><code>moves_anywhere</code> is powered by
-<code>MOVES v4.0</code>, downloaded from Github.</p></li>
+<li><p>That <code>parameters.json</code> file should specify the
+<code>dtablename</code> of the table they want to create/add
+to.</p></li>
+<li><p>If they want to add multiple data.csv files from different
+buckets to the same table, then they should keep the
+<code>dtablename</code> the same, but list
+<code>multiple: TRUE</code>.</p></li>
 </ul></li>
-<li><p><code>runspec</code>: A runspec file is a <code>.xml</code> file
-that lists every specification about your MOVES <code>run</code>,
-including the <strong>area</strong> (eg. Tompkins County),
-<strong>level</strong> of analysis (eg. county/state),
-<strong>year</strong>(s) under analysis (eg. 2025),
-<strong>pollutants</strong> (eg. CO2 equivalent = id 98),
-<strong>sourcetypes</strong>, <strong>fueltypes</strong>, and
-<strong>roadtypes</strong>, and level of <strong>geographic
-aggregation</strong> and <strong>temporal aggregation</strong> for
-results. See here for the <a href="https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/AnatomyOfARunspec.md"><strong>EPA’s
-guide “Anatomy of a Runspec”</strong></a> on interpreting a runspec
-document.</p></li>
-<li><p><code>MOVES runs</code>:</p>
-<ul>
-<li><p><code>run</code>: a run refers to running the MOVES software 1
-time, using 1 runspec file. In <code>moves_anywhere</code>, this usually
-describes emissions for 1 county-year.</p></li>
-<li><p><code>scenario</code>: A bundle of MOVES <code>runs</code> for
-the same geographic area over time, often with distinct custom input
-tables for each year. (Eg. Tompkins County for 2020, 2025, and
-2030.)</p></li>
-<li><p><code>default MOVES run</code>: A MOVES run that sources any
-required data directly from the MOVES
-<code>default input database</code>. In the MOVES GUI, under
-Domain/Scale, also called <code>Default Scale</code>. Produces
-approximate estimates of emissions in an area. For Emissions Reporting
-purposes, we should <em>always</em> use a <code>custom MOVES run</code>,
-which better reflects on-the-ground vehicle fleet activity and
-conditions.</p></li>
-<li><p><code>custom MOVES run</code>: A MOVES run for 1 county-year that
-draws on a set of ~40 specific <code>custom input tables</code> provided
-by the user in the form of a <code>custom input database</code>. Also
-draws on some background data from <code>default input database</code>.
-In the MOVES GUI, under Domain/Scale called <code>County Scale</code>.
-MOVES GUI provides <code>County Data Manager</code> to help users fill
-in the many required <code>custom input tables</code>.</p></li>
-</ul></li>
-<li><p><code>input tables</code>:</p>
-<ul>
-<li><p><code>default input tables</code>: Several hundred tables of
-default data for MOVES processing, which comes with moves. Stored as a
-MariaDB database, commonly referred to as the
-<code>default input database</code>. of several hundred default input
-tables and tables for internal MOVES processing that come with
-MOVES.</p>
-<ul>
-<li><p>Contains all tables needed to perform a
-<code>default MOVES run</code>. Contains <em>some</em> but <em>not
-all</em> of the possible tables that can be provided in a
-<code>custom MOVES run</code>.</p></li>
-<li><p>Current default input database version is named
-<strong>movesdb20240104</strong>. Available for download <a href="https://github.com/USEPA/EPA_MOVES_Model/blob/master/database/Setup/movesdb20240104.zip"><strong>here
-in MariaDB format</strong></a>. Installed automatically when MOVES is
-installed.</p></li>
-</ul></li>
-<li><p><code>custom input tables</code>: About ~40 input tables required
-by MOVES to perform a <code>custom MOVES run</code>. Provided to MOVES
-as a <code>custom input database</code>.</p></li>
-</ul></li>
-<li><p><code>catr</code>: an R package containing tools in the R
-programming language for running various <code>moves_anywhere</code>
-processes.</p>
-<ul>
-<li><code>adapt</code>(): an R function that adapts the MOVES default
-input database</li>
-<li><code>custom_rs()</code>: an R function that writes customized
-runspec documents.</li>
-<li><code>postprocess_format()</code>: An R function that combines a
-<code>movesoutput</code> and <code>movesactivityoutput</code> table from
-a your outputdatabase into a <code>data.csv</code> file.</li>
-<li>Others Example Helper Functions:
-<ul>
-<li><code>translate_rs()</code>: an R function that extracts important
-metadata from a runspec into an <code>R</code> list object.</li>
-<li><code>connect()</code>: an R function that helps you quickly connect
-to your output or input database.</li>
-<li>and more!</li>
-</ul></li>
-</ul></li>
-<li><p><code>CAT Format</code><em>:</em> This format refers to the act
-of joining an aggregating a <code>movesoutput</code> table and
-<code>movesactivityoutput</code> table from your output database. CAT
-Format has 16 types of aggregation possible, each with their own unique
-id called the <code>by</code> field. <code>by</code> can therefore range
-from aggregation id <code>by = 1</code> to <code>by = 16</code>. Each
-set of aggregated data can therefore be bundled atop each other, as long
-as they are differentiated by a <code>by</code> column, enabling easy
-filtering of ready-to-use data. This means that emissions and activity
-variables can be seen for each county year at different levels of
-aggregation.</p>
-<ul>
-<li><p>For example, <code>by=16</code> means completely aggregated,
-showing the total emissions and vehicle miles travel among other metrics
-for a given pollutant in a given year in a given county.
-<code>by = 8</code> shows total emissions and activity metrics for
-giving pollutants and it given a year in a given county disaggregated by
-sourcetype, meaning type of vehicle. <code>by = 1</code> means total
-emissions and activity metrics for a given pollutant in a given year in
-a given county completely disaggregated by source type, fuel type,
-regulatory class, and road type.</p></li>
-<li><p>For a detailed explanation of CAT Format, please see this
-markdown document!</p></li>
-</ul></li>
+<li><p>Add a <code>data.csv</code> file to the bucket. This is the
+trigger event that kicks off a cloud upload job. This step must always
+occur <u><strong>LAST</strong></u><strong>.</strong></p></li>
 </ul>
+<pre class="mermaid"><code>
+flowchart LR
+
+bucket
+
+workflow_upload[&quot;workflow&lt;br&gt;&lt;b&gt;upload&lt;/b&gt;&quot;]
+create_job[[&quot;create job&lt;br&gt;&amp; mount bucket&quot;]]
+image_upload[&quot;image&lt;br&gt;&lt;b&gt;upload:v2&lt;/b&gt;&quot;]
+container_upload[&quot;run&lt;br&gt;container&lt;br&gt;&lt;b&gt;upload&lt;/b&gt;&quot;]
+add_parameters[[&quot;add parameters.json&quot;]]
+add_data[[&quot;Add data.csv&quot;]] 
+parameters[&quot;parameters.json&quot;]
+data[&quot;data.csv&quot;]
+trigger_upload(&quot;trigger&lt;br&gt;&lt;b&gt;data-to-upload&lt;/b&gt;&quot;)
+add_table[[&quot;Add table&lt;br&gt;&lt;b&gt;[dtablename]&lt;/b&gt;&quot;]]
+cloudsql[(&quot;Cloud SQL&lt;br&gt;&lt;b&gt;[dtablename]&lt;/b&gt;&quot;)]
+
+parameters --&gt; add_parameters
+add_parameters --&gt; bucket
+data --&gt; add_data
+add_data --&gt; bucket
+bucket --&gt; trigger_upload
+add_data --&gt; trigger_upload
+
+
+trigger_upload --&gt; workflow_upload
+image_upload ---&gt; create_job
+bucket --&gt; create_job
+
+workflow_upload --&gt; create_job --&gt; container_upload
+container_upload --&gt; add_table
+add_table --&gt; cloudsql </code></pre>
 </div>
-<div id="moves_anywhere-process" class="section level2">
-<h2>2. <code>moves_anywhere</code> process</h2>
-<div id="process-overview" class="section level3">
-<h3>2.1 Process Overview</h3>
-<p><code>moves_anywhere</code> follows the following process:</p>
-<ol style="list-style-type: decimal">
-<li><p>First, a runspec is made, named <code>rs_custom.xml</code>. The
-catr package’s custom_rs function can swiftly produce run specs from a
-limited set of inputs.</p></li>
-<li><p>Then, a bucket (eg. folder) is made to hold the runspec and any
-custom input tables.</p></li>
-<li><p>Any other custom input tables are placed into the bucket, where
-their names match their respective tables exactly, with no spaces,
-typically lowercase, written as <code>.csv</code> files. For example,
-the <code>sourceTypeYear</code> table would be saved in the bucket as
-<code>sourcetypeyear.csv</code>.</p></li>
-<li><p>The runspec <code>rs_custom.xml</code> is placed in the
-bucket.</p></li>
-<li><p>Then, a container is made from the ‘moves’ docker image (from
-<code>image_moves/</code>), where the bucket has been mounted to that
-container to the file path <code>cat-api/inputs/</code>. Any changes
-that the container makes to the contents of that folder occur to the
-contents of the bucket itself.</p></li>
-<li><p>Upon starting the moves container, this container runs the
-<code>bash</code> shell script <code>cat-api/launch.sh</code>. This
-script conducts settings, preprocessing, invokes moves, and then
-conducts data postprocessing.</p></li>
-<li><p>For members of the CAT research team, data can be optionally
-uploaded to the CATSERVER <code>orderdata</code> Cloud SQL server,
-dubbed <code>catcloud</code>.</p></li>
-</ol>
 </div>
-<div id="understanding-the-moves-docker-image" class="section level3">
-<h3>2.2 Understanding the <code>moves</code> docker image</h3>
-<p>Let’s take a closer look at step 6 from above, where the magic
-happens in the container.</p>
-<div id="settings" class="section level4">
-<h4><em>2.2.1 Settings</em></h4>
-<p>Settings involves starting up the MySQL server on the container and
-loading environmental variables necessary for running moves from the
-setenv.sh script.</p>
-</div>
-<div id="preprocessing" class="section level4">
-<h4><em>2.2.2 Preprocessing</em></h4>
-<p>Preprocessing involves using the runspec and user supplied custom
-input tables to run the adapt.r function. As discussed earlier, adapt()
-imports into the default input database any provided custom input
-tables. Then, if a given custom input table was not supplied, it
-develops suitable approximations from the default input data and save
-these as custom input tables. Additionally, it filters other relevant
-tables to reflect the metadata of that moves run, fixing the county,
-year, region, etc. At the end, the resulting database still bears the
-same name as its original form as a default input database, but it is
-now a custom input database, it must be listed in the runspec as
-such.</p>
-</div>
-<div id="running-moves" class="section level4">
-<h4><em>2.2.3 Running MOVES</em></h4>
-<p>Running moves involves compiling Go and Java, then directing moves to
-run using the specific runspec from the bucket. A typical county moves
-runtime for 1 county-year fairies depending on CPU. We have found that a
-virtual machine with 4GB of RAM and 1 CPU can run moves in inventory
-mode in 5-10 minutes. With more CPU, that number can decrease to about 2
-minutes. A running moves in rate mode may require upwards of 30 minutes
-for a large number of pollutants.</p>
-</div>
-<div id="post-processing" class="section level4">
-<h4><em>2.2.4 Post-processing</em></h4>
+<div id="frequent-links" class="section level2">
+<h2>3. Frequent Links</h2>
+<p>These links may be helpful to you as you check in on the status of
+your uploads and jobs, etc.</p>
 <ul>
-<li><p>At the conclusion of the moves container’s process, it has
-written its output files to the aptly named output database
-<code>&quot;moves&quot;</code>. These tables will only exist as long as the
-container runs, so they must be collected from the database and written
-to file in the bucket as <code>csv</code>s.</p></li>
-<li><p>The <code>postprocess.r</code> script extracts relevant tables
-depending on what type of run was specified in your
-<code>runspec</code>.</p>
-<ul>
-<li><p>If your <code>runspec</code> specified an <strong>Emissions
-Inventory</strong> run, the <code>movesoutput</code> and
-<code>movesactivityoutput</code> tables are extracted from your output
-database. They are saved to the mounted <code>/inputs</code> bucket as
-<code>movesoutput.csv</code> and
-<code>movesactivityoutput.csv</code>.</p>
-<ul>
-<li>Additionally, if a <code>parameter.json</code> is provided in the
-<code>inputs/</code> folder, then <code>catr</code> will run some
-formatting functions, combining these two tables into the more dataviz
-friendly CAT Format and save it as <code>data.csv</code> in the
-bucket.</li>
-</ul></li>
-<li><p>If your <code>runspec</code> specified an <strong>Emissions
-Rates</strong> run, the <code>rateperhour</code>,
-<code>ratepervehicle</code>, <code>rateperdistance</code>,
-<code>rateperstart</code>, <code>startspervehicle</code>,
-<code>rateperprofile</code>, and <code>movesrun</code> tables are
-extracted and saved to the mounted <code>/inputs</code> bucket as
-<code>rateperhour.csv</code>, <code>ratepervehicle.csv</code>,
-<code>rateperdistance.csv</code>, <code>rateperstart.csv</code>,
-<code>startspervehicle.csv</code>, <code>rateperprofile.csv</code>, and
-<code>movesrun.csv</code>.</p></li>
-</ul></li>
+<li><p><a href="https://console.cloud.google.com/storage/browser?forceOnBucketsSortingFiltering=true&amp;authuser=1&amp;hl=en&amp;project=moves-runs&amp;supportedpurview=project&amp;prefix=&amp;forceOnObjectsSortingFiltering=false">Check
+Bucket Status</a></p></li>
+<li><p><a href="https://console.cloud.google.com/workflows/workflow/us-central1/run-moves/executions?authuser=1&amp;hl=en&amp;project=moves-runs&amp;supportedpurview=project">Check
+MOVES Workflow Status Here:</a></p></li>
+<li><p><a href="https://console.cloud.google.com/run/jobs?authuser=1&amp;project=moves-runs&amp;supportedpurview=project">Check
+Jobs Status Here</a></p></li>
+<li><p><a href="https://console.cloud.google.com/workflows/workflow/us-central1/upload-data/executions?authuser=1&amp;hl=en&amp;project=moves-runs&amp;supportedpurview=project">Check
+Upload Workflow Status Here</a></p></li>
+<li><p><a href="https://console.cloud.google.com/sql/instances/catcloud/overview?authuser=1&amp;hl=en&amp;project=moves-runs">Check
+CAT Cloud Server Here</a></p></li>
+<li><p><a href="https://console.cloud.google.com/iam-admin/iam?authuser=1&amp;hl=en&amp;project=moves-runs">Check
+Permissions Here</a></p></li>
+<li><p><a href="https://console.cloud.google.com/billing/01C33B-2EA889-CDC484?authuser=1&amp;hl=en&amp;project=moves-runs">Check
+Billing Here</a></p></li>
+<li><p><a href="https://docs.google.com/document/d/1La8vmQ5KcUBRjdwVW7C24HholWNq_YXJPg5ZiAad6X4/edit?usp=sharing">Check
+CATSERVER Read-Only Credentials for <code>granddata</code> here.</a>
+(Need permission)</p></li>
+<li><p><a href="https://drive.google.com/file/d/1i09dCu8aC6yEuxd2UVQZcRddRHrgkUKc/view?usp=sharing">Check
+API Key here</a>. (Need permission)</p></li>
+<li><p><a href="https://docs.google.com/document/d/1ZA-Q5pPdhPyOwZrjfHl99TfyRz67P2BN245LV4TydvQ/edit?usp=sharing">Check
+CATCLOUD Read-Write Credentials for <code>orderdata</code> here.</a>
+(Need permission)</p></li>
 </ul>
-</div>
-</div>
-</div>
-<div id="configuring-your-inputs-bucket" class="section level2">
-<h2>3. Configuring your <code>/inputs</code> bucket</h2>
-<div id="basic-requirements" class="section level3">
-<h3>3.1 Basic Requirements</h3>
-<p>All docker images used in <code>moves_anywhere</code> involve a
-folder/bucket that gets mounted to the path <code>/cat-api/inputs</code>
-in the container. This is the location where we can pass files to the
-container, and receive new outputted files from the container. Your
-bucket may contain the following information:</p>
-<ul>
-<li><p><strong>Mandatory Inputs</strong></p>
-<ul>
-<li><code>/inputs/rs_custom.xml</code>: a runspec file.</li>
-</ul></li>
-<li><p><strong>Optional Inputs</strong></p>
-<ul>
-<li><p><code>/inputs/your_custom_input_table_here.csv</code>: any custom
-input tables can be added here, where the file should share the name of
-your custom input table, followed by <code>.csv</code>. For example,
-<code>sourceTypeYear</code> should be
-<code>sourcetypeyear.csv</code>.</p></li>
-<li><p><code>/inputs/parameters.json</code>: The Cornell CAT system uses
-a <code>parameters.json</code> for several extra functionalities of
-<code>moves_anywhere</code>, like having <code>catr</code> aggregate
-data into a <code>data.csv</code> or having the file uploaded to
-<code>catcloud</code>. A <code>parameters.json</code> is not otherwise
-required.</p></li>
-</ul></li>
-<li><p><strong>Potential Outputs</strong></p>
-<ul>
-<li><p><code>/inputs/movesoutput.csv</code>: a summary of a
-<code>emissionsQuant</code> by <code>pollutantID</code>,
-<code>sourceTypeID</code>, <code>roadTypeID</code>,
-<code>fuelTypeID</code>, <code>countyID</code>, etc. <strong>[Inventory
-mode only]</strong></p></li>
-<li><p><code>/inputs/movesactivityoutput.csv</code>: a summary of
-<code>activity</code> metrics by <code>activityTypeID</code>, and any
-other stratification variables. <strong>[Inventory mode
-only]</strong></p></li>
-<li><p><code>/inputs/data.csv</code>: a CAT-formatted aggregated data
-table, according to the specifications requested in
-<code>parameters.json</code>. <strong>[Inventory mode
-only]</strong></p></li>
-<li><p><code>/inputs/rateperhour.csv</code> <strong>[Rate mode
-only]</strong></p></li>
-<li><p><code>/inputs/ratepervehicle.csv</code> <strong>[Rate mode
-only]</strong></p></li>
-<li><p><code>/inputs/rateperdistance.csv</code> <strong>[Rate mode
-only]</strong></p></li>
-<li><p><code>/inputs/rateperstart.csv</code> <strong>[Rate mode
-only]</strong></p></li>
-<li><p><code>/inputs/startspervehicle.csv</code> <strong>[Rate mode
-only]</strong></p></li>
-<li><p><code>/inputs/rateperprofile.csv</code> <strong>[Rate mode
-only]</strong></p></li>
-<li><p><code>/inputs/movesrun.csv</code> <strong>[Rate mode only; may be
-added for Inventory mode in future.]</strong></p>
-<ul>
-<li>For detailed descriptions of these tables and their variables, see
-the <a href="https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md"><strong>MOVES
-documentation on Database Tables on Github.</strong></a></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-<div id="custom-input-tables-required-by-moves" class="section level3">
-<h3>3.2 <code>custom input tables</code> required by MOVES</h3>
-<p>There are up to 39~41 total custom input tables that must be edited
-to use <code>moves_anywhere</code> with MOVES 4.0. This includes 13~15
-<u><strong>required</strong></u> <strong>user-supplied tables</strong>,
-which users must supply in the traditional County Data Manager user
-interface (<strong>Table 1</strong>), and 17
-<u><strong>optional</strong></u> <strong>user-supplied tables</strong>,
-for which MOVES typically automatically sources defaults if not supplied
-(<strong>Table 2</strong>). Further, <strong>9 background
-tables</strong> must be updated to reflect the geography, time frame,
-regions, etc. on the run (<strong>Table 3</strong>). Any of the
-remaining ~200 tables in the MOVES default input database can also be
-updated. See <a href="#id_0">here</a> for a full list of all MOVES
-database tables.</p>
-<p>One of the key challenges of using MOVES is that unless someone
-crafts all <strong>required user-supplied tables</strong>, MOVES
-<u><strong>refuses</strong></u> to perform a <code>custom run</code>.
-This was extremely difficult as a user and developer working with MOVES,
-and was the motivation for creating the <code>adapt()</code>
-function.</p>
-<p><code>adapt()</code>: So, the first step of the
-<code>moves_anywhere</code> team was to develop a strategy to populate
-these required <code>custom input tables</code> with ‘good-enough’
-values, by borrowing relevant values from the default database and/or
-transforming them where needed. This was to make it possible that
-<em>even if</em> you don’t have <strong>all</strong> the possible input
-data about your scenario, you can still run MOVES. We refer to this
-process as the <code>adapt()</code> function in the <code>catr</code>
-package, which adapts the <code>default input database</code> and any
-supplied <code>custom input tables</code> into a fully operational
-<code>custom input database</code><em>.</em></p>
-<div id="table-1-user-supplied-tables-required-by-county-data-manager" class="section level4">
-<h4>Table 1: User-Supplied Tables Required by County Data Manager</h4>
-<table style="width:100%;">
-<colgroup>
-<col width="9%" />
-<col width="14%" />
-<col width="75%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Menu</th>
-<th>Table</th>
-<th>Adaptation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Vehicle Type VMT</strong></td>
-<td><code>monthVMTFraction</code></td>
-<td>Used if VMT is <strong>Annual</strong></td>
-</tr>
-<tr class="even">
-<td><strong>Vehicle Type VMT</strong></td>
-<td><code>dayVMTFraction</code></td>
-<td>Used if VMT is <strong>Annual</strong></td>
-</tr>
-<tr class="odd">
-<td><strong>Vehicle Type VMT</strong></td>
-<td><code>hourVMTFraction</code></td>
-<td>Used if VMT is <strong>Annual</strong> or
-<strong>Daily</strong></td>
-</tr>
-<tr class="even">
-<td><strong>Vehicle Type VMT</strong></td>
-<td><code>SourceTypeYearVMT</code> OR <code>HPMSVtypeYear</code></td>
-<td>Used if VMT is <strong>Annual.</strong> If no VMT tables provided,
-existing <code>HPMSVtypeYear</code> table is population re-weighted and
-used.</td>
-</tr>
-<tr class="odd">
-<td><strong>Vehicle Type VMT</strong></td>
-<td><code>SourceTypeDayVMT</code> OR
-<code>HPMSVTypeDay</code><sup>1</sup></td>
-<td>Used if VMT is <strong>Daily.</strong> If no VMT tables provided,
-existing <code>HPMStypeYear</code> table is population re-weighted and
-used.</td>
-</tr>
-<tr class="even">
-<td><strong>Source Type Population</strong></td>
-<td><code>sourceTypeYear</code></td>
-<td>Using national-level default <code>sourceTypeYear</code>,
-<u>interpolated and population-weighted</u><sup>2</sup></td>
-</tr>
-<tr class="odd">
-<td><strong>Fuel</strong></td>
-<td><code>AVFT</code></td>
-<td>Using <a href="https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md#samplevehiclepopulation"><code>samplevehiclepopulation</code></a>,
-group by <code>sourceTypeID</code>, <code>modelYearID</code>,
-<code>fuelTypeID</code>, and <code>engTechID</code> and sum
-<code>stmyFraction</code> to make <code>fuelEngFraction</code>.</td>
-</tr>
-<tr class="even">
-<td><strong>Fuel</strong></td>
-<td><code>FuelSupply</code></td>
-<td>Filter by <code>fuelRegionID</code>, <code>fuelYearID</code>,
-<code>monthGroupID</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Fuel</strong></td>
-<td><code>FuelUsageFraction</code></td>
-<td>Filter by <code>countyID</code>, <code>fuelYearID</code></td>
-</tr>
-<tr class="even">
-<td><strong>Fuel</strong></td>
-<td><code>FuelFormulation</code><sup>3</sup></td>
-<td><p>Untouched</p>
-<p>(<em>Avoid Tinkering</em>)</p></td>
-</tr>
-<tr class="odd">
-<td><strong>Average Speed Distribution</strong></td>
-<td><code>avgSpeedDistribution</code></td>
-<td>Filter by <code>hourDayID</code></td>
-</tr>
-<tr class="even">
-<td><strong>Age Distribution</strong></td>
-<td><code>sourceTypeAgeDistribution</code></td>
-<td>Filter by <code>yearID</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Road Type Distribution</strong></td>
-<td><code>roadTypeDistribution</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="even">
-<td><strong>I/M Programs</strong></td>
-<td><code>IMCoverage</code></td>
-<td>Filter by <code>stateID</code>, <code>countyID</code>,
-<code>yearID</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Meteorology Data</strong></td>
-<td><code>zoneMonthHour</code></td>
-<td>Filter by <code>zoneID</code>, <code>monthID</code>,
-<code>hourID</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="table-2-optional-tables-for-county-data-manager" class="section level4">
-<h4><strong>Table 2: Optional Tables for County Data
-Manager</strong></h4>
-<table style="width:99%;">
-<colgroup>
-<col width="16%" />
-<col width="28%" />
-<col width="53%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Menu</th>
-<th>Table</th>
-<th>Adaptation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Starts</strong></td>
-<td><code>startsHourFraction</code></td>
-<td>Filter by <code>dayID</code> and <code>hourID</code></td>
-</tr>
-<tr class="even">
-<td><strong>Starts</strong></td>
-<td><code>starts</code></td>
-<td>Filter by <code>yearID</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Starts</strong></td>
-<td><code>startsPerDay</code></td>
-<td>Filter by <code>dayID</code></td>
-</tr>
-<tr class="even">
-<td><strong>Starts</strong></td>
-<td><code>StartsPerDayPerVehicle</code></td>
-<td>Filter by <code>dayID</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Starts</strong></td>
-<td><code>startsMonthAdjust</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="even">
-<td><strong>Starts</strong></td>
-<td><code>startsAgeAdjustment</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="odd">
-<td><strong>Starts</strong></td>
-<td><code>startsOpModeDistribution</code></td>
-<td>Filter by <code>opModeID</code>, <code>dayID</code>,
-<code>hourID</code></td>
-</tr>
-<tr class="even">
-<td><strong>Hotelling</strong></td>
-<td><code>hotellingActivityDistribution</code></td>
-<td>Filter by <code>zoneID</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Hotelling</strong></td>
-<td><code>hotellingHours</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="even">
-<td><strong>Hotelling</strong></td>
-<td><code>hotellingHourFraction</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="odd">
-<td><strong>Hotelling</strong></td>
-<td><code>hotellingAgeFraction</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="even">
-<td><strong>Hotelling</strong></td>
-<td><code>hotellingMonthAdjust</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="odd">
-<td><strong>Idle</strong></td>
-<td><code>totalIdleFraction</code></td>
-<td>Filter by <code>idleRegionID</code>, <code>countyTypeID</code>,
-<code>monthID</code>, <code>dayID</code></td>
-</tr>
-<tr class="even">
-<td>Idle</td>
-<td><code>idleModelYearGrouping</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="odd">
-<td>Idle</td>
-<td><code>idleMonthAdjust</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="even">
-<td><strong>Idle</strong></td>
-<td><code>idleDayAdjust</code></td>
-<td>Untouched</td>
-</tr>
-<tr class="odd">
-<td><strong>Retrofit Data</strong></td>
-<td><code>onRoadRetrofit</code></td>
-<td>Untouched</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="table-3-generic-tables-to-be-updated" class="section level4">
-<h4>Table 3: Generic Tables to be Updated</h4>
-<table style="width:99%;">
-<caption>Adaptations of Note</caption>
-<colgroup>
-<col width="20%" />
-<col width="32%" />
-<col width="46%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Menu</th>
-<th>Table</th>
-<th>Adaptation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Generic</td>
-<td><code>year</code></td>
-<td>Filter by <code>yearID</code></td>
-</tr>
-<tr class="even">
-<td>Generic</td>
-<td><code>county</code></td>
-<td>Filter by <code>countyID</code></td>
-</tr>
-<tr class="odd">
-<td>Generic</td>
-<td><code>state</code></td>
-<td>Filter by <code>stateID</code></td>
-</tr>
-<tr class="even">
-<td>Generic</td>
-<td><code>idleRegion</code></td>
-<td>Filter by <code>idleRegionID</code></td>
-</tr>
-<tr class="odd">
-<td>Generic</td>
-<td><code>zone</code></td>
-<td>Filter by <code>countyID</code></td>
-</tr>
-<tr class="even">
-<td>Generic</td>
-<td><code>zoneRoadType</code></td>
-<td>Filter by <code>zoneID</code></td>
-</tr>
-<tr class="odd">
-<td>Generic</td>
-<td><code>regionCounty</code></td>
-<td>Filter by <code>countyID</code>, <code>fuelYearID</code></td>
-</tr>
-<tr class="even">
-<td>Generic</td>
-<td><code>pollutantProcessAssoc</code></td>
-<td>Filter by <code>pollutantID</code></td>
-</tr>
-<tr class="odd">
-<td>Generic</td>
-<td><code>opModePolProcAssoc</code></td>
-<td>Filter by <code>polProcessID</code></td>
-</tr>
-</tbody>
-</table>
-<p>Several of the table adaptations outlined in <strong>Table 1</strong>
-deserve extra attention, as they could not be handled just by filtering,
-for example.</p>
-</div>
-<div id="issue-1-vmt-data" class="section level4">
-<h4><strong>Issue 1: VMT data</strong></h4>
-<p>A <code>custom input database</code> can only have 1 of these four
-VMT tables: <code>sourcetypeyearvmt,</code> <code>hpmsvtypeyear,</code>
-<code>sourcetypedayvmt</code>, or <code>hpmsvtypeday</code>. If a
-year-level table <code>sourcetypeyearvmt</code> or
-<code>hpmsvtypeyear</code> is chosen, then other year-relevant VMT
-tables can be uploaded, namely, <code>monthVMTFraction</code>,
-<code>dayVMTFraction</code>, and <code>hourVMTFraction</code>. However,
-if day-level table <code>sourcetypedayvmt</code> or
-<code>hpmsvtypeday</code> is chosen, then other day-relevant VMT tables
-can be uploaded, namely <code>hourVMTFraction</code>.</p>
-</div>
-<div id="issue-2-population-projection" class="section level4">
-<h4><strong>Issue 2: Population Projection</strong></h4>
-<p>Some tables required adjustments using population projections,
-discussed further in <strong>Item 3.</strong> To do so, we assembled a
-county dataset from 1990 to 2060 of population projections, listed in
-<code>catr::projections</code>. We rely on the following data:</p>
-<ul>
-<li><p>For the years 1990 to 2020, we use county-level estimates for
-every US county, sourced from the National Historical Geographic
-Information Systems’ IPUMS database, which records various census data
-historically over time. We use decennial census estimates for 1990,
-2000, 2010, and 2020, and fill in missing years 2008-2019 using American
-Community Survey 5-year average estimates (ACS-5). For example, 2008 is
-represented by 2006-2010, 2009 is represented by 2007-2011,
-etc.</p></li>
-<li><p>For the years 2021 to 2060, we use county-level population
-projections developed by Matt Hauer (2019) and published in <em>Nature:
-Scientific Data</em>. Hauer outlines 5 potential Shared Socioeconomic
-Pathways (SSPs) as population change scenarios for every county between
-2015 and 2100, each depicting certain population change patterns
-depending on broader national socioeconomic conditions. These senarios
-include “Sustainability”, “Middle of the Road”, “Regional Equity”,
-“Inequality”, and “Fossil-Fuel Development”. To be conservative, we use
-their population projections for a “Middle of the Road” scenario (SSP
-#2).</p>
-<ul>
-<li><p><strong>Paper Citation:</strong> Hauer, M. Population projections
-for U.S. counties by age, sex, and race controlled to shared
-socioeconomic pathway. <em>Sci Data</em> <strong>6</strong>, 190005
-(2019). <a href="https://doi.org/10.1038/sdata.2019.5" class="uri">https://doi.org/10.1038/sdata.2019.5</a></p></li>
-<li><p><strong>Data set citation</strong>: Hauer, M., and Center for
-International Earth Science Information Network (CIESIN), Columbia
-University. 2021. Georeferenced U.S. County-Level Population
-Projections, Total and by Sex, Race and Age, Based on the SSPs,
-2020-2100. Palisades, NY: NASA Socioeconomic Data and Applications
-Center (SEDAC). <a href="https://doi.org/10.7927/dv72-s254." class="uri">https://doi.org/10.7927/dv72-s254.</a></p></li>
-</ul></li>
-<li><p>Any gaps (eg. 1991 to 1999) are filled in using linear
-interpolation between available data for each specific county over time.
-(The American Community Survey did not begin until 2006.)</p></li>
-<li><p>Our final population projections dataset is built into the
-<code>catr</code> package under <code>catr::projections</code>, a
-347,985 row dataset with 5 variables including the county
-<code>geoid</code>, <code>year</code>, estimated
-<code>pop</code>ulation, <code>total</code> national population
-projected in that year, and the <code>fraction</code> represented by the
-county <code>pop</code> divided by the national <code>total</code>
-population. See <strong>Figure 1</strong> for an example of these
-population projections.</p></li>
-</ul>
-<div class="float">
-<img src="data:image/png;base64,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" alt="Figure 1: Population Projections in catr::projections" />
-<div class="figcaption"><strong>Figure 1:</strong> Population
-Projections in <code>catr::projections</code></div>
-</div>
-</div>
-<div id="issue-3-population-weighting-and-linear-interpolation" class="section level4">
-<h4><strong>Issue 3</strong>: Population Weighting and Linear
-Interpolation</h4>
-<p>In several cases, default input tables contain nation-level estimates
-for the year <code>2020</code>. Examples include
-<code>sourceTypeYear</code>, which measures
-<code>sourceTypePopulation</code> by vehicle type, and
-<code>HPMSVtypeYear</code>, which measures VMT by vehicle types. To
-adapt these values to the county level, we keep that same split of the
-stratifying variable (<code>sourcetypes)</code> (eg. 20% cars, 10%
-buses), but re-weight the data using the ratio of county population
-vs. national population projections (see <strong>Issue 2</strong>), for
-any year between 1990 and 2060.</p>
-<p><strong>Example:</strong> Building a Custom
-<code>sourceTypeYear</code> Table using Population Projections</p>
-<ul>
-<li><code>sourceTypeYear</code><strong>:</strong> In the
-<code>default input database</code>, <code>sourceTypeYear</code> is
-recorded at the <code>nation</code> level for the year
-<code>2020</code>, recording the number of vehicles
-(<code>sourceTypePopulation</code>) per <code>sourceTypeID</code>. But,
-we down-weight the metric (<code>sourceTypePopulation</code>) for each
-level of the stratifying variable (each <code>sourceTypeID</code>) by
-multiplying it by the ratio of <em>county population vs. national
-population.</em> This estimates what a true vehicle population might
-look like in the county, supposing that the number of vehicles is
-related to population. Naturally, this is an imperfect estimate, but it
-provides much more realistic values for
-<code>sourceTypePopulation</code> than otherwise available.</li>
-</ul>
-</div>
-<div id="issue-4-fuel-inputs" class="section level4">
-<h4><strong>Issue 4</strong>: <strong>Fuel Inputs</strong></h4>
-<p>According to recent EPA guidance, because fuel properties can be
-quite variable, the EPA does not consider single or yearly station
-samples adequate for substitution. In other words, just don’t touch
-FuelFormulations table, and take all the contents of the fuel supply
-table. Read more in <a href="https://www.epa.gov/sites/default/files/2020-11/documents/420b20052.pdf"><strong>Section
-4.8.1 Fuel Formulation and Fuel Supply Guidance (2020).</strong></a></p>
-</div>
-</div>
-</div>
-<div id="section" class="section level2">
-<h2></h2>
-</div>
-<div id="how-does-catr-write-runspecs-and-parameters" class="section level2">
-<h2>4. How does <code>catr</code> write Runspecs and Parameters?</h2>
-<div id="how-does-catr-write-runspec-files" class="section level3">
-<h3>4.1 How does <code>catr</code> write <code>runspec</code>
-files?</h3>
-<p><code>moves_anywhere</code> uses the <code>catr</code> package and
-its function <code>custom_rs()</code> to write runspec.xml files, based
-off a template stored in <code>catr::rs_template</code>. It
-programmatically replaces runspec contents, according to several
-parameters. <a href="https://github.com/Gao-Labs/moves_anywhere/blob/main/catr/R/custom_rs.R">See
-<code>catr/R/custom_rs.R</code> for a detailed explanation and source
-code</a>.</p>
-<p>To write a runspec, you need your…</p>
-<ul>
-<li><p><code>.geoid</code> (eg. <code>&quot;36109&quot;</code>) - geographic area
-of analysis, using US FIPS codes.</p></li>
-<li><p><code>.year</code> (eg. <code>2020</code>) - year of
-analysis</p></li>
-<li><p><code>.level</code> (eg. <code>&quot;county&quot;</code>,
-<code>&quot;state&quot;</code>) - level of analysis</p></li>
-<li><p><code>.default</code> (eg. FALSE) - is it a default run or a
-custom run? (ie. county data manager style)</p></li>
-<li><p><code>.path</code> output path for your runspec</p></li>
-<li><p><code>.rate</code> (eg. FALSE) - is it an inventory mode run
-(<code>FALSE</code>) or an emissions rates mode run
-(<code>TRUE</code>).</p></li>
-<li><p><code>.geoaggregation</code> (eg. <code>&quot;county&quot;</code>,
-<code>&quot;link&quot;</code>, <code>&quot;state&quot;</code>) should your results be
-aggregated/disaggregated to a different geographic level
-afterwards?</p></li>
-<li><p><code>.timeaggregation</code> (eg. <code>&quot;year&quot;</code>,
-<code>&quot;hour&quot;</code>) should your results be aggregated/disaggregated to
-a different temporal level?</p></li>
-</ul>
-</div>
-<div id="how-does-catr-write-parameters.json-files" class="section level3">
-<h3>4.2 How does <code>catr</code> write <code>parameters.json</code>
-files?</h3>
-<p><code>moves_anywhere</code> can write a <code>parameters.json</code>
-file from any <code>runspec</code> file, plus a few optional values,
-using <code>catr</code> package and its function
-<code>rs_to_parameters()</code>.</p>
-</div>
-<div id="section-1" class="section level3">
-<h3></h3>
-</div>
 </div>
 </div>
 
