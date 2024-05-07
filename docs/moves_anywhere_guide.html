@@ -482,41 +482,48 @@ input database</li>
 </div>
 <div id="custom-input-tables-required-by-moves" class="section level2">
 <h2><code>custom input tables</code> required by MOVES</h2>
-<p>There are XX total custom input tables required by MOVES. This
-includes YY user-supplied tables, for which there are no defaults, and
-ZZ optional user-supplied tables, for which there are defaults. One of
-the key challenges of using MOVES is that unless someone crafts all YY
-user-supplied tables, MOVES <u><strong>refuses</strong></u> to perform a
-<code>custom run</code>. This was extremely difficult as a user and
-developer working with MOVES.</p>
-<p>So, the first step of the <code>moves_anywhere</code> team was to
-develop a strategy to populate these required
-<code>custom input tables</code> with ‘good-enough’ values, by borrowing
-relevant values from the default database and/or transforming them where
-needed. This was to make it possible that <em>even if</em> you don’t
-have <strong>all</strong> the possible input data about your scenario,
-you can still run MOVES. We refer to this process as the
-<code>adapt()</code> function in the <code>catr</code> package, which
-adapts the <code>default input database</code> and any supplied
-<code>custom input tables</code> into a fully operational
+<p>There are up to 39~41 total custom input tables that must be edited
+to use <code>moves_anywhere</code> with MOVES 4.0. This includes 13~15
+<u><strong>required</strong></u> <strong>user-supplied tables</strong>,
+which users must supply in the traditional County Data Manager user
+interface (<strong>Table 1</strong>), and 17
+<u><strong>optional</strong></u> <strong>user-supplied tables</strong>,
+for which MOVES typically automatically sources defaults if not supplied
+(<strong>Table 2</strong>). Further, <strong>9 background
+tables</strong> must be updated to reflect the geography, time frame,
+regions, etc. on the run (<strong>Table 3</strong>). Any of the
+remaining ~200 tables in the MOVES default input database can also be
+updated. See <a href="#id_0">here</a> for a full list of all MOVES
+database tables.</p>
+<p>One of the key challenges of using MOVES is that unless someone
+crafts all <strong>required user-supplied tables</strong>, MOVES
+<u><strong>refuses</strong></u> to perform a <code>custom run</code>.
+This was extremely difficult as a user and developer working with MOVES,
+and was the motivation for creating the <code>adapt()</code>
+function.</p>
+<p><code>adapt()</code>: So, the first step of the
+<code>moves_anywhere</code> team was to develop a strategy to populate
+these required <code>custom input tables</code> with ‘good-enough’
+values, by borrowing relevant values from the default database and/or
+transforming them where needed. This was to make it possible that
+<em>even if</em> you don’t have <strong>all</strong> the possible input
+data about your scenario, you can still run MOVES. We refer to this
+process as the <code>adapt()</code> function in the <code>catr</code>
+package, which adapts the <code>default input database</code> and any
+supplied <code>custom input tables</code> into a fully operational
 <code>custom input database</code><em>.</em></p>
-<p><code>adapt()</code></p>
-<div id="user-supplied-tables-required-by-county-data-manager" class="section level3">
-<h3>[User-Supplied Tables Required by County Data Manager]</h3>
-<table>
-<caption><strong>Table: User Supplied Tables Required by County Data
-Manager</strong></caption>
+<div id="table-1-user-supplied-tables-required-by-county-data-manager" class="section level4">
+<h4>Table 1: User-Supplied Tables Required by County Data Manager</h4>
+<table style="width:100%;">
 <colgroup>
-<col width="22%" />
-<col width="22%" />
-<col width="19%" />
-<col width="35%" />
+<col width="9%" />
+<col width="17%" />
+<col width="72%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Menu</th>
 <th>Table</th>
-<th>Notes</th>
 <th>Adaptation</th>
 </tr>
 </thead>
@@ -524,173 +531,322 @@ Manager</strong></caption>
 <tr class="odd">
 <td><strong>Vehicle Type VMT</strong></td>
 <td><code>monthVMTFraction</code></td>
-<td>If VMT is <strong>Annual</strong></td>
-<td></td>
+<td>Used if VMT is <strong>Annual</strong></td>
 </tr>
 <tr class="even">
 <td><strong>Vehicle Type VMT</strong></td>
 <td><code>dayVMTFraction</code></td>
-<td>If VMT is <strong>Annual</strong></td>
-<td></td>
+<td>Used if VMT is <strong>Annual</strong></td>
 </tr>
 <tr class="odd">
 <td><strong>Vehicle Type VMT</strong></td>
 <td><code>hourVMTFraction</code></td>
-<td>If VMT is <strong>Annual</strong></td>
-<td></td>
+<td>Used if VMT is <strong>Annual</strong> or
+<strong>Daily</strong></td>
 </tr>
 <tr class="even">
 <td><strong>Vehicle Type VMT</strong></td>
 <td><code>SourceTypeYearVMT</code> OR <code>HPMSVtypeYear</code></td>
-<td>If VMT is <strong>Annual</strong></td>
-<td></td>
+<td>Used if VMT is <strong>Annual.</strong> If no VMT tables provided,
+existing <code>HPMSVtypeYear</code> table is population re-weighted and
+used.</td>
 </tr>
 <tr class="odd">
 <td><strong>Vehicle Type VMT</strong></td>
-<td><code>hourVMTFraction</code></td>
-<td>If VMT is <strong>Daily</strong></td>
-<td></td>
+<td><code>SourceTypeDayVMT</code> OR
+<code>HPMSVTypeDay</code>[^moves_anywhere_guide-1]</td>
+<td>Used if VMT is <strong>Daily.</strong> If no VMT tables provided,
+existing <code>HPMStypeYear</code> table is population re-weighted and
+used.</td>
 </tr>
 <tr class="even">
-<td><strong>Vehicle Type VMT</strong></td>
-<td><code>SourceTypeDayVMT</code> OR <code>HPMSVTypeDay</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
-<td>If VMT is <strong>Daily</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
 <td><strong>Source Type Population</strong></td>
 <td><code>sourceTypeYear</code></td>
-<td></td>
-<td></td>
+<td>Using national-level default <code>sourceTypeYear</code>,
+interpolated and population-weighted.[^moves_anywhere_guide-2]</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Fuel</strong></td>
 <td><code>AVFT</code></td>
-<td></td>
-<td></td>
+<td>Using <a href="https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md#samplevehiclepopulation"><code>samplevehiclepopulation</code></a>,
+group by <code>sourceTypeID</code>, <code>modelYearID</code>,
+<code>fuelTypeID</code>, and <code>engTechID</code> and sum
+<code>stmyFraction</code> to make <code>fuelEngFraction</code>.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Fuel</strong></td>
 <td><code>FuelSupply</code></td>
-<td></td>
-<td></td>
+<td>Filter by <code>fuelRegionID</code>, <code>fuelYearID</code>,
+<code>monthGroupID</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Fuel</strong></td>
 <td><code>FuelUsageFraction</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Fuel</strong></td>
-<td><code>FuelFormulation</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
-<td>(<em>Avoid</em>)</td>
-<td></td>
+<td>Filter by <code>countyID</code>, <code>fuelYearID</code></td>
 </tr>
 <tr class="even">
+<td><strong>Fuel</strong></td>
+<td><code>FuelFormulation</code>[^moves_anywhere_guide-3]</td>
+<td><p>Untouched</p>
+<p>(<em>Avoid Tinkering</em>)</p></td>
+</tr>
+<tr class="odd">
 <td><strong>Average Speed Distribution</strong></td>
 <td><code>avgSpeedDistribution</code></td>
-<td></td>
-<td></td>
+<td>Filter by <code>hourDayID</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Age Distribution</strong></td>
 <td><code>sourceTypeAgeDistribution</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Road Type Distribution</strong></td>
-<td><code>roadTypeDistribution</code></td>
-<td></td>
-<td></td>
+<td>Filter by <code>yearID</code></td>
 </tr>
 <tr class="odd">
-<td><strong>I/M Programs</strong></td>
-<td><code>IMCoverage</code></td>
-<td></td>
-<td></td>
+<td><strong>Road Type Distribution</strong></td>
+<td><code>roadTypeDistribution</code></td>
+<td>Untouched</td>
 </tr>
 <tr class="even">
+<td><strong>I/M Programs</strong></td>
+<td><code>IMCoverage</code></td>
+<td>Filter by <code>stateID</code>, <code>countyID</code>,
+<code>yearID</code></td>
+</tr>
+<tr class="odd">
 <td><strong>Meteorology Data</strong></td>
 <td><code>zoneMonthHour</code></td>
-<td></td>
-<td></td>
+<td>Filter by <code>zoneID</code>, <code>monthID</code>,
+<code>hourID</code></td>
 </tr>
 </tbody>
 </table>
-<p><em>Note:</em> According to recent EPA guidance, because fuel
-properties can be quite variable, the EPA does not consider single or
-yearly station samples adequate for substitution. In other words, just
-don’t touch this table, and take all the contents of the fuel supply
-table. Read more in <a href="https://www.epa.gov/sites/default/files/2020-11/documents/420b20052.pdf"><strong>Section
+<p><strong>Table Notes:</strong></p>
+<p><strong>Item 1 - VMT data</strong>: A
+<code>custom input database</code> can only have 1 of these four VMT
+tables: <code>sourcetypeyearvmt,</code> <code>hpmsvtypeyear,</code>
+<code>sourcetypedayvmt</code>, or <code>hpmsvtypeday</code>. If a
+year-level table <code>sourcetypeyearvmt</code> or
+<code>hpmsvtypeyear</code> is chosen, then other year-relevant VMT
+tables can be uploaded, namely, <code>monthVMTFraction</code>,
+<code>dayVMTFraction</code>, and <code>hourVMTFraction</code>. However,
+if day-level table <code>sourcetypedayvmt</code> or
+<code>hpmsvtypeday</code> is chosen, then other day-relevant VMT tables
+can be uploaded, namely <code>hourVMTFraction</code>.</p>
+<p><strong>Item 2</strong> <strong>- Population Re-Weighting:</strong>
+In several cases, default input tables contain nation-level estimates
+for the year <code>2020</code>. Examples include
+<code>sourceTypeYear</code>, which measures
+<code>sourceTypePopulation</code> by vehicle type, and
+<code>HPMSVtypeYear</code>, which measures VMT by vehicle types. To
+adapt these values to the county level, we keep that same split of the
+stratifying variable (<code>sourcetypes)</code> (eg. 20% cars, 10%
+buses), but re-weight the data using the ratio of county population
+vs. national population projections, for any year between 1990 and
+2060.</p>
+<p><strong>Example:</strong> Building a Custom
+<code>sourceTypeYear</code> Table using Population Projections</p>
+<ul>
+<li><code>sourceTypeYear</code><strong>:</strong> In the
+<code>default input database</code>, <code>sourceTypeYear</code> is
+recorded at the <code>nation</code> level for the year
+<code>2020</code>, recording the number of vehicles
+(<code>sourceTypePopulation</code>) per <code>sourceTypeID</code>. But,
+we down-weight the metric (<code>sourceTypePopulation</code>) for each
+level of the stratifying variable (each <code>sourceTypeID</code>) by
+multiplying it by the ratio of <em>county population vs. national
+population.</em> This estimates what a true vehicle population might
+look like in the county, supposing that the number of vehicles is
+related to population. Naturally, this is an imperfect estimate, but it
+provides much more realistic values for
+<code>sourceTypePopulation</code> than otherwise available.</li>
+</ul>
+<p><strong>Item 3</strong> - <strong>Fuel Inputs:</strong> According to
+recent EPA guidance, because fuel properties can be quite variable, the
+EPA does not consider single or yearly station samples adequate for
+substitution. In other words, just don’t touch this table, and take all
+the contents of the fuel supply table. Read more in <a href="https://www.epa.gov/sites/default/files/2020-11/documents/420b20052.pdf"><strong>Section
 4.8.1 Fuel Formulation and Fuel Supply Guidance (2020).</strong></a></p>
+</div>
+<div id="table-2-optional-tables-for-county-data-manager" class="section level4">
+<h4><strong>Table 2: Optional Tables for County Data
+Manager</strong></h4>
+<table style="width:99%;">
+<colgroup>
+<col width="16%" />
+<col width="28%" />
+<col width="53%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Menu</th>
+<th>Table</th>
+<th>Adaptation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Starts</strong></td>
+<td><code>startsHourFraction</code></td>
+<td>Filter by <code>dayID</code> and <code>hourID</code></td>
+</tr>
+<tr class="even">
+<td><strong>Starts</strong></td>
+<td><code>starts</code></td>
+<td>Filter by <code>yearID</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Starts</strong></td>
+<td><code>startsPerDay</code></td>
+<td>Filter by <code>dayID</code></td>
+</tr>
+<tr class="even">
+<td><strong>Starts</strong></td>
+<td><code>StartsPerDayPerVehicle</code></td>
+<td>Filter by <code>dayID</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Starts</strong></td>
+<td><code>startsMonthAdjust</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="even">
+<td><strong>Starts</strong></td>
+<td><code>startsAgeAdjustment</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="odd">
+<td><strong>Starts</strong></td>
+<td><code>startsOpModeDistribution</code></td>
+<td>Filter by <code>opModeID</code>, <code>dayID</code>,
+<code>hourID</code></td>
+</tr>
+<tr class="even">
+<td><strong>Hotelling</strong></td>
+<td><code>hotellingActivityDistribution</code></td>
+<td>Filter by <code>zoneID</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Hotelling</strong></td>
+<td><code>hotellingHours</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="even">
+<td><strong>Hotelling</strong></td>
+<td><code>hotellingHourFraction</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="odd">
+<td><strong>Hotelling</strong></td>
+<td><code>hotellingAgeFraction</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="even">
+<td><strong>Hotelling</strong></td>
+<td><code>hotellingMonthAdjust</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="odd">
+<td><strong>Idle</strong></td>
+<td><code>totalIdleFraction</code></td>
+<td>Filter by <code>idleRegionID</code>, <code>countyTypeID</code>,
+<code>monthID</code>, <code>dayID</code></td>
+</tr>
+<tr class="even">
+<td>Idle</td>
+<td><code>idleModelYearGrouping</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="odd">
+<td>Idle</td>
+<td><code>idleMonthAdjust</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="even">
+<td><strong>Idle</strong></td>
+<td><code>idleDayAdjust</code></td>
+<td>Untouched</td>
+</tr>
+<tr class="odd">
+<td><strong>Retrofit Data</strong></td>
+<td><code>onRoadRetrofit</code></td>
+<td>Untouched</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-3-generic-tables-to-be-updated" class="section level4">
+<h4>Table 3: Generic Tables to be Updated</h4>
+<table style="width:99%;">
+<colgroup>
+<col width="19%" />
+<col width="33%" />
+<col width="45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Menu</th>
+<th>Table</th>
+<th>Adaptation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Generic</td>
+<td><code>year</code></td>
+<td>Filter by <code>yearID</code></td>
+</tr>
+<tr class="even">
+<td>Generic</td>
+<td><code>county</code></td>
+<td>Filter by <code>countyID</code></td>
+</tr>
+<tr class="odd">
+<td>Generic</td>
+<td><code>state</code></td>
+<td>Filter by <code>stateID</code></td>
+</tr>
+<tr class="even">
+<td>Generic</td>
+<td><code>idleRegion</code></td>
+<td>Filter by <code>idleRegionID</code></td>
+</tr>
+<tr class="odd">
+<td>Generic</td>
+<td><code>zone</code></td>
+<td>Filter by <code>countyID</code></td>
+</tr>
+<tr class="even">
+<td>Generic</td>
+<td><code>zoneRoadType</code></td>
+<td>Filter by <code>zoneID</code></td>
+</tr>
+<tr class="odd">
+<td>Generic</td>
+<td><code>regionCounty</code></td>
+<td>Filter by <code>countyID</code>, <code>fuelYearID</code></td>
+</tr>
+<tr class="even">
+<td>Generic</td>
+<td><code>pollutantProcessAssoc</code></td>
+<td>Filter by <code>pollutantID</code></td>
+</tr>
+<tr class="odd">
+<td>Generic</td>
+<td><code>opModePolProcAssoc</code></td>
+<td>Filter by <code>polProcessID</code></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="optional-tables-for-county-data-manager" class="section level3">
 <h3>[Optional Tables for County Data Manager]</h3>
-<ul>
-<li><p><strong>Starts</strong></p>
-<ul>
-<li><p>startsHourFraction</p></li>
-<li><p>starts</p></li>
-<li><p>startsPerDay</p></li>
-<li><p>StartsPerDayPerVehicle</p></li>
-<li><p>startsMonthAdjust: reused as-is from
-<code>defaults</code>.</p></li>
-<li><p>startsAgeAdjustment: reused as-is from
-<code>defaults</code>.</p></li>
-<li><p>startsOpModeDistribution: reused as-is from
-<code>defaults</code>.</p></li>
-</ul></li>
-<li><p><strong>Hotelling</strong></p>
-<ul>
-<li><p>hotellingActivityDistribution: filtered by
-<code>zoneID</code>.</p></li>
-<li><p>hotellingHours: reused as-is from <code>defaults</code></p></li>
-<li><p>hotellingHourFraction: reused as-is from
-<code>defaults</code></p></li>
-<li><p>hotellingAgeFraction: reused as-is from
-<code>defaults</code></p></li>
-<li><p>hotellingMonthAdjust: reused as-is from
-<code>defaults</code></p></li>
-</ul></li>
-<li><p><strong>Idle</strong></p>
-<ul>
-<li><p>totalIdleFraction</p></li>
-<li><p>idleModelYearGrouping</p></li>
-<li><p>idleMonthAdjust</p></li>
-<li><p>idleDayAdjust</p></li>
-</ul></li>
-<li><p><strong>Retrofit Data</strong></p>
-<ul>
-<li>onRoadRetrofit</li>
-</ul></li>
-</ul>
 </div>
 <div id="optional-generic-tables-for-county-data-manager" class="section level3">
 <h3>[Optional Generic Tables for County Data Manager]</h3>
 <ul>
-<li>Any of the remaining ~200 tables in the MOVES default input database
-can also be updated. See <a href="https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md">here</a>
-for a full list of all MOVES database tables.</li>
+<li></li>
 </ul>
 </div>
 </div>
-</div>
-<div class="footnotes footnotes-end-of-document">
-<hr />
-<ol>
-<li id="fn1"><p>A <code>custom input database</code> can only have 1 of
-these four VMT tables: <code>sourcetypeyearvmt,</code>
-<code>sourcetypedayvmt</code>, <code>hpmsvtypeyear,</code> or
-<code>hpmsvtypeday</code> can be uploaded at a time<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>According to recent EPA guidance, because fuel
-properties can be quite variable, the EPA does not consider single or
-yearly station samples adequate for substitution. In other words, just
-don’t touch this table, and take all the contents of the fuel supply
-table. Read more in <a href="https://www.epa.gov/sites/default/files/2020-11/documents/420b20052.pdf"><strong>Section
-4.8.1 Fuel Formulation and Fuel Supply Guidance (2020).</strong></a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
 
 
