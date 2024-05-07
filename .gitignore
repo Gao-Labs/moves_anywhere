@@ -16,6 +16,10 @@ image_upload_cloudsql/.Renvironcatcloud
 image_cloudproxy/.Renviron
 image_cloudproxy/.Renvironcatcloud
 image_cloudproxy/secret/runapikey.json
+runapikey.json
+image_cloudproxy/runapikey.json
+image_moves/runapikey.json
+image_rs/runapikey.json
 inputs/.Renviron
 demos/.Renviron
 demos/demo0/.Renviron

@@ -128,3 +128,27 @@ workflow_upload --> create_job --> container_upload
 container_upload --> add_table
 add_table --> cloudsql 
 ```
+
+## 3. Frequent Links
+
+These links may be helpful to you as you check in on the status of your uploads and jobs, etc.
+
+-   [Check Bucket Status](https://console.cloud.google.com/storage/browser?forceOnBucketsSortingFiltering=true&authuser=1&hl=en&project=moves-runs&supportedpurview=project&prefix=&forceOnObjectsSortingFiltering=false)
+
+-   [Check MOVES Workflow Status Here:](https://console.cloud.google.com/workflows/workflow/us-central1/run-moves/executions?authuser=1&hl=en&project=moves-runs&supportedpurview=project)
+
+-   [Check Jobs Status Here](https://console.cloud.google.com/run/jobs?authuser=1&project=moves-runs&supportedpurview=project)
+
+-   [Check Upload Workflow Status Here](https://console.cloud.google.com/workflows/workflow/us-central1/upload-data/executions?authuser=1&hl=en&project=moves-runs&supportedpurview=project)
+
+-   [Check CAT Cloud Server Here](https://console.cloud.google.com/sql/instances/catcloud/overview?authuser=1&hl=en&project=moves-runs)
+
+-   [Check Permissions Here](https://console.cloud.google.com/iam-admin/iam?authuser=1&hl=en&project=moves-runs)
+
+-   [Check Billing Here](https://console.cloud.google.com/billing/01C33B-2EA889-CDC484?authuser=1&hl=en&project=moves-runs)
+
+-   [Check CATSERVER Read-Only Credentials for `granddata` here.](https://docs.google.com/document/d/1La8vmQ5KcUBRjdwVW7C24HholWNq_YXJPg5ZiAad6X4/edit?usp=sharing) (Need permission)
+
+-   [Check API Key here](https://drive.google.com/file/d/1i09dCu8aC6yEuxd2UVQZcRddRHrgkUKc/view?usp=sharing). (Need permission)
+
+-   [Check CATCLOUD Read-Write Credentials for `orderdata` here.](https://docs.google.com/document/d/1ZA-Q5pPdhPyOwZrjfHl99TfyRz67P2BN245LV4TydvQ/edit?usp=sharing) (Need permission)
