@@ -240,6 +240,25 @@ db %>%
 
 dbDisconnect(db); remove(db)
 
+## pollutantprocessassoc ################################
+# we need this table in `catr` so that we can find which pollutants and processes are required together.
+library(DBI)
+library(dplyr)
+setwd(rstudioapi::getActiveProject())
+db = DBI::dbConnect(drv = RMariaDB::MariaDB(), user = "moves", password = "moves", host = "localhost", port = 1235, dbname = 'movesdb20240104')
+
+tab_pollutantprocessassoc = db %>% tbl("pollutantprocessassoc") %>% collect()
+save(tab_pollutantprocessassoc, file = "catr/data/tab_pollutantprocessassoc.rda")
+
+tab_pollutant = db %>% tbl("pollutant") %>% collect()
+save(tab_pollutantprocessassoc, file = "catr/data/tab_pollutant.rda")
+
+tab_emissionprocess = db %>% tbl("emissionprocess") %>% collect()
+save(tab_emissionprocess, file = "catr/data/tab_emissionprocess.rda")
+
+
+dbDisconnect(db)
+
 
 # END #########################################
 
