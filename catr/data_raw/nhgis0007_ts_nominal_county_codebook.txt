@@ -1,0 +1,253 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0007_ts_nominal_county'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Geographic Integration Methods
+    - Source Data
+    - Citation and Use
+ 
+Detailed notes on time series design and comparability are available at: 
+    https://www.nhgis.org/sites/www.nhgis.org/files/nhgis_time_series_tables.pdf 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Time series layout:     Time varies by column
+Geographic level:       County (by State)
+Geographic integration: Nominal
+Measurement times:      1990, 2000, 2010, 2006-2010, 2007-2011, 2008-2012, 2009-2013, 2010-2014, 2011-2015, 2012-2016, 2013-2017, 2014-2018, 2015-2019, 2020, 2016-2020, 2017-2021, 2018-2022
+ 
+Tables:
+ 
+1. Total Population
+   Selected year(s): 1990, 2000, 2010, 2006-2010, 2007-2011, 2008-2012, 2009-2013, 2010-2014, 2011-2015, 2012-2016, 2013-2017, 2014-2018, 2015-2019, 2020, 2016-2020, 2017-2021, 2018-2022
+   Code: AV0
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        STATE:       NHGIS Integrated State Name
+        STATEFP:     FIPS State Code
+        STATENH:     NHGIS Integrated State Code
+        COUNTY:      NHGIS Integrated County Name
+        COUNTYFP:    FIPS County Code
+        COUNTYNH:    NHGIS Integrated County Code
+ 
+Table 1: (AV0) Total Population
+    Time series AA: Persons: Total
+        AV0AA1990:   1990: Persons: Total
+        AV0AA2000:   2000: Persons: Total
+        AV0AA2010:   2010: Persons: Total
+        AV0AA105:    2006-2010: Persons: Total
+        AV0AA105M:   Margin of error: 2006-2010: Persons: Total
+        AV0AA115:    2007-2011: Persons: Total
+        AV0AA115M:   Margin of error: 2007-2011: Persons: Total
+        AV0AA125:    2008-2012: Persons: Total
+        AV0AA125M:   Margin of error: 2008-2012: Persons: Total
+        AV0AA135:    2009-2013: Persons: Total
+        AV0AA135M:   Margin of error: 2009-2013: Persons: Total
+        AV0AA145:    2010-2014: Persons: Total
+        AV0AA145M:   Margin of error: 2010-2014: Persons: Total
+        AV0AA155:    2011-2015: Persons: Total
+        AV0AA155M:   Margin of error: 2011-2015: Persons: Total
+        AV0AA165:    2012-2016: Persons: Total
+        AV0AA165M:   Margin of error: 2012-2016: Persons: Total
+        AV0AA175:    2013-2017: Persons: Total
+        AV0AA175M:   Margin of error: 2013-2017: Persons: Total
+        AV0AA185:    2014-2018: Persons: Total
+        AV0AA185M:   Margin of error: 2014-2018: Persons: Total
+        AV0AA195:    2015-2019: Persons: Total
+        AV0AA195M:   Margin of error: 2015-2019: Persons: Total
+        AV0AA2020:   2020: Persons: Total
+        AV0AA205:    2016-2020: Persons: Total
+        AV0AA205M:   Margin of error: 2016-2020: Persons: Total
+        AV0AA215:    2017-2021: Persons: Total
+        AV0AA215M:   Margin of error: 2017-2021: Persons: Total
+        AV0AA225:    2018-2022: Persons: Total
+        AV0AA225M:   Margin of error: 2018-2022: Persons: Total
+ 
+--------------------------------------------------------------------------------
+Geographic Integration Methods
+--------------------------------------------------------------------------------
+ 
+Nominal Integration:
+
+    Nominally integrated tables link geographic units across time according to
+    their names and codes, disregarding any changes in unit boundaries. The
+    identified geographic units match those from each census source, so the
+    spatial definitions and total number of units may vary from one time to
+    another (e.g., a city may annex land, a tract may be split in two, a new
+    county may be created, etc.). The tables include data for a particular
+    geographic unit only at times when the unit's name or code was in use,
+    resulting in truncated time series for some areas.
+    
+    Users should be cautious when interpreting changes in nominally integrated
+    time series because a single unit code may refer to distinctly different
+    areas at different times. If you are uncertain whether any boundaries
+    changed in your areas of interest, we recommend inspecting NHGIS GIS files
+    to confirm. (NHGIS supplies GIS boundary files for all units and years in
+    nominally integrated time series *except* 1970 places and county
+    subdivisions.)
+    
+    Alternatively, for some topics and time periods, NHGIS provides
+    "geographically standardized" time series, which provide data from multiple
+    times for a single census's geographic units (e.g., 2000 and 2010 data for
+    2010 census units). A disadvantage of standardized time series is that, in
+    areas where source units do not nest perfectly within a unit of the standard
+    year (e.g., where a source 2000 unit intersects multiple 2010 units), NHGIS
+    applies interpolation to standardize the data, a process which may
+    occasionally produce substantial errors.
+
+Complete documentation on time series integration methods is available at:
+    https://www.nhgis.org/documentation/time-series
+ 
+--------------------------------------------------------------------------------
+Source Data
+--------------------------------------------------------------------------------
+ 
+Additional documentation on NHGIS data sources is available at:
+    https://www.nhgis.org/documentation/tabular-data
+
+Table 1: (AV0) Total Population
+ 
+    Time series AA: Persons: Total
+        Year: 1990
+            Source dataset: 1990 Census: STF 1 - 100% Data
+                Source table: NP1. Persons
+                    Universe: Persons
+                        Variable: [ET1001] Total
+        Year: 2000
+            Source dataset: 2000 Census: SF 1a - 100% Data [Areas Larger Than Block Groups]
+                Source table: NP001A. Total Population
+                    Universe: Persons
+                        Variable: [FL5001] Total
+        Year: 2010
+            Source dataset: 2010 Census: SF 1a - P & H Tables [Blocks & Larger Areas]
+                Source table: P1. Total Population
+                    Universe: Total population
+                        Variable: [H7V001] Total
+        Year: 2006-2010
+            Source dataset: 2010 American Community Survey: 5-Year Data [2006-2010, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [JMA001] Total
+        Year: 2007-2011
+            Source dataset: 2011 American Community Survey: 5-Year Data [2007-2011, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [MNT001] Total
+        Year: 2008-2012
+            Source dataset: 2012 American Community Survey: 5-Year Data [2008-2012, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [QSP001] Total
+        Year: 2009-2013
+            Source dataset: 2013 American Community Survey: 5-Year Data [2009-2013, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [UEP001] Total
+        Year: 2010-2014
+            Source dataset: 2014 American Community Survey: 5-Year Data [2010-2014, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [ABA1001] Total
+        Year: 2011-2015
+            Source dataset: 2015 American Community Survey: 5-Year Data [2011-2015, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [ADKW001] Total
+        Year: 2012-2016
+            Source dataset: 2016 American Community Survey: 5-Year Data [2012-2016, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [AF2L001] Total
+        Year: 2013-2017
+            Source dataset: 2017 American Community Survey: 5-Year Data [2013-2017, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [AHY1001] Total
+        Year: 2014-2018
+            Source dataset: 2018 American Community Survey: 5-Year Data [2014-2018, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [AJWM001] Total
+        Year: 2015-2019
+            Source dataset: 2019 American Community Survey: 5-Year Data [2015-2019, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [ALUB001] Total
+        Year: 2020
+            Source dataset: 2020 Census: P.L. 94-171 Redistricting Data Summary File
+                Source table: P1. Race
+                    Universe: Total population
+                        Variable: [U7B001] Total
+        Year: 2016-2020
+            Source dataset: 2020 American Community Survey: 5-Year Data [2016-2020, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [AMPV001] Total
+        Year: 2017-2021
+            Source dataset: 2021 American Community Survey: 5-Year Data [2017-2021, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [AON4001] Total
+        Year: 2018-2022
+            Source dataset: 2022 American Community Survey: 5-Year Data [2018-2022, Block Groups & Larger Areas]
+                Source table: B01003. Total Population
+                    Universe: Total population
+                        Variable: [AQNF001] Total
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Steven Manson, Jonathan Schroeder, David Van Riper, Katherine Knowles, Tracy Kugler, Finn Roberts, and Steven Ruggles.
+        IPUMS National Historical Geographic Information System: Version 18.0 
+        [dataset]. Minneapolis, MN: IPUMS. 2023.
+        http://doi.org/10.18128/D050.V18.0
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

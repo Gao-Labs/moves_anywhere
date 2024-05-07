@@ -488,35 +488,44 @@ adapt = function(.runspec, .changes = NULL){
   }
   
   ### sourcetypeyearvmt #################################
+  # Note: if sourcetypedayvmt is provided, skip this one
   if(!"sourcetypeyearvmt" %in% .changed){
     # Query
     data = custom %>% tbl("sourcetypeyearvmt" ) %>% filter(yearID %in% !!.year) %>% collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypeyearvmt;")
+    # Only if sourcetypeyearvmt is NOT provided
+    if(!"sourcetypedayvmt" %in% .changed){
+      
     # Append
     DBI::dbWriteTable(conn = custom, name = "sourcetypeyearvmt" , value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "sourcetypeyearvmt", counter(data)))
+    }
     # Cleanup
     remove(data)
     
   }
-  
   ### sourcetypedayvmt ################################
-  if(!"sourcetypedayvmt" %in% .changed){ # added
+  # Note: if sourcetypeyearvmt is provided, skip this one
+  if(!"sourcetypedayvmt" %in% .changed ){ # added
+    
     # Query
     data = custom %>% tbl("sourcetypedayvmt") %>% filter(yearID %in% !!.year) %>% collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE sourcetypedayvmt;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "sourcetypedayvmt", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "sourcetypedayvmt", counter(data)))
+    # Only if sourcetypeyearvmt is NOT provided
+    if(!"sourcetypeyearvmt" %in% .changed){
+      # Append
+      DBI::dbWriteTable(conn = custom, name = "sourcetypedayvmt", value = data, overwrite = FALSE, append = TRUE)
+      # Message
+      cat(paste0("\n---adapted default table:   ", "sourcetypedayvmt", counter(data)))
+    }
     # Cleanup
     remove(data)
     
   }
-  
+
   ### monthvmtfraction #################################  
   if(!"monthvmtfraction" %in% .changed){
     # Query

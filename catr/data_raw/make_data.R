@@ -176,6 +176,23 @@ rs_template = xml2::read_xml("data_raw/rs_template.xml") %>% xml2::as_list()
 usethis::use_data(rs_template, overwrite = TRUE)
 #save(rs_template, file = "data/rs_template.rda")
 remove(rs_template)
+# this is an inventory mode
+
+## rs_template_inventory ############################################
+
+rs_template_inventory = xml2::read_xml("data_raw/rs_inventory.xml") %>% xml2::as_list()
+usethis::use_data(rs_template_inventory, overwrite = TRUE)
+remove(rs_template_inventory)
+
+
+## rs_template_rates  #############################################
+# rstudioapi::getActiveProject(getwd())
+# setwd("catr")
+# require(dplyr)
+# require(xml2)
+rs_template_rate = xml2::read_xml("data_raw/rs_rate.xml") %>% xml2::as_list()
+usethis::use_data(rs_template_rate, overwrite = TRUE)
+remove(rs_template_rate)
 
 
 ## demo #####################################################

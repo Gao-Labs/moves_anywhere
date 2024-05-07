@@ -13,7 +13,6 @@
 #' @importFrom stringr str_remove str_split 
 #' @importFrom utils data
 #' @import DBI
-#' @import RSQLite
 #' @import RMariaDB
 #' @export
 #' @author Tim Fraser, March 2023
@@ -21,16 +20,16 @@
 process_emissions = function(tab, .by, .geoid, .pollutant = NULL){
   # require(dplyr, warn.conflicts = FALSE)
   # require(DBI, warn.conflicts = FALSE)
-  # #require(RSQLite, warn.conflicts = FALSE)
   # require(RMariaDB, warn.conflicts = FALSE)
   # require(tidyr, warn.conflicts = FALSE)
   # require(stringr, warn.conflicts = FALSE)
   # #tab = q_e
-  # Get starter table queries for emissions and activity levels
   # Make type-specific filtering adjustments
-  data = tab %>% filter(roadtype != 1)  
+  # data = tab %>% filter(roadtype != 1)
   
-  #.pollutant = NULL
+  # Get starter table queries for emissions and activity levels
+  data = tab
+  
   # Filter to specific pollutant, if desired
   if(!is.null(.pollutant)){ data = data %>% filter(pollutant %in% !!.pollutant) }
   # Filter to specific geoid, if desired
@@ -42,18 +41,15 @@ process_emissions = function(tab, .by, .geoid, .pollutant = NULL){
     .mygeoid = as.integer(.geoid)
     data = data %>% filter(is.null(geoid)) %>% mutate(geoid = !!.mygeoid)}
   
+  # Get variable names....
   # Get categories matching your '.by' id
-  data("by", overwrite = TRUE, envir = environment())
-  cats =  by %>%  filter(id == !!.by) %>% with(term) %>% 
-    str_remove("overall") %>% str_split(pattern = ", ") %>%  unlist() %>%  na_if("") %>% .[!is.na(.)]
-  
+  cats = get_bycats(.by)
+  # Get pollutant, always present
   basic = "pollutant"
-  
   # Set unique ID variables
   ids = c("year", "geoid")
   # Get starter values for aggregation strata
   all = c(ids, basic, cats)
-
 
   # Aggregate Emissions
   data = data %>%

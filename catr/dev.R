@@ -9,6 +9,8 @@
 unloadNamespace(ns = "catr"); rm(list = ls())
 remove.packages("catr")
 # Set working directory to project directory
+# getwd()
+# setwd("../moves_anywhere/catr")
 setwd(rstudioapi::getActiveProject())
 # Zoom into catr directory
 setwd("./catr")
@@ -21,8 +23,12 @@ devtools::document()
 devtools::build(path = ".", pkg = getwd(), binary = FALSE, manual = TRUE, vignettes = FALSE)
 # Get package name
 package = "catr_0.1.0.tar.gz"
-# Copy package to image file
-file.copy(from = package, to = paste0("../image/", package), overwrite = TRUE)
+# Copy package to image folders
+#file.copy(from = package, to = paste0("../image/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_rs/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_cloudproxy/", package), overwrite = TRUE)
+#file.copy(from = package, to = paste0("../image_cmd/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_moves/", package), overwrite = TRUE)
 
 # Unload catr if installed or loaded
 unloadNamespace(ns = "catr"); remove.packages("catr")
@@ -38,5 +44,5 @@ install.packages(package, type = "source")
 rm(list = ls()); gc()
 
 # Tidy up your description file
-usethis::use_tidy_description()
+#usethis::use_tidy_description()
 

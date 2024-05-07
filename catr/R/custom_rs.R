@@ -7,12 +7,16 @@
 #' @param .level  description TBA.
 #' @param .default  description TBA.
 #' @param .id  description TBA.
-#' @param .dir Directory where runspec outputs
 #' @param .outputdbname Output database name
 #' @param .outputservername Hostname of output database (defaults to localhost)
 #' @param .inputdbname Custom Input database name
 #' @param .inputservername Hostname of custom input database (defaults to localhost) 
+#' @param .path Output path for runspec.
+#' @param .normalize (logical) normalize the file path? FALSE
+#' @param .rate (logical) is this for emissions rate mode or inventory mode?
 #' @importFrom xml2 read_xml as_list write_xml as_xml_document
+#' @importFrom stringr str_sub
+#' @importFrom dplyr `%>%`
 #' @export
 
 # Function to design a 'custom' runspec for 1 county for custom county data manager inputs
@@ -22,88 +26,156 @@ custom_rs = function(
     .level = "county",
     .default = FALSE,
     .id = 1,
-    .dir = NULL,
     .outputdbname = "moves",
     .outputservername = "localhost",
     .inputdbname = "movesdb20240104",
-    .inputservername = "localhost"
+    .inputservername = "localhost",
+    .path = "inputs/rs_custom.xml",
+    .normalize = FALSE,
+    .rate = FALSE,
+    # Extra parameters
+    .geoaggregation = NULL,
+    .timeaggregation = "year"
+    # .timeaggregation = "year",
+    # .timefactors = "year"
 ){
   
-  # Set database information  
-  
-  # Set rs_folder to TEMP_FOLDER by default.
-  if(is.null(.dir)){ .dir = Sys.getenv("TEMP_FOLDER") }
-  
-
+  # Testing Values (comment out before pushing)  
+  # .geoid = "36109"
+  # .year = 2020
+  # .level = "county"
+  # .default = FALSE
+  # .id = 1
+  # .outputdbname = "moves"
+  # .outputservername = "localhost"
+  # .inputdbname = "movesdb20240104"
+  # .inputservername = "localhost"
+  # .path = "inputs/rs_custom.xml"
   # require(xml2, warn.conflicts = FALSE)
   # require(dplyr, warn.conflicts = FALSE)
   
-  # Get template RS
-  data("rs_template", envir=environment()); x = rs_template; remove(rs_template)
-  #x = helper("rs_template")
-  
-  # GEOGRAPHY ###############################
-  # Extract geographic attributes
-  .g = x$runspec$geographicselections$geographicselection
-  attr(.g, "type") <- toupper(.level)
-  attr(.g, "key") <-  .geoid 
-  attr(.g, "description") <- ""
-  # Update the actual runspec again.
-  x$runspec$geographicselections$geographicselection <- .g
-  remove(.g)
-  
-  # Extract Geographic Output Detail Level
-  .g <- x$runspec$geographicoutputdetail
-  attr(.g, "description") <- toupper(.level)
-  x$runspec$geographicoutputdetail <- .g
-  remove(.g)
-  
-
-  # IF NOT A DEFAULT RUN, set these values...
-  if(.default == FALSE){ 
-    .domain = "SINGLE";
-    .description = "Temporary custom input database for cat_inputter";
-    .name = "custom"
-    # But if it's a DEFAULT run, you'll need these settings.
-  }else if(.default == TRUE){ 
-    .domain = "DEFAULT"; .inputdbname = ""; .inputservername = ""; .description = ""; .name = "default"
+  # FUNCTIONS ########################################
+  # Short function for turning words' first letter upper case
+  uppercase = function(word){
+      a =  toupper(stringr::str_sub(word, 1,1))
+      b = stringr::str_sub(word, 2, -1)
+      paste0(a,b)
   }
   
+  # GENERAL CONDITIONS ###########################
+  # Set general conditions, which may get overridden below
+  # Format .geographic selection as "ZONE" "STATE" "COUNTY" etc.
+  .geographicselection = toupper(.level)
+  # If not provided, make it aggregate to the level described. Otherwise, aggregate to whatever is requested
+  # Format geographicoutputdetail as "LINK" "STATE" "COUNTY" "NATION" etc.
+  if(is.null(.geoaggregation)){ .geographicoutputdetail = .level }else{ .geographicoutputdetail = toupper(.geoaggregation) }
+  # Format time aggregation as "Year" "Hour" "Month" etc.
+  .timeaggregation = uppercase(.timeaggregation)
+  
+  # DEFAULT? ################################
+  # IF NOT A DEFAULT RUN, set these values...
+  if(.default == FALSE){ 
+    .domain = "SINGLE"; .name = "custom"; .description = "Temporary custom input database.";
+    # But if it's a DEFAULT run, you'll need these settings.
+  }else if(.default == TRUE){ 
+    .domain = "DEFAULT"; .name = "default"; .inputdbname = ""; .inputservername = ""; .description = "";
+  }
+  
+  # MODE ##############################################
+  if(.rate == TRUE){
+    # Get template runspec for a rate mode run
+    data("rs_template_rate", envir = environment()); x = rs_template_rate; remove(rs_template_rate)
+    # Set mode
+    attr(x$runspec$modelscale, "value") = "Rates"
+    # Q1 ########################################
+    # - geographicoutputdetail: does it have to be LINK for rate mode? Let's find out.
+    # .geographicoutputdetail = if(.level == "county"){ "LINK" }
+    # Q2 ###########################################
+    # - Q2. outputtimestep: does it have to be "Hour" for rate mode?
+    # .outputtimestep = "hour"
+    # .timefactors = "hour"
+    
+  }else if(.rate == FALSE){
+    # Get template RS for an inventory mode run
+    data("rs_template", envir=environment()); x = rs_template; remove(rs_template)
+    # Set mode
+    attr(x$runspec$modelscale, "value") = "Inv"
+  }
+  
+
+  
+  # Qs ####################################################
+  # - Q1. geographicoutputdetail: does it have to be LINK for rate mode? Let's find out.
+  # - Q2. outputtimestep: does it have to be "Hour" for rate mode?
+  # - Q3. outputfactors\timefactors --> Hours for rate mode?
+  
+  
+  
+  # GEOGRAPHY ###############################
+  
+  ## LEVEL ####################################
+  # Extract geographic attributes
+  #.g = x$runspec$geographicselections$geographicselection
+  attr(x$runspec$geographicselections$geographicselection, "type") = .geographicselection
+  attr(x$runspec$geographicselections$geographicselection, "key") <-  .geoid 
+       attr(x$runspec$geographicselections$geographicselection, "description") <- ""
+  # Update the actual runspec again.
+  # x$runspec$geographicselections$geographicselection <- .g
+  # remove(.g)
+  
+  ## OUTPUT DETAIL ###########################
+  # Extract Geographic Output Detail Level
+  attr(x$runspec$geographicoutputdetail, "description") = .geographicoutputdetail
+  
+  # TIME ##################################################
+  
+  ## Set year ################################################
+  # Set year of interest
+  attr(x$runspec$timespan$year, "key") = as.character(.year)
+
+  ## AGGREGATION #############################################  
+  # Update aggregation time category (eg. by "Year", by "Month", by "Hour", etc)  
+  attr(x$runspec$timespan$aggregateBy, "key") = .timeaggregation
+
+  # Time Units in Output (eg. "Year")
+  attr(x$runspec$outputtimestep, "value") = .timeaggregation
+
+  # Time Units in Output (eg. "Year")  
+  attr(x$runspec$outputfactors$timefactors, "units") = .timeaggregation
+
+  
+    
   # OUTPUT DATABASE ###############################################
-  .o <- x$runspec$outputdatabase   # Extract output database attributes
-  attr(.o, "databasename") <- .outputdbname
-  attr(.o, "servername") <- .outputservername
-  x$runspec$outputdatabase <- .o # # Update actual runspec
-  remove(.o)
+  attr(x$runspec$outputdatabase, "databasename") <- .outputdbname
+  attr(x$runspec$outputdatabase, "servername") <- .outputservername
+
   
   # INPUT DATABASE ################################################
-  .o = x$runspec$scaleinputdatabase
-  attr(.o, "databasename") = .inputdbname
-  attr(.o, "servername") = .inputservername
-  attr(.o, "description") = .description
-  x$runspec$scaleinputdatabase <- .o; remove(.o)
-  
+  attr(x$runspec$scaleinputdatabase, "databasename") = .inputdbname
+  attr(x$runspec$scaleinputdatabase, "servername") = .inputservername
+  attr(x$runspec$scaleinputdatabase, "description") = .description
+
+  # RUN TYPE ##################################################
   # SET RUN TYPE ("SINGLE" COUNTY vs. "DEFAULT")
-  .o = x$runspec$modeldomain
-  attr(.o, "value") = .domain
-  x$runspec$modeldomain = .o; remove(.o)
-  
-  .t = x$runspec$timespan$year
-  attr(.t, "key") = as.character(.year)
-  x$runspec$timespan$year = .t; remove(.t)
-  
+  attr(x$runspec$modeldomain, "value") = .domain
+
+  # DESCRIPTION ###############################################
   # Update the runspec description
   x$runspec$description[[1]] <- paste0(.level, .geoid, " MOVES run with ", .name, " inputs")
   
-  # Design the filepath
-  .path = paste0(.dir, "/", "rs", "_", .geoid, "_", .year, "_rs_moves31_", .name, "_", .id, ".xml")
-  # Normalize the path
-  .path = normalizePath(.path, winslash = "/")
+  # Design the filepath (outddated - let's just use rs_custom.xml)
+  # .path = paste0(.dir, "/", "rs", "_", .geoid, "_", .year, "_rs_moves31_", .name, "_", .id, ".xml")
   
+  if(.normalize == TRUE){
+    # Normalize the path
+    .path = normalizePath(.path, winslash = "/")
+  }
+  # Write as xml
   xml2::write_xml(x = xml2::as_xml_document(x), file = .path)
-
+  
+  # Print completion message
   print(paste0(.geoid, "-", .year, "-", .name, "--- done!"))
- 
+  
   
   return(.path)
   

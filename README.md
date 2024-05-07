@@ -1,7 +1,7 @@
 # `moves_anywhere`
 
 - Developers: Tim Fraser, Junna Chen
-- Contributors: Mahak Bindal, Shungo Najima, Carl Closs, Erin Murphy
+- Contributors: Erin Murphy, Mahak Bindal, Shungo Najima, Carl Closs
 - Description: A Docker-based solution to run MOVES anywhere - on Windows, Mac, or Linux
 
 ## Getting Started
@@ -25,12 +25,12 @@ For a comprehensive walkthrough, view [our recent Training Video](https://vod.vi
 ### Running with Command Line
   1. Ensure that Docker Desktop is open. You can do this by navigating to your applications and clicking on the app icon.
   2. Using either the terminal (MacOS) or GitBash (Windows), navigate to the demos folder in the moves_anywhere repository that you downloaded from Github.
-  3. In the command line, run `./demo1_command.sh`. This will perform the setup for the system as well as build and run the docker image.
-     - You will know the docker image is running when you see a line starting with `root` and ending with `cat-api`.
-     - If you get a permission denied message, run `chmod 777 demo1_command.sh` to set the file to executable
+  3. In the command line, run `./demos/demo0/testme.sh`. This will perform the setup for the system as well as build and run the docker container.
+     - You will know the docker container is running when you see a line starting with `root` and ending with `cat-api`.
+     - If you get a permission denied message, run `chmod 777 ./demos/demo0/testme.sh` to set the file to executable
   5. Run `bash launch.sh`. This will perform all the setup for MOVES and the run itself.
      - Once you see the prompt `BUILD SUCCESSFUL`, the MOVES run has finished.
-  6. Now, we are done with MOVES. To get back to the script, run the `exit` command. You may need to run this twice.
+  6. Now, we are done with MOVES. Post-processing functions will begin to execute. To get back to the script, run the `exit` command. You may need to run this twice.
      - If you want to explore within the docker container, you can do so now (do not run the `exit` command)
      - At this point, the formatted output data has been copied to your machine
 

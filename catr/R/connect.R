@@ -91,6 +91,8 @@ connect = function(type = "mariadb", ...){
       dbname = ...)
     # Return connection object
     return(conn)
+  }else if(type == "csv"){
+    conn = read_csv(...)
   }else{
     # Otherwise, return an errors
     stop("---'type' is not valid. Must be 'mariadb' or 'mysql'.")
