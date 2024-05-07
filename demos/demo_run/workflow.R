@@ -14,11 +14,13 @@ key_path = "../../runapikey.json" # path to your private runapikey.json
 project = "moves-runs" # project name
 region = "us-central1" # region name
 # Provide a dtablename - the name of the table that you'll end up with.
-dtablename = "d36109_u1_o19"
-# Convert that to a bucket name - can't have underscores.
-bucket = gsub(x = dtablename, pattern = "[_]", replacement = "-")
+dtablename = "d36109_u1_o21"
 # Write out paths
 folder = "./volume"   # path to folder for mounting
+
+
+# Convert that to a bucket name - can't have underscores.
+bucket = gsub(x = dtablename, pattern = "[_]", replacement = "-")
 path_rs = paste0(folder, "/rs_custom.xml") # path to runspec file
 path_parameters = paste0(folder, "/parameters.json") # path to parameters.json
 
@@ -32,6 +34,8 @@ catr::custom_rs(
   .path = path_rs,
   .geoaggregation = "county", .timeaggregation = "year", .rate = FALSE
 )
+
+
 # Make a parameters.json from the runspec
 catr::rs_to_parameters(
   path_rs = path_rs, path_parameters = path_parameters,

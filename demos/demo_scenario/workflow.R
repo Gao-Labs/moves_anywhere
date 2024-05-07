@@ -16,7 +16,7 @@ key_path = "../../runapikey.json" # path to your private runapikey.json
 project = "moves-runs" # project name
 region = "us-central1" # region name
 # Provide a dtablename - the name of the table that you'll end up with.
-dtablename = "d36109_u1_o20"
+dtablename = "d36109_u1_o22"
 # Convert that to a bucket name - can't have underscores.
 bucket = gsub(x = dtablename, pattern = "[_]", replacement = "-")
 # Write out paths
@@ -37,14 +37,15 @@ runs = tibble(
   bucket = gsub(x = paste0(dtablename, "_", group), pattern = "[_]", replacement = "-")
 )
 
+runs
 
 # Authorize
 auth = movesrunner::authorize(key_path = key_path)
 
 # Try to delete each bucket if present
 for(i in runs$id){
-  movesrunner::object_delete_bulk(bucket = runs$bucket[i], token = auth$credentials$access_token)
-  movesrunner::bucket_delete(bucket = runs$bucket[i], token = auth$credentials$access_token)
+  catr::object_delete_bulk(bucket = runs$bucket[i], token = auth$credentials$access_token)
+  catr::bucket_delete(bucket = runs$bucket[i], token = auth$credentials$access_token)
 }
 
 # Make a bucket and upload contents, one-by-one.
