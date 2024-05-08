@@ -12,27 +12,19 @@ An exciting current research direction of the Cornell CAT MOVES team is the deve
 
 To use Cornell Cloud MOVES, you will need the following items.
 
--   A Google Cloud API Key with requisite permissions
-
--   A Cornell gmail account
-
--   Viewer Permissions for Google Storage Buckets, assigned to your Cornell gmail account
-
--   The catr package installed in RStudio, plus any dependencies
-
--   Your runspec, saved as rs_custom.xml. It must always be added to the bucket LAST after your custom input tables.
-
--   Your parameters file, saved as parameters.json - if you want your data to be saved to catcloud's orderdata database.
-
--   Any custom input tables in the style described in Section 3.1 above.
-
--   A CAT user account, with a userid number.
-
--   A unique bucket name that has not yet been used and a dtablename that has not yet been used. Standard format is d36109-u1-o1
-
--   If doing just 1 single MOVES run, review demo_run.R.
-
--   If doing several MOVES run as a scenario, review demo_scenario.R
+| Name          | Description                                                                                                                  |
+|--------------|----------------------------------------------------------|
+| API Key       | Google Cloud API Key with requisite permissions                                                                              |
+| Gmail Account | Cornell gmail account                                                                                                        |
+| Viewer        | Viewer Permissions for Google Storage Buckets, assigned to your Cornell gmail account                                        |
+| catr Package  | The catr package installed in RStudio, plus any dependencies                                                                 |
+| Runspec       | Your runspec, saved as rs_custom.xml. It must always be added to the bucket LAST after your custom input tables.             |
+| Parameters    | Your parameters file, saved as parameters.json. If you want your data to be saved to catcloud's orderdata database.          |
+| Custom Tables | Any custom input tables in the style described in Section 3.1 above.                                                         |
+| CAT Account   | A CAT user account, with a userid number                                                                                     |
+| Bucket Name   | A unique bucket name that has not yet been used and a dtablename that has not yet been used. Standard format is d36109-u1-o1 |
+| Single Run    | If doing just 1 single MOVES run, review demo_run.R.                                                                         |
+| Scenario Run  | If doing several MOVES run as a scenario, review demo_scenario.R.                                                            |
 
 If any questions, ask Tim Fraser [tmf77\@cornell.edu](mailto:tmf77@cornell.edu){.email}. Please be sure to read the documentation first, as 99% of questions often can be first resolved with the documentation. 😃
 
