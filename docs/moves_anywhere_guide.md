@@ -205,69 +205,30 @@ One of the key challenges of using MOVES is that unless someone crafts all **req
 
 #### **Table 2: Optional Tables for County Data Manager**
 
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| Menu              | Table                           | Adaptation                                                   |
-+===================+=================================+==============================================================+
-| **Starts**        | `startsHourFraction`            | Filter by `dayID` and `hourID`                               |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Starts**        | `starts`                        | Filter by `yearID`                                           |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Starts**        | `startsPerDay`                  | Filter by `dayID`                                            |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Starts**        | `StartsPerDayPerVehicle`        | Filter by `dayID`                                            |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Starts**        | `startsMonthAdjust`             | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Starts**        | `startsAgeAdjustment`           | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Starts**        | `startsOpModeDistribution`      | Filter by `opModeID`, `dayID`, `hourID`                      |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Hotelling**     | `hotellingActivityDistribution` | Filter by `zoneID`                                           |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Hotelling**     | `hotellingHours`                | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Hotelling**     | `hotellingHourFraction`         | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Hotelling**     | `hotellingAgeFraction`          | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Hotelling**     | `hotellingMonthAdjust`          | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Idle**          | `totalIdleFraction`             | Filter by `idleRegionID`, `countyTypeID`, `monthID`, `dayID` |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| Idle              | `idleModelYearGrouping`         | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| Idle              | `idleMonthAdjust`               | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Idle**          | `idleDayAdjust`                 | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
-| **Retrofit Data** | `onRoadRetrofit`                | Untouched                                                    |
-+-------------------+---------------------------------+--------------------------------------------------------------+
+| Menu          | Table                  | Adaptation     |
+| ------        | ---------------------- | -------------- |
+| **Starts**    | `startsHourFraction`   | Filter by `dayID` and `hourID` |
+| **Starts**    | `starts`               | Filter by `yearID` |
+| **Starts**    | `startsPerDay`         | Filter by `dayID` |
+| **Starts**    | `StartsPerDayPerVehicle` | Filter by `dayID` |
+| **Starts**    | `startsMonthAdjust`    | Untouched |
+| **Starts**    | `startsAgeAdjustment`  | Untouched |
+| **Starts**    | `startsOpModeDistribution` | Filter by `opModeID`, `dayID`, `hourID` |
+| **Hotelling** | `hotellingActivityDistribution` | Filter by `zoneID` |
+| **Hotelling** | `hotellingHours`       | Untouched |
+| **Hotelling** | `hotellingHourFraction` | Untouched |
+| **Hotelling** | `hotellingAgeFraction` | Untouched |
+| **Hotelling** | `hotellingMonthAdjust` | Untouched |
+| **Idle**      | `totalIdleFraction`    | Filter by `idleRegionID`, `countyTypeID`, `monthID`, `dayID` |
+| **Idle**      | `idleModelYearGrouping` | Untouched |
+| **Idle**      | `idleMonthAdjust`      | Untouched |
+| **Idle**      | `idleDayAdjust`        | Untouched |
+| **Retrofit Data** | `onRoadRetrofit`   | Untouched |
 
 #### Table 3: Generic Tables to be Updated
 
-+---------------+-------------------------+------------------------------------+
-| Menu          | Table                   | Adaptation                         |
-+===============+=========================+====================================+
-| Generic       | `year`                  | Filter by `yearID`                 |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `county`                | Filter by `countyID`               |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `state`                 | Filter by `stateID`                |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `idleRegion`            | Filter by `idleRegionID`           |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `zone`                  | Filter by `countyID`               |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `zoneRoadType`          | Filter by `zoneID`                 |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `regionCounty`          | Filter by `countyID`, `fuelYearID` |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `pollutantProcessAssoc` | Filter by `pollutantID`            |
-+---------------+-------------------------+------------------------------------+
-| Generic       | `opModePolProcAssoc`    | Filter by `polProcessID`           |
-+---------------+-------------------------+------------------------------------+
 
-: Adaptations of Note
+### Adaptations of Note
 
 Several of the table adaptations outlined in **Table 1** deserve extra attention, as they could not be handled just by filtering, for example.
 
