@@ -251,7 +251,7 @@ tab_pollutantprocessassoc = db %>% tbl("pollutantprocessassoc") %>% collect()
 save(tab_pollutantprocessassoc, file = "catr/data/tab_pollutantprocessassoc.rda")
 
 tab_pollutant = db %>% tbl("pollutant") %>% collect()
-save(tab_pollutantprocessassoc, file = "catr/data/tab_pollutant.rda")
+save(tab_pollutant, file = "catr/data/tab_pollutant.rda")
 
 tab_emissionprocess = db %>% tbl("emissionprocess") %>% collect()
 save(tab_emissionprocess, file = "catr/data/tab_emissionprocess.rda")
