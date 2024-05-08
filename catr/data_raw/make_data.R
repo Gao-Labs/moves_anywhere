@@ -259,6 +259,69 @@ save(tab_emissionprocess, file = "catr/data/tab_emissionprocess.rda")
 
 dbDisconnect(db)
 
+## onroadvehicleselections #####################
+# Adapted directly from MOVES 4.0 runspec
+tab_onroadvehicleselections = bind_rows(
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="62", sourcetypename="Combination Long-haul Truck"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="62", sourcetypename="Combination Long-haul Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="62", sourcetypename="Combination Long-haul Truck"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="61", sourcetypename="Combination Short-haul Truck"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="61", sourcetypename="Combination Short-haul Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="61", sourcetypename="Combination Short-haul Truck"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="61", sourcetypename="Combination Short-haul Truck"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="32", sourcetypename="Light Commercial Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="32", sourcetypename="Light Commercial Truck"),
+  tibble(fueltypeid="5", fueltypedesc="Ethanol (E-85)", sourcetypeid="32", sourcetypename="Light Commercial Truck"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="32", sourcetypename="Light Commercial Truck"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="54", sourcetypename="Motor Home"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="54", sourcetypename="Motor Home"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="54", sourcetypename="Motor Home"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="54", sourcetypename="Motor Home"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="11", sourcetypename="Motorcycle"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="41", sourcetypename="Other Buses"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="41", sourcetypename="Other Buses"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="41", sourcetypename="Other Buses"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="41", sourcetypename="Other Buses"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="21", sourcetypename="Passenger Car"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="21", sourcetypename="Passenger Car"),
+  tibble(fueltypeid="5", fueltypedesc="Ethanol (E-85)", sourcetypeid="21", sourcetypename="Passenger Car"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="21", sourcetypename="Passenger Car"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="31", sourcetypename="Passenger Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="31", sourcetypename="Passenger Truck"),
+  tibble(fueltypeid="5", fueltypedesc="Ethanol (E-85)", sourcetypeid="31", sourcetypename="Passenger Truck"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="31", sourcetypename="Passenger Truck"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="51", sourcetypename="Refuse Truck"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="51", sourcetypename="Refuse Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="51", sourcetypename="Refuse Truck"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="51", sourcetypename="Refuse Truck"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="43", sourcetypename="School Bus"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="43", sourcetypename="School Bus"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="43", sourcetypename="School Bus"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="43", sourcetypename="School Bus"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="53", sourcetypename="Single Unit Long-haul Truck"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="53", sourcetypename="Single Unit Long-haul Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="53", sourcetypename="Single Unit Long-haul Truck"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="53", sourcetypename="Single Unit Long-haul Truck"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="52", sourcetypename="Single Unit Short-haul Truck"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="52", sourcetypename="Single Unit Short-haul Truck"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="52", sourcetypename="Single Unit Short-haul Truck"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="52", sourcetypename="Single Unit Short-haul Truck"),
+  tibble(fueltypeid="3", fueltypedesc="Compressed Natural Gas (CNG)", sourcetypeid="42", sourcetypename="Transit Bus"),
+  tibble(fueltypeid="2", fueltypedesc="Diesel Fuel", sourcetypeid="42", sourcetypename="Transit Bus"),
+  tibble(fueltypeid="9", fueltypedesc="Electricity", sourcetypeid="42", sourcetypename="Transit Bus"),
+  tibble(fueltypeid="1", fueltypedesc="Gasoline", sourcetypeid="42", sourcetypename="Transit Bus")
+)
+save(tab_onroadvehicleselections, file = "data/tab_onroadvehicleselections.rda")
+
+# roadtypes #############################
+tab_roadtypes = bind_rows(  
+  tibble(roadtypeid="1", roadtypename="Off-Network", modelCombination="M1"),
+  tibble(roadtypeid="2", roadtypename="Rural Restricted Access", modelCombination="M1"),
+  tibble(roadtypeid="3", roadtypename="Rural Unrestricted Access", modelCombination="M1"),
+  tibble(roadtypeid="4", roadtypename="Urban Restricted Access", modelCombination="M1"),
+  tibble(roadtypeid="5", roadtypename="Urban Unrestricted Access", modelCombination="M1")
+)
+save(tab_roadtypes, file = "data/tab_roadtypes.rda")
 
 # END #########################################
 

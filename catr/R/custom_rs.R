@@ -2,18 +2,42 @@
 #' @title `custom_rs()` function
 #' @description Designs a custom runspec file based off input parameters.
 #' eg. custom_rs(.geoid = "36109", .year = 2020, .level = "county", .default = FALSE) 
-#' @param .geoid  description TBA.
-#' @param .year  description TBA.
-#' @param .level  description TBA.
-#' @param .default  description TBA.
-#' @param .id  description TBA.
-#' @param .outputdbname Output database name
-#' @param .outputservername Hostname of output database (defaults to localhost)
-#' @param .inputdbname Custom Input database name
-#' @param .inputservername Hostname of custom input database (defaults to localhost) 
+#' 
+#' # Frequently Customized Parameters
+#' @param .geoid  (character) county/state FIPS code, eg. "36109"
+#' @param .year  (integer) eg. 2020
+#' @param .default  (logical) Is it a default run (`TRUE`) or a custom run (`FALSE`)? (eg. county-data-manager = custom). Default is `FALSE` (custom).
 #' @param .path Output path for runspec.
-#' @param .normalize (logical) normalize the file path? FALSE
 #' @param .rate (logical) is this for emissions rate mode or inventory mode?
+#'
+#' # Sensitive parameters - only change for a specific reason.
+#' @param .pollutants (integer) Vector of integer `pollutantID`s. 
+#' Will select all required pollutant-processes necessary to estimate that pollutant's emissions, using details from `get_polprocesses.R`
+#' Default is CO2 Equivalent (`98`) plus Criterion Air Pollutants, namely:
+#'  - Ozone = created when NOx (`3`) interacts with VOC (`87`)
+#'  - Carbon Monoxide = `2`
+#'  - Lead (measured by VOC) = `87`
+#'  - Sulfur Dioxide (SO2) = `31`
+#'  - Nitrogen Dioxide (NO2) = `33`
+#'  - PM2.5 = `110`
+#'  - PM10 = `100`
+#' @param .sourcetypes (integer) Vector of integer `sourceTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
+#' @param .fueltypes (integer) Vector of integer `fuelTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
+#' @param .roadtypes (integer) Vector of integer `roadTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
+#' 
+#' Aggregation Settings
+#' @param .level (character) level of MOVES run. Eg. "county". Should match `.geoid`. Defaults to `NULL`, in which case we programmatically identify the `"level"` from `.geoid` using `what_level()`. Better to be specific about your `.level` if you're not using county level.
+#' @param .geoaggregation (character) Level of geo-aggregation of results. Options include `"county"`, `"state"`, `"link"`, `"nation"`. Typically should match up with your level, unless you have a specific reason for changing it. Default is `NULL`, where it just sets the supplied `.level` to be the `.geoaggregation` level.
+#' @param .timeaggregation (character) Level of temporal-aggregation of results. Options include `"hour"`, `"day"`, `"month"`", `"year"`. Default is `"year"`.
+#'
+#' These parameters rarely change.
+#' @param .normalize (logical) normalize the file path? FALSE
+#' @param .id  description TBA. (ignore)
+#' @param .outputdbname Output database name ("moves")
+#' @param .outputservername Hostname of output database (defaults to "localhost")
+#' @param .inputdbname Custom Input database name (should be default input database "movesdb20240104", so we can adapt it.)
+#' @param .inputservername Hostname of custom input database (defaults to "localhost") 
+
 #' @importFrom xml2 read_xml as_list write_xml as_xml_document
 #' @importFrom stringr str_sub
 #' @importFrom dplyr `%>%`
@@ -23,21 +47,24 @@
 custom_rs = function(
     .geoid = "36109",
     .year = 2020,
-    .level = "county",
     .default = FALSE,
+    .path = "inputs/rs_custom.xml",
+    .rate = FALSE,
+    .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100),
+    .sourcetypes = NULL,
+    .fueltypes = NULL,
+    .roadtypes = NULL,
+    # Extra parameters
+    .level = NULL,
+    .geoaggregation = NULL,
+    .timeaggregation = "year",
+    # Rarely change    
+    .normalize = FALSE,
     .id = 1,
     .outputdbname = "moves",
     .outputservername = "localhost",
     .inputdbname = "movesdb20240104",
-    .inputservername = "localhost",
-    .path = "inputs/rs_custom.xml",
-    .normalize = FALSE,
-    .rate = FALSE,
-    # Extra parameters
-    .geoaggregation = NULL,
-    .timeaggregation = "year"
-    # .timeaggregation = "year",
-    # .timefactors = "year"
+    .inputservername = "localhost"
 ){
   
   # Testing Values (comment out before pushing)  
@@ -62,13 +89,42 @@ custom_rs = function(
       paste0(a,b)
   }
   
+  
+  # MODE ##############################################
+  if(.rate == TRUE){
+    # Get template runspec for a rate mode run
+    data("rs_template_rate", envir = environment()); x = rs_template_rate; remove(rs_template_rate)
+    # Set mode
+    attr(x$runspec$modelscale, "value") = "Rates"
+    
+  }else if(.rate == FALSE){
+    # Get template RS for an inventory mode run
+    data("rs_template_inventory", envir=environment()); x = rs_template_inventory; remove(rs_template_inventory)
+    # Set mode
+    attr(x$runspec$modelscale, "value") = "Inv"
+  }
+  
+  
+  
+  ## LEVEL ####################################
+  # If .level is not provided, use `what_level()` function to find it.
+  # See R/what_level.R
+  if(is.null(.level)){ .level = what_level(.geoid) }
+  
   # GENERAL CONDITIONS ###########################
+  
   # Set general conditions, which may get overridden below
   # Format .geographic selection as "ZONE" "STATE" "COUNTY" etc.
   .geographicselection = toupper(.level)
-  # If not provided, make it aggregate to the level described. Otherwise, aggregate to whatever is requested
+
+  # Extract geographic attributes
+  attr(x$runspec$geographicselections$geographicselection, "type") = .geographicselection
+  attr(x$runspec$geographicselections$geographicselection, "key") <-  .geoid 
+  attr(x$runspec$geographicselections$geographicselection, "description") <- ""
+  # If not provided, make it aggregate to the level described. 
+  # Otherwise, aggregate to whatever is requested
   # Format geographicoutputdetail as "LINK" "STATE" "COUNTY" "NATION" etc.
-  if(is.null(.geoaggregation)){ .geographicoutputdetail = .level }else{ .geographicoutputdetail = toupper(.geoaggregation) }
+  if(is.null(.geoaggregation)){ .geographicoutputdetail = .geographicselection }else{ .geographicoutputdetail = toupper(.geoaggregation) }
   # Format time aggregation as "Year" "Hour" "Month" etc.
   .timeaggregation = uppercase(.timeaggregation)
   
@@ -80,49 +136,7 @@ custom_rs = function(
   }else if(.default == TRUE){ 
     .domain = "DEFAULT"; .name = "default"; .inputdbname = ""; .inputservername = ""; .description = "";
   }
-  
-  # MODE ##############################################
-  if(.rate == TRUE){
-    # Get template runspec for a rate mode run
-    data("rs_template_rate", envir = environment()); x = rs_template_rate; remove(rs_template_rate)
-    # Set mode
-    attr(x$runspec$modelscale, "value") = "Rates"
-    # Q1 ########################################
-    # - geographicoutputdetail: does it have to be LINK for rate mode? Let's find out.
-    # .geographicoutputdetail = if(.level == "county"){ "LINK" }
-    # Q2 ###########################################
-    # - Q2. outputtimestep: does it have to be "Hour" for rate mode?
-    # .outputtimestep = "hour"
-    # .timefactors = "hour"
-    
-  }else if(.rate == FALSE){
-    # Get template RS for an inventory mode run
-    data("rs_template", envir=environment()); x = rs_template; remove(rs_template)
-    # Set mode
-    attr(x$runspec$modelscale, "value") = "Inv"
-  }
-  
 
-  
-  # Qs ####################################################
-  # - Q1. geographicoutputdetail: does it have to be LINK for rate mode? Let's find out.
-  # - Q2. outputtimestep: does it have to be "Hour" for rate mode?
-  # - Q3. outputfactors\timefactors --> Hours for rate mode?
-  
-  
-  
-  # GEOGRAPHY ###############################
-  
-  ## LEVEL ####################################
-  # Extract geographic attributes
-  #.g = x$runspec$geographicselections$geographicselection
-  attr(x$runspec$geographicselections$geographicselection, "type") = .geographicselection
-  attr(x$runspec$geographicselections$geographicselection, "key") <-  .geoid 
-       attr(x$runspec$geographicselections$geographicselection, "description") <- ""
-  # Update the actual runspec again.
-  # x$runspec$geographicselections$geographicselection <- .g
-  # remove(.g)
-  
   ## OUTPUT DETAIL ###########################
   # Extract Geographic Output Detail Level
   attr(x$runspec$geographicoutputdetail, "description") = .geographicoutputdetail
@@ -163,11 +177,22 @@ custom_rs = function(
   # Update the runspec description
   x$runspec$description[[1]] <- paste0(.level, .geoid, " MOVES run with ", .name, " inputs")
   
-  # Design the filepath (outddated - let's just use rs_custom.xml)
-  # .path = paste0(.dir, "/", "rs", "_", .geoid, "_", .year, "_rs_moves31_", .name, "_", .id, ".xml")
+  # ROADTYPE SELECTIONS #######################################
+  # see get_roadtypes.R for background
+  x$runspec$roadtypes = get_roadtypes(.roadtypes = .roadtypes)
   
+  # VEHICLE SELECTIONS ##################################################
+  # see get_vehicleselections.R for background
+  x$runspec$onroadvehicleselections = get_vehicleselections(.sourcetypes = .sourcetypes, .fueltypes = .fueltypes)
+  
+  # POLLUTANT ASSOCIATIONS #########################################
+  # see get_pollutantprocessassoc.R for background
+  x$runspec$pollutantprocessassociations = get_pollutantprocessassoc(.pollutants = .pollutants)
+
+  # WRITE #####################################
   if(.normalize == TRUE){
-    # Normalize the path
+    # Normalize the path 
+    # (sometimes has issues, so default for `.normalize` is now FALSE)
     .path = normalizePath(.path, winslash = "/")
   }
   # Write as xml

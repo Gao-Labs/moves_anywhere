@@ -18,6 +18,7 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
   # require(xml2)
   # require(dplyr)
   # .runspec = "data_raw/rs_template.xml"
+  # .runspec = "rs4.xml"
   
   x = read_xml(.runspec) %>% as_list()
   
@@ -68,6 +69,38 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
   
   remove(t, time)
   
+  # Get all sourcetypes listed #################################
+  .fueltype = x$runspec$onroadvehicleselections %>%
+    map_chr(~.x %>% attr("fueltypeid")) %>%
+    unique() %>% as.integer() %>% sort()
+  
+  # Get all fueltypes listed #################################
+  .sourcetype = x$runspec$onroadvehicleselections %>%
+    map_chr(~.x %>% attr("sourcetypeid")) %>%
+    unique() %>% as.integer() %>% sort()
+  
+  # Get all roadtypes listed #######################################
+  .roadtype = x$runspec$roadtypes %>%
+    map_chr(~.x %>% attr("roadtypeid")) %>%
+    unique() %>% as.integer() %>% sort()
+  
+  # AGGREGATION ################################
+  # Get time aggregation level
+  .timeaggregation1 = x$runspec$timespan$aggregateBy %>% attr("key") %>% tolower()
+  .timeaggregation2 = x$runspec$outputtimestep %>% attr("value") %>% tolower()
+  .timeaggregation3 = x$runspec$outputfactors$timefactors %>% attr("units") %>% tolower()
+  # Time aggregation must be the same in each for us to grab it.
+  check_time = .timeaggregation1 == .timeaggregation2 &
+    .timeaggregation1 == .timeaggregation3 &
+    .timeaggregation2 == .timeaggregation3
+  # If they are the same, assign
+  if(check_time == TRUE){
+    .timeaggregation = .timeaggregation1
+  }else{ .timeaggregation = NULL }
+
+  # Get geographic aggregation level
+  .geoaggregation = x$runspec$geographicoutputdetail %>% attr("description") %>% tolower()
+
   # INPUT/OUTPUT DATABASE TRAITS  
   .inputservername = x$runspec$scaleinputdatabase %>% attr(., "servername")
   .inputdbname = x$runspec$scaleinputdatabase %>% attr(., "databasename")
@@ -80,12 +113,16 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
   result = list(geoid = .geoid, level = .level,
                 pollutant = .pollutant, 
                 year = .year, month = .month, day = .day, hour = .hour,
+                sourcetype = .sourcetype, fueltype = .fueltype, roadtype = .roadtype, 
                 default = .default,
                 inputservername = .inputservername,
                 inputdbname = .inputdbname,
                 outputservername = .outputservername,
                 outputdbname = .outputdbname,
-                mode = .mode)
+                mode = .mode,
+                geoaggregation = .geoaggregation,
+                timeaggregation = .timeaggregation
+              )
   
   return(result)
 }

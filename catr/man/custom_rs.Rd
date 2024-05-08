@@ -7,46 +7,79 @@
 custom_rs(
   .geoid = "36109",
   .year = 2020,
-  .level = "county",
   .default = FALSE,
+  .path = "inputs/rs_custom.xml",
+  .rate = FALSE,
+  .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100),
+  .sourcetypes = NULL,
+  .fueltypes = NULL,
+  .roadtypes = NULL,
+  .level = NULL,
+  .geoaggregation = NULL,
+  .timeaggregation = "year",
+  .normalize = FALSE,
   .id = 1,
   .outputdbname = "moves",
   .outputservername = "localhost",
   .inputdbname = "movesdb20240104",
-  .inputservername = "localhost",
-  .path = "inputs/rs_custom.xml",
-  .normalize = FALSE,
-  .rate = FALSE,
-  .geoaggregation = NULL,
-  .timeaggregation = "year"
+  .inputservername = "localhost"
 )
 }
 \arguments{
-\item{.geoid}{description TBA.}
+\item{.geoid}{(character) county/state FIPS code, eg. "36109"}
 
-\item{.year}{description TBA.}
+\item{.year}{(integer) eg. 2020}
 
-\item{.level}{description TBA.}
-
-\item{.default}{description TBA.}
-
-\item{.id}{description TBA.}
-
-\item{.outputdbname}{Output database name}
-
-\item{.outputservername}{Hostname of output database (defaults to localhost)}
-
-\item{.inputdbname}{Custom Input database name}
-
-\item{.inputservername}{Hostname of custom input database (defaults to localhost)}
+\item{.default}{(logical) Is it a default run (`TRUE`) or a custom run (`FALSE`)? (eg. county-data-manager = custom). Default is `FALSE` (custom).}
 
 \item{.path}{Output path for runspec.}
 
+\item{.rate}{(logical) is this for emissions rate mode or inventory mode?
+
+# Sensitive parameters - only change for a specific reason.}
+
+\item{.pollutants}{(integer) Vector of integer `pollutantID`s. 
+Will select all required pollutant-processes necessary to estimate that pollutant's emissions, using details from `get_polprocesses.R`
+Default is CO2 Equivalent (`98`) plus Criterion Air Pollutants, namely:
+ - Ozone = created when NOx (`3`) interacts with VOC (`87`)
+ - Carbon Monoxide = `2`
+ - Lead (measured by VOC) = `87`
+ - Sulfur Dioxide (SO2) = `31`
+ - Nitrogen Dioxide (NO2) = `33`
+ - PM2.5 = `110`
+ - PM10 = `100`}
+
+\item{.sourcetypes}{(integer) Vector of integer `sourceTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.}
+
+\item{.fueltypes}{(integer) Vector of integer `fuelTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.}
+
+\item{.roadtypes}{(integer) Vector of integer `roadTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
+
+Aggregation Settings}
+
+\item{.level}{(character) level of MOVES run. Eg. "county". Should match `.geoid`. Defaults to `NULL`, in which case we programmatically identify the `"level"` from `.geoid` using `what_level()`. Better to be specific about your `.level` if you're not using county level.}
+
+\item{.geoaggregation}{(character) Level of geo-aggregation of results. Options include `"county"`, `"state"`, `"link"`, `"nation"`. Typically should match up with your level, unless you have a specific reason for changing it. Default is `NULL`, where it just sets the supplied `.level` to be the `.geoaggregation` level.}
+
+\item{.timeaggregation}{(character) Level of temporal-aggregation of results. Options include `"hour"`, `"day"`, `"month"`", `"year"`. Default is `"year"`.
+
+These parameters rarely change.}
+
 \item{.normalize}{(logical) normalize the file path? FALSE}
 
-\item{.rate}{(logical) is this for emissions rate mode or inventory mode?}
+\item{.id}{description TBA. (ignore)}
+
+\item{.outputdbname}{Output database name ("moves")}
+
+\item{.outputservername}{Hostname of output database (defaults to "localhost")}
+
+\item{.inputdbname}{Custom Input database name (should be default input database "movesdb20240104", so we can adapt it.)}
+
+\item{.inputservername}{Hostname of custom input database (defaults to "localhost")}
 }
 \description{
 Designs a custom runspec file based off input parameters.
-eg. custom_rs(.geoid = "36109", .year = 2020, .level = "county", .default = FALSE)
+eg. custom_rs(.geoid = "36109", .year = 2020, .level = "county", .default = FALSE) 
+
+# Frequently Customized Parameters
 }
