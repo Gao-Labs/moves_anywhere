@@ -1,0 +1,9 @@
+{
+  "geoid": ["36109"],
+  "level": ["county"],
+  "pollutant": [6, 98, 90, 91, 5, 1],
+  "year": [2020],
+  "default": [false],
+  "dtablename": ["d36109_u1_o1"],
+  "by": [1, 16]
+}
