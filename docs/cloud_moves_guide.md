@@ -13,7 +13,7 @@ An exciting current research direction of the Cornell CAT MOVES team is the deve
 To use Cornell Cloud MOVES, you will need the following items.
 
 | Name          | Description                                                                                                                  |
-|--------------|----------------------------------------------------------|
+|---------------|------------------------------------------------------------------------------------------------------------------------------|
 | API Key       | Google Cloud API Key with requisite permissions                                                                              |
 | Gmail Account | Cornell gmail account                                                                                                        |
 | Viewer        | Viewer Permissions for Google Storage Buckets, assigned to your Cornell gmail account                                        |

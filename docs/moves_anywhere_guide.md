@@ -5,6 +5,8 @@
 -   Institution: Gao Labs \@ Cornell University
 -   Description: A Docker-based solution to run MOVES anywhere - on Windows, Mac, or Linux
 
+## 0. Welcome
+
 Welcome to `moves_anywhere`! This software suite includes several tools to help you run the Environmental Protection Agency's [MO]{.underline}tor [V]{.underline}ehicle [E]{.underline}missions [S]{.underline}imulator (MOVES) more easily. Developed by Tim Fraser and colleagues at Gao Labs at Cornell University, `moves_anywhere` aims to solve several common problems for planners, engineers, and researchers who need to know how many tons of emissions are produced from on-road transportation sources in their county or state. These problems include:
 
 -   Writing runspec.xml documents faster (a recipe for your MOVES run)
@@ -291,4 +293,3 @@ To write a runspec, you need your...
 
 `moves_anywhere` can write a `parameters.json` file from any `runspec` file, plus a few optional values, using `catr` package and its function `rs_to_parameters()`.
 
-### 
