@@ -10,7 +10,7 @@ custom_rs(
   .default = FALSE,
   .path = "inputs/rs_custom.xml",
   .rate = FALSE,
-  .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100),
+  .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100, 106, 107, 116, 117),
   .sourcetypes = NULL,
   .fueltypes = NULL,
   .roadtypes = NULL,
@@ -47,7 +47,12 @@ Default is CO2 Equivalent (`98`) plus Criterion Air Pollutants, namely:
  - Sulfur Dioxide (SO2) = `31`
  - Nitrogen Dioxide (NO2) = `33`
  - PM2.5 = `110`
- - PM10 = `100`}
+ - PM10 = `100`
+ Also...
+ - PM10 - Brakewear `106`
+ - PM10 - Tirewear `107`
+ - PM2.5 - Brakewear `116`
+ - PM2.5 - Tirewear `117`}
 
 \item{.sourcetypes}{(integer) Vector of integer `sourceTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.}
 

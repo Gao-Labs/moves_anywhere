@@ -6,7 +6,7 @@
 start docker
 main_folder=$(pwd)
 # Path to image folder
-image_folder="$(pwd)/image"
+image_folder="$(pwd)/image_moves"
 
 # Start docker
 start docker

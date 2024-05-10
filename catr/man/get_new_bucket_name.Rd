@@ -8,6 +8,7 @@ get_new_bucket_name(
   geoid = "36109",
   user = 1,
   project = "projectname",
+  type = "d",
   key_path = "runapikey.json",
   max_results = 100
 )
@@ -18,6 +19,8 @@ get_new_bucket_name(
 \item{user}{eg. 1}
 
 \item{project}{eg. "projectname"}
+
+\item{type}{eg. "d" for an inventory "data" table.}
 
 \item{key_path}{eg. "runapikey.json"}
 

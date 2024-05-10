@@ -9,7 +9,7 @@
 #' @param .default  (logical) Is it a default run (`TRUE`) or a custom run (`FALSE`)? (eg. county-data-manager = custom). Default is `FALSE` (custom).
 #' @param .path Output path for runspec.
 #' @param .rate (logical) is this for emissions rate mode or inventory mode?
-#'
+#' 
 #' # Sensitive parameters - only change for a specific reason.
 #' @param .pollutants (integer) Vector of integer `pollutantID`s. 
 #' Will select all required pollutant-processes necessary to estimate that pollutant's emissions, using details from `get_polprocesses.R`
@@ -21,6 +21,11 @@
 #'  - Nitrogen Dioxide (NO2) = `33`
 #'  - PM2.5 = `110`
 #'  - PM10 = `100`
+#'  Also...
+#'  - PM10 - Brakewear `106`
+#'  - PM10 - Tirewear `107`
+#'  - PM2.5 - Brakewear `116`
+#'  - PM2.5 - Tirewear `117`
 #' @param .sourcetypes (integer) Vector of integer `sourceTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
 #' @param .fueltypes (integer) Vector of integer `fuelTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
 #' @param .roadtypes (integer) Vector of integer `roadTypeID`s. Default is `NULL`, which grabs all of them. Suggested to use `NULL`, unless you really need to change it.
@@ -50,7 +55,7 @@ custom_rs = function(
     .default = FALSE,
     .path = "inputs/rs_custom.xml",
     .rate = FALSE,
-    .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100),
+    .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100, 106, 107,116, 117),
     .sourcetypes = NULL,
     .fueltypes = NULL,
     .roadtypes = NULL,

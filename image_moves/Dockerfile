@@ -63,8 +63,14 @@ FROM tmf77/docker_moves:v1
 WORKDIR /cat-api
 # COPY . /cat-api
 
+# Install new catr dependencies
+RUN R -e "install.packages('remotes', repos = 'http://cran.us.r-project.org')"
+RUN R -e "remotes::install_version('gargle', version = '1.5.2', repos = 'http://cran.us.r-project.org')"
+RUN R -e "remotes::install_version('googleCloudStorageR', version = '0.7.0', repos = 'http://cran.us.r-project.org')"
+RUN R -e "remotes::install_version('googleAuthR', version = '2.0.1', repos = 'http://cran.us.r-project.org')"
+RUN R -e "remotes::install_version('httr', version = '1.4.7', repos = 'http://cran.us.r-project.org')"
+
 # Install catr from source #####################################
-# RUN R -e "install.packages('readxl')"
 COPY "catr_0.1.0.tar.gz" "/cat-api/catr_0.1.0.tar.gz"
 RUN R -e "install.packages('catr_0.1.0.tar.gz', type = 'source'); print(packageVersion('catr'))"
 

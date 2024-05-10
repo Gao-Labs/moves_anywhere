@@ -407,6 +407,25 @@ bucket_upload_bulk = function(bucket, folder, last_file = NULL, token, scenario 
   
 }
 
+#' @name name_bucket_to_table
+#' @title Convert Bucket Name to Table Name
+#' @description
+#' Convert a bucketname to a tablename
+#' @export
+name_bucket_to_table = function(bucket){
+  #bucket = "d36109-u1-o1"  
+  gsub(x = bucket, pattern = "[-]", replacement = "_")
+}
+#' @name name_table_to_bucket
+#' @title Convert Table Name to Bucket Name
+#' @description
+#' Convert a tablename to a bucketname
+#' @export
+name_table_to_bucket = function(table){
+  #table = "d36109_u1_o1"
+  gsub(x = table, pattern = "[_]", replacement = "-")
+}
+
 #' @name get_new_bucket_name
 #' @title Get New Bucket Name
 #' @description
@@ -415,6 +434,7 @@ bucket_upload_bulk = function(bucket, folder, last_file = NULL, token, scenario 
 #' 
 #' @param geoid eg. "36109"
 #' @param user eg. 1
+#' @param type eg. "d" for an inventory "data" table.
 #' @param project eg. "projectname"
 #' @param key_path eg. "runapikey.json"
 #' @param max_results eg. 100
@@ -425,17 +445,19 @@ bucket_upload_bulk = function(bucket, folder, last_file = NULL, token, scenario 
 #' @importFrom readr parse_integer
 #' 
 #' @export
-get_new_bucket_name = function(geoid = "36109", user = 1, project = "projectname", 
+get_new_bucket_name = function(geoid = "36109", user = 1, project = "projectname", type = "d",
                                key_path = "runapikey.json", max_results = 100){
   # Testing values
-  # key_path = "runapikey.json"; project = "projectname"; max_results = 100
-  # user = 1; geoid = "36109"
+  # key_path = "../../runapikey.json"; project = "moves-runs"; max_results = 100
+  # user = 1; geoid = "36109"; type = "d"
+  # library(stringr)
+  # library(dplyr)
   
   # Authenticate 
   # Get an authorization token
   auth = authorize(key_path = key_path)
   # Create prefix for searching through that user's existing buckets
-  prefix = paste0(project, "-", "d", geoid, "-", "u", user)
+  prefix = paste0(type, geoid, "-", "u", user)
   # Check list of existing buckets
   response = googleCloudStorageR::gcs_list_buckets(projectId = project, prefix = prefix, maxResults = max_results)
   # If no buckets exist, this must be the first
@@ -450,8 +472,11 @@ get_new_bucket_name = function(geoid = "36109", user = 1, project = "projectname
       # Filter to just buckets that contain your user's id
       filter(str_detect(name, paste0("[-]u", user, "[-]"))) %>%
       # Get the order number 
-      mutate(order = str_remove(name, ".*[-]u[0-9]+[-]o") %>% parse_integer())
-    
+      mutate(order = str_remove(name, ".*[-]u[0-9]+[-]o"),
+             # If there are any extra metadata after the order id (eg. run -r2020), remove it.
+             order = str_remove(order, "[-].*"),
+             order = as.integer(order))
+
     if(nrow(o) == 0){
       latest_order = 0
     }else{
@@ -467,9 +492,6 @@ get_new_bucket_name = function(geoid = "36109", user = 1, project = "projectname
   new_bucket_name = paste0(prefix, "-o", this_order)
   return(new_bucket_name)
 }
-
-
-
 
 
 
