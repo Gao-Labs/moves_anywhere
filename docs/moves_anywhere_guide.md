@@ -59,15 +59,15 @@ Welcome to `moves_anywhere`! This software suite includes several tools to help 
 
     -   `adapt`(): an R function that adapts the MOVES default input database
     -   `custom_rs()`: an R function that writes customized runspec documents.
-    -   `postprocess_format()`: An R function that combines a `movesoutput` and `movesactivityoutput` table from a your outputdatabase into a `data.csv` file.
-    -   Others Example Helper Functions:
+    -   `postprocess_format()`: An R function that combines a `movesoutput` and `movesactivityoutput` table from your outputdatabase into a `data.csv` file.
+    -   Other Example Helper Functions:
         -   `translate_rs()`: an R function that extracts important metadata from a runspec into an `R` list object.
         -   `connect()`: an R function that helps you quickly connect to your output or input database.
         -   and more!
 
--   `CAT Format`*:* This format refers to the act of joining an aggregating a `movesoutput` table and `movesactivityoutput` table from your output database. CAT Format has 16 types of aggregation possible, each with their own unique id called the `by` field. `by` can therefore range from aggregation id `by = 1` to `by = 16`. Each set of aggregated data can therefore be bundled atop each other, as long as they are differentiated by a `by` column, enabling easy filtering of ready-to-use data. This means that emissions and activity variables can be seen for each county year at different levels of aggregation.
+-   `CAT Format`*:* This format refers to the act of joining and aggregating a `movesoutput` table and `movesactivityoutput` table from your output database. CAT Format has 16 types of aggregation possible, each with their own unique id called the `by` field. `by` can therefore range from aggregation id `by = 1` to `by = 16`. Each set of aggregated data can therefore be bundled atop each other, as long as they are differentiated by a `by` column, enabling easy filtering of ready-to-use data. This means that emissions and activity variables can be seen for each county year at different levels of aggregation.
 
-    -   For example, `by=16` means completely aggregated, showing the total emissions and vehicle miles travel among other metrics for a given pollutant in a given year in a given county. `by = 8` shows total emissions and activity metrics for giving pollutants and it given a year in a given county disaggregated by sourcetype, meaning type of vehicle. `by = 1` means total emissions and activity metrics for a given pollutant in a given year in a given county completely disaggregated by source type, fuel type, regulatory class, and road type.
+    -   For example, `by=16` means completely aggregated, showing the total emissions and vehicle miles traveled among other metrics for a given pollutant in a given year in a given county. `by = 8` shows total emissions and activity metrics for given pollutants in a given year in a given county disaggregated by sourcetype (type of vehicle). `by = 1` means total emissions and activity metrics for a given pollutant in a given year in a given county completely disaggregated by source type, fuel type, regulatory class, and road type.
 
     -   For a detailed explanation of CAT Format, please see this markdown document!
 
@@ -101,15 +101,15 @@ Settings involves starting up the MySQL server on the container and loading envi
 
 #### *2.2.2 Preprocessing*
 
-Preprocessing involves using the runspec and user supplied custom input tables to run the adapt.r function. As discussed earlier, adapt() imports into the default input database any provided custom input tables. Then, if a given custom input table was not supplied, it develops suitable approximations from the default input data and save these as custom input tables. Additionally, it filters other relevant tables to reflect the metadata of that moves run, fixing the county, year, region, etc. At the end, the resulting database still bears the same name as its original form as a default input database, but it is now a custom input database, it must be listed in the runspec as such.
+Preprocessing involves using the runspec and user supplied custom input tables to run the adapt.r function. As discussed earlier, adapt() imports into the default input database any provided custom input tables. Then, if a given custom input table was not supplied, it develops suitable approximations from the default input data and save these as custom input tables. Additionally, it filters other relevant tables to reflect the metadata of that moves run, fixing the county, year, region, etc. At the end, the resulting database still bears the same name as its original form as a default input database, but it is now a custom input database and must be listed in the runspec as such.
 
 #### *2.2.3 Running MOVES*
 
-Running moves involves compiling Go and Java, then directing moves to run using the specific runspec from the bucket. A typical county moves runtime for 1 county-year fairies depending on CPU. We have found that a virtual machine with 4GB of RAM and 1 CPU can run moves in inventory mode in 5-10 minutes. With more CPU, that number can decrease to about 2 minutes. A running moves in rate mode may require upwards of 30 minutes for a large number of pollutants.
+Running MOVES involves compiling Go and Java, then directing MOVES to run using the specific runspec from the bucket. A typical county MOVES runtime for 1 county-year varies depending on CPU. We have found that a virtual machine with 4GB of RAM and 1 CPU can run MOVES in inventory mode in 5-10 minutes. With more CPU, that number can decrease to about 2 minutes. Running MOVES in rate mode may require upwards of 30 minutes for a large number of pollutants.
 
 #### *2.2.4 Post-processing*
 
--   At the conclusion of the moves container's process, it has written its output files to the aptly named output database `"moves"`. These tables will only exist as long as the container runs, so they must be collected from the database and written to file in the bucket as `csv`s.
+-   At the conclusion of the MOVES container's process, it has written its output files to the aptly named output database `"moves"`. These tables will only exist as long as the container runs, so they must be collected from the database and written to file in the bucket as `csv`s.
 
 -   The `postprocess.r` script extracts relevant tables depending on what type of run was specified in your `runspec`.
 
