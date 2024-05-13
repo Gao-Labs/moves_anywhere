@@ -35,7 +35,8 @@ dos2unix "$IMAGE_FOLDER/launch.sh"
 cd "$IMAGE_FOLDER"
 
 # Build the Docker image
-docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG . --no-cache
+docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG . 
+#--no-cache
 
 # Reset working directory out of the image folder
 cd ..

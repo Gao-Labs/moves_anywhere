@@ -81,6 +81,9 @@ COPY preprocess_adapt.r /cat-api/preprocess_adapt.r
 COPY postprocess.r /cat-api/postprocess.r
 COPY adapt.r /cat-api/adapt.r
 
+# Setting mysql/mariadb configurations based on MOVES repository README
+COPY my.cnf /etc/my.cnf
+
 # Launch MOVES 
 COPY launch.sh /cat-api/launch.sh
 RUN chmod +x /cat-api/launch.sh
