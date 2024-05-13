@@ -30,4 +30,5 @@ demos/demo3/.Renviron
 key.json
 dev/key.json
 dev/.env
-
+dev/oauth2.json
+dev/app.R

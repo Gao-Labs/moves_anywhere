@@ -544,4 +544,49 @@ drop_bucket = function(bucket = "d36109-u1-o12", project = "projectname",key_pat
 
 
 
+#' @name workflow_execute
+#' @title Execute Workflow
+#' @author Tim Fraser
+#' @description
+#' Primarily used to publish tables from `granddata` to `orderdata`, for Cornell CATCLOUD developers.
+#' `body` should be a list, matching this structure:
+#' `list(fromdbname = "orderdata", fromdbtable = "d36109_u1_o18", todbname = "granddata", todbtable =  "dZZZZZ")`
+#' @importFrom httr add_headers POST
+#' @importFrom jsonlite toJSON
+#' @importFrom dplyr `%>%`
+#' @export
+workflow_execute = function(workflow_name, body, project= "moves-runs", region = "us-central1", token){
+  # Testing Values
+  # workflow_name = "orderdata-to-granddata"; 
+  # project = "moves-runs"; region = "us-central1"; token = auth$credentials$access_token;
+  # key_path = "image_transfer/secret/runapikey.json"
+  # auth = catr::authorize(key_path = key_path)
+  # body = list(fromdbname = "orderdata", fromdbtable = "d36109_u1_o18", todbname = "granddata", todbtable =  "dZZZZZ")
+  
+  # require(httr)
+  # require(jsonlite)
+  # require(dplyr)
+  
+  # Make URL
+  url = paste0("https://workflowexecutions.googleapis.com/v1/projects/", project, "/locations/", region, "/workflows/", workflow_name, "/executions")
+  
+  # Make authorization header
+  headers = add_headers(
+    "Authorization" = paste("Bearer ", token),
+    "Content-Type" = "application/json; charset = utf-8"
+  )
+  
+  body = body %>%
+    toJSON(auto_unbox = TRUE) %>% as.character() %>%
+    list(argument = .)
+  
+  
+  response = POST(url = url, body = body, encode = "json", headers)
+  
+  check_response(response)
+  return(response)
+  
+}
+
+
 

@@ -16,6 +16,7 @@
 
 # TEST 2: Upload using .Renviron + SSL Credentials (Cloud SQL example) #########################################
 
+
 # Variables
 REPO=$(git rev-parse --show-toplevel)
 cd "$REPO"
@@ -41,6 +42,9 @@ docker run  \
   -e "DBPORT=$PORT" \
   --name "dock" \
   -it "$IMAGE_NAME"
+
+
+
 
 
 
