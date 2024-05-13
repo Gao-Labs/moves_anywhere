@@ -144,3 +144,23 @@ These links may be helpful to you as you check in on the status of your uploads 
 -   [Check API Key here](https://drive.google.com/file/d/1i09dCu8aC6yEuxd2UVQZcRddRHrgkUKc/view?usp=sharing). (Need permission)
 
 -   [Check CATCLOUD Read-Write Credentials for `orderdata` here.](https://docs.google.com/document/d/1ZA-Q5pPdhPyOwZrjfHl99TfyRz67P2BN245LV4TydvQ/edit?usp=sharing) (Need permission)
+
+## 4. Step-By-Step Example
+This walks through one example run in MOVES Emission Rates Mode, including generating a runspec using `custom_rs()`.
+1. Clone this repository and open in RStudio
+2. Add your `runapikey.json` file to the root `moves_anywhere` folder.
+3. Locate `moves_anywhere/demos/demo_run/workflow_rate.R`
+4. Alter any parameters on line 19 that you wish.
+5. Run this file line by line, and trigger the job at line 19. If you get errors at any step, skip to Troubleshooting.
+6. Check on the status/success of the job [here.](https://console.cloud.google.com/run/jobs?authuser=1&project=moves-runs&supportedpurview=project)
+
+### Troubleshooting
+- `Error in library(catr) : there is no package called ‘catr’` and/or `Error: repeated formal argument 'folder' (trigger_run.R:10:24)`
+    - Run in R console: `install.packages("../../catr/catr_0.1.0.tar.gz", repos=NULL, type="source", dependencies=TRUE)`
+- `Error: lexical error: invalid char in json text. ../../runapikey.json (right here) ------^`
+    - Make sure you have `runapikey.json` in your root folder.
+ 
+  
+ 
+  
+
