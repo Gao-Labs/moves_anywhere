@@ -146,19 +146,40 @@ These links may be helpful to you as you check in on the status of your uploads 
 -   [Check CATCLOUD Read-Write Credentials for `orderdata` here.](https://docs.google.com/document/d/1ZA-Q5pPdhPyOwZrjfHl99TfyRz67P2BN245LV4TydvQ/edit?usp=sharing) (Need permission)
 
 ## 4. Step-By-Step Example
+### Example 1: Runspec Generation via `moves_anywhere` repo and RStudio
 This walks through one example run in MOVES Emission Rates Mode, including generating a runspec using `custom_rs()`.
 1. Clone this repository and open in RStudio
 2. Add your `runapikey.json` file to the root `moves_anywhere` folder.
 3. Locate `moves_anywhere/demos/demo_run/workflow_rate.R`
-4. Alter any parameters on line 19 that you wish.
-5. Run this file line by line, and trigger the job at line 19. If you get errors at any step, skip to Troubleshooting.
+4. Alter any parameters on line 19 that you wish to configure your runspec.
+5. Run this file line by line. This will create a custom runspec, create a bucket, and trigger the MOVES job. If you get errors at any step, skip to Troubleshooting.
 6. Check on the status/success of the job [here.](https://console.cloud.google.com/run/jobs?authuser=1&project=moves-runs&supportedpurview=project)
 
-### Troubleshooting
+#### Troubleshooting
 - `Error in library(catr) : there is no package called ‘catr’` and/or `Error: repeated formal argument 'folder' (trigger_run.R:10:24)`
     - Run in R console: `install.packages("../../catr/catr_0.1.0.tar.gz", repos=NULL, type="source", dependencies=TRUE)`
 - `Error: lexical error: invalid char in json text. ../../runapikey.json (right here) ------^`
     - Make sure you have `runapikey.json` in your root folder.
+
+### Example 2: Custom Input Run with premade runspec
+1. On the [Google Storage Buckets page](https://console.cloud.google.com/storage/browser?forceOnBucketsSortingFiltering=true&authuser=1&hl=en&project=moves-runs&supportedpurview=project&prefix=&forceOnObjectsSortingFiltering=false), click on "CREATE +".
+2. Name your bucket according to the naming convention `d<geoid>-u<userid>-o<orderid>`. Click "Continue".
+3. Change "Location Type" to "Region" and select us-central1 (Iowa). If you select another region, the automatic triggering of the MOVES run may not work. 
+4. Click "Continue" and do so for the rest of the bucket creation process, using the default settings and clicking "Confirm" on the pop-up window at the end.
+5. In your newly created bucket, upload any custom input files.
+6. Upload the runspec (must be called `rs_custom.xml`) which triggers the job.
+7. Check on the status/success of the job [here.](https://console.cloud.google.com/run/jobs?authuser=1&project=moves-runs&supportedpurview=project)
+
+#### Troubleshooting
+- `Container terminated on signal 7.`
+    - We think this is an "out of memory" error. You can increase the memory and CPU by going to Job execution > YAML and editing the file:
+    ```
+    limits:
+            cpu: 1000m
+            memory: 4Gi
+    ```
+    - Increase each of these limits by x2 (in this example, cpu = 2000m and memory = 8Gi).
+    - Rerun the task ("Execute").
  
   
  
