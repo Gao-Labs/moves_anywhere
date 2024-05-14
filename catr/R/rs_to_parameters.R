@@ -16,12 +16,19 @@
 #' @export
 rs_to_parameters = function(path_rs = "rs_custom.xml", path_parameters = "parameters.json", tablename = NULL, user = 1, order = 1, by = c(1,16,8,12,14,15),  multiple = FALSE, return = FALSE){
   
+  # Testing values
+  # setwd(rstudioapi::getActiveProject())
+  # setwd("catr")
+  # path_rs = 'z/test.xml'
+  
   p = path_rs %>%
     translate_rs() %>%
     # Extract a list of values
     with(list(
       geoid = geoid, level = level, pollutant = pollutant, year = year,
-      default = default))
+      default = default, 
+      # Extra values
+      mode = mode, geoaggregation = geoaggregation, timeaggregation = timeaggregation))
   
   # If dtablename is not provided
   if(is.null(tablename)){
@@ -48,7 +55,7 @@ rs_to_parameters = function(path_rs = "rs_custom.xml", path_parameters = "parame
   }
   
   p %>%
-    toJSON(pretty = TRUE) %>%
+    toJSON(pretty = TRUE, auto_unbox = TRUE) %>%
     cat(file = path_parameters)  
   
   # If return is true, return the list

@@ -24,11 +24,10 @@ devtools::build(path = ".", pkg = getwd(), binary = FALSE, manual = TRUE, vignet
 # Get package name
 package = "catr_0.1.0.tar.gz"
 # Copy package to image folders
-#file.copy(from = package, to = paste0("../image/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_rs/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_cloudproxy/", package), overwrite = TRUE)
-#file.copy(from = package, to = paste0("../image_cmd/", package), overwrite = TRUE)
 file.copy(from = package, to = paste0("../image_moves/", package), overwrite = TRUE)
+file.copy(from = package, to = paste0("../image_xml2json/", package), overwrite = TRUE)
 
 # Unload catr if installed or loaded
 unloadNamespace(ns = "catr"); remove.packages("catr")
@@ -43,6 +42,8 @@ install.packages(package, type = "source")
 # Clean up
 rm(list = ls()); gc()
 
+# Restart session
+rstudioapi::restartSession()
 # Tidy up your description file
 #usethis::use_tidy_description()
 

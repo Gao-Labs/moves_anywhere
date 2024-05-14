@@ -7,7 +7,7 @@ trigger_run = function(geoid = "36109", year = 2020, level = "county", default =
                        sourcetypes = NULL, fueltypes = NULL, roadtypes = NULL, # this means use all
                        user = 1, folder = "./volume", by = c(1,16,8,12,14,15),
                        project = "moves-runs", region = "us-central1",
-                       folder, key_path){
+                       key_path){
 
   # Testing values
   # key_path = "../../runapikey.json" # path to your private runapikey.json
