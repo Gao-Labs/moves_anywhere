@@ -24,6 +24,8 @@ adapt = function(.runspec, .changes = NULL){
   # .changes = NULL
   # .runspec = "inputs/rs_36109_2020_rs_moves31_custom_1.xml"
   # .runspec = "EPA_MOVES_Model/rs_custom.xml"
+  # .runspec = "image_moves/volume_1990/rs_custom.xml"
+  
   # 1. RUNSPEC ###################################################
   
   # Load translate_rs() function
@@ -347,32 +349,143 @@ adapt = function(.runspec, .changes = NULL){
   ### regioncounty ################################################
   # Shrink the list of fuelregions to just those that align with your geoid
   if(!"regioncounty" %in% .changed){
+  
     # Query
-    data = custom %>% tbl("regioncounty") %>% 
+    data = custom %>% tbl("regioncounty") %>%
       filter(countyID %in% !!.geoid, fuelYearID %in% !!.year) %>% collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE regioncounty;")
     # Append
     DBI::dbWriteTable(conn = custom, name = "regioncounty", value = data, overwrite = FALSE, append = TRUE)
     # Message
-    cat(paste0("\n---adapted default table:   ", "regioncounty", counter(data)))
+    cat(paste0("\n---adapted default table:   ", "regioncounty", counter(data), "\n"))
     # Cleanup
     remove(data)
-    
+
   }
-  
+
   ### (N/A) fuelformulation #################################
-  # .table = "fuelformulation"
-  # data = custom %>% tbl(.table)  %>%
-  #   collect()
-  #   DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
+  if(!"fuelformulation" %in% .changed){
+    #if(.year %in% c(1990:2000)){
+#      For testing only
+      # library(DBI)
+      # library(RMariaDB)
+      # library(dplyr)
+      # custom = dbConnect(
+      #   drv = RMariaDB::MariaDB(),
+      #   user = "moves",
+      #   password = "moves",
+      #   host = "localhost",
+      #   port = 1235,
+      #   dbname = "movesdb20240104"
+      # )
+      # ids = list(regionID = 100000000)
+      # .year = 1990
+      # .month = 1:12
+
+      # .table = "fuelformulation"
+      # data = custom %>% tbl(.table)  %>%
+      #   collect()
+      # 
+      # # These fuel formulations have ETOH volume under 10,
+      # # so MOVES is throwing a fit, wants to reclassify them as fuelSubTypeID = 13
+      # # ERROR: Missing: Warning: Fuel formulation 2675 changed fuelSubtypeID from 12 to 13 based on ETOHVolume
+      # # ERROR: Missing: Warning: Fuel formulation 2676 changed fuelSubtypeID from 12 to 13 based on ETOHVolume
+      # # ERROR: Missing: Warning: Fuel type 5 is imported but will not be used
+      # 
+      # # Some fuels were very much not available until 2000s
+      # 
+      # # data = data %>%
+      # #   mutate(fuelSubtypeID = case_when(
+      # #     fuelFormulationID == 2675 ~ 13,
+      # #     fuelFormulationID == 2676 ~ 13,
+      # #     TRUE ~ fuelSubtypeID))
+      # # 
+      # # Certain fuel formulations are not possible for certain years.
+      # 
+      # # Truncate
+      # DBI::dbExecute(custom, "TRUNCATE TABLE fuelformulation;")
+      # # Append
+      # DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
+      # # Message
+      # cat(paste0("\n---adapted default table:   ", "fuelformulation", counter(data)))
+      # # Cleanup
+      # remove(data)
+      # 
+      #dbDisconnect(custom)
+    #}  
+  }
   
   ### fuelsupply #################################
   if(!"fuelsupply" %in% .changed){
+    
+
+    # For fuelsupply, marketShare MUST sum to 1 for each fueltype
+    
+    #For testing only
+    # library(DBI)
+    # library(RMariaDB)
+    # library(dplyr)
+    # custom = dbConnect(
+    #   drv = RMariaDB::MariaDB(),
+    #   user = "moves",
+    #   password = "moves",
+    #   host = "localhost",
+    #   port = 1235,
+    #   dbname = "movesdb20240104"
+    # )
+    # ids = list(regionID = 100000000)
+    # .year = 1990
+    # .month = 1:12
+
     # Query
     data = custom %>% tbl("fuelsupply")  %>%
-      filter(fuelRegionID %in% !!ids$regionID, fuelYearID %in% !!.year, monthGroupID %in% !!.month) %>%
+      filter(fuelRegionID %in% !!ids$regionID, fuelYearID %in% !!.year, monthGroupID %in% !!.month)  %>%
+      left_join(
+        by = c("fuelFormulationID"),
+        y = custom %>% 
+          tbl("fuelformulation") %>%
+          select(fuelFormulationID, fuelSubtypeID) 
+      ) %>%
+      left_join(
+        by = c("fuelSubtypeID"),
+        y = custom %>% 
+          tbl("fuelsubtype") %>%
+          select(fuelSubtypeID, fuelTypeID) 
+      ) %>%
+      # For each fueltype...
+      # Rescale the marketShare of each fuelFormulation,
+      # in case they don't sum to 1,
+      # so that they do sum to 1.
+      group_by(fuelRegionID, fuelYearID, monthGroupID, fuelTypeID) %>%
+      mutate(marketShare = marketShare / sum(marketShare, na.rm = TRUE)) %>%
+      # Rescaling can produce divide by zero errors. We will replace these na values with 0.
+      mutate(marketShare = if_else(is.na(marketShare), true = 0, false = marketShare)) %>%
+      ungroup()  %>%
+      select(-any_of(c("fuelSubtypeID", "fuelTypeID"))) %>%
       collect()
+  
+    # custom %>% tbl("fuelsupply")   %>%
+    #   filter(marketShare == 0 )
+    # custom %>%
+    #   tbl("fuelformulation") %>%
+    #   filter(fuelFormulationID %in% c(2675, 2676) ) %>%
+    #   # left_join(
+    #   #   by = c("fuelFormulationID"),
+    #   #   y = custom %>% 
+    #   #     tbl("fuelformulation") %>%
+    #   #     select(fuelFormulationID, fuelSubtypeID) 
+    #   # ) %>%
+    #    left_join(
+    #     by = c("fuelSubtypeID"),
+    #     y = custom %>% 
+    #       tbl("fuelsubtype") %>%
+    #       select(fuelSubtypeID, fuelTypeID, fuelSubtypeDesc) 
+    #   ) %>%
+    #   glimpse()
+    
+    # dbDisconnect(custom)
+    
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE fuelsupply;")
     # Append
@@ -381,13 +494,36 @@ adapt = function(.runspec, .changes = NULL){
     cat(paste0("\n---adapted default table:   ", "fuelsupply", counter(data)))
     # Cleanup
     remove(data)
-    
-  }  
+
+  }
   ### fuelusagefraction #################################
   if(!"fuelusagefraction" %in% .changed){
+    
+    #For testing only
+    # library(DBI)
+    # library(RMariaDB)
+    # library(dplyr)
+    # custom = dbConnect(
+    #   drv = RMariaDB::MariaDB(),
+    #   user = "moves",
+    #   password = "moves",
+    #   host = "localhost",
+    #   port = 1235,
+    #   dbname = "movesdb20240104"
+    # )
+    # ids = list(regionID = 100000000)
+    # .year = 1990
+    # .month = 1:12
+    # .geoid = '36109'
+
+    # EPA MOVES 4.0 Training Slides
+    # https://www.epa.gov/system/files/documents/2023-12/moves4-training-slides-2023-12.pdf
+    # Fuels: Fuel Usage
+
     # Query
     data = custom %>% tbl("fuelusagefraction") %>%
       filter(countyID %in% !!.geoid, fuelYearID  %in% !!.year) %>% collect()
+
     # truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE fuelusagefraction;")
     # append
@@ -396,25 +532,25 @@ adapt = function(.runspec, .changes = NULL){
     cat(paste0("\n---adapted default table:   ", "fuelusagefraction", counter(data)))
     # Cleanup
     remove(data)
-    
+
   }
-  
+
   ### avft ####################################
   # If an avft table was not supplied by the user...
   if(!"avft" %in% .changed){
     # Estimate our own from the default database.
-    
-    
+
+
     # To make the default AVFT,
-    # you would group by all of the ID columns except regulatory class, 
-    # and then rename the stmyFraction column to FuelEngFraction. 
-    # We could also store any default inputs we needed to make (such as AVFT) 
+    # you would group by all of the ID columns except regulatory class,
+    # and then rename the stmyFraction column to FuelEngFraction.
+    # We could also store any default inputs we needed to make (such as AVFT)
     # of the default inputs in database form, do the imports with the csv provided,
-    # then copy any leftover tables from the default database or our own, 
+    # then copy any leftover tables from the default database or our own,
     # and change any necessary ids
-    
+
     # https://github.com/USEPA/EPA_MOVES_Model/blob/master/docs/MOVESDatabaseTables.md#samplevehiclepopulation
-    
+
     # Query
     data = custom %>%
       tbl("samplevehiclepopulation") %>%
@@ -430,7 +566,7 @@ adapt = function(.runspec, .changes = NULL){
     cat(paste0("\n---adapted default table:   ", "avft", counter(data)))
     # Cleanup
     remove(data)
-    
+
   }
   
   ## SOURCETYPE POPULATION #############################

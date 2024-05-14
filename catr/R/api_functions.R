@@ -298,7 +298,7 @@ object_delete = function(file, bucket, token){
 #' @param token ...
 #' @export
 object_delete_bulk = function(bucket, token){
-  response = movesrunner::object_list(bucket = bucket, token = auth$credentials$access_token)
+  response = object_list(bucket = bucket, token = auth$credentials$access_token)
   objects = jsonlite::fromJSON(rawToChar(response$content))
   for(i in objects$items$name){
     object_delete(file = i, bucket = bucket, token = auth$credentials$access_token)
@@ -505,7 +505,7 @@ get_new_bucket_name = function(geoid = "36109", user = 1, project = "projectname
 #' @param key_path path to API key for authentification
 #'
 #' @export
-drop_bucket = function(bucket = "d36109-u1-o12", project = "projectname",key_path = "raunapikey.json"){
+drop_bucket = function(bucket = "d36109-u1-o12", key_path = "raunapikey.json"){
   
   # Testing Values
   # bucket = "d36109-u1-o12"; key_path = "raunapikey.json"
@@ -525,7 +525,7 @@ drop_bucket = function(bucket = "d36109-u1-o12", project = "projectname",key_pat
   
   # Take dtablename - this will be the name of the folder for upload too
   # Get bucket name
-  bucket = paste0(project, "-", dtablename_gc)
+  #bucket = paste0(project, "-", bucket)
   
   ## LIST OBJECTS
   response = object_list(bucket = bucket, token = auth$credentials$access_token)

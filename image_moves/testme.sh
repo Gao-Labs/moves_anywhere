@@ -52,6 +52,11 @@ docker run  \
   --name "dock" \
   --mount src="$BUCKET/",target="/cat-api/inputs",type=bind \
   -it "$IMAGE_NAME"
+  
+  
+  
+  
+
 
 
 # Jump into the Container

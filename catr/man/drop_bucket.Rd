@@ -4,18 +4,14 @@
 \alias{drop_bucket}
 \title{Drop Bucket}
 \usage{
-drop_bucket(
-  bucket = "d36109-u1-o12",
-  project = "projectname",
-  key_path = "raunapikey.json"
-)
+drop_bucket(bucket = "d36109-u1-o12", key_path = "raunapikey.json")
 }
 \arguments{
 \item{bucket}{name of bucket eg. "d36109-u1-o12"}
 
-\item{project}{"projectname"}
-
 \item{key_path}{path to API key for authentification}
+
+\item{project}{"projectname"}
 }
 \description{
 META-function to remove all elements from a bucket and then drop it.

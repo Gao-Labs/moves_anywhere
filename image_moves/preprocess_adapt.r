@@ -47,10 +47,10 @@ if(length(csvs) > 0){ changes = paste0("inputs/", csvs) }else{ changes = NULL }
 # Adapt your default database to be a custom database,
 # using a vector of supplied .csv paths, named after the tables they replace.
 # Load packages
-library(catr, quietly = TRUE)
-library(DBI, quietly = TRUE)
-library(RMariaDB, quietly = TRUE)
-library(dplyr, quietly = TRUE)
+library(catr, warn.conflicts = FALSE,  quietly = TRUE)
+library(DBI, warn.conflicts = FALSE, quietly = TRUE)
+library(RMariaDB, warn.conflicts = FALSE,  quietly = TRUE)
+library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
 
 # Load adapt() function (now in catr)
 source("adapt.r")

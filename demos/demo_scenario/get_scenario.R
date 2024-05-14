@@ -5,6 +5,7 @@
 get_scenario = function(user, geoid, years = seq(from = 1990, to = 2060, by = 5), by = c(1,16,8,12,14,15),
                         level = "county", default = FALSE, 
                         geoaggregation = "county", timeaggregation = "year", rate = FALSE,
+                        pollutants = c(98, 3, 87, 2, 31, 33, 110, 100, 106, 107, 116, 117),
                         project = "moves-runs", # project name
                         region = "us-central1", # region name
                         key_path){
@@ -79,6 +80,7 @@ get_scenario = function(user, geoid, years = seq(from = 1990, to = 2060, by = 5)
       .geoid = geoid, .year = runs$years[i], 
       .level = level, .default = default,
       .path = runs$path_rs[i],
+      .pollutants = pollutants,
       .geoaggregation = geoaggregation, .timeaggregation = timeaggregation, .rate = rate
     )
     # Make a parameters.json from the runspec
