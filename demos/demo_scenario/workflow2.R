@@ -34,10 +34,10 @@ get_scenario(user = user, geoid = geoid, years = seq(from = 1990, to = 2060, by 
 #              key_path = key_path)
 
 
-get_scenario(user = user, geoid = geoid, years = 1990, 
-             pollutants = 98,
-             level = "county", geoaggregation = "county", timeaggregation = "year",rate = FALSE, 
+get_scenario(user = user, geoid = geoid, years = c(2000), 
+             pollutants = 98, level = "county", geoaggregation = "county", timeaggregation = "year",rate = FALSE, 
              key_path = key_path)
+
 
 c("d36109-u1-o34-r1990") %>%
   drop_bucket(bucket = ., key_path = key_path)

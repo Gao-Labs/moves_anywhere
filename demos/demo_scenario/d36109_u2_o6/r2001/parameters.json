@@ -1,0 +1,13 @@
+{
+  "geoid": "36109",
+  "level": "county",
+  "pollutant": [98, 90, 91, 6, 5, 1],
+  "year": 2001,
+  "default": false,
+  "mode": "inv",
+  "geoaggregation": "county",
+  "timeaggregation": "year",
+  "dtablename": "d36109_u2_o6",
+  "by": [1, 16, 8, 12, 14, 15],
+  "multiple": true
+}
