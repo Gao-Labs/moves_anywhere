@@ -2,7 +2,7 @@
 #' @description
 #' Function for generating an up-to-date picture of NY counties
 
-get_scenario = function(user, geoid, years = seq(from = 1990, to = 2060, by = 5), by = c(1,16,8,12,14,15),
+get_scenario = function(user, geoid, years = seq(from = 2005, to = 2060, by = 5), by = c(1,16,8,12,14,15),
                         level = "county", default = FALSE, 
                         geoaggregation = "county", timeaggregation = "year", rate = FALSE,
                         pollutants = c(98, 3, 87, 2, 31, 33, 110, 100, 106, 107, 116, 117),

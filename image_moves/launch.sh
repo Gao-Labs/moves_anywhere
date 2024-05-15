@@ -41,6 +41,9 @@ echo ------------editing MOVESConfiguration.txt------------
 sed -i 's|\\|/|g' MOVESConfiguration.txt
 
 
+# Ensure debugdata is kept
+sed -i 's/keepDebugData = false;/keepDebugData = true;/' gov/epa/otaq/moves/master/framework/OutputProcessor.java
+
 # Ensure that the output of these two match: 
 #   which java should have the same path as $JAVA_HOME, but with /bin/java at the end
 which java

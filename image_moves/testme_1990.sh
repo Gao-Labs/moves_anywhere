@@ -20,17 +20,9 @@ docker run  \
   --rm \
   --name "dock" \
   --mount src="$BUCKET/",target="/cat-api/inputs",type=bind \
-  --memory="8g" \
-  --cpus="2" \
+  --memory="4g" \
+  --cpus="1" \
   -it "$IMAGE_NAME"
 
 
-# ERROR: Missing: Warning: Fuel formulation 2675 changed fuelSubtypeID from 12 to 13 based on ETOHVolume
-# ERROR: Region 600000000, year 2000, month 1, fuel type 1 market share is not 1.0 but instead 0.9999
-# In
-
-# MOVES 4.0 Training Slides
-# https://www.epa.gov/system/files/documents/2023-12/moves4-training-slides-2023-12.pdf
-# On p277, Fuel: Fuel Supply
-# marketShare is suppose to sum to 1 for each fueltype
 
