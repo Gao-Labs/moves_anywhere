@@ -252,11 +252,23 @@ Things I have tried to resolve this:
 
 -   [x] Checking whether it runs better with fewer sourcetypes –\> NOPE.
 
--   [ ] Filter out `fuelformulation` `2675` and `2676`
+-   [x] Filter out `fuelformulation` `2675` and `2676` –\> Removes error, but sitll ends early.
 
--   [ ] removing modifications to `avft`
+-   [x] Try running just passenger cars.
 
--   [ ] Writing adapt-generated files to bucket.
+-   [x] Add debugging step
+
+-   [x] removing modifications to `avft` —\> Didn't help. AVFT is required.
+
+-   [x] Try filtering by `fueltype` in adapt. Didn't really help. Had to remove them.
+
+-   [x] Check whether 2000 works again. –\> Nope.
+
+-   [x] Check whether 2000 works with more pollutants. –\> Nope.
+
+-   [x] Check whether 2000 works with more sourcetypes. –\> Nope.
+
+-   [ ] Conclusion: Tentatively, focus on 2001 to 2060 for Cloud MOVES runs.
 
 ### Issue: `innodb` settings and packet size
 
