@@ -18,6 +18,8 @@ What are we trying to do with Cloud MOVES, and what aren't we trying to do?
 
 ## 1. Requirements for Cornell Cloud MOVES
 
+### 1.1 Requirements
+
 To use Cornell Cloud MOVES, you will need the following items.
 
 | Name          | Description                                                                                                                  |
@@ -35,6 +37,18 @@ To use Cornell Cloud MOVES, you will need the following items.
 | Scenario Run  | If doing several MOVES run as a scenario, review demo_scenario.R.                                                            |
 
 If any questions, ask Tim Fraser [tmf77\@cornell.edu](mailto:tmf77@cornell.edu){.email}. Please be sure to read the documentation first, as 99% of questions often can be first resolved with the documentation. 😃
+
+### 1.2 Test Users
+
+| ID | Name         |
+| -  | ----------   |
+| 1  | Test Account |
+| 2  | Tim          |
+| 3  | Erin         |
+| 4  | Carl         |
+| 5  | Alireza      |
+| 6  | Tolkein      |
+
 
 ## 2. Cloud MOVES Process
 
