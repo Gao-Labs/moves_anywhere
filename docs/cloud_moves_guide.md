@@ -48,6 +48,7 @@ If any questions, ask Tim Fraser [tmf77\@cornell.edu](mailto:tmf77@cornell.edu){
 | 4  | Carl         |
 | 5  | Alireza      |
 | 6  | Tolkein      |
+| 7  | Baby MOVES   |
 
 
 ## 2. Cloud MOVES Process
