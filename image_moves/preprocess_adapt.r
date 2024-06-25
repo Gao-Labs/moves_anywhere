@@ -55,7 +55,7 @@ library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
 # Load adapt() function (now in catr)
 source("adapt.r")
 # Run adapt() function on runspec with vector of custom input csv table paths
-adapt(.changes = changes, .runspec = runspec)
+adapt(.changes = changes, .runspec = runspec, .save = TRUE, .volume = "inputs")
 # Remove adapt function
 # remove(adapt)
 

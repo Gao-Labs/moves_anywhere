@@ -10,13 +10,13 @@
 #' 
 #' @importFrom dplyr `%>%` mutate filter tbl collect
 #' @importFrom stringr str_remove str_extract
-#' @importFrom readr read_csv
+#' @importFrom readr read_csv write_csv
 #' @importFrom tidyr expand_grid
 #' @importFrom DBI dbWriteTable dbConnect dbDisconnect
 #' 
 #' @export
 
-adapt = function(.runspec, .changes = NULL){
+adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   
   # a script to 'adapt' existing default data to a new 'custom' db
   
@@ -34,6 +34,10 @@ adapt = function(.runspec, .changes = NULL){
   
   # Save list of key values as object 'rs'
   rs = catr::translate_rs(.runspec = .runspec)
+  
+  # Get the path to your volume
+  #volume = "inputs"
+  volume = .volume
   
   # Relabel key values from runspec.
   .year = rs$year # eg. 2020
@@ -174,8 +178,11 @@ adapt = function(.runspec, .changes = NULL){
       overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "year", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_year.csv")) }
     # Cleanup
     remove(data)
+    
   }
   ### county #######################################################
   if(!"county" %in% .changed){
@@ -186,6 +193,8 @@ adapt = function(.runspec, .changes = NULL){
     # Append to table
     DBI::dbWriteTable(conn = custom, name = "county", value = data, overwrite = FALSE, append = TRUE)
     cat(paste0("\n---adapted default table:   ", "county", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_county.csv")) }
     # Cleanup
     remove(data)
   }
@@ -201,6 +210,8 @@ adapt = function(.runspec, .changes = NULL){
     # Append
     DBI::dbWriteTable(conn = custom, name = "state", value = data, overwrite = FALSE, append = TRUE)
     cat(paste0("\n---adapted default table:   ", "state", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_state.csv")) }
     # Cleanup
     remove(data)
   }
@@ -214,6 +225,8 @@ adapt = function(.runspec, .changes = NULL){
     # Append
     DBI::dbWriteTable(conn = custom, name = "idleregion", value = data, overwrite = FALSE, append = TRUE)
     cat(paste0("\n\n---adapted default table:   ", "idleregion", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_idleregion.csv"))  }
     # Cleanup
     remove(data)
   }
@@ -230,6 +243,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "totalidlefraction", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "totalidlefraction", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_totalidlefraction.csv"))    }
     # Cleanup
     remove(data)
     
@@ -245,6 +260,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "imcoverage", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "imcoverage",counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_imcoverage.csv"))    }
     # Cleanup
     remove(data)
     
@@ -260,6 +277,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "zone", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "zone", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_zone.csv"))    }
     # Cleanup
     remove(data)
   }
@@ -274,6 +293,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "zonemonthhour", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "zonemonthhour", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_zonemonthhour.csv"))    }
     # Cleanup
     remove(data)
     
@@ -290,6 +311,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "zoneroadtype", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "zoneroadtype", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){  data %>% readr::write_csv(paste0(volume, "/_zoneroadtype.csv"))    }
     # Cleanup
     remove(data)
     
@@ -309,6 +332,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "hotellingactivitydistribution", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "hotellingactivitydistribution", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_hotellingactivitydistribution.csv"))    }
     # Cleanup
     remove(data)
   }
@@ -410,6 +435,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "regioncounty", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "regioncounty", counter(data), "\n"))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_regioncounty.csv"))    }
     # Cleanup
     remove(data)
     
@@ -464,6 +491,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "fuelformulation", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_fuelformulation.csv"))    }
     # Cleanup
     remove(data)
     
@@ -557,6 +586,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "fuelsupply", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "fuelsupply", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_fuelsupply.csv"))    }
     # Cleanup
     remove(data)
     
@@ -595,6 +626,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "fuelusagefraction", value = data, overwrite = FALSE, append = TRUE)
     # message
     cat(paste0("\n---adapted default table:   ", "fuelusagefraction", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_fuelusagefraction.csv"))    }
     # Cleanup
     remove(data)
     
@@ -646,6 +679,9 @@ adapt = function(.runspec, .changes = NULL){
     dbWriteTable(conn = custom, name = "avft", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "avft", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_avft.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -696,6 +732,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "sourcetypeyear", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "sourcetypeyear", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_sourcetypeyear.csv"))    }
     # Cleanup
     remove(data)
   }
@@ -763,6 +801,9 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "hpmsvtypeyear", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "hpmsvtypeyear", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_hpmsvtypeyear.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -831,6 +872,9 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "dayvmtfraction", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "dayvmtfraction", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_dayvmtfraction.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -845,6 +889,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "hourvmtfraction", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "hourvmtfraction", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_hourvmtfraction.csv"))    }
     # Cleanup
     remove(data)
     
@@ -860,6 +906,9 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "monthvmtfraction", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "monthvmtfraction", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_monthvmtfraction.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -879,6 +928,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "sourcetypeagedistribution", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "sourcetypeagedistribution", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_sourcetypeagedistribution.csv"))    }
     # Cleanup
     remove(data)
     
@@ -900,6 +951,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "startshourfraction", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "startshourfraction", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_startshourfraction.csv"))    }
     # Cleanup
     remove(data)
     
@@ -930,6 +983,9 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "starts", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "starts", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_starts.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -948,6 +1004,9 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "startsperday", value = data, overwrite = FALSE, append = TRUE)
     # Mesage
     cat(paste0("\n---adapted default table:   ", "startsperday", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_startsperday.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -963,6 +1022,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "startsperdaypervehicle", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "startsperdaypervehicle", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_startsperdaypervehicle.csv"))    }
     # Cleanup
     remove(data)
     
@@ -982,6 +1043,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "avgspeeddistribution", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "avgspeeddistribution", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_avgspeeddistribution.csv"))    }
     # Cleanup
     remove(data)
     
@@ -1014,6 +1077,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "pollutantprocessassoc", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "pollutantprocessassoc", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_pollutantprocessassoc.csv"))    }
     # Clean
     remove(data)
     
@@ -1029,6 +1094,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "opmodepolprocassoc", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "opmodepolprocassoc", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_opmodepolprocassoc.csv"))    }
     # Clean
     remove(data)
     
@@ -1047,6 +1114,8 @@ adapt = function(.runspec, .changes = NULL){
     DBI::dbWriteTable(conn = custom, name = "startsopmodedistribution", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "startsopmodedistribution", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_startsopmodedistribution.csv"))    }
     # Clean
     remove(data)
     

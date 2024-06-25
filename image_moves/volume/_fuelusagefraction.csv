@@ -1,0 +1,8 @@
+countyID,fuelYearID,modelYearGroupID,sourceBinFuelTypeID,fuelSupplyFuelTypeID,usageFraction
+42091,2025,0,1,1,1
+42091,2025,0,2,2,1
+42091,2025,0,3,3,1
+42091,2025,0,4,4,1
+42091,2025,0,5,1,0.982134
+42091,2025,0,5,5,0.017866
+42091,2025,0,9,9,1

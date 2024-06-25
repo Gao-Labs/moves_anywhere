@@ -21,7 +21,7 @@ What are we trying to do with Cloud MOVES, and what aren't we trying to do?
 To use Cornell Cloud MOVES, you will need the following items.
 
 | Name          | Description                                                                                                                  |
-|--------------|----------------------------------------------------------|
+|---------------|------------------------------------------------------------------------------------------------------------------------------|
 | API Key       | Google Cloud API Key with requisite permissions                                                                              |
 | Gmail Account | Cornell gmail account                                                                                                        |
 | Viewer        | Viewer Permissions for Google Storage Buckets, assigned to your Cornell gmail account                                        |
@@ -56,7 +56,7 @@ flowchart LR  bucket csv["custom inputs"] rs["runspec"]  create_bucket[["create<
 
 **Note:** **Setting Memory, Processors, and Timeout for your Job**
 
-Each Workflow execution creates a job which runs a container from the `moves` image. Your container can be run with various different settings for `memory`, `cpu`, and `timeout`. By default, your container will run with `memory = 4Gi,``image_cpu = 1000m, image_timeout = 600s`. But if you upload a `parameters.json` that contains the fields `mode`, `geoaggregation`, and `timeaggregation` (among others), it will set the `image_memory`, `image_cpu` , and `image_timeout` fields automatically to match our expectations of their needs, via a series of conditions. These settings tentatively look like this:
+Each Workflow execution creates a job which runs a container from the `moves` image. Your container can be run with various different settings for `memory`, `cpu`, and `timeout`. By default, your container will run with ``` memory = 4Gi,``image_cpu = 1000m, image_timeout = 600s ```. But if you upload a `parameters.json` that contains the fields `mode`, `geoaggregation`, and `timeaggregation` (among others), it will set the `image_memory`, `image_cpu` , and `image_timeout` fields automatically to match our expectations of their needs, via a series of conditions. These settings tentatively look like this:
 
 ```         
    - check_run_type:
@@ -223,9 +223,8 @@ Things I have tried to resolve this:
 
 -   [x] removing modifications to `fuelsupply` –\> NOPE
 
-```{=html}
 <!-- -->
-```
+
 -   [x] removing modifications to `fuelusagefraction` –\> NOPE
 
 -   [x] adding modifications to `fuelformulation` –\> NOPE.
