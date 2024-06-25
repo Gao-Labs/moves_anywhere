@@ -1078,7 +1078,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # Message
     cat(paste0("\n---adapted default table:   ", "pollutantprocessassoc", counter(data)))
     # Write to file, showing * to show that it is not custom
-    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_pollutantprocessassoc.csv"))    }
+    # if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_pollutantprocessassoc.csv"))    }
     # Clean
     remove(data)
     
@@ -1095,7 +1095,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # Message
     cat(paste0("\n---adapted default table:   ", "opmodepolprocassoc", counter(data)))
     # Write to file, showing * to show that it is not custom
-    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_opmodepolprocassoc.csv"))    }
+    # if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_opmodepolprocassoc.csv"))    }
     # Clean
     remove(data)
     

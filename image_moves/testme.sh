@@ -22,10 +22,21 @@ BUCKET="$(pwd)/image_moves/volume" # Path to where you will source your data/inp
 # For this test, keep only parameters.json and your .csvs
 # That means, cut your rs_custom.xml and any data outputs
 # if [ -e "$BUCKET/rs_custom.xml" ]; then unlink "$BUCKET/rs_custom.xml"; fi
+
+
+
 if [ -e "$BUCKET/data.rds" ]; then unlink "$BUCKET/data.rds"; fi
 if [ -e "$BUCKET/data.csv" ]; then unlink "$BUCKET/data.csv"; fi
 if [ -e "$BUCKET/movesoutput.csv" ]; then unlink "$BUCKET/movesoutput.csv"; fi
 if [ -e "$BUCKET/movesactivityoutput.csv" ]; then unlink "$BUCKET/movesactivityoutput.csv"; fi
+
+# If any sources are default files, delete them first
+for file in "$BUCKET"/*; do
+  filename=$(basename "$file")
+  if [[ $filename == _* ]]; then
+    unlink "$file"
+  fi
+done
 
 # Test container - interactively (remove upon completion) #####################################
 docker run  \
