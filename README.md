@@ -1,4 +1,8 @@
-# `moves_anywhere`
+<head>
+    <link rel="shortcut icon" type="image/png" href="extra/movesanywhere_hexagon.png">
+</head>
+
+# `moves_anywhere` <a href="https://github.com/gao-labs/movesanywhere"><img src="extra/movesanywhere_hexagon.png" align="right" height="200" /></a>
 
 -   Lead Developer: [Tim Fraser, PhD](github.com/timothyfraser) `<tmf77@cornell.edu>`
 -   Contributors: Erin Murphy, Junna Chen, Mahak Bindal, Shungo Najima, Carl Closs
