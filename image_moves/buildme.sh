@@ -33,7 +33,7 @@ dos2unix "$IMAGE_FOLDER/launch.sh"
 
 # Set working directory
 cd "$IMAGE_FOLDER"
-
+pwd
 # Build the Docker image
 docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG . 
 #--no-cache

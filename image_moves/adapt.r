@@ -1052,15 +1052,22 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   
   ## ROAD TYPE DISTRIBUTION ###########################################
   cat("\n\n---ROAD TYPE DISTRIBUTION TABLES----------------------\n")
-  ### (N/A) roadtypedistribution #################################  
-  # .table = "roadtypedistribution"
-  # data = custom %>% tbl(.table) %>%
-  #   # filter(roadTypeID %in% !!.roadtype) %>%
-  #   collect()
-  #   DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
-  # # 
   
+  ### roadtypedistribution #################################  
   
+  if(!"roadtypedistribution" %in% .changed){
+    # Query as is
+    data = custom %>% tbl("roadtypedistribution") %>% collect()
+    # Truncate
+    DBI::dbExecute(custom, "TRUNCATE TABLE roadtypedistribution;")
+    # Append
+    DBI::dbWriteTable(conn = custom, name = "roadtypedistribution", value = data, overwrite = FALSE, append = TRUE)
+    # Message
+    cat(paste0("\n---adapted default table:   ", "roadtypedistribution", counter(data)))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_roadtypedistribution.csv"))   }
+    remove(data)
+  }
   
   
   ## POLLUTANT #########################################################################
