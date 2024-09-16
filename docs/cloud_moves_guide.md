@@ -66,7 +66,31 @@ Cloud MOVES is run on Google Cloud, making use of the Workflows API, Cloud Run A
 #### Figure 1: Triggering a MOVES Run Job
 
 ``` mermaid
-flowchart LR  bucket csv["custom inputs"] rs["runspec"]  create_bucket[["create<br>bucket"]] add_files[["add files"]] add_rs[["add rs_custom.xml"]] workflow_moves["workflow<br><b>moves</b>"] create_job[["create job<br>& mount bucket"]] image_moves["image<br><b>moves:v1</b>"] container_moves["run<br>container<br><b>moves</b>"] output_csvs["output .csvs"]  create_bucket ---> bucket csv --> add_files --> bucket rs --> add_rs add_rs --> trigger_moves add_rs --> bucket  trigger_moves("trigger<br><b>rs-to-moves</b>") bucket --> trigger_moves  trigger_moves --> workflow_moves  image_moves ---> create_job workflow_moves --> create_job --> container_moves  bucket --- create_job  container_moves --> output_csvs  output_csvs -- Put Outputs back in Bucket --> bucket
+flowchart LR
+   bucket
+   csv["custom inputs"]
+   rs["runspec"]
+   create_bucket[["create<br>bucket"]]
+   add_files[["add files"]]
+   add_rs[["add rs_custom.xml"]]
+   workflow_moves["workflow<br><b>moves</b>"]
+   create_job[["create job<br>& mount bucket"]]
+   image_moves["image<br><b>moves:v1</b>"]
+   container_moves["run<br>container<br><b>moves</b>"]
+   output_csvs["output .csvs"]
+   create_bucket ---> bucket
+   csv --> add_files --> bucket
+   rs --> add_rs
+   add_rs --> trigger_moves
+   add_rs --> bucket
+   trigger_moves("trigger<br><b>rs-to-moves</b>")
+   bucket --> trigger_moves
+   trigger_moves --> workflow_moves
+   image_moves ---> create_job
+   workflow_moves --> create_job --> container_moves
+   bucket --- create_job
+   container_moves --> output_csvs
+   output_csvs --|Put Outputs back in Bucket|--> bucket
 ```
 
 **Note:** **Setting Memory, Processors, and Timeout for your Job**
