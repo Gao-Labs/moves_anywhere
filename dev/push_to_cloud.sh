@@ -10,7 +10,7 @@
 
 # Get moves_anywhere repository path
 REPO=$(git rev-parse --show-toplevel)
-REPO="C://Users/tmf77/OneDrive - Cornell University/Documents/rstudio/moves_anywhere"
+#REPO="C://Users/tmf77/OneDrive - Cornell University/Documents/rstudio/moves_anywhere"
 cd "$REPO"
 
 # Load environmental variables

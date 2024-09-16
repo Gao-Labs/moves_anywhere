@@ -45,6 +45,7 @@ docker run  \
   --mount src="$BUCKET/",target="/cat-api/inputs",type=bind \
   -it "$IMAGE_NAME"
 
+#  --entrypoint bash \
 
 
 
