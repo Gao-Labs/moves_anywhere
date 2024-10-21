@@ -49,6 +49,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   .hourday = tidyr::expand_grid(hour = .hour, day = .day) %>% 
     mutate(hourday = paste0(hour, day)) %>% with(hourday) 
   .custom = rs$inputdbname
+  .geoidchar = stringr::str_pad(.geoid, width = 5, side = "left", pad = "0") # eg. "05100"
+  
+  
   
   # .local = Sys.getenv("MDB_DEFAULT")
   .default = rs$default
@@ -121,12 +124,24 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     select(countyID, countyTypeID, stateID) %>%
     head(1) %>%
     mutate(year = !!.year) %>%
-    left_join(by = "stateID", y = custom %>% tbl("state") %>% select(stateID, idleRegionID)) %>%
-    left_join(by = "countyID", y = custom %>% tbl("zone") %>% select(countyID, zoneID)) %>%
-    left_join(by = c("countyID", "year" = "fuelYearID"), 
-              y= custom %>% tbl("regioncounty") %>% select(countyID, fuelYearID, regionID)) %>%
+    left_join(
+      by = "stateID", 
+      y = custom %>% tbl("state") %>% 
+        select(stateID, idleRegionID)) %>%
+    left_join(
+      by = "countyID", 
+      y = custom %>% tbl("zone") %>% 
+        select(countyID, zoneID)) %>%
+    left_join(
+      by = c("countyID", "year" = "fuelYearID"), 
+      y= custom %>% tbl("regioncounty") %>% 
+        select(countyID, fuelYearID, regionID)) %>%
     distinct() %>%
-    left_join(by = "zoneID", y= custom %>% tbl("zoneroadtype") %>% select(zoneID, roadTypeID)) %>%
+    left_join(
+      by = "zoneID", 
+      y = custom %>% tbl("zoneroadtype") %>% 
+        select(zoneID, roadTypeID),
+      multiple = "all") %>%
     collect() 
   
   # Reformat ids as a list object
@@ -143,7 +158,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     filter(pollutantID %in% !!.pollutant) %>%
     select(pollutantID, polProcessID) %>%
     distinct() %>%
-    left_join(by = "polProcessID", y = custom %>% tbl("opmodepolprocassoc")) %>%
+    left_join(
+      by = "polProcessID", 
+      y = custom %>% tbl("opmodepolprocassoc"),
+      multiple = "all") %>%
     collect()
   
   # Add them to the ids
@@ -182,13 +200,12 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_year.csv")) }
     # Cleanup
     remove(data)
-    
   }
   ### county #######################################################
   if(!"county" %in% .changed){
     # Query data  
     data = custom %>% tbl("county") %>% filter(countyID %in% !!.geoid) %>% collect()
-    # Truncate table, while preserving fiels
+    # Truncate table, while preserving fields
     DBI::dbExecute(custom, "TRUNCATE TABLE county;")
     # Append to table
     DBI::dbWriteTable(conn = custom, name = "county", value = data, overwrite = FALSE, append = TRUE)
@@ -219,7 +236,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   ### idleregion ######################
   if(!"idleregion" %in% .changed){
     # Query
-    data = custom %>% tbl("idleregion") %>% filter(idleRegionID %in% !!ids$idleRegionID) %>% collect() 
+    data = custom %>% tbl("idleregion") %>% 
+      filter(idleRegionID %in% !!ids$idleRegionID) %>%
+      collect() 
     # Truncate table
     DBI::dbExecute(custom, "TRUNCATE TABLE idleregion;")
     # Append
@@ -235,8 +254,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"totalidlefraction" %in% .changed){
     # Query
     data = custom %>% tbl("totalidlefraction") %>%
-      filter(idleRegionID %in% !!ids$idleRegionID, countyTypeID %in% !!ids$countyTypeID,
-             monthID %in% !!.month, dayID %in% !!.day) %>% collect() 
+      filter(idleRegionID %in% !!ids$idleRegionID, 
+             countyTypeID %in% !!ids$countyTypeID,
+             monthID %in% !!.month, dayID %in% !!.day) %>%
+      collect() 
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE totalidlefraction;")
     # Append
@@ -253,7 +274,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"imcoverage" %in% .changed){
     # Query
     data = custom %>% tbl("imcoverage") %>%
-      filter(stateID %in% !!ids$stateID, countyID %in% !!.geoid, yearID %in% !!.year)  %>% collect()
+      filter(stateID %in% !!ids$stateID, 
+             countyID %in% !!.geoid, 
+             yearID %in% !!.year)  %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE imcoverage;")
     # Append
@@ -286,7 +310,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"zonemonthhour" %in% .changed){
     # Query
     data = custom %>% tbl("zonemonthhour") %>%
-      filter(zoneID %in% !!ids$zoneID, monthID %in% !!.month, hourID %in% !!.hour) %>% collect()
+      filter(zoneID %in% !!ids$zoneID, 
+             monthID %in% !!.month, 
+             hourID %in% !!.hour) %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE zonemonthhour;")
     # Append
@@ -304,7 +331,8 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"zoneroadtype" %in% .changed){
     # Query
     data = custom %>% tbl("zoneroadtype") %>% 
-      filter(zoneID %in% !!ids$zoneID) %>% collect()
+      filter(zoneID %in% !!ids$zoneID) %>%
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE zoneroadtype;")
     # Append
@@ -318,14 +346,83 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
   }
   
+  ### regioncounty ################################################
+  # Shrink the list of fuelregions to just those that align with your geoid
+  if(!"regioncounty" %in% .changed){
+    
+    # library(DBI)
+    # library(RMariaDB)
+    # library(dplyr)
+    # custom = dbConnect(
+    #   drv = RMariaDB::MariaDB(),
+    #   user = "moves",
+    #   password = "moves",
+    #   host = "localhost",
+    #   port = 1235,
+    #   dbname = "movesdb20240104"
+    # )
+    # .year = 1990
+    # .geoid = '36109'
+    
+    #dbDisconnect(custom)
+    
+    # Query
+    data = custom %>% tbl("regioncounty") %>%
+      filter(countyID %in% !!.geoid,
+             fuelYearID %in% !!.year) %>% 
+      collect()
+    # Truncate
+    DBI::dbExecute(custom, "TRUNCATE TABLE regioncounty;")
+    # Append
+    DBI::dbWriteTable(conn = custom, name = "regioncounty", value = data, overwrite = FALSE, append = TRUE)
+    # Message
+    cat(paste0("\n---adapted default table:   ", "regioncounty", counter(data), "\n"))
+    # Write to file, showing * to show that it is not custom
+    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_regioncounty.csv"))    }
+    # Cleanup
+    remove(data)
+    
+  }
+  
   ## HOTELLING #################### 
   cat("\n\n---HOTELLING TABLES----------------------\n")
   
   ### hotellingactivitydistribution ###############################
   if(!"hotellingactivitydistribution" %in% .changed){
+    #For testing only
+    # library(DBI)
+    # library(RMariaDB)
+    # library(dplyr)
+    # custom = dbConnect(
+    #   drv = RMariaDB::MariaDB(),
+    #   user = "moves",
+    #   password = "moves",
+    #   host = "localhost",
+    #   port = 1235,
+    #   dbname = "movesdb20240104"
+    # )
+    # # custom %>% dbListTables()
+    # custom %>% 
+    #   tbl("hotellingactivitydistribution") %>%
+    #   summarize(count = n())
+    # ids = list(zoneID = 361090)
+    # dbDisconnect(custom)
+
+    
     # Query
-    data = custom %>% tbl("hotellingactivitydistribution") %>% 
-      filter(zoneID %in% !!ids$zoneID) %>% collect()
+    # Get base hotelling activity distribution,
+    # set to fake zoneID 990000
+    initial = custom %>% tbl("hotellingactivitydistribution") %>% 
+      filter(zoneID %in% 990000) %>%
+      select(-zoneID) %>%
+      collect()
+  
+    # For each observed zoneID, we're going to duplicate the base hotelling activity distribution
+    # which was set for fake zoneID 990000
+    data = tibble(zoneID = ids$zoneID) %>%
+      group_by(zoneID) %>%
+      reframe(initial)
+    
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE hotellingactivitydistribution;")
     # Append
@@ -335,7 +432,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # Write to file, showing * to show that it is not custom
     if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_hotellingactivitydistribution.csv"))    }
     # Cleanup
-    remove(data)
+    remove(data); remove(initial)
   }
   
   ### (N/A) hotellinghoursperday #######################
@@ -406,41 +503,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
   }
   
-  ### regioncounty ################################################
-  # Shrink the list of fuelregions to just those that align with your geoid
-  if(!"regioncounty" %in% .changed){
-    
-    # library(DBI)
-    # library(RMariaDB)
-    # library(dplyr)
-    # custom = dbConnect(
-    #   drv = RMariaDB::MariaDB(),
-    #   user = "moves",
-    #   password = "moves",
-    #   host = "localhost",
-    #   port = 1235,
-    #   dbname = "movesdb20240104"
-    # )
-    # .year = 1990
-    # .geoid = '36109'
-    
-    #dbDisconnect(custom)
-    
-    # Query
-    data = custom %>% tbl("regioncounty") %>%
-      filter(countyID %in% !!.geoid, fuelYearID %in% !!.year) %>% collect()
-    # Truncate
-    DBI::dbExecute(custom, "TRUNCATE TABLE regioncounty;")
-    # Append
-    DBI::dbWriteTable(conn = custom, name = "regioncounty", value = data, overwrite = FALSE, append = TRUE)
-    # Message
-    cat(paste0("\n---adapted default table:   ", "regioncounty", counter(data), "\n"))
-    # Write to file, showing * to show that it is not custom
-    if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_regioncounty.csv"))    }
-    # Cleanup
-    remove(data)
-    
-  }
+  
   
   ### (N/A) fuelformulation #################################
   if(!"fuelformulation" %in% .changed){
@@ -528,7 +591,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
     # Query
     data = custom %>% tbl("fuelsupply")  %>%
-      filter(fuelRegionID %in% !!ids$regionID, fuelYearID %in% !!.year, monthGroupID %in% !!.month)  %>%
+      filter(fuelRegionID %in% !!ids$regionID,
+             fuelYearID %in% !!.year, 
+             monthGroupID %in% !!.month)  %>%
       left_join(
         by = c("fuelFormulationID"),
         y = custom %>% 
@@ -618,7 +683,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
     # Query
     data = custom %>% tbl("fuelusagefraction") %>%
-      filter(countyID %in% !!.geoid, fuelYearID  %in% !!.year) %>% collect()
+      filter(countyID %in% !!.geoid,
+             fuelYearID  %in% !!.year) %>% 
+      collect()
     
     # truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE fuelusagefraction;")
@@ -713,7 +780,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
     # For geoid 36109
     estimates = catr::projections %>%
-      filter(year == .year & geoid == .geoid)
+      filter(year == .year & geoid == .geoidchar)
     
     sourcetypeyear = data %>%
       # Reset the year to be whatever year our scenario is
@@ -784,7 +851,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
     # And re-weight it
     estimates = catr::projections %>%
-      filter(year == .year & geoid == .geoid)
+      filter(year == .year & geoid == .geoidchar)
     
     # Reweight the sourceTypePopulation by that year-geoid pair's projected ratio.
     data = data %>%
@@ -865,7 +932,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"dayvmtfraction" %in% .changed){ 
     # must not filter by roadtype here
     # Query
-    data = custom %>% tbl("dayvmtfraction") %>% filter(monthID %in% !!.month & dayID %in% !!.day) %>% collect()
+    data = custom %>% tbl("dayvmtfraction") %>% 
+      filter(monthID %in% !!.month,
+             dayID %in% !!.day) %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE dayvmtfraction;")
     # Append
@@ -882,7 +952,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   #### hourvmtfraction #################################  
   if(!"hourvmtfraction" %in% .changed){
     # Query
-    data = custom %>% tbl("hourvmtfraction") %>% filter(dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
+    data = custom %>% tbl("hourvmtfraction") %>%
+      filter(dayID %in% !!.day, 
+             hourID %in% !!.hour) %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE hourvmtfraction;")
     # Append
@@ -899,7 +972,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   #### monthvmtfraction #################################  
   if(!"monthvmtfraction" %in% .changed){
     # Query
-    data = custom %>% tbl("monthvmtfraction") %>% filter(monthID %in% !!.month) %>% collect()
+    data = custom %>% tbl("monthvmtfraction") %>%
+      filter(monthID %in% !!.month) %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE monthvmtfraction;")
     # Append
@@ -944,7 +1019,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   ### startshourfraction #################################
   if(!"startshourfraction" %in% .changed){
     # Query
-    data = custom %>% tbl("startshourfraction") %>% filter(dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
+    data = custom %>% tbl("startshourfraction") %>%
+      filter(dayID %in% !!.day, 
+             hourID %in% !!.hour) %>%
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE startshourfraction;")
     # Append
@@ -976,7 +1054,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # .geoid = '36109'
     
     # Query
-    data = custom %>% tbl("starts") %>% filter(yearID %in% !!.year) %>%  collect()
+    data = custom %>% tbl("starts") %>%
+      filter(yearID %in% !!.year) %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE starts;")
     # Append
@@ -997,7 +1077,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   ### startsperday ###################
   if(!"startsperday" %in% .changed){
     # Query
-    data = custom %>% tbl("startsperday") %>% filter(dayID %in% !!.day) %>%  collect()
+    data = custom %>% tbl("startsperday") %>%
+      filter(dayID %in% !!.day) %>%  
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE startsperday;")
     # Append
@@ -1015,7 +1097,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   ### startsperdaypervehicle #################################  
   if(!"startsperdaypervehicle" %in% .changed){
     # Query
-    data = custom %>% tbl("startsperdaypervehicle") %>% filter(dayID %in% !!.day) %>%  collect()
+    data = custom %>% tbl("startsperdaypervehicle") %>%
+      filter(dayID %in% !!.day) %>%  
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE startsperdaypervehicle;")
     # Append
@@ -1036,7 +1120,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"avgspeeddistribution" %in% .changed){ 
     # must not filter by roadtype here - to make sure that all roads are represented in calculations.
     # Query
-    data = custom %>% tbl("avgspeeddistribution") %>% filter(hourDayID %in% !!.hourday) %>% collect()
+    data = custom %>% tbl("avgspeeddistribution") %>% 
+      filter(hourDayID %in% !!.hourday) %>%
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE avgspeeddistribution;")
     # Append
@@ -1057,7 +1143,8 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   
   if(!"roadtypedistribution" %in% .changed){
     # Query as is
-    data = custom %>% tbl("roadtypedistribution") %>% collect()
+    data = custom %>% tbl("roadtypedistribution") %>% 
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE roadtypedistribution;")
     # Append
@@ -1077,7 +1164,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   ### pollutantprocessassoc #################################  
   if(!"pollutantprocessassoc" %in% .changed){
     # Query
-    data = custom %>% tbl("pollutantprocessassoc") %>% filter(pollutantID %in% !!.pollutant) %>% collect() 
+    data = custom %>% tbl("pollutantprocessassoc") %>% 
+      filter(pollutantID %in% !!.pollutant) %>% 
+      collect() 
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE pollutantprocessassoc;")
     # Append
@@ -1094,7 +1183,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   ### opmodepolprocassoc #################################  
   if(!"opmodepolprocassoc" %in% .changed){
     # Query
-    data = custom %>% tbl("opmodepolprocassoc") %>% filter(polProcessID %in% !!ids$polProcessID) %>% collect()
+    data = custom %>% tbl("opmodepolprocassoc") %>% 
+      filter(polProcessID %in% !!ids$polProcessID) %>%
+      collect()
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE opmodepolprocassoc;")
     # Append
@@ -1112,7 +1203,10 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"startsopmodedistribution" %in% .changed){
     # Query
     data = custom %>% tbl("startsopmodedistribution") %>% 
-      filter(opModeID %in% !!ids$opModeID, dayID %in% !!.day, hourID %in% !!.hour) %>% collect()
+      filter(opModeID %in% !!ids$opModeID, 
+             dayID %in% !!.day, 
+             hourID %in% !!.hour) %>% 
+      collect()
     
     
     # Truncate

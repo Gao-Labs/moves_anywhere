@@ -33,19 +33,36 @@ if(rs$mode == "inv"){
   
   # If json is present, create inputs/data.csv
   if(has_json == TRUE){
-    # Post process the data
-    path = postprocess_format(
-      path_data = "data.rds", csv = FALSE, 
-      by = c(1, 16, 15, 14, 12, 8), pollutant = NULL, 
-      path_parameters = "inputs/parameters.json")
     
-    print(path)
+    # Import the parameters
+    p = jsonlite::fromJSON("inputs/parameters.json")
     
-    # Check it
-    path %>% readr::read_rds() %>% head()
+    # Is this a training run? If so, then do not post-process the data.
+    # p = list(training_type = "randomized", other = 1, by = c(16, 1))
+    condition_training = any("training_type" %in% names(p))
     
-    # Write it to file as .csv in the mounted inputs/ folder.
-    read_rds("data.rds") %>% write_csv("inputs/data.csv")
+    # If it is NOT a training run...
+    if(condition_training == FALSE){
+  
+      # Check if it has the by fields
+      condition_by = any("by" %in% names(p))
+      # If it has by vars, use them. Otherwise, supply these defaults.
+      if(condition_by == TRUE){ by_vars = p$by }else{ by_vars = c(1,16,15,14,12,8)}
+      
+      # Post process the data
+      path = postprocess_format(
+        path_data = "data.rds", csv = FALSE, 
+        by = by_vars, pollutant = NULL, 
+        path_parameters = "inputs/parameters.json")
+      
+      print(path)
+      
+      # Check it
+      path %>% readr::read_rds() %>% head()
+      
+      # Write it to file as .csv in the mounted inputs/ folder.
+      read_rds("data.rds") %>% write_csv("inputs/data.csv")
+    }
     
   }
   

@@ -13,10 +13,10 @@ REPO=$(git rev-parse --show-toplevel)
 REPO="C://Users/tmf77/OneDrive - Cornell University/Documents/rstudio/moves_anywhere"
 cd "$REPO"
 
-# image_moves #################################
-echo "-----------build image_moves--------------"
-# Build image_moves/
-bash "image_moves/buildme.sh"
+# # image_moves #################################
+# echo "-----------build image_moves--------------"
+# # Build image_moves/
+# bash "image_moves/buildme.sh"
 
 
 source 'dev/.env'

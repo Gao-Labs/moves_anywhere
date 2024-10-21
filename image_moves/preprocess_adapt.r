@@ -39,7 +39,7 @@ cat("\n---------adapting defaults into custom input database----------\n")
 # Grab csv files
 csvs = dir("inputs", pattern = ".csv")
 # Remove any of the output csvs, so we just have input csvs
-csvs = csvs[!csvs %in% c("data.csv", "movesoutput.csv", "movesactivityoutput.csv")]
+csvs = csvs[!csvs %in% c("data.csv", "training.csv", "movesoutput.csv", "movesactivityoutput.csv")]
 # If there are any custom input tables supplied, add their file paths to the p object  
 if(length(csvs) > 0){ changes = paste0("inputs/", csvs) }else{ changes = NULL }
 
