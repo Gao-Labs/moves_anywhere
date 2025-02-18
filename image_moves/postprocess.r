@@ -31,24 +31,32 @@ if(rs$mode == "inv"){
   # Does your directory contain a parameters file?
   has_json = file.exists("inputs/parameters.json")
   
+  # Only create inputs/data.csv if a series of things are true.
   # If json is present, create inputs/data.csv
   if(has_json == TRUE){
     
     # Import the parameters
     p = jsonlite::fromJSON("inputs/parameters.json")
     
-    # Is this a training run? If so, then do not post-process the data.
+    
+    # Is this a training run that was randomized? If so, then do not post-process the data.
     # p = list(training_type = "randomized", other = 1, by = c(16, 1))
     condition_training = any("training_type" %in% names(p))
     
-    # If it is NOT a training run...
-    if(condition_training == FALSE){
-  
+    # If it is a training run - check and see - is it a randomized run? If so, we don't want to data-ify those.
+    if(condition_training == TRUE){
+        condition_randomized = p$training_type == "randomized"
+        # If it's not a training run, it's not a randomized run.
+    }else{condition_randomized = FALSE }
+    
+    # If it is NOT a randomized training run... 
+    if(condition_randomized == FALSE){
+      
       # Check if it has the by fields
       condition_by = any("by" %in% names(p))
       # If it has by vars, use them. Otherwise, supply these defaults.
       if(condition_by == TRUE){ by_vars = p$by }else{ by_vars = c(1,16,15,14,12,8)}
-      
+
       # Post process the data
       path = postprocess_format(
         path_data = "data.rds", csv = FALSE, 

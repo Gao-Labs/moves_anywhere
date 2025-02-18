@@ -64,6 +64,9 @@ sudo -u mysql ant run -Drunspec="/cat-api/EPA_MOVES_Model/rs_custom.xml"
 # Jump Backwards in File Directory, back to /cat-api/
 cd ..
 
+# Copy moves log to inputs bucket
+cp "EPA_MOVES_Model/moveslog.txt" "inputs/moveslog.txt"
+
 # 3. Post-Processing #########################################################################
 # Post-process the data into a data.rds file
 Rscript postprocess.r

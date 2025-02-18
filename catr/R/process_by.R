@@ -61,7 +61,7 @@ process_by = function(con, .by = 16, .geoid = '36109', .level = "county", .run =
   # Process (and collect into local memory) emissions data using the supplied settings
   emissions = process_emissions(tab = q_e, .by = .by, .pollutant = .pollutant, .geoid =  .geoid) 
 
-  metadata$county$activity
+  # metadata$county$activity
   # PROCESS ACTIVITY DATA ######################################################
   # Load function for processing activity data
   # source("R/process_activity.R") 

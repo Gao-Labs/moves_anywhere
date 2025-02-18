@@ -21,12 +21,20 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   # a script to 'adapt' existing default data to a new 'custom' db
   
   # Testing values:
+  # Sys.setenv("DBUSERNAME" = "moves")
+  # Sys.setenv("DBPASSWORD" = "moves")
+  # Sys.setenv("DBHOST" = "localhost")
+  # Sys.setenv("DBPORT" = 1235)
+
+  # 
   # .changes = NULL
   # .runspec = "inputs/rs_36109_2020_rs_moves31_custom_1.xml"
   # .runspec = "EPA_MOVES_Model/rs_custom.xml"
   # setwd(rstudioapi::getActiveProject())
   # setwd("image_moves")
   # .runspec = "volume_1990/rs_custom.xml"
+
+  # .changes = changes; .runspec = runspec; .save = TRUE; .volume = "inputs"
   
   # 1. RUNSPEC ###################################################
   
@@ -67,6 +75,23 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   
   # Write a short function to quickly connect
   custom = connect("mariadb", .custom)
+  
+  # Test connection
+  # library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
+  # library(DBI, warn.conflicts = FALSE, quietly = TRUE)
+  # library(RMySQL, warn.conflicts = FALSE, quietly = TRUE)
+  # library(dbplyr, warn.conflicts = FALSE, quietly = TRUE)
+  # custom = dbConnect(
+  #     drv = RMariaDB::MariaDB(),
+  #     username = Sys.getenv("DBUSERNAME"),
+  #     password = Sys.getenv("DBPASSWORD"),
+  #     host = Sys.getenv("DBHOST"),
+  #     port = as.integer(Sys.getenv("DBPORT")),
+  #     dbname = .custom
+  #   )
+  # 
+  
+  
   
   # 2. CHANGES #########################################################
   
@@ -149,6 +174,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     select(c(countyID, countyTypeID, stateID, idleRegionID, zoneID, regionID)) %>%
     slice(1) %>%
     as.list()
+  
   ids$roadTypeID = ids_data$roadTypeID
   remove(ids_data)
   
@@ -343,7 +369,6 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     if(.save == TRUE){  data %>% readr::write_csv(paste0(volume, "/_zoneroadtype.csv"))    }
     # Cleanup
     remove(data)
-    
   }
   
   ### regioncounty ################################################
@@ -371,6 +396,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
       filter(countyID %in% !!.geoid,
              fuelYearID %in% !!.year) %>% 
       collect()
+    
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE regioncounty;")
     # Append
@@ -503,9 +529,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
   }
   
-  
-  
-  ### (N/A) fuelformulation #################################
+  ### fuelformulation #################################
   if(!"fuelformulation" %in% .changed){
     #For testing only
     # library(DBI)
@@ -519,15 +543,36 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     #   port = 1235,
     #   dbname = "movesdb20240104"
     # )
+    
+    # custom %>% tbl("regioncounty")
     # ids = list(regionID = 100000000)
     # .year = 1990
     # .month = 1:12
     # dbDisconnect(custom)
-    
-    .table = "fuelformulation"
-    data = custom %>% tbl(.table)  %>%
+# 
+    data = custom %>% tbl("fuelformulation") %>%
+      # # filter(fuelFormulationID %in% c(2675, 2676)) %>%
+      mutate(fuelSubtypeID = case_when(
+        fuelFormulationID %in% c(2675, 2676) ~ 13,
+        TRUE ~ fuelSubtypeID
+      )) %>%
       collect()
+    # data %>%
+    #   filter(!fuelFormulationID %in% c(2675, 2676))
+    # 
+    # .table = "fuelformulation"
+    # data = custom %>% tbl(.table)  %>%
+    #   collect()
     
+    # Give me just fuelformulations that were actually in the fuelsupply.
+    # data = custom %>% tbl("fuelformulation") %>%
+    #   inner_join(
+    #     by = "fuelFormulationID",
+    #     y = custom %>% tbl("fuelsupply") %>% 
+    #       select(fuelFormulationID) %>% distinct()) %>%
+    #   collect()
+    
+    # data = custom %>% tbl("fuelformulation") %>% collect()
     # These fuel formulations have ETOH volume under 10,
     # so MOVES is throwing a fit, wants to reclassify them as fuelSubTypeID = 13
     # ERROR: Missing: Warning: Fuel formulation 2675 changed fuelSubtypeID from 12 to 13 based on ETOHVolume
@@ -535,27 +580,31 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # ERROR: Missing: Warning: Fuel type 5 is imported but will not be used
     
     # Some fuels were very much not available until 2000s
+    # data %>% filter(fuelFormulationID %in% c(2675, 2676))
     
-    if(.year %in% c(1990:2000)){
-      # Cut these formulation IDs
-      data = data %>%
-        filter(!fuelFormulationID %in% c(2675, 2676))
-      
-      # mutate(fuelSubtypeID = case_when(
-      #   fuelFormulationID == 2675 ~ 13,
-      #   fuelFormulationID == 2676 ~ 13,
-      #   TRUE ~ fuelSubtypeID))
-    }
+    # Some fuels don't appear to be available in certain regions...
+    
+    # if(.year %in% c(1990:2000)){
+    #   # Cut these formulation IDs
+    #   data = data %>%
+    #     filter(!fuelFormulationID %in% c(2675, 2676))
+    # 
+    #   # mutate(fuelSubtypeID = case_when(
+    #   #   fuelFormulationID == 2675 ~ 13,
+    #   #   fuelFormulationID == 2676 ~ 13,
+    #   #   TRUE ~ fuelSubtypeID))
+    # }
     # Certain fuel formulations are not possible for certain years.
     
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE fuelformulation;")
     # Append
-    DBI::dbWriteTable(conn = custom, name = .table, value = data, overwrite = FALSE, append = TRUE)
+    DBI::dbWriteTable(conn = custom, name = "fuelformulation", value = data, overwrite = FALSE, append = TRUE)
     # Message
     cat(paste0("\n---adapted default table:   ", "fuelformulation", counter(data)))
     # Write to file, showing * to show that it is not custom
     if(.save == TRUE){ data %>% readr::write_csv(paste0(volume, "/_fuelformulation.csv"))    }
+    
     # Cleanup
     remove(data)
     
@@ -566,7 +615,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   if(!"fuelsupply" %in% .changed){
     
     
-    # For fuelsupply, marketShare MUST sum to 1 for each fueltype
+    # For fuelsupply, marketShare MUST sum to 1 for each fueltype for each month
     
     #For testing only
     # library(DBI)
@@ -584,27 +633,43 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # .year = 1990
     # .month = 1:12
     
-  
+    
     # custom %>% tbl("fuelsupply") %>%
     #   filter(fuelRegionID %in% !!ids$regionID, fuelYearID %in% !!.year, monthGroupID %in% !!.month) %>%
-    #   filter(fuelYearID == 1990 & monthGroupID == 1)   
+    #   filter(fuelYearID == !!.year & monthGroupID == 1) %>%
+    #   arrange(fuelRegionID, fuelYearID, monthGroupID)
+    
+    # custom %>%
+    #   tbl("fuelsupply") %>%
+    #   select(fuelRegionID ) %>%
+    #   distinct() %>%
+    #   collect() %>%
+    #   summarize(count = n())
+    #   filter(fuelFormulationID %in% c(2675, 2676)) %>%
+    #   select(fuelRegionID) %>%
+    #   distinct()
+    #   summarize(count = n())
+    
+    
     
     # Query
     data = custom %>% tbl("fuelsupply")  %>%
-      filter(fuelRegionID %in% !!ids$regionID,
-             fuelYearID %in% !!.year, 
-             monthGroupID %in% !!.month)  %>%
+      # filter(
+      #   fuelRegionID %in% !!ids$regionID,
+      #   fuelYearID %in% !!.year,
+      #   monthGroupID %in% !!.month)  %>%
+      # filter(fuelFormulationID %in% c(2675, 2676)) %>%
       left_join(
         by = c("fuelFormulationID"),
-        y = custom %>% 
+        y = custom %>%
           tbl("fuelformulation") %>%
-          select(fuelFormulationID, fuelSubtypeID) 
+          select(fuelFormulationID, fuelSubtypeID)
       ) %>%
       left_join(
         by = c("fuelSubtypeID"),
-        y = custom %>% 
+        y = custom %>%
           tbl("fuelsubtype") %>%
-          select(fuelSubtypeID, fuelTypeID) 
+          select(fuelSubtypeID, fuelTypeID)
       ) %>%
       # For each fueltype...
       # Rescale the marketShare of each fuelFormulation,
@@ -612,12 +677,12 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
       # so that they do sum to 1.
       group_by(fuelRegionID, fuelYearID, monthGroupID, fuelTypeID) %>%
       mutate(marketShare = marketShare / sum(marketShare, na.rm = TRUE)) %>%
+      ungroup()  %>%
       # Rescaling can produce divide by zero errors. We will replace these na values with 0.
       mutate(marketShare = if_else(is.na(marketShare), true = 0, false = marketShare)) %>%
-      ungroup()  %>%
       select(-any_of(c("fuelSubtypeID", "fuelTypeID"))) %>%
       collect()
-    
+
     # Testing    
     # data %>%
     #   filter(fuelRegionID == 100000000) %>%
@@ -644,6 +709,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     #   glimpse()
     
     # dbDisconnect(custom)
+    # data = custom %>% tbl("fuelsupply") %>% collect()
     
     # Truncate
     DBI::dbExecute(custom, "TRUNCATE TABLE fuelsupply;")
@@ -657,6 +723,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     remove(data)
     
   }
+  
+  
+
   ### fuelusagefraction #################################
   if(!"fuelusagefraction" %in% .changed){
     
@@ -683,8 +752,9 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     
     # Query
     data = custom %>% tbl("fuelusagefraction") %>%
+      # filter(fuelYearID %in% !!.year) %>%
       filter(countyID %in% !!.geoid,
-             fuelYearID  %in% !!.year) %>% 
+             fuelYearID  %in% !!.year) %>%
       collect()
     
     # truncate
@@ -740,6 +810,7 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
       summarize(fuelEngFraction = sum(stmyFraction, na.rm = TRUE), .groups = "drop") %>%
       ungroup()  %>%
       collect()
+    
     # Truncate table, while preserving fields
     DBI::dbExecute(custom, "TRUNCATE TABLE avft;")
     # Append
@@ -759,9 +830,14 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
   
   ### sourcetypeyear #################################
   if(!"sourcetypeyear" %in% .changed){
+    
     # Query the national level vehicle population by sourcetype,
     # which is recorded for the year 2020
-    data = custom %>% tbl("sourcetypeyear") %>% collect()
+    data = custom %>% tbl("sourcetypeyear") %>%
+      # Filter to your actual year of observation
+      filter(yearID == .year) %>% 
+      collect()
+    
     # By default, we're going to keep that same split of sourcetypes
     # but we're going to downweight each sourcetypepopulation
     # by the ratio of county population to national population
@@ -778,13 +854,15 @@ adapt = function(.runspec, .changes = NULL, .save = TRUE, .volume = "inputs"){
     # .geoid = "36109"
     # .year = 2023
     
+  
     # For geoid 36109
     estimates = catr::projections %>%
       filter(year == .year & geoid == .geoidchar)
     
-    sourcetypeyear = data %>%
+    # Overwrite data 
+    data = data %>%
       # Reset the year to be whatever year our scenario is
-      mutate(yearID = .year) %>%
+      # mutate(yearID = .year) %>%
       # Join in the population estimates for the scenario year
       left_join(by = c("yearID" = "year"), 
                 y = estimates %>% select(year, fraction)) %>%

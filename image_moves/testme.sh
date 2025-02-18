@@ -17,7 +17,7 @@ pwd
 
 # Variables
 IMAGE_NAME="moves_anywhere:v1"
-BUCKET="$(pwd)/image_moves/volume" # Path to where you will source your data/inputs FROM
+BUCKET="$(pwd)/image_moves/test" # Path to where you will source your data/inputs FROM
 
 # For this test, keep only parameters.json and your .csvs
 # That means, cut your rs_custom.xml and any data outputs
@@ -43,11 +43,82 @@ docker run  \
   --rm \
   --name "dock" \
   --mount src="$BUCKET/",target="/cat-api/inputs",type=bind \
+  --mount src="$REPO/image_moves/adapt.r",target="/cat-api/adapt.r",type=bind \
+  --mount src="$REPO/image_moves/launch.sh",target="/cat-api/launch.sh",type=bind \
   -it "$IMAGE_NAME"
 
 #  --entrypoint bash \
 
+# Testing 
+R
 
+library(dplyr)
+library(dbplyr)
+library(DBI)
+library(RMariaDB)
+library(readr)
+Sys.setenv("DBUSERNAME" = "moves")
+Sys.setenv("DBPASSWORD" = "moves")
+Sys.setenv("DBHOST" = "localhost")
+Sys.setenv("DBPORT" = 3306)
+
+conn = dbConnect(
+  drv = RMariaDB::MariaDB(),
+  username = Sys.getenv("DBUSERNAME"),
+  password = Sys.getenv("DBPASSWORD"),
+  host = Sys.getenv("DBHOST"),
+  port = as.integer(Sys.getenv("DBPORT"))
+)
+
+.input = "movesdb20240104"
+.output = "moves"
+
+conn %>% 
+  tbl(in_schema(.input, "sourcetypeyear")) 
+
+conn %>% tbl(in_schema(.output, "movesoutput")) %>% 
+  filter(pollutantID == 98)  %>%
+  summarize(e = sum(emissionQuant, na.rm = TRUE))
+  
+dbDisconnect(conn)
+
+
+data = read_csv("inputs/movesactivityoutput.csv")
+
+# data %>%
+#   filter(activityTypeID == 6) %>% 
+#   select(sourceTypeID, regClassID, fuelTypeID, roadTypeID, activity) %>%
+#   select(activity) %>%
+#   distinct() %>%
+#   collect() %>%
+#   arrange(desc(activity)) %>%
+#   print()
+
+data %>%
+  filter(activityTypeID == 6) %>% 
+  select(sourceTypeID, regClassID, fuelTypeID, roadTypeID, activity) %>%
+  summarize(total = sum(activity, na.rm = TRUE))
+
+read_csv("inputs/data.csv") %>%
+  filter(pollutant == 98) %>%
+  filter(by == 16) %>%
+  select(year, geoid, emissions, vehicles)
+
+read_csv("inputs/data.csv") %>%
+  filter(pollutant == 98) %>%
+  filter(by == 16) %>%
+  select(year, geoid, emissions, vehicles, vmt)
+
+read_csv("inputs/data.csv") %>%
+  filter(pollutant == 98) %>%
+  filter(by == 8) %>%
+  select(year, geoid, emissions, vehicles, vmt)
+
+
+q()
+
+# Not big enough.
+# 1 car makes ~4 tons per year of emissions.
 
 # # Variables
 # IMAGE_NAME="moves_anywhere:v1"
