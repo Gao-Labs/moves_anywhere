@@ -1,0 +1,2723 @@
+3/20/25, 3:23 PM INFO: Loading system configuration...
+3/20/25, 3:23 PM INFO: System configuration setting up the instance counter...
+3/20/25, 3:23 PM INFO: System configuration clearing prior IDs...
+3/20/25, 3:23 PM INFO: System configuration reading computer ID...
+3/20/25, 3:23 PM INFO: Using master configuration file: MOVESConfiguration.txt
+3/20/25, 3:23 PM INFO: System configuration loading configuration files...
+3/20/25, 3:23 PM INFO: System configuration setting up temporary files...
+3/20/25, 3:23 PM INFO: Folder for temporary files: /cat/EPA_MOVES_Model/MOVESTemporary
+3/20/25, 3:23 PM INFO: System configuration acquiring distributed master ID...
+3/20/25, 3:23 PM INFO: Done loading system configuration.
+3/20/25, 3:23 PM INFO: API processing Importer file: /cat/inputs/importer.xml
+3/20/25, 3:23 PM INFO: Initializing default database connections...
+3/20/25, 3:23 PM INFO: Reading default database table definitions...
+3/20/25, 3:23 PM INFO: Done initializing database connections.
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM WARNING: Invalid PollutantProcessAssociation
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.AgeDistributionImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.AverageSpeedDistributionImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.FuelImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.MeteorologyImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.RoadTypeDistributionImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.SourceTypePopulationImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.StartsImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.VehicleTypeVMTImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.HotellingImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.IdleImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.IMImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.OnRoadRetrofitImporter
+3/20/25, 3:23 PM INFO: doImport for gov.epa.otaq.moves.master.implementation.importers.GenericImporter
+3/20/25, 3:23 PM INFO: activitytype not imported, no file specified.
+3/20/25, 3:23 PM INFO: Import complete.
+3/20/25, 3:25 PM INFO: Loading system configuration...
+3/20/25, 3:25 PM INFO: System configuration setting up the instance counter...
+3/20/25, 3:25 PM INFO: System configuration clearing prior IDs...
+3/20/25, 3:25 PM INFO: System configuration reading computer ID...
+3/20/25, 3:25 PM INFO: Using master configuration file: MOVESConfiguration.txt
+3/20/25, 3:25 PM INFO: System configuration loading configuration files...
+3/20/25, 3:25 PM INFO: System configuration setting up temporary files...
+3/20/25, 3:25 PM INFO: Folder for temporary files: /cat/EPA_MOVES_Model/MOVESTemporary
+3/20/25, 3:25 PM INFO: System configuration acquiring distributed master ID...
+3/20/25, 3:25 PM INFO: Done loading system configuration.
+3/20/25, 3:25 PM INFO: Initializing default database connections...
+3/20/25, 3:25 PM INFO: Reading default database table definitions...
+3/20/25, 3:25 PM INFO: Done initializing database connections.
+3/20/25, 3:25 PM INFO: Performing compatibility checks between RunSpec and domain database...
+3/20/25, 3:25 PM INFO: Done performing compatibility checks between RunSpec and domain database.
+3/20/25, 3:25 PM INFO: Performing domain database validation...
+3/20/25, 3:25 PM INFO: Done performing domain database validation.
+3/20/25, 3:25 PM INFO: ***Starting MOVES run***
+3/20/25, 3:25 PM INFO: Master Release: MOVES5.0.0
+3/20/25, 3:25 PM INFO: Master Computer ID: 4bdde28ba7eb
+3/20/25, 3:25 PM INFO: Master ID: 2800225829572973153
+3/20/25, 3:25 PM INFO: RunSpec: /cat/EPA_MOVES_Model/rs_custom.xml
+3/20/25, 3:25 PM INFO: Initializing default database connections...
+3/20/25, 3:25 PM INFO: Reading default database table definitions...
+3/20/25, 3:25 PM INFO: Done initializing database connections.
+3/20/25, 3:25 PM INFO: Initializing output database connections...
+3/20/25, 3:25 PM INFO: Done initializing database connections.
+3/20/25, 3:25 PM INFO: Thread starting for class gov.epa.otaq.moves.master.framework.HeartbeatDetectionThread.
+3/20/25, 3:25 PM INFO: Initializing default database connections...
+3/20/25, 3:25 PM INFO: Database connections already established.
+3/20/25, 3:25 PM INFO: Initializing MOVESExecution connections...
+3/20/25, 3:25 PM INFO: HeartbeatDetectionThread !hasWorkerOnThisComputer
+3/20/25, 3:25 PM INFO: Creating the execution database...
+3/20/25, 3:25 PM INFO: Removing tables from the execution database...
+3/20/25, 3:25 PM INFO: Creating empty tables in the execution database...
+3/20/25, 3:25 PM INFO: Finalizing the execution database...
+3/20/25, 3:25 PM INFO: Reading execution database table definitions...
+3/20/25, 3:25 PM INFO: Done initializing database connections.
+3/20/25, 3:25 PM INFO: Initializing output database connections...
+3/20/25, 3:25 PM INFO: Database connections already established.
+3/20/25, 3:25 PM INFO: Thread starting for class gov.epa.otaq.moves.master.framework.MasterLoop.
+3/20/25, 3:25 PM INFO: Thread starting for class gov.epa.otaq.moves.master.framework.EmissionCalculatorInboundUnbundler.
+3/20/25, 3:25 PM INFO: InputDataManager transferred all default tables.
+3/20/25, 3:25 PM INFO: InputDataManager transferred all default tables.
+3/20/25, 3:25 PM INFO: InputDataManager transferred all default tables.
+3/20/25, 3:25 PM INFO: InputDataManager transferred all NonRoad tables.
+3/20/25, 3:25 PM DEBUG: Starting WorkerCommandLine...
+3/20/25, 3:25 PM INFO: testConnection = com.mysql.jdbc.JDBC4Connection@77ccb891
+3/20/25, 3:25 PM INFO: WorkerConfiguration loaded. distributedWorkerId = 4960001848651655178
+3/20/25, 3:25 PM INFO: Worker Release: MOVES5.0.0
+3/20/25, 3:25 PM INFO: Worker Computer ID: 4bdde28ba7eb
+3/20/25, 3:25 PM INFO: Worker ID: 4960001848651655178
+3/20/25, 3:25 PM INFO: Thread starting for class gov.epa.otaq.moves.worker.framework.WorkerHeartbeatThread.
+3/20/25, 3:25 PM INFO: Setting worker flag for 4960001848651655178 on port 13132
+3/20/25, 3:25 PM INFO: Thread starting for class gov.epa.otaq.moves.worker.framework.RemoteEmissionsCalculator.
+3/20/25, 3:25 PM INFO: InputDataManager transferred all default tables.
+3/20/25, 3:25 PM INFO: InputDataManager transferred all NonRoad tables.
+3/20/25, 3:25 PM DEBUG: Running script to preaggregate to DAY level
+3/20/25, 3:25 PM DEBUG: Running script to preaggregate to MONTH level
+3/20/25, 3:25 PM DEBUG: Running script to preaggregate to YEAR level
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.AverageSpeedOperatingModeDistributionGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.CO2AERunningStartExtendedIdleCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.CrankcaseEmissionCalculatorNonPM has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.DistanceCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.HCSpeciationCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.NO2Calculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.NOCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.PM10BrakeTireCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.PM10EmissionCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.RatesOperatingModeDistributionGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.SO2Calculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.StartOperatingModeDistributionGenerator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.SulfatePMCalculator has been instantiated.
+3/20/25, 3:26 PM INFO: Class gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator has been instantiated.
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator subscribed to Running Exhaust at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator subscribed to Extended Idle Exhaust at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator subscribed to Start Exhaust at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator subscribed to Auxiliary Power Exhaust at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator subscribed to Tirewear at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.general.MeteorologyGenerator subscribed to Brakewear at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator subscribed to Extended Idle Exhaust at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator subscribed to Auxiliary Power Exhaust at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator subscribed to Running Exhaust at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator subscribed to Brakewear at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator subscribed to Tirewear at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.ActivityCalculator subscribed to Start Exhaust at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.AverageSpeedOperatingModeDistributionGenerator subscribed to Tirewear at PROCESS/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator subscribed to Running Exhaust at MONTH/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator subscribed to Start Exhaust at MONTH/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator subscribed to Brakewear at MONTH/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator subscribed to Tirewear at MONTH/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator subscribed to Extended Idle Exhaust at MONTH/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator subscribed to Auxiliary Power Exhaust at MONTH/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator subscribed to Running Exhaust at YEAR/98
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator subscribed to Start Exhaust at YEAR/98
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator subscribed to Extended Idle Exhaust at YEAR/98
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator subscribed to Auxiliary Power Exhaust at YEAR/98
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator subscribed to Brakewear at YEAR/98
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator subscribed to Tirewear at YEAR/98
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.DistanceCalculator subscribed to Running Exhaust at YEAR/10
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Running Exhaust at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Crankcase Running Exhaust at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Brakewear at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Tirewear at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Start Exhaust at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Crankcase Start Exhaust at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Extended Idle Exhaust at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Crankcase Extended Idle Exhaust at PROCESS/99
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.FuelEffectsGenerator subscribed to Auxiliary Power Exhaust at PROCESS/99
+3/20/25, 3:26 PM INFO: NO2Calculator chained to gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator@642bf5cf
+3/20/25, 3:26 PM INFO: NOCalculator chained to gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator@642bf5cf
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.RatesOperatingModeDistributionGenerator subscribed to Running Exhaust at YEAR/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.RatesOperatingModeDistributionGenerator subscribed to Extended Idle Exhaust at YEAR/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.RatesOperatingModeDistributionGenerator subscribed to Auxiliary Power Exhaust at YEAR/100
+3/20/25, 3:26 PM INFO: SO2Calculator chained to gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator@642bf5cf
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Running Exhaust at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Start Exhaust at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Extended Idle Exhaust at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Auxiliary Power Exhaust at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Evap Permeation at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Evap Fuel Vapor Venting at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Evap Fuel Leaks at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Brakewear at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.SourceBinDistributionGenerator subscribed to Tirewear at YEAR/101
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.StartOperatingModeDistributionGenerator subscribed to Start Exhaust at PROCESS/100
+3/20/25, 3:26 PM INFO: SulfatePMCalculator chained to gov.epa.otaq.moves.master.implementation.ghg.BaseRateCalculator@642bf5cf
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator subscribed to Running Exhaust at YEAR/97
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator subscribed to Start Exhaust at YEAR/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator subscribed to Extended Idle Exhaust at YEAR/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator subscribed to Auxiliary Power Exhaust at YEAR/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator subscribed to Brakewear at YEAR/100
+3/20/25, 3:26 PM DEBUG: gov.epa.otaq.moves.master.implementation.ghg.TotalActivityGenerator subscribed to Tirewear at YEAR/100
+3/20/25, 3:26 PM INFO: Calculate AVFT Control Strategy
+3/20/25, 3:26 PM INFO: AVFT Calculations Complete
+3/20/25, 3:26 PM INFO: 50 bundles will be used.
+3/20/25, 3:26 PM INFO: Thread starting for class gov.epa.otaq.moves.master.framework.MasterLoopableThread.
+3/20/25, 3:26 PM INFO: MetGen setupTime=52 bundleTime=0
+3/20/25, 3:26 PM INFO: doGeneralFuelRatio
+3/20/25, 3:26 PM INFO: FuelTypeID 1 has 3 formulations
+3/20/25, 3:26 PM INFO: FuelTypeID 2 has 1 formulations
+3/20/25, 3:26 PM INFO: FuelTypeID 5 has 2 formulations
+3/20/25, 3:26 PM INFO: doAirToxicsCalculations
+3/20/25, 3:26 PM INFO: 19502000 (1982 to 2000)
+3/20/25, 3:26 PM INFO: 20012050 (2001 to 2022)
+3/20/25, 3:26 PM INFO: FuelTypeID 1 has 3 formulations
+3/20/25, 3:26 PM INFO: doCOCalculations
+3/20/25, 3:26 PM INFO: 19502000 (1982 to 2000)
+3/20/25, 3:26 PM INFO: 20012050 (2001 to 2022)
+3/20/25, 3:26 PM INFO: FuelTypeID 1 has 3 formulations
+3/20/25, 3:26 PM INFO: Dropping criteriaRatio indexes
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempCOA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempCOA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempCOA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempCOA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: doPredictiveCalculations: predictHC, 101,102 / 1000101,1000102
+3/20/25, 3:26 PM INFO: 19502000 (1982 to 2000)
+3/20/25, 3:26 PM INFO: 20012050 (2001 to 2022)
+3/20/25, 3:26 PM INFO: FuelTypeID 1 has 3 formulations
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempHCA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempHCA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempHCA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempHCA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: doPredictiveCalculations: predictNOx, 301,302 / 
+3/20/25, 3:26 PM INFO: 19502000 (1982 to 2000)
+3/20/25, 3:26 PM INFO: 20012050 (2001 to 2022)
+3/20/25, 3:26 PM INFO: FuelTypeID 1 has 3 formulations
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempNOxA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempNOxA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempNOxA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: Checked sulfur model input table tempNOxA
+3/20/25, 3:26 PM INFO: Checked sulfur model output table criteriaRatio
+3/20/25, 3:26 PM INFO: doMTBECalculations
+3/20/25, 3:26 PM INFO: doEvapBenzeneCalculations
+3/20/25, 3:26 PM INFO: Creating criteriaRatio indexes
+3/20/25, 3:26 PM INFO: Removed potential overlaps between ATRatioNonGas and ATRatio
+3/20/25, 3:26 PM INFO: FuelEffectsGenerator totalTime=7625
+3/20/25, 3:26 PM DEBUG: newSBD Generator called for process: Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Atmospheric CO2 - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Atmospheric CO2 - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: CO2 Equivalent - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process CO2 Equivalent - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Carbon Monoxide (CO) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Composite - NonECPM - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Elemental Carbon - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: H2O (aerosol) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process H2O (aerosol) - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Methane (CH4) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Methane (CH4) - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Dioxide (NO2) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Oxide (NO) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrous Oxide (N2O) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Oxides of Nitrogen (NOx) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM10  - Total - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM10  - Total - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM2.5 - Total - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM2.5 - Total - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfate Particulate - Running Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Sulfate Particulate - Running Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfur Dioxide (SO2) - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Total Energy Consumption - Running Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Total Gaseous Hydrocarbons - Running Exhaust
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=2368
+3/20/25, 3:26 PM DEBUG: ROMD calculateOpModeFractions processID=1
+3/20/25, 3:26 PM DEBUG: RatesOpModeDistributionGenerator.calculateOpModeFractions ms=1
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=1
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.addIndexes: alter table avgSpeedBin add key speed1 (avgSpeedBinID, avgBinSpeed)
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.addIndexes ms=10
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.addIndexes: alter table avgSpeedBin add key speed2 (avgBinSpeed, avgSpeedBinID)
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.addIndexes ms=14
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.addIndexes: analyze table avgSpeedBin
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.addIndexes ms=2
+3/20/25, 3:26 PM DEBUG: Base Rate Generator called for process: Running Exhaust
+3/20/25, 3:26 PM DEBUG: Not normalizing sourcebin-weighted emission rates
+3/20/25, 3:26 PM DEBUG: Not normalizing sourcebin-weighted distance rates
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 3 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 4 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 5 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 6 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 1
+3/20/25, 3:26 PM INFO: BRG SBW running concurrent statements...
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 3 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 3 of 3
+3/20/25, 3:26 PM INFO: BRG SBW done running concurrent statements.
+3/20/25, 3:26 PM INFO: Statements done: 18
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.5555555555555556
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 3
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=2284
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator: processID=1, applyAvgSpeedDistribution=true, useAvgSpeedBin=false, applySourceBinDistribution=true, keepOpModeID=false, avgSpeedFraction="*coalesce(avgSpeedFraction,0)", sumSBD="*sumSBD"
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/generators/externalgenerator64.exe in /cat/EPA_MOVES_Model/MOVESTemporary/GeneratorTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -class=BaseRateGenerator.generateBaseRates
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -db=MOVESExecution
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -dbuser=moves
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -dbpwd=moves
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -params=nOp,nASB,yASF,ySBD,nRaw,1,2022,0
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -saveromd=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external generator (sec): 6.5370001792907715 for Process: 1 Running Exhaust
+State: 36
+County: 36109
+Zone: 361090
+Link: 3610901
+Road Type: 1
+Year: 2022
+Month: -1
+Day: -1
+Hour: -1
+Granularity: YEAR
+Priority: 98
+Phase: exec
+Module: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator
+Iteration: 1
+MovesRunID: 1
+3/20/25, 3:26 PM DEBUG: Success running the external generator in BaseRateGenerator.generateBaseRates
+3/20/25, 3:26 PM INFO: Statements done: 0
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 0
+3/20/25, 3:26 PM DEBUG: Done with BaseRateGenerator processID=1, roadTypeID=0, yearID=2022
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateBaseRates ms=6611
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=8895
+3/20/25, 3:26 PM INFO: TAG SourceTypeHour2 ms=13
+3/20/25, 3:26 PM INFO: TAG AverageSpeed ms=2
+3/20/25, 3:26 PM INFO: TAG SHOByAgeRoadwayHour ms=7
+3/20/25, 3:26 PM INFO: TAG IdleHoursByAgeHour ms=3
+3/20/25, 3:26 PM INFO: TAG StartsPerSampleVehicle ms=42
+3/20/25, 3:26 PM INFO: TAG SourceTypesInStartsPerVehicle ms=11
+3/20/25, 3:26 PM INFO: TAG StartsPerVehicle ms=16
+3/20/25, 3:26 PM INFO: TAG StartsByAgeHour ms=7
+3/20/25, 3:26 PM INFO: TAG SHPByAgeHour ms=8
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=214 focusTime=0
+3/20/25, 3:26 PM INFO: Created bundle 1 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: Created bundle 2 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=1
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=8895
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=273 focusTime=0
+3/20/25, 3:26 PM INFO: Created bundle 3 for workers to process
+3/20/25, 3:26 PM INFO: Created bundle 4 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: Created bundle 5 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=1
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=8895
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=327 focusTime=0
+3/20/25, 3:26 PM INFO: Created bundle 6 for workers to process
+3/20/25, 3:26 PM INFO: Created bundle 7 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: Created bundle 8 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=1
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=8895
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=379 focusTime=0
+3/20/25, 3:26 PM INFO: Created bundle 9 for workers to process
+3/20/25, 3:26 PM INFO: Created bundle 10 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: Created bundle 11 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=1
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=8895
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=499 focusTime=0
+3/20/25, 3:26 PM INFO: Created bundle 12 for workers to process
+3/20/25, 3:26 PM INFO: Created bundle 13 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM DEBUG: Worker found 13 TODO files.
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_1_TODO
+3/20/25, 3:26 PM INFO: Created bundle 14 for workers to process
+3/20/25, 3:26 PM INFO: MetGen setupTime=52 bundleTime=0
+3/20/25, 3:26 PM DEBUG: newSBD Generator called for process: Brakewear
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary PM10 - Brakewear Particulate - Brakewear
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary PM10 - Brakewear Particulate - Brakewear because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary PM2.5 - Brakewear Particulate - Brakewear
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_1_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_1_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_2_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_2_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=431
+3/20/25, 3:26 PM INFO: TAG SourceTypeHour2 ms=15
+3/20/25, 3:26 PM INFO: TAG AverageSpeed ms=3
+3/20/25, 3:26 PM INFO: TAG SHOByAgeRoadwayHour ms=6
+3/20/25, 3:26 PM INFO: TAG IdleHoursByAgeHour ms=4
+3/20/25, 3:26 PM INFO: TAG StartsByAgeHour ms=8
+3/20/25, 3:26 PM INFO: TAG SHPByAgeHour ms=8
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=546 focusTime=0
+3/20/25, 3:26 PM DEBUG: Base Rate Generator called for process: Brakewear
+3/20/25, 3:26 PM DEBUG: Not normalizing sourcebin-weighted emission rates
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 3 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 4 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 5 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 6 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 1
+3/20/25, 3:26 PM INFO: BRG SBW running concurrent statements...
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 3 of 3
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.20399999618530273
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 3 of 3
+3/20/25, 3:26 PM INFO: BRG SBW done running concurrent statements.
+3/20/25, 3:26 PM INFO: Statements done: 17
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.5294117647058822
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 4
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=145
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator: processID=9, applyAvgSpeedDistribution=true, useAvgSpeedBin=false, applySourceBinDistribution=true, keepOpModeID=false, avgSpeedFraction="*coalesce(avgSpeedFraction,0)", sumSBD="*sumSBD"
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/generators/externalgenerator64.exe in /cat/EPA_MOVES_Model/MOVESTemporary/GeneratorTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -class=BaseRateGenerator.generateBaseRates
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -db=MOVESExecution
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -dbuser=moves
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -dbpwd=moves
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -params=nOp,nASB,yASF,ySBD,nRaw,9,2022,0
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -saveromd=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.017000000923871994
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 1 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Extracted 1706 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 2217 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_2_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_3_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_3_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_3_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_4_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_4_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_4_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_5_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_5_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.3319999873638153
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.01600000075995922
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 3 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 4 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 2 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Extracted 1706 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 2217 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_5_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_6_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_6_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Time spent on running the external generator (sec): 5.144000053405762 for Process: 9 Brakewear
+State: 36
+County: 36109
+Zone: 361090
+Link: 3610901
+Road Type: 1
+Year: 2022
+Month: -1
+Day: -1
+Hour: -1
+Granularity: YEAR
+Priority: 98
+Phase: exec
+Module: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator
+Iteration: 1
+MovesRunID: 1
+3/20/25, 3:26 PM DEBUG: Success running the external generator in BaseRateGenerator.generateBaseRates
+3/20/25, 3:26 PM INFO: Statements done: 0
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 0
+3/20/25, 3:26 PM DEBUG: Done with BaseRateGenerator processID=9, roadTypeID=0, yearID=2022
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateBaseRates ms=5147
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14188
+3/20/25, 3:26 PM INFO: Created bundle 15 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=546 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14188
+3/20/25, 3:26 PM INFO: Created bundle 16 for workers to process
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_6_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_7_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_7_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 17 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=546 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14188
+3/20/25, 3:26 PM INFO: Created bundle 18 for workers to process
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 6 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_7_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_8_TODO
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 5 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_8_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 19 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=546 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14188
+3/20/25, 3:26 PM INFO: Created bundle 20 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.23899999260902405
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 21 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=546 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14188
+3/20/25, 3:26 PM INFO: Created bundle 22 for workers to process
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.012000000104308128
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 23 for workers to process
+3/20/25, 3:26 PM INFO: MetGen setupTime=52 bundleTime=0
+3/20/25, 3:26 PM DEBUG: newSBD Generator called for process: Tirewear
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary PM10 - Tirewear Particulate - Tirewear
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary PM10 - Tirewear Particulate - Tirewear because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary PM2.5 - Tirewear Particulate - Tirewear
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=372
+3/20/25, 3:26 PM INFO: TAG SourceTypeHour2 ms=23
+3/20/25, 3:26 PM INFO: TAG AverageSpeed ms=3
+3/20/25, 3:26 PM INFO: TAG SHOByAgeRoadwayHour ms=8
+3/20/25, 3:26 PM INFO: TAG IdleHoursByAgeHour ms=7
+3/20/25, 3:26 PM INFO: TAG StartsByAgeHour ms=10
+3/20/25, 3:26 PM INFO: TAG SHPByAgeHour ms=17
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=616 focusTime=0
+3/20/25, 3:26 PM DEBUG: Base Rate Generator called for process: Tirewear
+3/20/25, 3:26 PM DEBUG: Not normalizing sourcebin-weighted emission rates
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 3 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 4 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 5 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 6 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 1
+3/20/25, 3:26 PM INFO: BRG SBW running concurrent statements...
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 3 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 3 of 3
+3/20/25, 3:26 PM INFO: BRG SBW done running concurrent statements.
+3/20/25, 3:26 PM INFO: Statements done: 17
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.588235294117647
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 4
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=259
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator: processID=10, applyAvgSpeedDistribution=true, useAvgSpeedBin=false, applySourceBinDistribution=true, keepOpModeID=false, avgSpeedFraction="*coalesce(avgSpeedFraction,0)", sumSBD="*sumSBD"
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/generators/externalgenerator64.exe in /cat/EPA_MOVES_Model/MOVESTemporary/GeneratorTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -class=BaseRateGenerator.generateBaseRates
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -db=MOVESExecution
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -dbuser=moves
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -dbpwd=moves
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -params=nOp,nASB,yASF,ySBD,nRaw,10,2022,0
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: , 
+3/20/25, 3:26 PM DEBUG: -saveromd=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external generator (sec): 0.3070000112056732 for Process: 10 Tirewear
+State: 36
+County: 36109
+Zone: 361090
+Link: 3610901
+Road Type: 1
+Year: 2022
+Month: -1
+Day: -1
+Hour: -1
+Granularity: YEAR
+Priority: 98
+Phase: exec
+Module: gov.epa.otaq.moves.master.implementation.ghg.BaseRateGenerator
+Iteration: 1
+MovesRunID: 1
+3/20/25, 3:26 PM DEBUG: Success running the external generator in BaseRateGenerator.generateBaseRates
+3/20/25, 3:26 PM INFO: Statements done: 0
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 0
+3/20/25, 3:26 PM DEBUG: Done with BaseRateGenerator processID=10, roadTypeID=0, yearID=2022
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateBaseRates ms=310
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14758
+3/20/25, 3:26 PM INFO: Created bundle 24 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=616 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14758
+3/20/25, 3:26 PM INFO: Created bundle 25 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 26 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=616 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14758
+3/20/25, 3:26 PM INFO: Created bundle 27 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 7 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Created bundle 28 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=616 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14758
+3/20/25, 3:26 PM INFO: Created bundle 29 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 30 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=616 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=14759
+3/20/25, 3:26 PM INFO: Created bundle 31 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: NO Calculator's SQLForWorker method does NOT find oxides of nitrogen
+3/20/25, 3:26 PM INFO: SO2 Calculator's SQLForWorker method does NOT find energy consumption
+3/20/25, 3:26 PM INFO: Sulfate Calculator's SQLForWorker method does NOT find any required input pollutants
+3/20/25, 3:26 PM INFO: Created bundle 32 for workers to process
+3/20/25, 3:26 PM INFO: MetGen setupTime=52 bundleTime=0
+3/20/25, 3:26 PM INFO: Extracted 1706 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 2217 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_8_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_9_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_9_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_9_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_10_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_10_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_10_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_11_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_11_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.34700000286102295
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 10 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 8 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.01600000075995922
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 9 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: StartOperatingModeDistributionGenerator setupTime=1888 totalTime=97
+3/20/25, 3:26 PM DEBUG: newSBD Generator called for process: Start Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Atmospheric CO2 - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Atmospheric CO2 - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: CO2 Equivalent - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process CO2 Equivalent - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Carbon Monoxide (CO) - Start Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Composite - NonECPM - Start Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Elemental Carbon - Start Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: H2O (aerosol) - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process H2O (aerosol) - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Methane (CH4) - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Methane (CH4) - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Dioxide (NO2) - Start Exhaust
+3/20/25, 3:26 PM INFO: Extracted 1706 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 2217 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_11_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_12_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_12_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Oxide (NO) - Start Exhaust
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_12_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_13_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_13_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrous Oxide (N2O) - Start Exhaust
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_13_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM DEBUG: Worker found 19 TODO files.
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_14_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_14_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Oxides of Nitrogen (NOx) - Start Exhaust
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.3019999861717224
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.008999999612569809
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM10  - Total - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM10  - Total - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM2.5 - Total - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM2.5 - Total - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfate Particulate - Start Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Sulfate Particulate - Start Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfur Dioxide (SO2) - Start Exhaust
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 13 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 12 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 11 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Total Energy Consumption - Start Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Total Gaseous Hydrocarbons - Start Exhaust
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=8392
+3/20/25, 3:26 PM INFO: TAG SourceTypeHour2 ms=30
+3/20/25, 3:26 PM INFO: TAG AverageSpeed ms=4
+3/20/25, 3:26 PM INFO: TAG SHOByAgeRoadwayHour ms=7
+3/20/25, 3:26 PM INFO: TAG IdleHoursByAgeHour ms=7
+3/20/25, 3:26 PM INFO: TAG StartsByAgeHour ms=13
+3/20/25, 3:26 PM INFO: TAG SHPByAgeHour ms=23
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=848 focusTime=0
+3/20/25, 3:26 PM DEBUG: Base Rate Generator called for process: Start Exhaust
+3/20/25, 3:26 PM DEBUG: Not normalizing sourcebin-weighted emission rates
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 3 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 4 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 5 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 6 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 1
+3/20/25, 3:26 PM INFO: BRG SBW running concurrent statements...
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 3
+3/20/25, 3:26 PM INFO: Extracted 1706 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 2217 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_14_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_15_TODO
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 3 of 3
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_15_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_15_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_16_TODO
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 3 of 3
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_16_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: BRG SBW done running concurrent statements.
+3/20/25, 3:26 PM INFO: Statements done: 17
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.5294117647058822
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 4
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=1100
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator: processID=2, applyAvgSpeedDistribution=false, useAvgSpeedBin=false, applySourceBinDistribution=true, keepOpModeID=true, avgSpeedFraction="", sumSBD="*sumSBD"
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator processID=2, roadTypeID=0, yearID=2022 has 91 iterations
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing concurrent SQL...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 1 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 1 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 2 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 3 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 4 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 5 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 6 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 7 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 8 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 9 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 10 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 11 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 12 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 13 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 14 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 15 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 16 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 17 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 18 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 19 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 20 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 21 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 22 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 23 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 24 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 25 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 26 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 27 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 28 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 29 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 30 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 31 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 32 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 33 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 34 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 35 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 36 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 37 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 38 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 39 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 40 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 41 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 42 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 43 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 44 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 45 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 46 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 47 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 48 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 49 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 50 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 51 of 182
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 52 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 53 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 54 of 182
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 55 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 56 of 182
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 57 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 58 of 182
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_16_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 59 of 182
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_17_TODO
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 60 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 61 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 62 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 63 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 64 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 65 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 66 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 67 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 68 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 69 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 70 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 71 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 72 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 73 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 74 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 75 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 76 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 77 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 78 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 79 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 80 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 81 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 82 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 83 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 84 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 85 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 86 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 87 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 88 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 89 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 90 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 91 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 92 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 93 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 94 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 95 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 96 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 97 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 98 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 99 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 100 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 101 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 102 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 103 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 2 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 104 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 105 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 106 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 107 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 108 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 109 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 110 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 111 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 112 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 113 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 114 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 115 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 116 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 117 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 118 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 119 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 120 of 182
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 121 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 122 of 182
+3/20/25, 3:26 PM INFO: Bundle 16 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 123 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 124 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 125 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 126 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 127 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 3 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_17_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 128 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 129 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 130 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 131 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 132 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 133 of 182
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 134 of 182
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 135 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 136 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 137 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 4 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 138 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 139 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 140 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 141 of 182
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 5 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Bundle 14 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 142 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 143 of 182
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.07000000029802322
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 144 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 145 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 6 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 146 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 147 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 148 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 149 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 150 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 151 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 152 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 153 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 154 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 155 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 156 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 157 of 182
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.014999999664723873
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 158 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 159 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 7 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 160 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 161 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 162 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 163 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 164 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 165 of 182
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 15 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 8 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 166 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 167 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 168 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 169 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 170 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 171 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 172 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 173 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 9 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 174 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 175 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 176 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 177 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 178 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 179 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 180 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 181 of 182
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 182 of 182
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 10 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 11 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 12 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 13 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 14 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 15 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 16 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 17 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 18 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 19 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 20 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 21 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 22 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 23 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 24 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 25 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 26 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 27 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 28 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 29 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 30 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 31 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 32 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 33 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 34 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 35 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 36 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 37 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 38 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 39 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 40 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 41 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 42 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 43 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_17_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_18_TODO
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 44 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 45 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 46 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 47 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 48 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 49 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_18_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 50 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_18_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_19_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_19_InProgress_4960001848651655178
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 51 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.06400000303983688
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 52 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 53 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 18 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 54 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.20499999821186066
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 55 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 56 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 57 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 58 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 59 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 60 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 61 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 62 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 63 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 64 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 65 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 66 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 67 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 68 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 69 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 70 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 71 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 72 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 73 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 74 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 75 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 76 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 77 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 78 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 79 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 80 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 81 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 82 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 83 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 84 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 85 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 86 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 87 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 88 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 89 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 90 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 91 of 91
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator concurrent SQL done.
+3/20/25, 3:26 PM INFO: Statements done: 273
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.6923076923076923
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 2
+3/20/25, 3:26 PM DEBUG: Done with BaseRateGenerator processID=2, roadTypeID=0, yearID=2022
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateBaseRates ms=2837
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=18696
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 17 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Created bundle 33 for workers to process
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_19_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_20_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_20_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_20_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_21_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_21_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.057999998331069946
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.008999999612569809
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_21_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_22_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_22_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_22_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_23_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_23_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.04600000008940697
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.012000000104308128
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_23_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_24_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_24_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Created bundle 34 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=848 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=18696
+3/20/25, 3:26 PM INFO: Created bundle 35 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=848 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=18696
+3/20/25, 3:26 PM INFO: Created bundle 36 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=848 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=18696
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Created bundle 37 for workers to process
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_24_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=848 focusTime=0
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_25_TODO
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=18696
+3/20/25, 3:26 PM INFO: Created bundle 38 for workers to process
+3/20/25, 3:26 PM INFO: MetGen setupTime=52 bundleTime=0
+3/20/25, 3:26 PM DEBUG: newSBD Generator called for process: Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Atmospheric CO2 - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Atmospheric CO2 - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: CO2 Equivalent - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process CO2 Equivalent - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Carbon Monoxide (CO) - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_25_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_25_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_26_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_26_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.052000001072883606
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.014000000432133675
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Composite - NonECPM - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_26_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_27_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_27_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_27_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_28_TODO
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 24 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_28_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 19 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.07000000029802322
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 27 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.01899999938905239
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 22 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 20 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 23 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 21 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Elemental Carbon - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Bundle 25 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_28_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_29_TODO
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 26 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_29_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_29_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_30_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_30_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.06499999761581421
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.014999999664723873
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: H2O (aerosol) - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process H2O (aerosol) - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Methane (CH4) - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Methane (CH4) - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Dioxide (NO2) - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_30_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_31_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_31_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_31_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_32_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_32_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.08100000023841858
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.014000000432133675
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Oxide (NO) - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: Extracted 156 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 156 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_32_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM DEBUG: Worker found 6 TODO files.
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_33_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_33_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 78 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_33_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_34_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_34_InProgress_4960001848651655178
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Oxides of Nitrogen (NOx) - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM10  - Total - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM10  - Total - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM2.5 - Total - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM2.5 - Total - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfate Particulate - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Sulfate Particulate - Extended Idle Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfur Dioxide (SO2) - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.5419999957084656
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 29 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.041999999433755875
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 28 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 30 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 33 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 31 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 32 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Total Energy Consumption - Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Total Gaseous Hydrocarbons - Extended Idle Exhaust
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=4570
+3/20/25, 3:26 PM DEBUG: RatesOpModeDistributionGenerator.calculateOpModeFractions ms=2
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=4
+3/20/25, 3:26 PM INFO: TAG SourceTypeHour2 ms=28
+3/20/25, 3:26 PM INFO: TAG AverageSpeed ms=2
+3/20/25, 3:26 PM INFO: TAG SHOByAgeRoadwayHour ms=12
+3/20/25, 3:26 PM INFO: TAG IdleHoursByAgeHour ms=7
+3/20/25, 3:26 PM INFO: TAG StartsByAgeHour ms=21
+3/20/25, 3:26 PM INFO: TAG SHPByAgeHour ms=15
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1038 focusTime=0
+3/20/25, 3:26 PM DEBUG: Base Rate Generator called for process: Extended Idle Exhaust
+3/20/25, 3:26 PM DEBUG: Not normalizing sourcebin-weighted emission rates
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 3 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 4 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 5 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 6 of 6
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 1 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #CORE: 2 of 2
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 1
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 1
+3/20/25, 3:26 PM INFO: BRG SBW running concurrent statements...
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 3 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 2 of 3
+3/20/25, 3:26 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 3 of 3
+3/20/25, 3:26 PM INFO: BRG SBW done running concurrent statements.
+3/20/25, 3:26 PM INFO: Statements done: 17
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.5294117647058822
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 4
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=625
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator: processID=90, applyAvgSpeedDistribution=false, useAvgSpeedBin=false, applySourceBinDistribution=true, keepOpModeID=false, avgSpeedFraction="", sumSBD="*sumSBD"
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator processID=90, roadTypeID=0, yearID=2022 has 54 iterations
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing concurrent SQL...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 1 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 1 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 2 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 3 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 2 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 4 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 5 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 6 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 3 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 7 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 8 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 4 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 9 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 10 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 11 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 5 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 12 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 13 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 6 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 14 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 15 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 16 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 7 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 17 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 18 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 19 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 8 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 20 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 21 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 9 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 22 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 23 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 24 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 10 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 25 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 26 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 11 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 27 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 28 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 29 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 12 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 30 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 31 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 32 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 13 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 33 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 34 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 14 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 35 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 36 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 37 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 15 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 38 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 39 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 16 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 40 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 41 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 42 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 17 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 43 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 44 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 18 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 45 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 46 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 19 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 47 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 48 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 49 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 20 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 50 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 51 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 52 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 21 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 53 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 54 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 22 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 55 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 56 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 57 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 23 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 58 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 59 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 24 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 60 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 61 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 62 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 25 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 63 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 64 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 65 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 26 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 66 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 67 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 68 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 27 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 69 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 70 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 71 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 28 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 72 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 73 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 29 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 74 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 75 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 76 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 30 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 77 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 78 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 79 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 31 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 80 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 81 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 32 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 82 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 83 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 84 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 33 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 85 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 86 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 87 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 34 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 88 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 89 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 90 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 35 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 91 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 92 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 93 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 36 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 94 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 95 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 96 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 37 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 97 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 98 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 38 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 99 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 100 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 39 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 101 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 40 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 102 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 103 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 104 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 41 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 105 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 42 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 106 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 107 of 108
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATE: 108 of 108
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 43 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 44 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 45 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 46 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 47 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 48 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 49 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 50 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 51 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 52 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 53 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM INFO: Running Statement: #BASERATEBYAGE: 54 of 54
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator concurrent SQL done.
+3/20/25, 3:26 PM INFO: Statements done: 162
+3/20/25, 3:26 PM INFO: Avg. Concurrent Statements: 1.8395061728395061
+3/20/25, 3:26 PM INFO: Max. Concurrent Statements: 2
+3/20/25, 3:26 PM DEBUG: Done with BaseRateGenerator processID=90, roadTypeID=0, yearID=2022
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateBaseRates ms=154
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=19476
+3/20/25, 3:26 PM INFO: Created bundle 39 for workers to process
+3/20/25, 3:26 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:26 PM INFO: Created bundle 40 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=4
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1038 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=19476
+3/20/25, 3:26 PM INFO: Created bundle 41 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=4
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1038 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=19476
+3/20/25, 3:26 PM INFO: Created bundle 42 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=4
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1038 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=19476
+3/20/25, 3:26 PM INFO: Created bundle 43 for workers to process
+3/20/25, 3:26 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:26 PM INFO: ROMDG setupTime=59 bundleTime=4
+3/20/25, 3:26 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1038 focusTime=0
+3/20/25, 3:26 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:26 PM INFO: BRG setupTime=28 bundleTime=19477
+3/20/25, 3:26 PM INFO: Created bundle 44 for workers to process
+3/20/25, 3:26 PM INFO: MetGen setupTime=52 bundleTime=0
+3/20/25, 3:26 PM DEBUG: newSBD Generator called for process: Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Atmospheric CO2 - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Atmospheric CO2 - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: CO2 Equivalent - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process CO2 Equivalent - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Carbon Monoxide (CO) - Auxiliary Power Exhaust
+3/20/25, 3:26 PM INFO: Extracted 1694 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 2205 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_34_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_35_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_35_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_35_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_36_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_36_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Composite - NonECPM - Auxiliary Power Exhaust
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_36_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_38_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_38_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_38_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_37_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_37_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_37_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM DEBUG: Worker found 6 TODO files.
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_39_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_39_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Elemental Carbon - Auxiliary Power Exhaust
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 3 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_39_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_40_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_40_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:26 PM DEBUG: Command line = 
+3/20/25, 3:26 PM DEBUG: -isproject=0
+3/20/25, 3:26 PM DEBUG: 
+3/20/25, 3:26 PM INFO: Time spent on running the external calculator (sec): 0.061000000685453415
+3/20/25, 3:26 PM INFO: Time spent on absorbing external calculator results (sec): 0.014000000432133675
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 34 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 38 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 37 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 35 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: H2O (aerosol) - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process H2O (aerosol) - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Methane (CH4) - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Methane (CH4) - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Dioxide (NO2) - Auxiliary Power Exhaust
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 36 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM INFO: Received bundle from worker
+3/20/25, 3:26 PM INFO: Bundle 39 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Nitrogen Oxide (NO) - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Oxides of Nitrogen (NOx) - Auxiliary Power Exhaust
+3/20/25, 3:26 PM INFO: Extracted 66 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 87 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_40_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_41_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_41_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_41_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_42_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_42_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_42_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_43_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_43_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_43_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM INFO: Found work file: 2800225829572973153_44_TODO
+3/20/25, 3:26 PM INFO: Worker Processing 2800225829572973153_44_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:26 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:26 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:26 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:26 PM INFO: Worker finished processing: 2800225829572973153_44_InProgress_4960001848651655178
+3/20/25, 3:26 PM INFO: Worker is idle
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM10  - Total - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM10  - Total - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Primary Exhaust PM2.5 - Total - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Primary Exhaust PM2.5 - Total - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfate Particulate - Auxiliary Power Exhaust
+3/20/25, 3:26 PM DEBUG: No SourceBinDistribution for pollutant-process Sulfate Particulate - Auxiliary Power Exhaust because there is no SourceTypePolProcess information for it.
+3/20/25, 3:26 PM DEBUG: Processing pollutant-process: Sulfur Dioxide (SO2) - Auxiliary Power Exhaust
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 41 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 40 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 44 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM DEBUG: Processing pollutant-process: Total Energy Consumption - Auxiliary Power Exhaust
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 43 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 42 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM DEBUG: Processing pollutant-process: Total Gaseous Hydrocarbons - Auxiliary Power Exhaust
+3/20/25, 3:27 PM INFO: newSBDG setupTime=1 bundleTime=4456
+3/20/25, 3:27 PM DEBUG: RatesOpModeDistributionGenerator.calculateOpModeFractions ms=5
+3/20/25, 3:27 PM INFO: ROMDG setupTime=59 bundleTime=9
+3/20/25, 3:27 PM INFO: TAG SourceTypeHour2 ms=20
+3/20/25, 3:27 PM INFO: TAG AverageSpeed ms=5
+3/20/25, 3:27 PM INFO: TAG SHOByAgeRoadwayHour ms=19
+3/20/25, 3:27 PM INFO: TAG IdleHoursByAgeHour ms=11
+3/20/25, 3:27 PM INFO: TAG StartsByAgeHour ms=11
+3/20/25, 3:27 PM INFO: TAG SHPByAgeHour ms=12
+3/20/25, 3:27 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1267 focusTime=0
+3/20/25, 3:27 PM DEBUG: Base Rate Generator called for process: Auxiliary Power Exhaust
+3/20/25, 3:27 PM DEBUG: Not normalizing sourcebin-weighted emission rates
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 1 of 6
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 2 of 6
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 3 of 6
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 4 of 6
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 5 of 6
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 6 of 6
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 1 of 2
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDDISTANCERATE: 1 of 1
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 1
+3/20/25, 3:27 PM INFO: Running Statement: #CORE: 2 of 2
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 1
+3/20/25, 3:27 PM INFO: BRG SBW running concurrent statements...
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 1 of 3
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 1 of 3
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 2 of 3
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATEBYAGE: 3 of 3
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 2 of 3
+3/20/25, 3:27 PM INFO: Running Statement: #SBWEIGHTEDEMISSIONRATE: 3 of 3
+3/20/25, 3:27 PM INFO: BRG SBW done running concurrent statements.
+3/20/25, 3:27 PM INFO: Statements done: 17
+3/20/25, 3:27 PM INFO: Avg. Concurrent Statements: 1.5294117647058822
+3/20/25, 3:27 PM INFO: Max. Concurrent Statements: 4
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=893
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator: processID=91, applyAvgSpeedDistribution=false, useAvgSpeedBin=false, applySourceBinDistribution=true, keepOpModeID=false, avgSpeedFraction="", sumSBD="*sumSBD"
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator processID=91, roadTypeID=0, yearID=2022 has 54 iterations
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing concurrent SQL...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 1 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 1 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 2 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 3 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 4 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 5 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 2 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 6 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 7 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 3 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 8 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 9 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 10 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 4 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 11 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 12 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 5 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 13 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 14 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 15 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 6 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 16 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 17 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 18 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 7 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 19 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 20 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 21 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 8 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 22 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 23 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 9 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 24 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 25 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 26 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 27 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 10 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 28 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 29 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 30 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 11 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 31 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 12 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 32 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 33 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 34 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 13 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 35 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 14 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 36 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 37 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 38 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 15 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 39 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 40 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 16 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 41 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 42 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 43 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 17 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 44 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 45 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 18 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 46 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 47 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 19 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 48 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 49 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 20 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 50 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 51 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 21 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 52 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 53 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 54 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 22 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 55 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 56 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 57 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 23 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 58 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 59 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 60 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 24 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 61 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 62 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 63 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 25 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 64 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 65 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 66 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 26 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 67 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 68 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 27 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 69 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 70 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 71 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 72 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 28 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 73 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 74 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 75 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 29 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 76 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 77 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 78 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 30 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 79 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 80 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 81 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 31 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 82 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 83 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 84 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 32 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 85 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 86 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 33 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 87 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 34 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 88 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 89 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 35 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 90 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 91 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 36 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 92 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 93 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 94 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 37 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 95 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 96 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 38 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 97 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 98 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 39 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 99 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 100 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 40 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 101 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 102 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 41 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 103 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 42 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 104 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 43 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 44 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 45 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 105 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 106 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 107 of 108
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 46 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATE: 108 of 108
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 47 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 48 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 49 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 50 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 51 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 52 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 53 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM INFO: Running Statement: #BASERATEBYAGE: 54 of 54
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper...
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator executing BaseRateByAgeHelper Done
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator concurrent SQL done.
+3/20/25, 3:27 PM INFO: Statements done: 162
+3/20/25, 3:27 PM INFO: Avg. Concurrent Statements: 1.876543209876543
+3/20/25, 3:27 PM INFO: Max. Concurrent Statements: 2
+3/20/25, 3:27 PM DEBUG: Done with BaseRateGenerator processID=91, roadTypeID=0, yearID=2022
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator.generateBaseRates ms=192
+3/20/25, 3:27 PM INFO: BRG setupTime=28 bundleTime=20563
+3/20/25, 3:27 PM INFO: Created bundle 45 for workers to process
+3/20/25, 3:27 PM INFO: NO2 Calculator doExecute method IS successful
+3/20/25, 3:27 PM INFO: SO2 Calculator doExecute method IS successful
+3/20/25, 3:27 PM INFO: Created bundle 46 for workers to process
+3/20/25, 3:27 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:27 PM INFO: ROMDG setupTime=59 bundleTime=9
+3/20/25, 3:27 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1267 focusTime=0
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:27 PM INFO: BRG setupTime=28 bundleTime=20563
+3/20/25, 3:27 PM INFO: Created bundle 47 for workers to process
+3/20/25, 3:27 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:27 PM INFO: ROMDG setupTime=59 bundleTime=9
+3/20/25, 3:27 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1267 focusTime=0
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:27 PM INFO: BRG setupTime=28 bundleTime=20563
+3/20/25, 3:27 PM INFO: Created bundle 48 for workers to process
+3/20/25, 3:27 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:27 PM INFO: ROMDG setupTime=59 bundleTime=9
+3/20/25, 3:27 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1267 focusTime=0
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:27 PM INFO: BRG setupTime=28 bundleTime=20563
+3/20/25, 3:27 PM INFO: Created bundle 49 for workers to process
+3/20/25, 3:27 PM INFO: newSBDG setupTime=1 bundleTime=0
+3/20/25, 3:27 PM INFO: ROMDG setupTime=59 bundleTime=9
+3/20/25, 3:27 PM INFO: TAG setupTime=143 growthTime=91 bundleTime=1267 focusTime=0
+3/20/25, 3:27 PM DEBUG: BaseRateGenerator.generateSBWeightedEmissionRates ms=0
+3/20/25, 3:27 PM INFO: BRG setupTime=28 bundleTime=20563
+3/20/25, 3:27 PM INFO: Created bundle 50 for workers to process
+3/20/25, 3:27 PM INFO: Thread shutdown starting for class gov.epa.otaq.moves.master.framework.MasterLoop.
+3/20/25, 3:27 PM INFO: Thread shutdown starting for class gov.epa.otaq.moves.master.framework.MasterLoopableThread.
+3/20/25, 3:27 PM INFO: Thread shutdown complete for class gov.epa.otaq.moves.master.framework.MasterLoopableThread.
+3/20/25, 3:27 PM INFO: Thread shutdown complete for class gov.epa.otaq.moves.master.framework.MasterLoop.
+3/20/25, 3:27 PM DEBUG: Worker found 6 TODO files.
+3/20/25, 3:27 PM INFO: Found work file: 2800225829572973153_45_TODO
+3/20/25, 3:27 PM INFO: Worker Processing 2800225829572973153_45_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:27 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:27 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:27 PM INFO: Extracted 9 rows from MOVESWorkerActivityOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:27 PM INFO: Worker finished processing: 2800225829572973153_45_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: Worker is idle
+3/20/25, 3:27 PM INFO: Found work file: 2800225829572973153_46_TODO
+3/20/25, 3:27 PM INFO: Worker Processing 2800225829572973153_46_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:27 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:27 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:27 PM DEBUG: Run /cat/EPA_MOVES_Model/calc/externalcalculatorgo64.exe in /cat/EPA_MOVES_Model/WorkerFolder/WorkerTemp
+3/20/25, 3:27 PM DEBUG: Command line = 
+3/20/25, 3:27 PM DEBUG: -isproject=0
+3/20/25, 3:27 PM DEBUG: 
+3/20/25, 3:27 PM INFO: Time spent on running the external calculator (sec): 0.02800000086426735
+3/20/25, 3:27 PM INFO: Time spent on absorbing external calculator results (sec): 0.04100000113248825
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 45 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Extracted 48 rows from MOVESWorkerOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:27 PM INFO: Extracted 48 rows from BaseRateOutput
+3/20/25, 3:27 PM INFO: Worker finished processing: 2800225829572973153_46_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: Worker is idle
+3/20/25, 3:27 PM INFO: Found work file: 2800225829572973153_47_TODO
+3/20/25, 3:27 PM INFO: Worker Processing 2800225829572973153_47_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:27 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:27 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:27 PM INFO: Worker finished processing: 2800225829572973153_47_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: Worker is idle
+3/20/25, 3:27 PM INFO: Found work file: 2800225829572973153_48_TODO
+3/20/25, 3:27 PM INFO: Worker Processing 2800225829572973153_48_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:27 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:27 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 46 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:27 PM INFO: Bundle 47 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Worker finished processing: 2800225829572973153_48_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: Worker is idle
+3/20/25, 3:27 PM INFO: Found work file: 2800225829572973153_49_TODO
+3/20/25, 3:27 PM INFO: Worker Processing 2800225829572973153_49_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:27 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:27 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:27 PM INFO: Worker finished processing: 2800225829572973153_49_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: Worker is idle
+3/20/25, 3:27 PM INFO: Found work file: 2800225829572973153_50_TODO
+3/20/25, 3:27 PM INFO: Worker Processing 2800225829572973153_50_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: WorkerVersion=MOVES5.0.0
+3/20/25, 3:27 PM INFO: WorkerComputerID=4bdde28ba7eb
+3/20/25, 3:27 PM INFO: WorkerID=4960001848651655178
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from MOVESWorkerActivityOutput
+3/20/25, 3:27 PM INFO: Extracted 0 rows from BaseRateOutput
+3/20/25, 3:27 PM INFO: Worker finished processing: 2800225829572973153_50_InProgress_4960001848651655178
+3/20/25, 3:27 PM INFO: Worker is idle
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 49 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 48 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Received bundle from worker
+3/20/25, 3:27 PM INFO: Bundle 50 is from worker: '4bdde28ba7eb'/'MOVES5.0.0'/'4960001848651655178'
+3/20/25, 3:27 PM INFO: Final aggregation is being done because the runspec includes Atmospheric CO2
+3/20/25, 3:27 PM INFO: Final Aggregation starting...
+3/20/25, 3:27 PM INFO: Final Aggregation complete.
+3/20/25, 3:27 PM INFO: Unit conversions starting...
+3/20/25, 3:27 PM INFO: Time Measurement System = Years
+3/20/25, 3:27 PM INFO: Output Time Step = Year
+3/20/25, 3:27 PM INFO: Output Time Step average hours = 8766.0
+3/20/25, 3:27 PM INFO: Unit conversions done.
+3/20/25, 3:27 PM INFO: No final post processing required.
+3/20/25, 3:27 PM INFO: Unbundler has detected completion conditions. Exiting.
+3/20/25, 3:27 PM INFO: Generated bundles = 50 Retrieved bundles = 50
+3/20/25, 3:27 PM INFO: Thread shutdown starting for class gov.epa.otaq.moves.master.framework.EmissionCalculatorInboundUnbundler.
+3/20/25, 3:27 PM INFO: Thread shutdown complete for class gov.epa.otaq.moves.master.framework.EmissionCalculatorInboundUnbundler.
+3/20/25, 3:27 PM INFO: Thread shutdown starting for class gov.epa.otaq.moves.master.framework.HeartbeatDetectionThread.
+3/20/25, 3:27 PM INFO: Thread shutdown complete for class gov.epa.otaq.moves.master.framework.HeartbeatDetectionThread.
+3/20/25, 3:27 PM INFO: Initializing default database connections...
+3/20/25, 3:27 PM INFO: Reading default database table definitions...
+3/20/25, 3:27 PM INFO: Done initializing database connections.
+3/20/25, 3:27 PM INFO: Thread shutdown starting for class gov.epa.otaq.moves.worker.framework.WorkerHeartbeatThread.
+3/20/25, 3:27 PM INFO: Thread shutdown complete for class gov.epa.otaq.moves.worker.framework.WorkerHeartbeatThread.
