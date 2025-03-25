@@ -40,9 +40,11 @@
 #' @param .id  description TBA. (ignore)
 #' @param .outputdbname Output database name ("moves")
 #' @param .outputservername Hostname of output database (defaults to "localhost")
-#' @param .inputdbname Custom Input database name (should be default input database "movesdb20240104", so we can adapt it.)
+#' @param .inputdbname Custom Input database name ("custom")
 #' @param .inputservername Hostname of custom input database (defaults to "localhost") 
-
+#' @param .defaultinputdbname Name of default input database. (should be default input database "movesdb20241112")
+#' @param .defaultinputservername Hostname of default input datbase (defaults to "localhost")
+#' @param .skipvalidation:logical Should we skip domain validation? TRUE or FALSE? Defaults to TRUE.
 #' @importFrom xml2 read_xml as_list write_xml as_xml_document
 #' @importFrom stringr str_sub
 #' @importFrom dplyr `%>%`
@@ -68,24 +70,40 @@ custom_rs = function(
     .id = 1,
     .outputdbname = "moves",
     .outputservername = "localhost",
-    .inputdbname = "movesdb20240104",
-    .inputservername = "localhost"
+    .inputdbname = "custom",
+    .inputservername = "localhost",
+    .defaultinputservername = "localhost",
+    .defaultinputdbname =  "movesdb20241112",
+    .skipvalidation = TRUE
 ){
   
   # Testing Values (comment out before pushing)  
-  # .geoid = "36109"
-  # .year = 2020
-  # .level = "county"
-  # .default = FALSE
-  # .id = 1
-  # .outputdbname = "moves"
-  # .outputservername = "localhost"
-  # .inputdbname = "movesdb20240104"
-  # .inputservername = "localhost"
-  # .path = "inputs/rs_custom.xml"
+  # .geoid = "36109";
+  # .year = 2020;
+  # .default = FALSE;
+  # .path = "inputs/rs_custom.xml";
+  # .rate = FALSE;
+  # .pollutants = c(98, 3, 87, 2, 31, 33, 110, 100, 106, 107,116, 117);
+  # .sourcetypes = NULL;
+  # .fueltypes = NULL;
+  # .roadtypes = NULL;
+  # # Extra parameters
+  # .level = NULL;
+  # .geoaggregation = NULL;
+  # .timeaggregation = "year";
+  # # Rarely change
+  # .normalize = FALSE;
+  # .id = 1;
+  # .outputdbname = "moves";
+  # .outputservername = "localhost";
+  # .inputdbname = "custom";
+  # .inputservername = "localhost";
+  # .defaultinputservername = "localhost";
+  # .defaultinputdbname =  "movesdb20241112"
+  # .skipvalidation = FALSE
   # require(xml2, warn.conflicts = FALSE)
   # require(dplyr, warn.conflicts = FALSE)
-  
+  # library(catr)
   # FUNCTIONS ########################################
   # Short function for turning words' first letter upper case
   uppercase = function(word){
@@ -108,8 +126,6 @@ custom_rs = function(
     # Set mode
     attr(x$runspec$modelscale, "value") = "Inv"
   }
-  
-  
   
   ## LEVEL ####################################
   # If .level is not provided, use `what_level()` function to find it.
@@ -159,8 +175,8 @@ custom_rs = function(
   # Time Units in Output (eg. "Year")
   attr(x$runspec$outputtimestep, "value") = .timeaggregation
 
-  # Time Units in Output (eg. "Year")  
-  attr(x$runspec$outputfactors$timefactors, "units") = .timeaggregation
+  # Time Units in Output (eg. "Years") - Note: yes, it's plural  
+  attr(x$runspec$outputfactors$timefactors, "units") = paste0(.timeaggregation, "s")
 
   
     
@@ -169,11 +185,17 @@ custom_rs = function(
   attr(x$runspec$outputdatabase, "servername") <- .outputservername
 
   
-  # INPUT DATABASE ################################################
+  # SCALE INPUT DATABASE ################################################
   attr(x$runspec$scaleinputdatabase, "databasename") = .inputdbname
   attr(x$runspec$scaleinputdatabase, "servername") = .inputservername
   attr(x$runspec$scaleinputdatabase, "description") = .description
 
+  # DEFAULT INPUT DATABASE ##########################################
+  attr(x$runspec$inputdatabase, "databasename") = .defaultinputdbname
+  attr(x$runspec$inputdatabase, "servername") = .defaultinputservername
+  attr(x$runspec$inputdatabase, "description") = "defaults"
+  
+  
   # RUN TYPE ##################################################
   # SET RUN TYPE ("SINGLE" COUNTY vs. "DEFAULT")
   attr(x$runspec$modeldomain, "value") = .domain
@@ -194,6 +216,10 @@ custom_rs = function(
   # see get_pollutantprocessassoc.R for background
   x$runspec$pollutantprocessassociations = get_pollutantprocessassoc(.pollutants = .pollutants)
 
+  # DOMAIN VALIDATION ############################################### 
+  attr(x$runspec$skipdomaindatabasevalidation, "selected") = .skipvalidation
+  
+  
   # WRITE #####################################
   if(.normalize == TRUE){
     # Normalize the path 

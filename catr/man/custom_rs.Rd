@@ -21,8 +21,11 @@ custom_rs(
   .id = 1,
   .outputdbname = "moves",
   .outputservername = "localhost",
-  .inputdbname = "movesdb20240104",
-  .inputservername = "localhost"
+  .inputdbname = "custom",
+  .inputservername = "localhost",
+  .defaultinputservername = "localhost",
+  .defaultinputdbname = "movesdb20241112",
+  .skipvalidation = TRUE
 )
 }
 \arguments{
@@ -78,9 +81,15 @@ These parameters rarely change.}
 
 \item{.outputservername}{Hostname of output database (defaults to "localhost")}
 
-\item{.inputdbname}{Custom Input database name (should be default input database "movesdb20240104", so we can adapt it.)}
+\item{.inputdbname}{Custom Input database name ("custom")}
 
 \item{.inputservername}{Hostname of custom input database (defaults to "localhost")}
+
+\item{.defaultinputservername}{Hostname of default input datbase (defaults to "localhost")}
+
+\item{.defaultinputdbname}{Name of default input database. (should be default input database "movesdb20241112")}
+
+\item{.skipvalidation:logical}{Should we skip domain validation? TRUE or FALSE? Defaults to TRUE.}
 }
 \description{
 Designs a custom runspec file based off input parameters.

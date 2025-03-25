@@ -89,6 +89,16 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
   .timeaggregation1 = x$runspec$timespan$aggregateBy %>% attr("key") %>% tolower()
   .timeaggregation2 = x$runspec$outputtimestep %>% attr("value") %>% tolower()
   .timeaggregation3 = x$runspec$outputfactors$timefactors %>% attr("units") %>% tolower()
+  # outputfactors$timefactors is usually plural, while the others are not. Eg. Years instead of Year
+  .timeaggregation3 = switch(
+    EXPR = .timeaggregation3,
+    "years" = "year",
+    "hours" = "hour",
+    "days" = "day",
+    "months" = "month", 
+    ... = NA_character_
+  )
+  
   # Time aggregation must be the same in each for us to grab it.
   check_time = .timeaggregation1 == .timeaggregation2 &
     .timeaggregation1 == .timeaggregation3 &
@@ -96,11 +106,20 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
   # If they are the same, assign
   if(check_time == TRUE){
     .timeaggregation = .timeaggregation1
-  }else{ .timeaggregation = NULL }
+  }else{ 
+    message("time aggregation settings were not uniform. Could not extract timeaggregation.")
+    .timeaggregation = NULL 
+  }
+  
 
   # Get geographic aggregation level
   .geoaggregation = x$runspec$geographicoutputdetail %>% attr("description") %>% tolower()
 
+  
+  # DEFAULT INPUT DATABASE TRAITS
+  .defaultservername = x$runspec$inputdatabase %>% attr(., "servername")
+  .defaultdbname = x$runspec$inputdatabase %>% attr(., "databasename")
+    
   # INPUT/OUTPUT DATABASE TRAITS  
   .inputservername = x$runspec$scaleinputdatabase %>% attr(., "servername")
   .inputdbname = x$runspec$scaleinputdatabase %>% attr(., "databasename")
@@ -119,6 +138,8 @@ translate_rs = function(.runspec = Sys.getenv("RS_TEMPLATE")){
                 inputdbname = .inputdbname,
                 outputservername = .outputservername,
                 outputdbname = .outputdbname,
+                defaultservername = .defaultservername,
+                defaultdbname = .defaultdbname,
                 mode = .mode,
                 geoaggregation = .geoaggregation,
                 timeaggregation = .timeaggregation

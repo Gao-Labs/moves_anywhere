@@ -129,7 +129,7 @@ get_pollutantprocessassoc = function(.pollutants){
       # Split into a list
       split(.$row) %>% 
       # For each item, set attributes
-      purrr::map(~set_pp_attributes(.pollutantID = .$pollutantID, .pollutantName = .$pollutantID, 
+      purrr::map(~set_pp_attributes(.pollutantID = .$pollutantID, .pollutantName = .$pollutantName, 
                                     .processID = .$processID, .processName = .$processName)) %>% 
       # Set the name of each to be pollutant process association.
       setNames(., nm = rep("pollutantprocessassociation", length(.)) )

@@ -172,6 +172,7 @@ usethis::use_data(pollutant, overwrite = TRUE)
 ## rs_template #####################################################
 
 # Save runspec template as a list, so it can be encoded within the package.
+# file.copy(from = "moves_anywhere/inputs_ny/rs_custom.xml", to = "catr/data_raw/rs_template.xml", overwrite = TRUE)
 rs_template = xml2::read_xml("data_raw/rs_template.xml") %>% xml2::as_list()
 usethis::use_data(rs_template, overwrite = TRUE)
 #save(rs_template, file = "data/rs_template.rda")
@@ -180,6 +181,7 @@ remove(rs_template)
 
 ## rs_template_inventory ############################################
 
+# file.copy(from = "moves_anywhere/inputs_ny/rs_custom.xml", to = "catr/data_raw/rs_inventory.xml", overwrite = TRUE)
 rs_template_inventory = xml2::read_xml("data_raw/rs_inventory.xml") %>% xml2::as_list()
 usethis::use_data(rs_template_inventory, overwrite = TRUE)
 remove(rs_template_inventory)
@@ -322,6 +324,12 @@ tab_roadtypes = bind_rows(
   tibble(roadtypeid="5", roadtypename="Urban Unrestricted Access", modelCombination="M1")
 )
 save(tab_roadtypes, file = "data/tab_roadtypes.rda")
+
+
+# importer ##########################
+
+
+
 
 # END #########################################
 
