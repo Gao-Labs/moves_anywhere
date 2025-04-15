@@ -1,0 +1,10 @@
+# .env
+Sys.setenv("OUTPUTDBNAME"="moves")
+Sys.setenv("INPUTDBNAME"="movesdb20240104")
+Sys.setenv(MDB_USERNAME="moves")
+Sys.setenv(MDB_PASSWORD="moves")
+Sys.setenv(MDB_PORT="3306")
+Sys.setenv(MDB_HOST="localhost")
+Sys.setenv(MDB_DEFAULT="movesdb20240104")
+Sys.setenv(MOVES_FOLDER="/EPA_MOVES_Model")
+Sys.setenv(TEMP_FOLDER=".")

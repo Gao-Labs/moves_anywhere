@@ -10,7 +10,7 @@ cd "$REPO"
 pwd
 
 # SELECT BUCKET
-# BUCKET="$(pwd)/moves_anywhere"
+BUCKET="$(pwd)/inputs2"
 
 # Variables
 IMAGE_NAME="moves_anywhere:v2"
@@ -19,12 +19,13 @@ SECRET="$(pwd)/secret"
 echo $SECRET
 
 docker run  \
---rm \
---name "dock" \
---mount src="$SECRET/",target="/cat/secret",type=bind \
---entrypoint bash \
--it "$IMAGE_NAME" 
+  --rm \
+  --name "dock" \
+  --mount src="$BUCKET/",target="/cat/inputs",type=bind \
+  --entrypoint bash \
+  -it "$IMAGE_NAME"
+  
 
 # Check contents
-ls -lh /cat/secret/
+# ls -lh /cat/secret/
 
