@@ -50,6 +50,11 @@ IMAGE="docker-moves:v2"
 IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
 SOURCE_IMAGE="tmf77/docker_moves:v2"
 
+
+IMAGE="moves-anywhere:v2"
+IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
+SOURCE_IMAGE="moves_anywhere:v2"
+
 # Tag the image locally
 docker tag $SOURCE_IMAGE $IMAGE_NAME
 # Login with key

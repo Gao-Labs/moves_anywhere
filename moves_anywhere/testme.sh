@@ -5,24 +5,6 @@
 # A script for testing moves_anywhere,
 # involving making new runspecs
 
-# Issues
-# [x] custom_rs() must make outputtimefactors be Years
-# [x] translate_rs() check_time must work
-# [x] scaleinputdatabase and inputdatabase must be differentiated
-# [x] must use MOVES 5.0 runspec as a template
-# [ ] update the make_data.R script for MOVES 5.0 - pollutant processes
-# [ ] confirm it works with no inputs
-#    [x] need fuelsupply data for appropriate region
-#    [x] fix adapt for fuelsupply - marketShare syntax
-#    [x] must provide roadtypedistribution
-#    [ ] get fuelformulation for fuelsubtypes 10, 20, 30, 50, 90
-#    [ ] handle the NAs in fuelsubtypes 90
-# [x] confirm it works with inputs
-
-# [x] Run the NY example - inputs3
-# [ ] Run NY without fuelformulation - inputs4
-
-
 
 # Launch R
 R
