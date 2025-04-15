@@ -24,6 +24,7 @@ library(catr, warn.conflicts = FALSE,  quietly = TRUE)
 library(DBI, warn.conflicts = FALSE, quietly = TRUE)
 library(RMariaDB, warn.conflicts = FALSE,  quietly = TRUE)
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
+library(readr, warn.conflicts = FALSE, quietly = TRUE)
 # Load functions
 source("scripts/adapt_functions.R")
 
@@ -43,13 +44,30 @@ adapt_avft(.runspec = .runspec)
 
 # SOURCETYPE YEAR #################################
 cat("\n\n---VEHICLE POPULATION TABLES----------------------\n")
-source("scripts/adapt_sourcetypeyear.R")
-adapt_sourcetypeyear(.runspec = .runspec)
+
+# Skip using raw defaults
+# source("scripts/adapt_sourcetypeyear.R")
+# adapt_sourcetypeyear(.runspec = .runspec)
+
+# Instead, adapt from NEI MOVES Input data
+source("scripts/adapt_from_nei.R")
+source("scripts/adapt_sourcetypeyear2.R")
+adapt_sourcetypeyear2(.runspec = .runspec)
+
 
 # VMT #################################
 cat("\n\n---VEHICLE VMT TABLES----------------------\n")
-source("scripts/adapt_vmt.R")
-adapt_vmt(.runspec = .runspec)
+
+# Skip using raw defaults
+# source("scripts/adapt_vmt.R")
+# adapt_vmt(.runspec = .runspec)
+
+# Instead adapt from NEI MOVES Input data
+source("scripts/adapt_from_nei.R")
+source("scripts/adapt_vmt2.R")
+adapt_vmt2(.runspec = .runspec)
+
+
 
 # VMT FRACTIONS ########################################
 cat("\n\n---VMT FRACTION TABLES----------------------\n")

@@ -1,0 +1,168 @@
+scc,category,fuel_type,vehicle_type,road_type,type,road_type_/_process
+2201110200,Mobile Sources,Highway Vehicles - Gasoline,Motorcycles,Rural Restricted Access,VMT,NA
+2201110300,Mobile Sources,Highway Vehicles - Gasoline,Motorcycles,Rural Unrestricted Access,VMT,NA
+2201110400,Mobile Sources,Highway Vehicles - Gasoline,Motorcycles,Urban Restricted Access,VMT,NA
+2201110500,Mobile Sources,Highway Vehicles - Gasoline,Motorcycles,Urban Unrestricted Access,VMT,NA
+2201210200,Mobile Sources,Highway Vehicles - Gasoline,Passenger Cars,Rural Restricted Access,VMT,NA
+2201210300,Mobile Sources,Highway Vehicles - Gasoline,Passenger Cars,Rural Unrestricted Access,VMT,NA
+2201210400,Mobile Sources,Highway Vehicles - Gasoline,Passenger Cars,Urban Restricted Access,VMT,NA
+2201210500,Mobile Sources,Highway Vehicles - Gasoline,Passenger Cars,Urban Unrestricted Access,VMT,NA
+2201310200,Mobile Sources,Highway Vehicles - Gasoline,Passenger Trucks,Rural Restricted Access,VMT,NA
+2201310300,Mobile Sources,Highway Vehicles - Gasoline,Passenger Trucks,Rural Unrestricted Access,VMT,NA
+2201310400,Mobile Sources,Highway Vehicles - Gasoline,Passenger Trucks,Urban Restricted Access,VMT,NA
+2201310500,Mobile Sources,Highway Vehicles - Gasoline,Passenger Trucks,Urban Unrestricted Access,VMT,NA
+2201320200,Mobile Sources,Highway Vehicles - Gasoline,Light Commercial Trucks,Rural Restricted Access,VMT,NA
+2201320300,Mobile Sources,Highway Vehicles - Gasoline,Light Commercial Trucks,Rural Unrestricted Access,VMT,NA
+2201320400,Mobile Sources,Highway Vehicles - Gasoline,Light Commercial Trucks,Urban Restricted Access,VMT,NA
+2201320500,Mobile Sources,Highway Vehicles - Gasoline,Light Commercial Trucks,Urban Unrestricted Access,VMT,NA
+2201410200,Mobile Sources,Highway Vehicles - Gasoline,Intercity Buses,Rural Restricted Access,VMT,NA
+2201410300,Mobile Sources,Highway Vehicles - Gasoline,Intercity Buses,Rural Unrestricted Access,VMT,NA
+2201410400,Mobile Sources,Highway Vehicles - Gasoline,Intercity Buses,Urban Restricted Access,VMT,NA
+2201410500,Mobile Sources,Highway Vehicles - Gasoline,Intercity Buses,Urban Unrestricted Access,VMT,NA
+2201420200,Mobile Sources,Highway Vehicles - Gasoline,Transit Buses,Rural Restricted Access,VMT,NA
+2201420300,Mobile Sources,Highway Vehicles - Gasoline,Transit Buses,Rural Unrestricted Access,VMT,NA
+2201420400,Mobile Sources,Highway Vehicles - Gasoline,Transit Buses,Urban Restricted Access,VMT,NA
+2201420500,Mobile Sources,Highway Vehicles - Gasoline,Transit Buses,Urban Unrestricted Access,VMT,NA
+2201430200,Mobile Sources,Highway Vehicles - Gasoline,School Buses,Rural Restricted Access,VMT,NA
+2201430300,Mobile Sources,Highway Vehicles - Gasoline,School Buses,Rural Unrestricted Access,VMT,NA
+2201430400,Mobile Sources,Highway Vehicles - Gasoline,School Buses,Urban Restricted Access,VMT,NA
+2201430500,Mobile Sources,Highway Vehicles - Gasoline,School Buses,Urban Unrestricted Access,VMT,NA
+2201510200,Mobile Sources,Highway Vehicles - Gasoline,Refuse Trucks,Rural Restricted Access,VMT,NA
+2201510300,Mobile Sources,Highway Vehicles - Gasoline,Refuse Trucks,Rural Unrestricted Access,VMT,NA
+2201510400,Mobile Sources,Highway Vehicles - Gasoline,Refuse Trucks,Urban Restricted Access,VMT,NA
+2201510500,Mobile Sources,Highway Vehicles - Gasoline,Refuse Trucks,Urban Unrestricted Access,VMT,NA
+2201520200,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Short-haul Trucks,Rural Restricted Access,VMT,NA
+2201520300,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Short-haul Trucks,Rural Unrestricted Access,VMT,NA
+2201520400,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Short-haul Trucks,Urban Restricted Access,VMT,NA
+2201520500,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Short-haul Trucks,Urban Unrestricted Access,VMT,NA
+2201530200,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Long-haul Trucks,Rural Restricted Access,VMT,NA
+2201530300,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Long-haul Trucks,Rural Unrestricted Access,VMT,NA
+2201530400,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Long-haul Trucks,Urban Restricted Access,VMT,NA
+2201530500,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Long-haul Trucks,Urban Unrestricted Access,VMT,NA
+2201540200,Mobile Sources,Highway Vehicles - Gasoline,Motor Homes,Rural Restricted Access,VMT,NA
+2201540300,Mobile Sources,Highway Vehicles - Gasoline,Motor Homes,Rural Unrestricted Access,VMT,NA
+2201540400,Mobile Sources,Highway Vehicles - Gasoline,Motor Homes,Urban Restricted Access,VMT,NA
+2201540500,Mobile Sources,Highway Vehicles - Gasoline,Motor Homes,Urban Unrestricted Access,VMT,NA
+2201610200,Mobile Sources,Highway Vehicles - Gasoline,Combination Short-haul Trucks,Rural Restricted Access,VMT,NA
+2201610300,Mobile Sources,Highway Vehicles - Gasoline,Combination Short-haul Trucks,Rural Unrestricted Access,VMT,NA
+2201610400,Mobile Sources,Highway Vehicles - Gasoline,Combination Short-haul Trucks,Urban Restricted Access,VMT,NA
+2201610500,Mobile Sources,Highway Vehicles - Gasoline,Combination Short-haul Trucks,Urban Unrestricted Access,VMT,NA
+2201620200,Mobile Sources,Highway Vehicles - Gasoline,Combination Long-haul Trucks,Rural Restricted Access,VMT,NA
+2201620300,Mobile Sources,Highway Vehicles - Gasoline,Combination Long-haul Trucks,Rural Unrestricted Access,VMT,NA
+2201620400,Mobile Sources,Highway Vehicles - Gasoline,Combination Long-haul Trucks,Urban Restricted Access,VMT,NA
+2201620500,Mobile Sources,Highway Vehicles - Gasoline,Combination Long-haul Trucks,Urban Unrestricted Access,VMT,NA
+2202110200,Mobile Sources,Highway Vehicles - Diesel,Motorcycles,Rural Restricted Access,VMT,NA
+2202110300,Mobile Sources,Highway Vehicles - Diesel,Motorcycles,Rural Unrestricted Access,VMT,NA
+2202110400,Mobile Sources,Highway Vehicles - Diesel,Motorcycles,Urban Restricted Access,VMT,NA
+2202110500,Mobile Sources,Highway Vehicles - Diesel,Motorcycles,Urban Unrestricted Access,VMT,NA
+2202210200,Mobile Sources,Highway Vehicles - Diesel,Passenger Cars,Rural Restricted Access,VMT,NA
+2202210300,Mobile Sources,Highway Vehicles - Diesel,Passenger Cars,Rural Unrestricted Access,VMT,NA
+2202210400,Mobile Sources,Highway Vehicles - Diesel,Passenger Cars,Urban Restricted Access,VMT,NA
+2202210500,Mobile Sources,Highway Vehicles - Diesel,Passenger Cars,Urban Unrestricted Access,VMT,NA
+2202310200,Mobile Sources,Highway Vehicles - Diesel,Passenger Trucks,Rural Restricted Access,VMT,NA
+2202310300,Mobile Sources,Highway Vehicles - Diesel,Passenger Trucks,Rural Unrestricted Access,VMT,NA
+2202310400,Mobile Sources,Highway Vehicles - Diesel,Passenger Trucks,Urban Restricted Access,VMT,NA
+2202310500,Mobile Sources,Highway Vehicles - Diesel,Passenger Trucks,Urban Unrestricted Access,VMT,NA
+2202320200,Mobile Sources,Highway Vehicles - Diesel,Light Commercial Trucks,Rural Restricted Access,VMT,NA
+2202320300,Mobile Sources,Highway Vehicles - Diesel,Light Commercial Trucks,Rural Unrestricted Access,VMT,NA
+2202320400,Mobile Sources,Highway Vehicles - Diesel,Light Commercial Trucks,Urban Restricted Access,VMT,NA
+2202320500,Mobile Sources,Highway Vehicles - Diesel,Light Commercial Trucks,Urban Unrestricted Access,VMT,NA
+2202410200,Mobile Sources,Highway Vehicles - Diesel,Intercity Buses,Rural Restricted Access,VMT,NA
+2202410300,Mobile Sources,Highway Vehicles - Diesel,Intercity Buses,Rural Unrestricted Access,VMT,NA
+2202410400,Mobile Sources,Highway Vehicles - Diesel,Intercity Buses,Urban Restricted Access,VMT,NA
+2202410500,Mobile Sources,Highway Vehicles - Diesel,Intercity Buses,Urban Unrestricted Access,VMT,NA
+2202420200,Mobile Sources,Highway Vehicles - Diesel,Transit Buses,Rural Restricted Access,VMT,NA
+2202420300,Mobile Sources,Highway Vehicles - Diesel,Transit Buses,Rural Unrestricted Access,VMT,NA
+2202420400,Mobile Sources,Highway Vehicles - Diesel,Transit Buses,Urban Restricted Access,VMT,NA
+2202420500,Mobile Sources,Highway Vehicles - Diesel,Transit Buses,Urban Unrestricted Access,VMT,NA
+2202430200,Mobile Sources,Highway Vehicles - Diesel,School Buses,Rural Restricted Access,VMT,NA
+2202430300,Mobile Sources,Highway Vehicles - Diesel,School Buses,Rural Unrestricted Access,VMT,NA
+2202430400,Mobile Sources,Highway Vehicles - Diesel,School Buses,Urban Restricted Access,VMT,NA
+2202430500,Mobile Sources,Highway Vehicles - Diesel,School Buses,Urban Unrestricted Access,VMT,NA
+2202510200,Mobile Sources,Highway Vehicles - Diesel,Refuse Trucks,Rural Restricted Access,VMT,NA
+2202510300,Mobile Sources,Highway Vehicles - Diesel,Refuse Trucks,Rural Unrestricted Access,VMT,NA
+2202510400,Mobile Sources,Highway Vehicles - Diesel,Refuse Trucks,Urban Restricted Access,VMT,NA
+2202510500,Mobile Sources,Highway Vehicles - Diesel,Refuse Trucks,Urban Unrestricted Access,VMT,NA
+2202520200,Mobile Sources,Highway Vehicles - Diesel,Single Unit Short-haul Trucks,Rural Restricted Access,VMT,NA
+2202520300,Mobile Sources,Highway Vehicles - Diesel,Single Unit Short-haul Trucks,Rural Unrestricted Access,VMT,NA
+2202520400,Mobile Sources,Highway Vehicles - Diesel,Single Unit Short-haul Trucks,Urban Restricted Access,VMT,NA
+2202520500,Mobile Sources,Highway Vehicles - Diesel,Single Unit Short-haul Trucks,Urban Unrestricted Access,VMT,NA
+2202530200,Mobile Sources,Highway Vehicles - Diesel,Single Unit Long-haul Trucks,Rural Restricted Access,VMT,NA
+2202530300,Mobile Sources,Highway Vehicles - Diesel,Single Unit Long-haul Trucks,Rural Unrestricted Access,VMT,NA
+2202530400,Mobile Sources,Highway Vehicles - Diesel,Single Unit Long-haul Trucks,Urban Restricted Access,VMT,NA
+2202530500,Mobile Sources,Highway Vehicles - Diesel,Single Unit Long-haul Trucks,Urban Unrestricted Access,VMT,NA
+2202540200,Mobile Sources,Highway Vehicles - Diesel,Motor Homes,Rural Restricted Access,VMT,NA
+2202540300,Mobile Sources,Highway Vehicles - Diesel,Motor Homes,Rural Unrestricted Access,VMT,NA
+2202540400,Mobile Sources,Highway Vehicles - Diesel,Motor Homes,Urban Restricted Access,VMT,NA
+2202540500,Mobile Sources,Highway Vehicles - Diesel,Motor Homes,Urban Unrestricted Access,VMT,NA
+2202610200,Mobile Sources,Highway Vehicles - Diesel,Combination Short-haul Trucks,Rural Restricted Access,VMT,NA
+2202610300,Mobile Sources,Highway Vehicles - Diesel,Combination Short-haul Trucks,Rural Unrestricted Access,VMT,NA
+2202610400,Mobile Sources,Highway Vehicles - Diesel,Combination Short-haul Trucks,Urban Restricted Access,VMT,NA
+2202610500,Mobile Sources,Highway Vehicles - Diesel,Combination Short-haul Trucks,Urban Unrestricted Access,VMT,NA
+2202620200,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,Rural Restricted Access,VMT,NA
+2202620300,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,Rural Unrestricted Access,VMT,NA
+2202620400,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,Urban Restricted Access,VMT,NA
+2202620500,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,Urban Unrestricted Access,VMT,NA
+2203420200,Mobile Sources,Highway Vehicles - Compressed Natural Gas (CNG),Transit Buses,Rural Restricted Access,VMT,NA
+2203420300,Mobile Sources,Highway Vehicles - Compressed Natural Gas (CNG),Transit Buses,Rural Unrestricted Access,VMT,NA
+2203420400,Mobile Sources,Highway Vehicles - Compressed Natural Gas (CNG),Transit Buses,Urban Restricted Access,VMT,NA
+2203420500,Mobile Sources,Highway Vehicles - Compressed Natural Gas (CNG),Transit Buses,Urban Unrestricted Access,VMT,NA
+2205210200,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Cars,Rural Restricted Access,VMT,NA
+2205210300,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Cars,Rural Unrestricted Access,VMT,NA
+2205210400,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Cars,Urban Restricted Access,VMT,NA
+2205210500,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Cars,Urban Unrestricted Access,VMT,NA
+2205310200,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Trucks,Rural Restricted Access,VMT,NA
+2205310300,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Trucks,Rural Unrestricted Access,VMT,NA
+2205310400,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Trucks,Urban Restricted Access,VMT,NA
+2205310500,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Trucks,Urban Unrestricted Access,VMT,NA
+2205320200,Mobile Sources,Highway Vehicles - Ethanol (E-85),Light Commercial Trucks,Rural Restricted Access,VMT,NA
+2205320300,Mobile Sources,Highway Vehicles - Ethanol (E-85),Light Commercial Trucks,Rural Unrestricted Access,VMT,NA
+2205320400,Mobile Sources,Highway Vehicles - Ethanol (E-85),Light Commercial Trucks,Urban Restricted Access,VMT,NA
+2205320500,Mobile Sources,Highway Vehicles - Ethanol (E-85),Light Commercial Trucks,Urban Unrestricted Access,VMT,NA
+2209210200,Mobile Sources,Highway Vehicles - Electric,Passenger Cars,Rural Restricted Access,VMT,NA
+2209210300,Mobile Sources,Highway Vehicles - Electric,Passenger Cars,Rural Unrestricted Access,VMT,NA
+2209210400,Mobile Sources,Highway Vehicles - Electric,Passenger Cars,Urban Restricted Access,VMT,NA
+2209210500,Mobile Sources,Highway Vehicles - Electric,Passenger Cars,Urban Unrestricted Access,VMT,NA
+2209310200,Mobile Sources,Highway Vehicles - Electric,Passenger Trucks,Rural Restricted Access,VMT,NA
+2209310300,Mobile Sources,Highway Vehicles - Electric,Passenger Trucks,Rural Unrestricted Access,VMT,NA
+2209310400,Mobile Sources,Highway Vehicles - Electric,Passenger Trucks,Urban Restricted Access,VMT,NA
+2209310500,Mobile Sources,Highway Vehicles - Electric,Passenger Trucks,Urban Unrestricted Access,VMT,NA
+2209320200,Mobile Sources,Highway Vehicles - Electric,Light Commercial Trucks,Rural Restricted Access,VMT,NA
+2209320300,Mobile Sources,Highway Vehicles - Electric,Light Commercial Trucks,Rural Unrestricted Access,VMT,NA
+2209320400,Mobile Sources,Highway Vehicles - Electric,Light Commercial Trucks,Urban Restricted Access,VMT,NA
+2209320500,Mobile Sources,Highway Vehicles - Electric,Light Commercial Trucks,Urban Unrestricted Access,VMT,NA
+2202620153,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,NA,HOTELLING,Off-network: Extended Idle Exhaust
+2202620191,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,NA,HOTELLING,Off-network: Auxiliary Power Exhaust
+2201110100,Mobile Sources,Highway Vehicles - Gasoline,Motorcycles,Off-network,VPOP,NA
+2201210100,Mobile Sources,Highway Vehicles - Gasoline,Passenger Cars,Off-network,VPOP,NA
+2201310100,Mobile Sources,Highway Vehicles - Gasoline,Passenger Trucks,Off-network,VPOP,NA
+2201320100,Mobile Sources,Highway Vehicles - Gasoline,Light Commercial Trucks,Off-network,VPOP,NA
+2201410100,Mobile Sources,Highway Vehicles - Gasoline,Intercity Buses,Off-network,VPOP,NA
+2201420100,Mobile Sources,Highway Vehicles - Gasoline,Transit Buses,Off-network,VPOP,NA
+2201430100,Mobile Sources,Highway Vehicles - Gasoline,School Buses,Off-network,VPOP,NA
+2201510100,Mobile Sources,Highway Vehicles - Gasoline,Refuse Trucks,Off-network,VPOP,NA
+2201520100,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Short-haul Trucks,Off-network,VPOP,NA
+2201530100,Mobile Sources,Highway Vehicles - Gasoline,Single Unit Long-haul Trucks,Off-network,VPOP,NA
+2201540100,Mobile Sources,Highway Vehicles - Gasoline,Motor Homes,Off-network,VPOP,NA
+2201610100,Mobile Sources,Highway Vehicles - Gasoline,Combination Short-haul Trucks,Off-network,VPOP,NA
+2201620100,Mobile Sources,Highway Vehicles - Gasoline,Combination Long-haul Trucks,Off-network,VPOP,NA
+2202110100,Mobile Sources,Highway Vehicles - Diesel,Motorcycles,Off-network,VPOP,NA
+2202210100,Mobile Sources,Highway Vehicles - Diesel,Passenger Cars,Off-network,VPOP,NA
+2202310100,Mobile Sources,Highway Vehicles - Diesel,Passenger Trucks,Off-network,VPOP,NA
+2202320100,Mobile Sources,Highway Vehicles - Diesel,Light Commercial Trucks,Off-network,VPOP,NA
+2202410100,Mobile Sources,Highway Vehicles - Diesel,Intercity Buses,Off-network,VPOP,NA
+2202420100,Mobile Sources,Highway Vehicles - Diesel,Transit Buses,Off-network,VPOP,NA
+2202430100,Mobile Sources,Highway Vehicles - Diesel,School Buses,Off-network,VPOP,NA
+2202510100,Mobile Sources,Highway Vehicles - Diesel,Refuse Trucks,Off-network,VPOP,NA
+2202520100,Mobile Sources,Highway Vehicles - Diesel,Single Unit Short-haul Trucks,Off-network,VPOP,NA
+2202530100,Mobile Sources,Highway Vehicles - Diesel,Single Unit Long-haul Trucks,Off-network,VPOP,NA
+2202540100,Mobile Sources,Highway Vehicles - Diesel,Motor Homes,Off-network,VPOP,NA
+2202610100,Mobile Sources,Highway Vehicles - Diesel,Combination Short-haul Trucks,Off-network,VPOP,NA
+2202620100,Mobile Sources,Highway Vehicles - Diesel,Combination Long-haul Trucks,Off-network,VPOP,NA
+2203420100,Mobile Sources,Highway Vehicles - Compressed Natural Gas (CNG),Transit Buses,Off-network,VPOP,NA
+2205210100,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Cars,Off-network,VPOP,NA
+2205310100,Mobile Sources,Highway Vehicles - Ethanol (E-85),Passenger Trucks,Off-network,VPOP,NA
+2205320100,Mobile Sources,Highway Vehicles - Ethanol (E-85),Light Commercial Trucks,Off-network,VPOP,NA
+2209210100,Mobile Sources,Highway Vehicles - Electric,Passenger Cars,Off-network,VPOP,NA
+2209310100,Mobile Sources,Highway Vehicles - Electric,Passenger Trucks,Off-network,VPOP,NA
+2209320100,Mobile Sources,Highway Vehicles - Electric,Light Commercial Trucks,Off-network,VPOP,NA

@@ -1,0 +1,12 @@
+{
+  "geoid": "36109",
+  "level": "county",
+  "pollutant": [90, 98, 2, 118, 112, 119, 5, 33, 32, 6, 3, 100, 110, 106, 107, 116, 117, 115, 31, 91, 1],
+  "year": 2022,
+  "default": false,
+  "mode": "inv",
+  "geoaggregation": "county",
+  "timeaggregation": "year",
+  "dtablename": "d36109_u1_o1",
+  "by": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}

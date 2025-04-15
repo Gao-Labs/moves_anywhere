@@ -99,11 +99,21 @@ cd "$REPO"
 
 
 # SELECT BUCKET
-BUCKET="$(pwd)/moves_anywhere/inputs_13035"
+BUCKET="$(pwd)/moves_anywhere/inputs_ny"
 
 # Variables
 IMAGE_NAME="tmf77/docker_moves:v2"
 SCRIPTS="$(pwd)/moves_anywhere/scripts"
+
+docker run  \
+--rm \
+--name "dock" \
+--mount src="$SCRIPTS/",target="/cat/scripts",type=bind \
+--mount src="$BUCKET/",target="/cat/inputs",type=bind \
+--entrypoint bash \
+-it "$IMAGE_NAME" 
+
+R
 
 # Process for use in linux
 # dos2unix "$SCRIPTS/launch.sh"

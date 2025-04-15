@@ -2,9 +2,22 @@
 
 # Task to postprocess MOVES data
 
+# Reset working directory
+setwd("/cat")
+
+# Load packages
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
 library(readr, warn.conflicts = FALSE, quietly = TRUE)
+library(DBI, warn.conflicts = FALSE, quietly = TRUE)
+library(dbplyr, warn.conflicts = FALSE, quietly = TRUE)
+library(RMariaDB, warn.conflicts = FALSE, quietly = TRUE)
 library(catr, warn.conflicts = FALSE, quietly = TRUE)
+library(purrr, warn.conflicts = FALSE, quietly = TRUE)
+library(tidyr, warn.conflicts = FALSE, quietly = TRUE)
+library(stringr, warn.conflicts = FALSE, quietly = TRUE)
+
+# Load helper function
+source("scripts/task_get_data.R")
 
 # Load environmental variables
 # source("setenv.r")
@@ -16,11 +29,6 @@ if(rs$mode == "inv"){
   
   # Either way, extract this data.
   # Grab movesoutput and movesactivityoutput as .csvs in the mounted inputs/ folder
-  library(DBI, warn.conflicts = FALSE, quietly = TRUE)
-  library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
-  library(catr, warn.conflicts = FALSE, quietly = TRUE)
-  library(readr, warn.conflicts = FALSE, quietly = TRUE)
-  library(RMariaDB, warn.conflicts = FALSE, quietly = TRUE)
   db = catr::connect(type = "mariadb", "moves")
   db %>% tbl("movesoutput") %>% collect() %>% write_csv("inputs/movesoutput.csv")
   db %>% tbl("movesactivityoutput") %>% collect() %>% write_csv("inputs/movesactivityoutput.csv")
@@ -29,6 +37,9 @@ if(rs$mode == "inv"){
   
   # Does your directory contain a parameters file?
   has_json = file.exists("inputs/parameters.json")
+  
+  
+  #rs_to_parameters(path_rs = "inputs/rs_custom.xml", path_parameters = "inputs/parameters.json", tablename = NULL, user = 1, order = 1, by = 1:16, multiple = FALSE, return = FALSE)
   
   # Only create inputs/data.csv if a series of things are true.
   # If json is present, create inputs/data.csv
@@ -57,15 +68,17 @@ if(rs$mode == "inv"){
       if(condition_by == TRUE){ by_vars = p$by }else{ by_vars = c(1,16,15,14,12,8)}
       
       # Post process the data
-      path = postprocess_format(
-        path_data = "data.rds", csv = FALSE, 
-        by = by_vars, pollutant = NULL, 
-        path_parameters = "inputs/parameters.json")
+      get_data()
       
-      print(path)
+      # path = postprocess_format(
+      #   path_data = "data.rds", csv = FALSE, 
+      #   by = by_vars, pollutant = NULL, 
+      #   path_parameters = "inputs/parameters.json")
       
-      # Check it
-      path %>% readr::read_rds() %>% head()
+      # print(path)
+      # 
+      # # Check it
+      # path %>% readr::read_rds() %>% head()
       
       # Write it to file as .csv in the mounted inputs/ folder.
       read_rds("data.rds") %>% write_csv("inputs/data.csv")
@@ -73,7 +86,7 @@ if(rs$mode == "inv"){
     
   }
   
-  
+
 }else if(rs$mode == "rates"){
   
   library(catr, warn.conflicts = FALSE, quietly = TRUE)

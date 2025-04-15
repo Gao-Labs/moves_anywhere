@@ -41,14 +41,14 @@ cd "$REPO"
 REPO=$(git rev-parse --show-toplevel)
 cd "$REPO"
 # image_moves #################################
-echo "-----------build image_moves--------------"
+echo "-----------build docker_moves--------------"
 # Build image_moves/
-bash "image_moves/buildme.sh"
+bash "docker_moves/buildme.sh"
 
 source 'dev/.env'
-IMAGE="moves:v1"
+IMAGE="docker-moves:v2"
 IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
-SOURCE_IMAGE="moves_anywhere:v1"
+SOURCE_IMAGE="tmf77/docker_moves:v2"
 
 # Tag the image locally
 docker tag $SOURCE_IMAGE $IMAGE_NAME
@@ -64,72 +64,7 @@ docker image rm "$IMAGE_NAME"
 
 
 
-# image_upload ######################################
-echo "-----------build image_upload--------------"
-# Build image_upload/
-bash "image_cloudproxy/buildme.sh"
 
-source 'dev/.env'
-IMAGE="upload:v2"
-IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
-SOURCE_IMAGE="upload:v2"
-
-# Tag the image locally
-docker tag $SOURCE_IMAGE $IMAGE_NAME
-# Login with key
-docker login -u _json_key --password-stdin "https://$LOCATION-docker.pkg.dev" < dev/key.json
-# Push image to repository
-docker push "$IMAGE_NAME"
-# Logout
-docker logout
-# Remove the duplicate tagged image, in favor of its local name
-docker image rm "$IMAGE_NAME"
-
-
-# image_transfer ######################################
-echo "-----------build image_transfer--------------"
-# Build image_upload/
-#bash "image_transfer/buildme.sh"
-REPO=$(git rev-parse --show-toplevel)
-REPO="C://Users/tmf77/OneDrive - Cornell University/Documents/rstudio/moves_anywhere"
-cd "$REPO"
-
-source 'dev/.env'
-IMAGE="transfer:v1"
-IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
-SOURCE_IMAGE="transfer:v1"
-
-# Tag the image locally
-docker tag $SOURCE_IMAGE $IMAGE_NAME
-# Login with key
-docker login -u _json_key --password-stdin "https://$LOCATION-docker.pkg.dev" < dev/key.json
-# Push image to repository
-docker push "$IMAGE_NAME"
-# Logout
-docker logout
-# Remove the duplicate tagged image, in favor of its local name
-docker image rm "$IMAGE_NAME"
-
-# image_rs ######################################
-# echo "-----------build image_rs--------------"
-# # Build image_rs/
-# bash "image_rs/buildme.sh"
-# 
-# source 'dev/.env'
-# IMAGE="rs:v1"
-# IMAGE_NAME="$LOCATION-docker.pkg.dev/$PROJECT_NAME/$REPOSITORY/$IMAGE"
-# SOURCE_IMAGE="rs:v1"
-# 
-# # Tag the image locally
-# docker tag $SOURCE_IMAGE $IMAGE_NAME
-# # Login with key
-# docker login -u _json_key --password-stdin "https://$LOCATION-docker.pkg.dev" < dev/key.json
-# # Push image to repository
-# docker push "$IMAGE_NAME"
-# # Logout
-# docker logout
-# # Remove the duplicate tagged image, in favor of its local name
-# docker image rm "$IMAGE_NAME"
 
 
 # PRUNE ####################################

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moves>
+  <importer mode="county">
+    <filters>
+      <geographicselections>
+        <geographicselection type="COUNTY" key="36085" description=""/>
+      </geographicselections>
+      <timespan>
+        <year key="2022"/>
+        <month id="1"/>
+        <month id="2"/>
+        <month id="3"/>
+        <month id="4"/>
+        <month id="5"/>
+        <month id="6"/>
+        <month id="7"/>
+        <month id="8"/>
+        <month id="9"/>
+        <month id="10"/>
+        <month id="11"/>
+        <month id="12"/>
+        <day id="2"/>
+        <day id="5"/>
+        <beginhour id="1"/>
+        <endhour id="24"/>
+        <aggregateBy key="Year"/>
+      </timespan>
+      <onroadvehicleselections>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="11" sourcetypename="Motorcycle"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="21" sourcetypename="Passenger Car"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="21" sourcetypename="Passenger Car"/>
+        <onroadvehicleselection fueltypeid="5" fueltypedesc="Ethanol (E-85)" sourcetypeid="21" sourcetypename="Passenger Car"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="21" sourcetypename="Passenger Car"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="31" sourcetypename="Passenger Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="31" sourcetypename="Passenger Truck"/>
+        <onroadvehicleselection fueltypeid="5" fueltypedesc="Ethanol (E-85)" sourcetypeid="31" sourcetypename="Passenger Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="31" sourcetypename="Passenger Truck"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="32" sourcetypename="Light Commercial Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="32" sourcetypename="Light Commercial Truck"/>
+        <onroadvehicleselection fueltypeid="5" fueltypedesc="Ethanol (E-85)" sourcetypeid="32" sourcetypename="Light Commercial Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="32" sourcetypename="Light Commercial Truck"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="41" sourcetypename="Other Buses"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="41" sourcetypename="Other Buses"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="41" sourcetypename="Other Buses"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="41" sourcetypename="Other Buses"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="42" sourcetypename="Transit Bus"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="42" sourcetypename="Transit Bus"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="42" sourcetypename="Transit Bus"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="42" sourcetypename="Transit Bus"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="43" sourcetypename="School Bus"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="43" sourcetypename="School Bus"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="43" sourcetypename="School Bus"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="43" sourcetypename="School Bus"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="51" sourcetypename="Refuse Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="51" sourcetypename="Refuse Truck"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="51" sourcetypename="Refuse Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="51" sourcetypename="Refuse Truck"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="52" sourcetypename="Single Unit Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="52" sourcetypename="Single Unit Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="52" sourcetypename="Single Unit Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="52" sourcetypename="Single Unit Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="53" sourcetypename="Single Unit Long-haul Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="53" sourcetypename="Single Unit Long-haul Truck"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="53" sourcetypename="Single Unit Long-haul Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="53" sourcetypename="Single Unit Long-haul Truck"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="54" sourcetypename="Motor Home"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="54" sourcetypename="Motor Home"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="54" sourcetypename="Motor Home"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="54" sourcetypename="Motor Home"/>
+        <onroadvehicleselection fueltypeid="1" fueltypedesc="Gasoline" sourcetypeid="61" sourcetypename="Combination Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="61" sourcetypename="Combination Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="61" sourcetypename="Combination Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="61" sourcetypename="Combination Short-haul Truck"/>
+        <onroadvehicleselection fueltypeid="2" fueltypedesc="Diesel Fuel" sourcetypeid="62" sourcetypename="Combination Long-haul Truck"/>
+        <onroadvehicleselection fueltypeid="3" fueltypedesc="Compressed Natural Gas (CNG)" sourcetypeid="62" sourcetypename="Combination Long-haul Truck"/>
+        <onroadvehicleselection fueltypeid="9" fueltypedesc="Electricity" sourcetypeid="62" sourcetypename="Combination Long-haul Truck"/>
+      </onroadvehicleselections>
+      <offroadvehicleselections>
+	</offroadvehicleselections>
+      <offroadvehiclesccs>
+	</offroadvehiclesccs>
+      <roadtypes>
+        <roadtype roadtypeid="1" roadtypename="Off-Network" modelCombination="M1"/>
+        <roadtype roadtypeid="2" roadtypename="Rural Restricted Access" modelCombination="M1"/>
+        <roadtype roadtypeid="3" roadtypename="Rural Unrestricted Access" modelCombination="M1"/>
+        <roadtype roadtypeid="4" roadtypename="Urban Restricted Access" modelCombination="M1"/>
+        <roadtype roadtypeid="5" roadtypename="Urban Unrestricted Access" modelCombination="M1"/>
+      </roadtypes>
+      <pollutantprocessassociations>
+        <pollutantprocessassociation pollutantkey="90" pollutantname="Atmospheric CO2" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="90" pollutantname="Atmospheric CO2" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="90" pollutantname="Atmospheric CO2" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="90" pollutantname="Atmospheric CO2" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="98" pollutantname="CO2 Equivalent" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="2" pollutantname="Carbon Monoxide (CO)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="118" pollutantname="Composite - NonECPM" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="118" pollutantname="Composite - NonECPM" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="118" pollutantname="Composite - NonECPM" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="118" pollutantname="Composite - NonECPM" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="112" pollutantname="Elemental Carbon" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="112" pollutantname="Elemental Carbon" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="112" pollutantname="Elemental Carbon" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="112" pollutantname="Elemental Carbon" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="119" pollutantname="H2O (aerosol)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="119" pollutantname="H2O (aerosol)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="119" pollutantname="H2O (aerosol)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="119" pollutantname="H2O (aerosol)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="5" pollutantname="Methane (CH4)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="33" pollutantname="Nitrogen Dioxide (NO2)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="32" pollutantname="Nitrogen Oxide (NO)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="6" pollutantname="Nitrous Oxide (N2O)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="6" pollutantname="Nitrous Oxide (N2O)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="3" pollutantname="Oxides of Nitrogen (NOx)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="100" pollutantname="Primary Exhaust PM10  - Total" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="110" pollutantname="Primary Exhaust PM2.5 - Total" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="106" pollutantname="Primary PM10 - Brakewear Particulate" processkey="9" processname="Brakewear"/>
+        <pollutantprocessassociation pollutantkey="107" pollutantname="Primary PM10 - Tirewear Particulate" processkey="10" processname="Tirewear"/>
+        <pollutantprocessassociation pollutantkey="116" pollutantname="Primary PM2.5 - Brakewear Particulate" processkey="9" processname="Brakewear"/>
+        <pollutantprocessassociation pollutantkey="117" pollutantname="Primary PM2.5 - Tirewear Particulate" processkey="10" processname="Tirewear"/>
+        <pollutantprocessassociation pollutantkey="115" pollutantname="Sulfate Particulate" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="115" pollutantname="Sulfate Particulate" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="115" pollutantname="Sulfate Particulate" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="115" pollutantname="Sulfate Particulate" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="31" pollutantname="Sulfur Dioxide (SO2)" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="91" pollutantname="Total Energy Consumption" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="91" pollutantname="Total Energy Consumption" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="91" pollutantname="Total Energy Consumption" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="91" pollutantname="Total Energy Consumption" processkey="91" processname="Auxiliary Power Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="1" processname="Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="15" processname="Crankcase Running Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="2" processname="Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="16" processname="Crankcase Start Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="90" processname="Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="17" processname="Crankcase Extended Idle Exhaust"/>
+        <pollutantprocessassociation pollutantkey="1" pollutantname="Total Gaseous Hydrocarbons" processkey="91" processname="Auxiliary Power Exhaust"/>
+      </pollutantprocessassociations>
+    </filters>
+    <databaseselection servername="localhost" databasename="custom"/>
+    <agedistribution>
+      <description></description>
+      <parts>
+        <sourceTypeAgeDistribution>
+          <filename>/cat/inputs/_sourcetypeagedistribution.csv</filename>
+        </sourceTypeAgeDistribution>
+      </parts>
+    </agedistribution>
+    <avgspeeddistribution>
+      <description></description>
+      <parts>
+        <avgSpeedDistribution>
+          <filename>/cat/inputs/_avgspeeddistribution.csv</filename>
+        </avgSpeedDistribution>
+      </parts>
+    </avgspeeddistribution>
+    <fuel>
+      <description></description>
+      <parts>
+        <FuelSupply>
+          <filename>/cat/inputs/_fuelsupply.csv</filename>
+        </FuelSupply>
+        <FuelFormulation>
+          <filename>/cat/inputs/_fuelformulation.csv</filename>
+        </FuelFormulation>
+        <FuelUsageFraction>
+          <filename>/cat/inputs/_fuelusagefraction.csv</filename>
+        </FuelUsageFraction>
+        <AVFT>
+          <filename>/cat/inputs/_avft.csv</filename>
+        </AVFT>
+      </parts>
+    </fuel>
+    <zonemonthhour>
+      <description></description>
+      <parts>
+        <zoneMonthHour>
+          <filename>/cat/inputs/_zonemonthhour.csv</filename>
+        </zoneMonthHour>
+      </parts>
+    </zonemonthhour>
+    <roadtypedistribution>
+      <description></description>
+      <parts>
+        <roadTypeDistribution>
+          <filename>/cat/inputs/_roadtypedistribution.csv</filename>
+        </roadTypeDistribution>
+      </parts>
+    </roadtypedistribution>
+    <sourcetypepopulation>
+      <description></description>
+      <parts>
+        <sourceTypeYear>
+          <filename>/cat/inputs/_sourcetypeyear.csv</filename>
+        </sourceTypeYear>
+      </parts>
+    </sourcetypepopulation>
+    <starts>
+      <description></description>
+      <parts>
+        <startsPerDayPerVehicle>
+          <filename>/cat/inputs/_startsperdaypervehicle.csv</filename>
+        </startsPerDayPerVehicle>
+        <startsPerDay>
+          <filename/>
+        </startsPerDay>
+        <startsHourFraction>
+          <filename>/cat/inputs/_startshourfraction.csv</filename>
+        </startsHourFraction>
+        <startsMonthAdjust>
+          <filename/>
+        </startsMonthAdjust>
+        <startsAgeAdjustment>
+          <filename/>
+        </startsAgeAdjustment>
+        <startsOpModeDistribution>
+          <filename/>
+        </startsOpModeDistribution>
+        <starts>
+          <filename/>
+        </starts>
+      </parts>
+    </starts>
+    <vehicletypevmt>
+      <description></description>
+      <parts>
+        <SourceTypeYearVMT>
+          <filename>/cat/inputs/_sourcetypeyearvmt.csv</filename>
+        </SourceTypeYearVMT>
+        <monthVMTFraction>
+          <filename>/cat/inputs/_monthvmtfraction.csv</filename>
+        </monthVMTFraction>
+        <dayVMTFraction>
+          <filename>/cat/inputs/_dayvmtfraction.csv</filename>
+        </dayVMTFraction>
+        <hourVMTFraction>
+          <filename>/cat/inputs/_hourvmtfraction.csv</filename>
+        </hourVMTFraction>
+      </parts>
+    </vehicletypevmt>
+    <hotelling>
+      <description></description>
+      <parts>
+        <hotellingHoursPerDay>
+          <filename/>
+        </hotellingHoursPerDay>
+        <hotellingHourFraction>
+          <filename/>
+        </hotellingHourFraction>
+        <hotellingAgeFraction>
+          <filename/>
+        </hotellingAgeFraction>
+        <hotellingMonthAdjust>
+          <filename/>
+        </hotellingMonthAdjust>
+        <hotellingActivityDistribution>
+          <filename>/cat/inputs/_hotellingactivitydistribution.csv</filename>
+        </hotellingActivityDistribution>
+      </parts>
+    </hotelling>
+    <idle>
+      <description></description>
+      <parts>
+        <totalIdleFraction>
+          <filename/>
+        </totalIdleFraction>
+        <idleModelYearGrouping>
+          <filename/>
+        </idleModelYearGrouping>
+        <idleMonthAdjust>
+          <filename/>
+        </idleMonthAdjust>
+        <idleDayAdjust>
+          <filename/>
+        </idleDayAdjust>
+      </parts>
+    </idle>
+    <imcoverage>
+      <description></description>
+      <parts>
+        <IMCoverage>
+          <filename>/cat/inputs/_imcoverage.csv</filename>
+        </IMCoverage>
+      </parts>
+    </imcoverage>
+    <onroadretrofit>
+      <description></description>
+      <parts>
+        <onRoadRetrofit>
+          <filename/>
+        </onRoadRetrofit>
+      </parts>
+    </onroadretrofit>
+    <generic>
+      <description></description>
+      <parts>
+        <anytable>
+          <tablename>activitytype</tablename>
+          <filename/>
+        </anytable>
+      </parts>
+    </generic>
+  </importer>
+</moves>
+
