@@ -67,17 +67,6 @@ dbDisconnect(db)
 
 cat("\n---custom input database created...\n")
 
-# Set directory
-setwd("/cat/")
-# Load the importer
-source("scripts/importer.R")
-
-path_importer = create_importer(BUCKET = "inputs", SOURCE = "scripts", dir = "/cat")
-
-cat("\n---created importer.xml file...\n")
-
-# Close R
-q(save = "no")
 # ADD TABLE SCHEMA ######################################
 
 # # Connect to newly made custom database

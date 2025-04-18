@@ -37,6 +37,12 @@ Rscript "scripts/task_adapt.R"
 # Create custom database
 Rscript "scripts/task_db_create.R"
 
+# Copy inputs into EPA_MOVES_Model (customized for gcsfuse)
+. "scripts/task_copy_inputs.sh"
+
+# Create importer script (customized for gcsfuse)
+Rscript "scripts/task_create_importer_fuse.R"
+
 # Import tables into newly created database
 . "scripts/task_importer.sh"
 

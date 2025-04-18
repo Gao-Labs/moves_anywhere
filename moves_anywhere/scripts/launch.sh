@@ -27,6 +27,9 @@ Rscript "scripts/task_adapt.R"
 # Create custom database
 Rscript "scripts/task_db_create.R"
 
+# Create importer script
+Rscript "scripts/task_create_importer.R"
+
 # Import tables into newly created database
 . "scripts/task_importer.sh"
 
