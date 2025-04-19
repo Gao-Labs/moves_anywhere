@@ -25,9 +25,26 @@ Welcome to `moves_anywhere`! This software suite includes several tools to help 
 
 ## Using this Repository
 
-To get started, check out [our cheatsheet](https://github.com/gao-labs/movesanywhere/tree/main/docs/img/moves-anywhere-cheatsheet.png):
+📂 To get started, check out [our cheatsheet](https://github.com/gao-labs/movesanywhere/tree/main/docs/img/moves-anywhere-cheatsheet.png):
 
 ![](docs/img/moves-anywhere-cheatsheet.png)
+
+## Download the `catr` package using
+
+Data processing in **MOVES Anywhere** is supported by our `catr` package in `R`. 
+Need to install `catr`?
+
+✅ To install the latest from source:, use the \`remotes package.
+
+``` r
+remotes::install_github("Gao-Labs/moves_anywhere", subdir = "catr")
+```
+
+✅ To install a specific version (e.g., 0.2.0):
+
+```         
+remotes::install_url("https://github.com/Gao-Labs/moves_anywhere/raw/main/catr/catr_0.2.0.tar.gz")
+```
 
 ## Stay Tuned!
 
@@ -37,5 +54,4 @@ More exciting developments coming soon!
 
 To cite this package, please tentatively cite:
 
-- Fraser, Timothy & Gao, H. Oliver. (2025). Distributed Cloud Computing for Clean Transportation,
-Community Health, & Climate Action Anywhere. Cornell University Systems Studio Working Paper.
+-   Fraser, Timothy & Gao, H. Oliver. (2025). Distributed Cloud Computing for Clean Transportation, Community Health, & Climate Action Anywhere. Cornell University Systems Studio Working Paper.
