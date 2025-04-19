@@ -1,4 +1,6 @@
-# `moves_anywhere`
+<head><link rel="shortcut icon" type="image/png" href="docs/img/movesanywhere_hexagon.png"></head>
+
+# `moves_anywhere` <a href="https://github.com/gao-labs/movesanywhere"><img src="docs/img/movesanywhere_hexagon.png" align="right" height="200"/></a>
 
 -   Lead Developer: [Tim Fraser, PhD](github.com/timothyfraser) `<tmf77@cornell.edu>`
 -   Contributors: Erin Murphy, Junna Chen, Mahak Bindal, Shungo Najima, Carl Closs
@@ -23,25 +25,17 @@ Welcome to `moves_anywhere`! This software suite includes several tools to help 
 
 ## Using this Repository
 
-To get started, check out our guides in the `docs` folder, including:
+To get started, check out [our cheatsheet](https://github.com/gao-labs/movesanywhere/tree/main/docs/img/moves-anywhere-cheatsheet.png):
 
--   [MOVES Anywhere Guide](docs/moves_anywhere_guide.md)
--   [Cloud MOVES Guide](docs/cloud_moves_guide.md)
-
-Try out our demos in the `demos` folder! We encourage:
-
--   [Setting Up `moves_anywhere` on your computer](docs/moves_anywhere_setup.md)
--   [Installing the `catr` package](demos/demo_catr/workflow.R)
--   [Use `catr` to quickly make a custom runspec](demos/demo_rs/workflow.R)
--   [Run `moves_anywhere` on your local computer with Docker](demos/demo_docker/testme.sh)
--   [View Example Custom Input Tables](demos/demo_inputs)
-
-For Cornell Research Team users, try:
-
--   [Make 1 `moves_anywhere` run on the cloud with Cloud MOVES](demos/demo_run/workflow.R)
-
--   [Make 1 `moves_anywhere` multi-year scenario on the cloud with Cloud MOVES](demos/demo_scenario/workflow.R)
+![](docs/img/moves-anywhere-cheatsheet.png)
 
 ## Stay Tuned!
 
 More exciting developments coming soon!
+
+## Citation
+
+To cite this package, please tentatively cite:
+
+- Fraser, Timothy & Gao, H. Oliver. (2025). Distributed Cloud Computing for Clean Transportation,
+Community Health, & Climate Action Anywhere. Cornell University Systems Studio Working Paper.
