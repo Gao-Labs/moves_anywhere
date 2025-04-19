@@ -32,7 +32,7 @@ SOURCE_IMAGE="moves_anywhere:v2"
 
 # Tag the image locally
 docker tag $SOURCE_IMAGE $IMAGE_NAME
-# Login with key
+# Login with keyz
 docker login -u _json_key --password-stdin "https://$LOCATION-docker.pkg.dev" < secret/key.json
 # Push image to repository
 docker push "$IMAGE_NAME"
