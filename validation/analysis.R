@@ -15,35 +15,6 @@ setwd(paste0(rstudioapi::getActiveProject(), "/validation"))
 # DATA16 ########################################################
 
 geoids = c("Bronx" = "36005", "Brooklyn" = "36047", "Queens" = "36081", "Manhattan" = "36061", "Staten Island" = "36085")
-runs = read_csv("runs.csv", show_col_types = FALSE) %>% 
-  filter(scenario %in% c(18,19,20,21,22,23,24,25,26,28, 29) ) %>%
-  filter(stringr::str_detect(bucket, pattern = paste0(geoids, collapse = "|") )) %>%
-  mutate(output = paste0("outputs/", bucket, ".csv")) %>%
-  # Filter out any that were invalid
-  filter(file.size(output) > 1000)
-
-
-# runs %>% filter(bucket == "d36047-u23-o25")
-
-# Read in the files
-runs %>% 
-  # Filter to buckets that were successfully downloaded
-  filter(output %in% dir("outputs", full.names = TRUE)) %>%
-  # For each bucket
-  split(.$bucket) %>%
-  # Read in the data
-  map_dfr(
-    .f = ~read_csv(.x$output, show_col_types = FALSE) %>%
-      filter(by == 16) %>%
-      mutate(bucket = .x$bucket, scenario = .x$scenario)
-  ) %>%
-  mutate(geoid = stringr::str_pad(geoid, width = 5, side = "left", pad = "0")) %>%
-  left_join(by = "geoid", y=  read_rds("../moves_anywhere/scripts/geoids.rds") %>% 
-              mutate(name = stringr::str_remove(name, " County[,] NY"))) %>%
-  saveRDS("data16.rds")
-
-
-
 
 ## TABLE 1 #############################################
 
@@ -118,16 +89,16 @@ gg = ggplot() +
   viridis::scale_color_viridis(
     discrete = TRUE, option = "plasma", end = 0.9, 
     labels = c("18" = "Default",
-               "19" = "+sourceTypeYearVMT",
-               "20" = "+sourceTypeYear",
-               "21" = "+roadTypeDistribution",
-               "22" = "+sourceTypeAgeDistribution",
-               "23" = "+avgSpeedDistribution",
-               "24" = "+AVFT",
-               "25" = "+zoneMonthHour",
-               "26" = "+imCoverage",
-               "28" = "+fuelFormulation\n+fuelSupply\n+fuelUsageFraction",
-               "29" = "+monthVMTFraction\n+dayVMTFraction"),
+               "19" = "+VMT by Vehicle Type",
+               "20" = "+Vehicle Population by Vehicle Type",
+               "21" = "+VMT Distribution by Roadtype",
+               "22" = "+Vehicle Population by Age and Type",
+               "23" = "+Average Speeds by Hour",
+               "24" = "+Fleet Technology and Fuel Types",
+               "25" = "+Meteorological Conditions by Hour",
+               "26" = "+Inspection & Maintenance Coverage",
+               "28" = "+Fuels...",
+               "29" = "+VMT Fractions..."),
     name = "Scenario"
   )  +
   scale_y_continuous(
@@ -180,46 +151,74 @@ compare = data %>%
   mutate(var = factor(var, levels = c("s18_s19", "s19_s20", "s20_s21", "s21_s22", "s22_s23",
                                       "s23_s24", "s24_s25", "s25_s26", "s26_s28", "s28_s29"))) %>%
   mutate(var = var %>% dplyr::recode_factor(
-    "s28_s29" = "+monthVMTFraction\n+dayVMTFraction",
-    "s26_s28" = "+fuelFormulation\n+fuelSupply\n+fuelUsageFraction",
-    "s25_s26" = "+imCoverage",
-    "s24_s25" = "+zoneMonthHour",
-    "s23_s24" = "+AVFT",
-    "s22_s23" = '+avgSpeedDistribution',
-    "s21_s22" = "+sourceTypeAgeDistribution",
-    "s20_s21" = "+roadTypeDistribution",
-    "s19_s20" = "+sourceTypeYear",
-    "s18_s19" ="+sourceTypeYearVMT"
+    "s18_s19" = "+VMT by Vehicle Type",
+    "s19_s20" = "+Vehicle Population<br>by Vehicle Type",
+    "s20_s21" = "+VMT Distribution<br>by Roadtype",
+    "s21_s22" = "+Vehicle Population<br>by Age and Type",
+    "s22_s23" = "+Average Speeds<br>by Hour",
+    "s23_s24" = "+Fleet Technology<br>& Fuel Types",
+    "s24_s25" = "+Meteorological<br>Conditions by Hour",
+    "s25_s26" = "+Inspection &<br>Maintenance Coverage",
+    "s26_s28" = "+Fuels...",
+    "s28_s29" = "+VMT Fractions..."
+    
+    
+    # "s28_s29" = "+monthVMTFraction\n+dayVMTFraction",
+    # "s26_s28" = "+fuelFormulation\n+fuelSupply\n+fuelUsageFraction",
+    # "s25_s26" = "+imCoverage",
+    # "s24_s25" = "+zoneMonthHour",
+    # "s23_s24" = "+AVFT",
+    # "s22_s23" = '+avgSpeedDistribution',
+    # "s21_s22" = "+sourceTypeAgeDistribution",
+    # "s20_s21" = "+roadTypeDistribution",
+    # "s19_s20" = "+sourceTypeYear",
+    # "s18_s19" ="+sourceTypeYearVMT"
   ))
 
 
 compare_stat = compare %>% 
   group_by(var) %>%
-  summarize(lower = quantile(value, probs = 0.05, na.rm = TRUE),
+  summarize(lower = quantile(value, probs = 0, na.rm = TRUE),
             estimate = quantile(value, probs = 0.50, na.rm = TRUE),
-            upper = quantile(value, probs = 0.95, na.rm = TRUE)
+            upper = quantile(value, probs = 1, na.rm = TRUE)
+  ) %>%
+  # Post-hoc, let's summarize these as absolute value percent changes
+  mutate(
+    estimate = abs(estimate),
+    lower = abs(lower),
+    upper = abs(upper)
   )
 
-
+library(ggtext)
 
 # Marginal successive improvement
 gg = ggplot() +
-  geom_line(data = compare, mapping = aes(x = var, y = value, group = geoid), color = "grey", alpha = 0.75) +
-  geom_point(data = compare, mapping = aes(x = var, y = value, color = var, group = geoid), size = 3) +
-  geom_crossbar(data = compare_stat, mapping = aes(x = var, y = estimate, ymin = lower, ymax = upper, group = var, fill = var, color = var),
+  # geom_line(data = compare, mapping = aes(x = reorder(var, value), y = value, group = geoid), color = "grey", alpha = 0.75) +
+  # geom_point(data = compare, mapping = aes(x = reorder(var, value), y = value, color = var, group = geoid), size = 3) +
+  geom_crossbar(data = compare_stat, mapping = aes(x = reorder(var, estimate), y = estimate, ymin = lower, ymax = upper, group = var, fill = var, color = var),
                 alpha = 0.75) +
-  scale_y_continuous(labels = scales::label_percent(), breaks = c(-0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75)) +
+  geom_label(data = compare_stat, mapping = aes(
+    x = reorder(var, estimate), y = estimate,  group = var, color = var, 
+    label = {
+      x = scales::percent(estimate, accuracy = 1)
+      if_else(x == "0%", "<0%", false = x)
+      })) +
+  scale_y_continuous(labels = scales::label_percent(), breaks = c(-0.75, -0.5, -0.1, -.2, -0.25, 0, 0.1, 0.2, 0.3, 0.5, 0.75)) +
   scale_fill_viridis(option = "plasma", discrete = TRUE, end = 0.9) +
   scale_color_viridis(option = "plasma", discrete = TRUE, end = 0.9) +
   theme_bw(base_size = 14) +
-  labs(y = "Percent Change in Emissions (90% Range)",
+  labs(y = "Absolute Percent Change in Overall CO2e Emissions<br><sup>(Medians and Ranges, n = 5 counties)</sup>",
        x = NULL,
-       title = "Improvement for Custom vs. Default MOVES Anywhere Tables") +
+       title = "<b>Valued-Added of Customizing MOVES Tables</b><br><sup>compared to MOVES Anywhere-made Default Tables</sup>") +
   coord_flip() +
   theme_bw(base_size = 14) +
   guides(fill = "none", color = "none") +
   theme(panel.border = element_rect(fill = NA, color = "#373737"),
-        plot.title = element_text(hjust = 0.5))
+        panel.grid.minor = element_blank(), plot.title.position = "plot",
+        plot.title = element_markdown(size = 14, hjust = 0.5), 
+        axis.title.x = element_markdown(size = 12),
+        axis.text.y = element_markdown(size = 10)
+        )
 
 ggsave(gg, filename = "viz/crossbars.png", dpi = 500, width = 6, height = 6)
 browseURL("viz/crossbars.png")
@@ -231,22 +230,6 @@ browseURL("viz/crossbars.png")
 #   facet_wrap(~var, ncol = 4)
 
 # DATA8 ############################################
-
-runs %>% 
-  # Filter to buckets that were successfully downloaded
-  filter(output %in% dir("outputs", full.names = TRUE)) %>%
-  # For each bucket
-  split(.$bucket) %>%
-  # Read in the data
-  map_dfr(
-    .f = ~read_csv(.x$output, show_col_types = FALSE) %>%
-      filter(pollutant == 98, by == 8) %>%
-      mutate(bucket = .x$bucket, scenario = .x$scenario)
-  ) %>%
-  mutate(geoid = stringr::str_pad(geoid, width = 5, side = "left", pad = "0")) %>%
-  left_join(by = "geoid", y=  read_rds("../moves_anywhere/scripts/geoids.rds") %>% 
-              mutate(name = stringr::str_remove(name, " County[,] NY")))  %>%
-  saveRDS("data8.rds")
 
 ## PLOT 3 #################################################
 data = read_rds("data8.rds") %>%
@@ -332,31 +315,6 @@ browseURL("viz/crossbars_sourcetype.png")
 
 # DATA16-ALL #########################################
 
-runs = read_csv("runs.csv", show_col_types = FALSE) %>% 
-  filter(scenario %in% c(18,26,28, 29) ) %>%
-  mutate(output = paste0("outputs/", bucket, ".csv")) %>%
-  # Filter out any that were invalid
-  filter(file.size(output) > 1000)
-
-
-# runs %>% filter(bucket == "d36047-u23-o25")
-
-# Read in the files
-runs %>% 
-  # Filter to buckets that were successfully downloaded
-  filter(output %in% dir("outputs", full.names = TRUE)) %>%
-  # For each bucket
-  split(.$bucket) %>%
-  # Read in the data
-  map_dfr(
-    .f = ~read_csv(.x$output, show_col_types = FALSE) %>%
-      filter(by == 16) %>%
-      mutate(bucket = .x$bucket, scenario = .x$scenario)
-  ) %>%
-  mutate(geoid = stringr::str_pad(geoid, width = 5, side = "left", pad = "0")) %>%
-  left_join(by = "geoid", y=  read_rds("../moves_anywhere/scripts/geoids.rds") %>% 
-              mutate(name = stringr::str_remove(name, " County[,] NY"))) %>%
-  saveRDS("data16_compare.rds")
 
 ## MAP 1 ##############################################
 
@@ -469,26 +427,6 @@ read_rds("data16_compare.rds") %>%
   # filter(pollutant %in% c(2,3, 31, 33, 98, 100, 110))
 
 # DATA8-ALL ############################################
-read_csv("runs.csv", show_col_types = FALSE) %>% 
-  filter(scenario %in% c(18,26,28, 29) ) %>%
-  mutate(output = paste0("outputs/", bucket, ".csv")) %>%
-  # Filter out any that were invalid
-  filter(file.size(output) > 1000) %>%
-  # Filter to buckets that were successfully downloaded
-  filter(output %in% dir("outputs", full.names = TRUE)) %>%
-  # For each bucket
-  split(.$bucket) %>%
-  # Read in the data
-  map_dfr(
-    .f = ~read_csv(.x$output, show_col_types = FALSE) %>%
-      filter(by == 8) %>%
-      mutate(bucket = .x$bucket, scenario = .x$scenario)
-  ) %>%
-  mutate(geoid = stringr::str_pad(geoid, width = 5, side = "left", pad = "0")) %>%
-  left_join(by = "geoid", y=  read_rds("../moves_anywhere/scripts/geoids.rds") %>% 
-              mutate(name = stringr::str_remove(name, " County[,] NY"))) %>%
-  saveRDS("data8_compare.rds")
-
 
 data = read_rds("data8_compare.rds") %>%
   filter(scenario %in% c(y, yhat)) %>%
@@ -519,31 +457,8 @@ bind_rows(
   write_csv("viz/r2.csv")
 
 read_csv("viz/r2.csv")
+
 # DATA1-ALL ################################################
-runs = read_csv("runs.csv", show_col_types = FALSE) %>% 
-  filter(scenario %in% c(y, yhat) ) %>%
-  mutate(output = paste0("outputs/", bucket, ".csv")) %>%
-  # Filter out any that were invalid
-  filter(file.size(output) > 1000)
-# runs %>% filter(bucket == "d36047-u23-o25")
-
-# Read in the files
-runs %>% 
-  # Filter to buckets that were successfully downloaded
-  filter(output %in% dir("outputs", full.names = TRUE)) %>%
-  # For each bucket
-  split(.$bucket) %>%
-  # Read in the data
-  map_dfr(
-    .f = ~read_csv(.x$output, show_col_types = FALSE) %>%
-      filter(by == 1) %>%
-      mutate(bucket = .x$bucket, scenario = .x$scenario)
-  ) %>%
-  mutate(geoid = stringr::str_pad(geoid, width = 5, side = "left", pad = "0")) %>%
-  left_join(by = "geoid", y=  read_rds("../moves_anywhere/scripts/geoids.rds") %>% 
-              mutate(name = stringr::str_remove(name, " County[,] NY"))) %>%
-  saveRDS("data1_compare.rds")
-
 
 data = read_rds("data1_compare.rds") %>%
   filter(scenario %in% c(y, yhat)) %>%
