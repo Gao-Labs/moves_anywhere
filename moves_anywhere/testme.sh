@@ -4,14 +4,21 @@
 
 # Development Workspace for pulling docker_moves:v2
 
-REPO=$(git rev-parse --show-toplevel)
-cd "$REPO"
-
-# Variables
-IMAGE_NAME="tmf77/docker_moves:v2"
-SCRIPTS="$(pwd)/moves_anywhere/scripts"
-# BUCKET="$(pwd)/moves_anywhere/inputs_ny"
-BUCKET="$(pwd)/moves_anywhere/inputs2"
+REPO=$(git rev-parse --show-toplevel) && \
+  cd "$REPO" && \
+  IMAGE_NAME="tmf77/moves-anywhere:v2" && \
+  SCRIPTS="$(pwd)/moves_anywhere/scripts" && \
+  BUCKET="$(pwd)/moves_anywhere/inputs3"
+  
+  
+  docker run  \
+    --rm \
+    --name "dock" \
+    --mount src="$SCRIPTS/",target="/cat/scripts",type=bind \
+    --mount src="$BUCKET/",target="/cat/inputs",type=bind \
+    --entrypoint bash \
+    -it "$IMAGE_NAME" \
+    -c "./scripts/launch.sh"
 
 # [x] monthvmtfraction works
 # [x] dayvmtfraction works

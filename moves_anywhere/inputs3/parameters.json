@@ -1,0 +1,14 @@
+{
+  "geoid": "54035",
+  "level": "county",
+  "pollutant": [2, 3, 31, 91, 33, 98, 90, 6, 5, 1, 100, 110, 118, 112, 119, 115, 106, 116, 107, 117],
+  "year": 2020,
+  "default": false,
+  "mode": "inv",
+  "geoaggregation": "county",
+  "timeaggregation": "year",
+  "dtablename": "d54035_u38_o1",
+  "by": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  "run": 0,
+  "training_type": "default"
+}

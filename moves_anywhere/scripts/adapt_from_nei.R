@@ -2,6 +2,14 @@
 
 # A series of functions for adapting inputs from the National Emissions Inventory
 
+# testing values
+# setwd(paste0(rstudioapi::getActiveProject(), "/moves_anywhere"))
+# .geoidchar = "54035"; .year = 2020
+# path_hpmsvtypeyear = "scripts/reference/hpmsvtypeyear.csv"
+# path_nei_sourcetypeyearvmt = "scripts/reference/nei_sourcetypeyearvmt.rds"
+# path_sourcetypeyear = "scripts/reference/sourcetypeyear.csv"
+# path_nei_sourcetypeyear = "scripts/reference/nei_sourcetypeyear.rds"
+
 adapt_vmt_from_nei = function(
     .geoidchar = "36109",
     .year = 2022,
@@ -124,13 +132,15 @@ adapt_vehicles_from_nei = function(
   # If year year is in the available years...
   if(.year %in% years){
     
+    .yearofinterest = .year
+    interpolate = FALSE
     # Just filter to obtain the estimate    
     final = read_rds(path_nei_sourcetypeyear) %>%
       filter(geoid == .geoidchar) %>%
-      filter(year %in% .yearofinterest) %>%
+      filter(year %in% .year) %>%
       select(yearID = year, sourceTypeID = sourcetype, sourceTypePopulation = vehicles)
     return(final)
-    
+
     # If your year is less than all the available years, grab the most recent year...
   }else if(all(.year > years)){
     .yearofinterest = max(years)
@@ -156,12 +166,18 @@ adapt_vehicles_from_nei = function(
   # If interpolation is needed (between years)
   if(interpolate == TRUE){
     
+    # Import in that geoid's NEI data for the year range available
+    current = read_rds(path_nei_sourcetypeyear) %>%
+      filter(geoid == .geoidchar) %>%
+      filter(year %in% .yearofinterest)
+      
+    # Interpolate the vehicle estimates for that year.
     final = current %>%
       group_by(sourcetype) %>%
-      summarize(vmt = lm(formula = vmt ~ year) %>% 
+      summarize(vehicles = lm(formula = vehicles ~ year) %>% 
                   predict(newdata = tibble(year = .year)),
                 year = .year, .groups = "drop") %>%
-      select(yearID = year, sourceTypeID = sourcetype, VMT = vmt)
+      select(yearID = year, sourceTypeID = sourcetype, sourceTypePopulation = vehicles)
     return(final)
     
     # Otherwise...
@@ -172,10 +188,9 @@ adapt_vehicles_from_nei = function(
       filter(yearID == .year) %>%
       select(sourcetype = sourceTypeID, year = yearID, vehicles_total = sourceTypePopulation)
     
-    
     # What's the ratio of vehicles in YOUR county for that sourcetype to the WHOLE COUNTY for that year
     reference = read_rds(path_nei_sourcetypeyear) %>%
-      filter(year == .yearofinterest) %>%
+      filter(year %in% .yearofinterest) %>%
       group_by(sourcetype) %>%
       summarize(
         vehicles_geoid = sum(vehicles[geoid == .geoidchar], na.rm = TRUE),
