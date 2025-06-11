@@ -131,7 +131,8 @@ adapt_vmt2 = function(.runspec = "EPA_MOVES_Model/rs_custom.xml"){
       .geoidchar = .geoidchar,
       .year = .year,
       path_hpmsvtypeyear = "scripts/reference/hpmsvtypeyear.csv",
-      path_nei_sourcetypeyearvmt = "scripts/reference/nei_sourcetypeyearvmt.rds"
+      path_nei_sourcetypeyearvmt = "scripts/reference/nei_sourcetypeyearvmt.rds",
+      path_projections = "scripts/projections.rds"
     )
     
     # Import table!

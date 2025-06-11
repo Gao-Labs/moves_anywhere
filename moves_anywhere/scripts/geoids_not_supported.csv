@@ -1,0 +1,113 @@
+state,state_code,state_name,county_code,county,geoid
+AK,02,Alaska,063,Chugach Census Area,02063
+AK,02,Alaska,066,Copper River Census Area,02066
+AK,02,Alaska,105,Hoonah-Angoon Census Area,02105
+AK,02,Alaska,158,Kusilvak Census Area,02158
+AK,02,Alaska,195,Petersburg Census Area,02195
+AK,02,Alaska,198,Prince of Wales-Hyder Census Area,02198
+AK,02,Alaska,201,Prince of Wales-Outer Ketchikan Census Area,02201
+AK,02,Alaska,230,Skagway Municipality,02230
+AK,02,Alaska,231,Skagway-Yakutat-Angoon Census Area,02231
+AK,02,Alaska,232,Skagway-Hoonah-Angoon Census Area,02232
+AK,02,Alaska,270,Wade Hampton Census Area,02270
+AK,02,Alaska,275,Wrangell City and Borough,02275
+AK,02,Alaska,280,Wrangell-Petersburg Census Area,02280
+FL,12,Florida,025,Dade County,12025
+MT,30,Montana,113,Yellowstone National Park,30113
+SD,46,South Dakota,102,Oglala Lakota County,46102
+SD,46,South Dakota,113,Shannon County,46113
+VA,51,Virginia,515,Bedford city,51515
+VA,51,Virginia,560,Clifton Forge city,51560
+VA,51,Virginia,780,South Boston city,51780
+AS,60,American Samoa,010,Eastern District,60010
+AS,60,American Samoa,020,Manu'a District,60020
+AS,60,American Samoa,030,Rose Island,60030
+AS,60,American Samoa,040,Swains Island,60040
+AS,60,American Samoa,050,Western District,60050
+GU,66,Guam,010,Guam,66010
+MP,69,Northern Mariana Islands,085,Northern Islands Municipality,69085
+MP,69,Northern Mariana Islands,100,Rota Municipality,69100
+MP,69,Northern Mariana Islands,110,Saipan Municipality,69110
+MP,69,Northern Mariana Islands,120,Tinian Municipality,69120
+PR,72,Puerto Rico,001,Adjuntas Municipio,72001
+PR,72,Puerto Rico,003,Aguada Municipio,72003
+PR,72,Puerto Rico,005,Aguadilla Municipio,72005
+PR,72,Puerto Rico,007,Aguas Buenas Municipio,72007
+PR,72,Puerto Rico,009,Aibonito Municipio,72009
+PR,72,Puerto Rico,011,Anasco Municipio,72011
+PR,72,Puerto Rico,013,Arecibo Municipio,72013
+PR,72,Puerto Rico,015,Arroyo Municipio,72015
+PR,72,Puerto Rico,017,Barceloneta Municipio,72017
+PR,72,Puerto Rico,019,Barranquitas Municipio,72019
+PR,72,Puerto Rico,021,Bayamon Municipio,72021
+PR,72,Puerto Rico,023,Cabo Rojo Municipio,72023
+PR,72,Puerto Rico,025,Caguas Municipio,72025
+PR,72,Puerto Rico,027,Camuy Municipio,72027
+PR,72,Puerto Rico,029,Canovanas Municipio,72029
+PR,72,Puerto Rico,031,Carolina Municipio,72031
+PR,72,Puerto Rico,033,Catano Municipio,72033
+PR,72,Puerto Rico,035,Cayey Municipio,72035
+PR,72,Puerto Rico,037,Ceiba Municipio,72037
+PR,72,Puerto Rico,039,Ciales Municipio,72039
+PR,72,Puerto Rico,041,Cidra Municipio,72041
+PR,72,Puerto Rico,043,Coamo Municipio,72043
+PR,72,Puerto Rico,045,Comerio Municipio,72045
+PR,72,Puerto Rico,047,Corozal Municipio,72047
+PR,72,Puerto Rico,049,Culebra Municipio,72049
+PR,72,Puerto Rico,051,Dorado Municipio,72051
+PR,72,Puerto Rico,053,Fajardo Municipio,72053
+PR,72,Puerto Rico,054,Florida Municipio,72054
+PR,72,Puerto Rico,055,Guanica Municipio,72055
+PR,72,Puerto Rico,057,Guayama Municipio,72057
+PR,72,Puerto Rico,059,Guayanilla Municipio,72059
+PR,72,Puerto Rico,061,Guaynabo Municipio,72061
+PR,72,Puerto Rico,063,Gurabo Municipio,72063
+PR,72,Puerto Rico,065,Hatillo Municipio,72065
+PR,72,Puerto Rico,067,Hormigueros Municipio,72067
+PR,72,Puerto Rico,069,Humacao Municipio,72069
+PR,72,Puerto Rico,071,Isabela Municipio,72071
+PR,72,Puerto Rico,073,Jayuya Municipio,72073
+PR,72,Puerto Rico,075,Juana Diaz Municipio,72075
+PR,72,Puerto Rico,077,Juncos Municipio,72077
+PR,72,Puerto Rico,079,Lajas Municipio,72079
+PR,72,Puerto Rico,081,Lares Municipio,72081
+PR,72,Puerto Rico,083,Las Marias Municipio,72083
+PR,72,Puerto Rico,085,Las Piedras Municipio,72085
+PR,72,Puerto Rico,087,Loiza Municipio,72087
+PR,72,Puerto Rico,089,Luquillo Municipio,72089
+PR,72,Puerto Rico,091,Manati Municipio,72091
+PR,72,Puerto Rico,093,Maricao Municipio,72093
+PR,72,Puerto Rico,095,Maunabo Municipio,72095
+PR,72,Puerto Rico,097,Mayaguez Municipio,72097
+PR,72,Puerto Rico,099,Moca Municipio,72099
+PR,72,Puerto Rico,101,Morovis Municipio,72101
+PR,72,Puerto Rico,103,Naguabo Municipio,72103
+PR,72,Puerto Rico,105,Naranjito Municipio,72105
+PR,72,Puerto Rico,107,Orocovis Municipio,72107
+PR,72,Puerto Rico,109,Patillas Municipio,72109
+PR,72,Puerto Rico,111,Penuelas Municipio,72111
+PR,72,Puerto Rico,113,Ponce Municipio,72113
+PR,72,Puerto Rico,115,Quebradillas Municipio,72115
+PR,72,Puerto Rico,117,Rincon Municipio,72117
+PR,72,Puerto Rico,119,Rio Grande Municipio,72119
+PR,72,Puerto Rico,121,Sabana Grande Municipio,72121
+PR,72,Puerto Rico,123,Salinas Municipio,72123
+PR,72,Puerto Rico,125,San German Municipio,72125
+PR,72,Puerto Rico,127,San Juan Municipio,72127
+PR,72,Puerto Rico,129,San Lorenzo Municipio,72129
+PR,72,Puerto Rico,131,San Sebastian Municipio,72131
+PR,72,Puerto Rico,133,Santa Isabel Municipio,72133
+PR,72,Puerto Rico,135,Toa Alta Municipio,72135
+PR,72,Puerto Rico,137,Toa Baja Municipio,72137
+PR,72,Puerto Rico,139,Trujillo Alto Municipio,72139
+PR,72,Puerto Rico,141,Utuado Municipio,72141
+PR,72,Puerto Rico,143,Vega Alta Municipio,72143
+PR,72,Puerto Rico,145,Vega Baja Municipio,72145
+PR,72,Puerto Rico,147,Vieques Municipio,72147
+PR,72,Puerto Rico,149,Villalba Municipio,72149
+PR,72,Puerto Rico,151,Yabucoa Municipio,72151
+PR,72,Puerto Rico,153,Yauco Municipio,72153
+UM,74,U.S. Minor Outlying Islands,300,Midway Islands,74300
+VI,78,U.S. Virgin Islands,010,St. Croix Island,78010
+VI,78,U.S. Virgin Islands,020,St. John Island,78020
+VI,78,U.S. Virgin Islands,030,St. Thomas Island,78030

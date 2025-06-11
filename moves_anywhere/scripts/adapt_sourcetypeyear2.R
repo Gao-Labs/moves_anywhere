@@ -57,7 +57,8 @@ adapt_sourcetypeyear2 = function(.runspec = "EPA_MOVES_Model/rs_custom.xml"){
       .geoidchar = .geoidchar,
       .year = .year,
       path_sourcetypeyear = "scripts/reference/sourcetypeyear.csv",
-      path_nei_sourcetypeyear = "scripts/reference/nei_sourcetypeyear.rds"
+      path_nei_sourcetypeyear = "scripts/reference/nei_sourcetypeyear.rds",
+      path_projections = "scripts/projections.rds"
     )
     # Import table!
     import_table(data = data, tablename = table, .custom = .custom, adapt = TRUE, save = TRUE, volume = BUCKET)
